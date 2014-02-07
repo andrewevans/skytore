@@ -1,0 +1,43 @@
+
+body{
+	background:#000;
+	color:#eee;
+}
+
+p {
+	font-size:120%;
+	font-family:'Open Sans',Arial, Helvetica, sans-serif;
+	line-height:1.8em;
+}
+
+p.story-title {
+	font-size:5em;
+	text-align:center;	
+	font-family:Georgia, "Times New Roman", Times, serif
+}
+
+.box {
+	margin:10px auto;
+	max-width: 600px;
+	padding:40px;
+}
+
+span.bullet {
+	font-size:200%;
+}
+
+/* For smaller displays */
+@media (max-width: 1025px) {
+	p {
+		font-size:300%;
+	}
+		
+	.box {
+		max-width:inherit;
+	}
+	
+span.bullet {
+	font-size:300%;
+}
+
+}
