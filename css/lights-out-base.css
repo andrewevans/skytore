@@ -3,6 +3,16 @@ body {
     color: #eee;
 }
 
+h1 {
+    line-height: 1.8em;
+    text-indent: 2em;
+    font-size: 5em;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    text-align: center;
+    text-indent: 0;
+    font-weight: normal;
+}
+
 p {
     font-size: 120%;
     font-family: 'Open Sans',Arial, Helvetica, sans-serif;

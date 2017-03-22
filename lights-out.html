@@ -12,39 +12,47 @@
 </head>
 <body>
 <div class="box">
-    <p class="story-title">The Sky Tore</p>
+The Sky Tore
+============
 
-    <p>Typewriter hella messenger bag, semiotics stumptown mumblecore pinterest organic tilde master cleanse man bun. Vinyl succulents echo park mumblecore. Fashion axe raclette salvia chartreuse tilde, shoreditch williamsburg cliche farm-to-table snackwave kickstarter marfa. Semiotics hexagon copper mug, pop-up bicycle rights scenester knausgaard swag flannel asymmetrical waistcoat. Seitan narwhal distillery crucifix tote bag ethical. Meh hella before they sold out, activated charcoal kitsch locavore single-origin coffee wayfarers humblebrag chillwave kombucha asymmetrical kogi knausgaard. Bespoke vegan schlitz, meggings mixtape fingerstache four loko cornhole cold-pressed.</p>
+Typewriter hella messenger bag, semiotics stumptown mumblecore pinterest organic tilde master cleanse man bun. Vinyl succulents echo park mumblecore. Fashion axe raclette salvia chartreuse tilde, shoreditch williamsburg cliche farm-to-table snackwave kickstarter marfa. Semiotics hexagon copper mug, pop-up bicycle rights scenester knausgaard swag flannel asymmetrical waistcoat. Seitan narwhal distillery crucifix tote bag ethical. Meh hella before they sold out, activated charcoal kitsch locavore single-origin coffee wayfarers humblebrag chillwave kombucha asymmetrical kogi knausgaard. Bespoke vegan schlitz, meggings mixtape fingerstache four loko cornhole cold-pressed.
 
-    <p class="story-star">* * *</p>
+* * *
 
-    <p>Blue bottle offal bicycle rights pickled, poutine crucifix literally. Plaid shoreditch meh lyft migas knausgaard church-key. Microdosing ugh fingerstache, distillery tbh.</p>
+>Check-in [ander] @ The Trough
 
-    <p>"Meh hella before they sold out, activated charcoal kitsch locavore single-origin coffee", Pop-up pour-over. Pinterest, austin jianbing raw denim synth humblebrag tote bag. Echo park selfies vinyl crucifix edison bulb, microdosing banjo farm-to-table viral plaid austin. Mixtape narwhal irony, flexitarian iceland seitan deep very pork belly synth snackwave man braid twee kombucha.</p>
+Blue bottle offal bicycle rights pickled, poutine crucifix literally. Plaid shoreditch meh lyft migas knausgaard church-key. Microdosing ugh fingerstache, distillery tbh.
 
-    <p>"Pinterest, austin jianbing", viral plaid austin.. "Oh. You need a little dummy text for your mockup? How quaint."</p>
+>Check-in [francix] @ The Trough
 
-    <p>"Gochujang readymade vice VHS, poutine kogi glossier", she says.</p>
+"Meh hella before they sold out, activated charcoal kitsch locavore single-origin coffee", to find \*yourself\* in all of this. Pinterest, austin jianbing raw denim synth humblebrag tote bag. Echo park selfies vinyl crucifix edison bulb, microdosing banjo farm-to-table viral plaid austin. Mixtape narwhal irony, flexitarian iceland seitan deep very pork belly synth snackwave man braid twee kombucha.
 
-    <p>"Right", Typewriter hella messenger bag.</p>
+"Pinterest, austin jianbing", viral plaid austin.. "Oh. You need a little dummy text for your mockup? How quaint."
 
-    <p>"Vinyl succulents", she meh hella before they sold out. "That's the message."</p>
+>When are you getting here? I've been waiting for like 20 minutes. Hurry up. There was a cool magician guy walking around throwing stuff though. Anyways, I'm here.
 
-    <p class="bullet">&#9632; &#9632;</p>
+"Gochujang readymade vice VHS, poutine kogi glossier", she says.
 
-    <p>Blue bottle offal bicycle rights pickled, poutine crucifix literally. Plaid shoreditch meh lyft migas knausgaard church-key. Microdosing ugh fingerstache, distillery tbh.</p>
+"Right", Typewriter hella messenger bag.
 
-    <p>"Meh hella before they sold out, activated charcoal kitsch locavore single-origin coffee", Pop-up pour-over. Pinterest, austin jianbing raw denim synth humblebrag tote bag. Echo park selfies vinyl crucifix edison bulb, microdosing banjo farm-to-table viral plaid austin. Mixtape narwhal irony, flexitarian iceland seitan deep very pork belly synth snackwave man braid twee kombucha.</p>
+"Vinyl succulents", she meh hella before they sold out. "That's the message."
 
-    <p class="story-star">*</p>
 
-    <p>"Pinterest, austin jianbing", viral plaid austin.. "Oh. You need a little dummy text for your mockup? How quaint."</p>
+■ ■
 
-    <p>"Gochujang readymade vice VHS, poutine kogi glossier", she says.</p>
+Blue bottle offal bicycle rights pickled, poutine crucifix literally. Plaid shoreditch meh lyft migas knausgaard church-key. Microdosing ugh fingerstache, distillery tbh.
 
-    <p>"Right", Typewriter hella messenger bag.</p>
+"Meh hella before they sold out, activated charcoal kitsch locavore single-origin coffee", Pop-up pour-over. Pinterest, austin jianbing raw denim synth humblebrag tote bag. Echo park selfies vinyl crucifix edison bulb, microdosing banjo farm-to-table viral plaid austin. Mixtape narwhal irony, flexitarian iceland seitan deep very pork belly synth snackwave man braid twee kombucha.
 
-    <p>"Vinyl succulents", she meh hella before they sold out. "That's the message."</p>
+*
+
+"Pinterest, austin jianbing", viral plaid austin.. "Oh. You need a little dummy text for your mockup? How quaint."
+
+"Gochujang readymade vice VHS, poutine kogi glossier", she says.
+
+"Right", Typewriter hella messenger bag.
+
+"Vinyl succulents", she meh hella before they sold out. "That's the message."
 </div>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -55,5 +63,15 @@
 
 <script>var editor = new MediumEditor('.box');</script>
 
+<script src="https://cdn.rawgit.com/showdownjs/showdown/1.6.4/dist/showdown.min.js"></script>
+
+<script>
+var converter = new showdown.Converter(), // Initialize Showdown
+        plain_text_markdown = $('.box').text(), // Showdown markup text
+        html_text = converter.makeHtml(plain_text_markdown); // Convert to HTML
+
+// Replace markup text with HTML text that will be rendered by the browser as HTML
+$('.box').html(html_text);
+</script>
 </body>
 </html>
