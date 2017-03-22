@@ -17,7 +17,11 @@ p {
     font-size: 120%;
     font-family: 'Open Sans',Arial, Helvetica, sans-serif;
     line-height: 1.8em;
-    text-indent: 2em;
+
+
+    -webkit-font-smoothing: antialiased;
+    font-size: 1.2rem;
+    line-height:1.6666666667;
 }
 
 p.story-title {
@@ -48,14 +52,36 @@ p.story-star {
 /* For smaller displays */
 @media (max-width: 1025px) {
     p {
+
         font-size: 300%;
     }
 
     .box {
         max-width: inherit;
+        padding: 40px;
     }
+
+
+
 
     p.bullet {
         font-size: 3em;
     }
+
+    blockquote {
+        text-align: left;
+        width: 30%;
+        font-size:0.7em;
+        display: block;
+        float: left;
+        margin: 0 40px 0 -40px;
+        background: #eee;
+        color: #333;
+    }
+
+    blockquote p {
+        margin: 10px;
+    }
 }
+
+
