@@ -1,6 +1,6 @@
 body {
-    background: #191b1f;
-    color: #eee;
+    background: #000;
+    color: #fff;
 }
 
 h1 {
@@ -17,6 +17,7 @@ p {
     font-size: 120%;
     font-family: 'Open Sans',Arial, Helvetica, sans-serif;
     line-height: 1.8em;
+    text-indent: 2em;
 
 
     -webkit-font-smoothing: antialiased;
@@ -69,6 +70,7 @@ blockquote p {
     margin: 10px;
     padding: 10px;
     font-size: 0.9em;
+    text-indent: 0em;
 }
 
 /* For smaller displays */
