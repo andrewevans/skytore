@@ -1,5 +1,5 @@
 body {
-    background: #000;
+    background: #191b1f;
     color: #eee;
 }
 
@@ -49,6 +49,7 @@ p.story-star {
     line-height: 5em;
 }
 
+
 /* For smaller displays */
 @media (max-width: 1025px) {
     p {
@@ -70,17 +71,23 @@ p.story-star {
 
     blockquote {
         text-align: left;
-        width: 30%;
+        width: 40%;
         font-size:0.7em;
         display: block;
         float: left;
         margin: 0 40px 0 -40px;
-        background: #eee;
-        color: #333;
+        background: #1f2228;
+        color: #ccc;
+    }
+
+    blockquote.blockquote-right {
+        float: right;
+        text-align: right;
+        margin: 0 -40px 0 40px;
     }
 
     blockquote p {
-        margin: 10px;
+        margin: 50px 10px 50px 10px;
     }
 }
 

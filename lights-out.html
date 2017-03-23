@@ -29,15 +29,17 @@ Typewriter hella messenger bag, semiotics stumptown mumblecore pinterest organic
 
 Blue bottle offal bicycle rights pickled, poutine crucifix literally. Plaid shoreditch meh lyft migas knausgaard church-key. Microdosing ugh fingerstache, distillery tbh.
 
->Check-in [francix] @ The Trough
+>Check-in [francix]
+@ The Trough
 
 "Meh hella before", they said.
 
->Check-in [ander] @ The Trough
+>-Check-in [ander]
+@ The Trough
 
 "Pinterest, austin jianbing", viral plaid austin.. "Oh. You need a little dummy text for your mockup? How quaint."
 
->When are you getting here? I've been waiting for like 20 minutes. Hurry up. There was a cool magician guy walking around throwing stuff though. Anyways, I'm here.
+>When are you getting here? I've been waiting for like 20 minutes. Hurry up. There was a cool magician guy walking around throwing stuff though. **Anyways, I'm here.**
 
 "Gochujang readymade vice VHS, poutine kogi glossier", she says.
 
@@ -74,8 +76,37 @@ Blue bottle offal bicycle rights pickled, poutine crucifix literally. Plaid shor
 <script src="/js/showdown.min.js"></script>
 
 <script>
+    var myext = function () {
+        var myext1 = {
+            type: 'lang',
+            regex: /((^ {0,3}>\-[ \t]?.+\n(.+\n)*\n*)+)/gm,
+            replace: function(regex_output) {
 
-var converter = new showdown.Converter({simpleLineBreaks: 'true'}), // Initialize Showdown
+                var bq = regex_output;
+
+                // attacklab: hack around Konqueror 3.5.4 bug:
+                // "----------bug".replace(/^-/g,"") == "bug"
+                bq = bq.replace(/^[ \t]*>-[ \t]?/gm, '¨0'); // trim one level of quoting
+
+                // attacklab: clean up hack
+                bq = bq.replace(/¨0/g, '');
+
+                bq = bq.replace(/^[ \t]+$/gm, ''); // trim whitespace-only lines
+                bq = bq.replace(/(^|\n)/g, '$1  ');
+
+                return '<blockquote class="blockquote-right"><p>\n' + bq + '\n</p></blockquote>';
+            }
+        }
+
+        return [myext1];
+    }
+
+showdown.extension('myext', myext);
+
+var converter = new showdown.Converter({
+    simpleLineBreaks: 'true',
+            extensions: [myext],
+}), // Initialize Showdown
         plain_text_markdown = $('.box').text(), // Showdown markup text
         html_text = converter.makeHtml(plain_text_markdown); // Convert to HTML
 
