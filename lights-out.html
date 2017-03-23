@@ -26,7 +26,7 @@ The burnt curls on the edges of the soon-to-be destroyed sky were peeling away s
 
 Don't say goodbye. I am more powerful than you know, my dear Celeste. And now is when I will show you, now is when the sands of time have reared their vengeful face and it is nothing to me. You are everything. It's not those words that speak so sweetly in books and movies and songs, or those places that are so beautiful that a smile and silence are the only response. It is not that lust that I have for you every waking moment, for your perfect body, with those calligraphic curves, your toned complexion, your legs that go on forever, your unreal face that was crafted with the most expert precision, your expressions that leave me speechless when you say so much with no words at all, your soft pouty lips, flowing blonde hair that fucking glows. There is something now that I realize that must continue, and that is you. Within you holds a compassion and a beauty that this ending world knows it cannot do without. Is that what is happening right now? The cosmos is about to lose you so it has decided to self destruct?
 
-*     *     *
+* * *
 
 "I'm trying to be cordial, dumb dumb", she replies when I asked her why she just courtsied the bellboy. Her crimson dress was the exact color of freshly oxygenated blood. Her drink was a layered gold and orange and red Mai Tai that matched nicely with her dress and her cherry lip gloss. The night sky with the warm subtle outdoor lighting was making her image all the more majestic. It was a little over the top, but then again everything about her was.
 
@@ -275,9 +275,19 @@ I finished my breakfast and hopped in my car. The small town café was cool enou
 
                 return '<blockquote class="blockquote-right"><p>\n' + bq + '\n</p></blockquote>';
             }
-        }
+        },
+                star_split = {
+                    type: 'lang',
+                    filter: function (text) {
 
-        return [myext1];
+                        var split_pattern = "* * *",
+                                new_text = text.replace(split_pattern, '<span class="star-split">' + split_pattern + '</span>');
+
+                        return new_text;
+                    }
+                };
+
+        return [myext1, star_split];
     }
 
 showdown.extension('myext', myext);

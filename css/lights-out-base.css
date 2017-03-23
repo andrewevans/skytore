@@ -73,6 +73,13 @@ blockquote p {
     text-indent: 0em;
 }
 
+span.star-split {
+    text-align: center;
+    display: inherit;
+    text-indent: -2em;
+    letter-spacing: 24px;
+}
+
 /* For smaller displays */
 @media (max-width: 1025px) {
     .box {
