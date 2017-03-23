@@ -49,7 +49,7 @@ Don't say goodbye. I am more powerful than you know, my dear Celeste. And now is
 
 "I'm not a dog."
 
->When are you getting here? I've been waiting for like 20 minutes. Hurry up. There was a cool magician guy walking around throwing stuff though. **Anyways, I'm here.**
+>When are you getting here? I've been waiting for like 20 minutes. Hurry up. There was a cool magician guy walking around throwing stuff though. *Anyways, I'm here.*
 
 "No, I mean look," still with her voice lowered so only I can hear. She hikes up her dress upon her right leg just enough so I can see what she has strapped to her thigh.
 
@@ -285,9 +285,18 @@ I finished my breakfast and hopped in my car. The small town café was cool enou
 
                         return new_text;
                     }
+                },
+                no_italics = {
+                    type: 'output',
+                    filter: function (text) {
+                        return text.replace(/<em>([^\s*][\s\S]*?)<\/em>/g, function (wm, m) {
+
+                            return (/\S$/.test(m)) ? '*' + m + '*' : wm;
+                        });
+                    }
                 };
 
-        return [myext1, star_split];
+        return [myext1, star_split, no_italics];
     }
 
 showdown.extension('myext', myext);
