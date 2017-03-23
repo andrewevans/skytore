@@ -92,7 +92,8 @@ Blue bottle offal bicycle rights pickled, poutine crucifix literally. Plaid shor
                 bq = bq.replace(/¨0/g, '');
 
                 bq = bq.replace(/^[ \t]+$/gm, ''); // trim whitespace-only lines
-                bq = bq.replace(/(^|\n)/g, '$1  ');
+                bq = bq.replace(/\n$/gm, ''); // trim whitespace-only lines
+                bq = bq.split("\n").join("<br />\n"); //@TODO: bad hack to make new lines show up
 
                 return '<blockquote class="blockquote-right"><p>\n' + bq + '\n</p></blockquote>';
             }
