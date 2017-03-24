@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>The Title</title>
-    <link href='/css/open-sans-css.css' rel='stylesheet' type='text/css' />
-    <link href="css/lights-out-base.css" rel="stylesheet" type="text/css" />
+    <link href='/css/open-sans-css.css' rel='stylesheet' />
+    <link href="/css/lights-out-base.css" rel='stylesheet' />
 
-    <link rel="stylesheet" href="css/medium-editor.min.css"> <!-- Core -->
-    <link rel="stylesheet" href="css/themes/default.min.css"> <!-- or any other theme -->
-
+    <link href='/css/medium-editor.min.css' rel='stylesheet'>
+    <link href='/css/themes/default.min.css' rel='stylesheet'>
 </head>
 <body>
 <div class="box">
@@ -249,34 +248,39 @@ I finished my breakfast and hopped in my car. The small town café was cool enou
 
 <script src="/js/medium-editor.min.js"></script>
 
-<script>var editor = new MediumEditor('.box');</script>
+<script>
+    var editor = new MediumEditor('.box'); // Initialize the editable content area
+</script>
 
 <script src="/js/showdown.min.js"></script>
 
 <script>
-    var myext = function () {
-        var myext1 = {
-            type: 'lang',
-            regex: /((^ {0,3}>\-[ \t]?.+\n(.+\n)*\n*)+)/gm,
-            replace: function(regex_output) {
+    var custom_extensions = function () {
+        var right_block = {
+                    type: 'lang',
+                    regex: /((^ {0,3}>\-[ \t]?.+\n(.+\n)*\n*)+)/gm,
+                    replace: function(regex_match) {
+                        // Most of these replacements within this function are
+                        // copied from the subparser for the Showdown blockquote.
 
-                var bq = regex_output;
+                        var needle = regex_match;
 
-                // attacklab: hack around Konqueror 3.5.4 bug:
-                // "----------bug".replace(/^-/g,"") == "bug"
-                bq = bq.replace(/^[ \t]*>-[ \t]?/gm, '¨0'); // trim one level of quoting
+                        // trim one level of quoting
+                        needle = needle.replace(/^[ \t]*>-[ \t]?/gm, '¨0');
 
-                // attacklab: clean up hack
-                bq = bq.replace(/¨0/g, '');
+                        // attacklab: clean up hack
+                        needle = needle.replace(/¨0/g, '');
 
-                bq = bq.replace(/^[ \t]+$/gm, ''); // trim whitespace-only lines
-                bq = bq.replace(/\n$/gm, ''); // trim whitespace-only lines
-                bq = bq.split("\n").join("<br />\n"); //@TODO: bad hack to make new lines show up
+                        needle = needle.replace(/^[ \t]+$/gm, ''); // trim whitespace-only lines
+                        needle = needle.replace(/\n$/gm, ''); // trim whitespace-only lines
+                        needle = needle.split("\n").join("<br />\n"); //@TODO: bad hack to make new lines show up
 
-                return '<blockquote class="blockquote-right"><p>\n' + bq + '\n</p></blockquote>';
-            }
-        },
+                        return '<blockquote class="blockquote-right"><p>\n' + needle + '\n</p></blockquote>';
+                    }
+                },
                 star_split = {
+                    // Creates stylized split in text
+
                     type: 'lang',
                     filter: function (text) {
 
@@ -287,6 +291,9 @@ I finished my breakfast and hopped in my car. The small town café was cool enou
                     }
                 },
                 no_italics = {
+                    // Italics text are not supposed to be transformed in this
+                    // document, so let's change them back, mmkay.
+
                     type: 'output',
                     filter: function (text) {
                         return text.replace(/<em>([^\s*][\s\S]*?)<\/em>/g, function (wm, m) {
@@ -296,20 +303,21 @@ I finished my breakfast and hopped in my car. The small town café was cool enou
                     }
                 };
 
-        return [myext1, star_split, no_italics];
+        return [right_block, star_split, no_italics];
     }
 
-showdown.extension('myext', myext);
+    // Register the new extensions with Showdown
+    showdown.extension('custom_extensions', custom_extensions);
 
-var converter = new showdown.Converter({
-    simpleLineBreaks: 'true',
-            extensions: [myext],
-}), // Initialize Showdown
-        plain_text_markdown = $('.box').text(), // Showdown markup text
-        html_text = converter.makeHtml(plain_text_markdown); // Convert to HTML
+    var converter = new showdown.Converter({
+                simpleLineBreaks: 'true',
+                extensions: [custom_extensions],
+            }), // Initialize Showdown
+            plain_text_markdown = $('.box').text(), // Showdown markup text
+            html_text = converter.makeHtml(plain_text_markdown); // Convert to HTML
 
-// Replace markup text with HTML text that will be rendered by the browser as HTML
-$('.box').html(html_text);
+    // Replace markup text with HTML text that will be rendered by the browser as HTML
+    $('.box').html(html_text);
 </script>
 </body>
 </html>
