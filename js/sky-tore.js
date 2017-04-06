@@ -1,64 +1,73 @@
-var editor = new MediumEditor('.box'); // Initialize the editable content area
-var custom_extensions = function () {
-  var right_block = {
-      type: 'lang',
-      regex: /((^ {0,3}>\-[ \t]?.+\n(.+\n)*\n*)+)/gm,
-      replace: function(regex_match) {
-        // Most of these replacements within this function are
-        // copied from the subparser for the Showdown blockquote.
 
-        var needle = regex_match;
+$.get( "pages/part-1.txt", function( data ) {
 
-        // trim one level of quoting
-        needle = needle.replace(/^[ \t]*>-[ \t]?/gm, '¨0');
+  $('.box').html(data);
+}).done(function() {
 
-        // attacklab: clean up hack
-        needle = needle.replace(/¨0/g, '');
+  var editor = new MediumEditor('.box'); // Initialize the editable content area
+  var custom_extensions = function () {
+    var right_block = {
+        type: 'lang',
+        regex: /((^ {0,3}>\-[ \t]?.+\n(.+\n)*\n*)+)/gm,
+        replace: function(regex_match) {
+          // Most of these replacements within this function are
+          // copied from the subparser for the Showdown blockquote.
 
-        needle = needle.replace(/^[ \t]+$/gm, ''); // trim whitespace-only lines
-        needle = needle.replace(/\n$/gm, ''); // trim whitespace-only lines
-        needle = needle.split("\n").join("<br />\n"); //@TODO: bad hack to make new lines show up
+          var needle = regex_match;
 
-        return '<blockquote class="blockquote-right"><p>\n' + needle + '\n</p></blockquote>';
-      }
-    },
-    star_split = {
-      // Creates stylized split in text
+          // trim one level of quoting
+          needle = needle.replace(/^[ \t]*>-[ \t]?/gm, '¨0');
 
-      type: 'lang',
-      filter: function (text) {
+          // attacklab: clean up hack
+          needle = needle.replace(/¨0/g, '');
 
-        var split_pattern = "* * *",
-          new_text = text.replace(split_pattern, '<span class="star-split">' + split_pattern + '</span>');
+          needle = needle.replace(/^[ \t]+$/gm, ''); // trim whitespace-only lines
+          needle = needle.replace(/\n$/gm, ''); // trim whitespace-only lines
+          needle = needle.split("\n").join("<br />\n"); //@TODO: bad hack to make new lines show up
 
-        return new_text;
-      }
-    },
-    no_italics = {
-      // Italics text are not supposed to be transformed in this
-      // document, so let's change them back, mmkay.
+          return '<blockquote class="blockquote-right"><p>\n' + needle + '\n</p></blockquote>';
+        }
+      },
+      star_split = {
+        // Creates stylized split in text
 
-      type: 'output',
-      filter: function (text) {
-        return text.replace(/<em>([^\s*][\s\S]*?)<\/em>/g, function (wm, m) {
+        type: 'lang',
+        filter: function (text) {
 
-          return (/\S$/.test(m)) ? '*' + m + '*' : wm;
-        });
-      }
-    };
+          var split_pattern = "* * *",
+            new_text = text.replace(split_pattern, '<span class="star-split">' + split_pattern + '</span>');
 
-  return [right_block, star_split, no_italics];
-}
+          return new_text;
+        }
+      },
+      no_italics = {
+        // Italics text are not supposed to be transformed in this
+        // document, so let's change them back, mmkay.
+
+        type: 'output',
+        filter: function (text) {
+          return text.replace(/<em>([^\s*][\s\S]*?)<\/em>/g, function (wm, m) {
+
+            return (/\S$/.test(m)) ? '*' + m + '*' : wm;
+          });
+        }
+      };
+
+    return [right_block, star_split, no_italics];
+  }
 
 // Register the new extensions with Showdown
-showdown.extension('custom_extensions', custom_extensions);
+  showdown.extension('custom_extensions', custom_extensions);
 
-var converter = new showdown.Converter({
-    simpleLineBreaks: 'true',
-    extensions: [custom_extensions],
-  }), // Initialize Showdown
-  plain_text_markdown = $('.box').text(), // Showdown markup text
-  html_text = converter.makeHtml(plain_text_markdown); // Convert to HTML
+  var converter = new showdown.Converter({
+      simpleLineBreaks: 'true',
+      extensions: [custom_extensions],
+    }), // Initialize Showdown
+    plain_text_markdown = $('.box').text(), // Showdown markup text
+    html_text = converter.makeHtml(plain_text_markdown); // Convert to HTML
 
 // Replace markup text with HTML text that will be rendered by the browser as HTML
-$('.box').html(html_text);
+  $('.box').html(html_text);
+
+  return true;
+});
