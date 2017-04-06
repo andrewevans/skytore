@@ -10,9 +10,15 @@ function getParameterByName(name) {
   return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
 }
 
-$.get( "pages/part-" + getParameterByName('page') + ".txt", function( data ) {
+var pages = ['1','2','3','3_2'],
+page_current = getParameterByName('page'),
+page_index = pages.indexOf(page_current);
+
+$.get( "pages/part-" + page_current + ".txt", function( data ) {
 
   $('.box').html(data);
+  $('.box').append(">&#8592; BACK\n\n>-NEXT &#8594;");
+
 }).done(function() {
 
   var editor = new MediumEditor('.box'); // Initialize the editable content area
@@ -81,4 +87,18 @@ $.get( "pages/part-" + getParameterByName('page') + ".txt", function( data ) {
   $('.box').html(html_text);
 
   return true;
+});
+
+// Turn the second to last block into the 'next' link
+$( "body" ).on( "click", "blockquote:last", function() {
+  if (page_index < (pages.length - 1)) {
+    window.location = '?page=' + pages[(page_index + 1)];
+  }
+});
+
+// Turn the last block into the 'back' link
+$( "body" ).on( "click", "blockquote:nth-last-child(2)", function() {
+  if (page_index > 0) {
+    window.location = '?page=' + pages[(page_index - 1)];
+  }
 });
