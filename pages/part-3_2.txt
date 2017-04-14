@@ -107,15 +107,24 @@ A phone playing a live video shows up in front of my face. It’s facing me show
 
 "Here comes Gabo," I say, half amused, trying to pay attention through the Goomsense trickle.
 
+>check-in andirk
+~ gabø
+
 My phone chimes in my pocket. It says I just checked in to 'Gabo'.
 
 "What the fuck," I say. "Celeste, why did my phone just check me in to Gabo?"
+
+>-check-in andirk
+~ celestival
 
 I look at her for an answer. She looks at me like she's surprised. Then my phone chimes again. This time it says I've checked in to 'Celestival'.
 
 "Hahaha dude this app is losing it," I say. "Check it out Francis, I just checked in to Celeste."
 
 "More like checked her out hahaha," Francis says.
+
+>check-in andirk
+~ francix
 
 It chimes again.
 
@@ -269,7 +278,7 @@ Karl and Lila had set up the bedding in the living room for Celeste (before I co
 
 My mind inebriated and my vision blurred, the pictures on the television come in to view. There was an accident.
 
-"A girl, only 19 years old... walking home... It could not have been predicted..."
+>- "A girl, only 19 years old... walking home... It could not have been predicted..."
 
 The news report shown a large caravan on its side with yellow paint still spilling from its carriage. Red, white, and blue lights flashing like lasers in my eyes.
 
