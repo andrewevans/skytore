@@ -10,7 +10,7 @@ function getParameterByName(name) {
   return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
 }
 
-var pages = ['1','2','3','3_2', '4'],
+var pages = ['1','2','3','3_2', '4', '5'],
 page_current = getParameterByName('page'),
 page_index = pages.indexOf(page_current);
 
