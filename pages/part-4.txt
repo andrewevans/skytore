@@ -22,81 +22,54 @@ She points up. "Meteors in the sky 24/7?" About a dozen meteor streaks scored th
 
 I told Britten about the little incident with Celeste, and I could tell she had begun to lose faith.
 
-"I don’t know exactly what’s going on, but enough about that," I said. "Check it out." I slid my phone over to her. "Pick a category."
-
-She looks at my app inquisitively.
-
-“We’ve been hard at work on our newest feature: the Honing Beacon,” I said. The Honing Beacon turned the rather complex app into a single compass that would point in the direction of a place that the user would find interesting, within a 3 mile radius.
-
-There was a small catch, though. The user could only choose one of three categories that were randomly shuffled from a pool of 10 or so, like 'Popular', 'Nature', 'Food', and 'Good times'.
-
-"K." She selects 'Cute'. The app thought for a moment then produced the compass, pointed southwest. "I don't get it."
-
-"Your treasure hunt has begun! Follow the compass to your 'cute' adventure."
-
-"Fine," she said. We got up from the cafe and followed the compass.
-
-10 minutes later we arrived at the local Humane Society.
-
-"No way! An all-cat circus show!" she said in disbelief.
-
-We paid the $10 donation to the Humaine Society and took our seats in the bleachers right as the show started.
-
-A couple feral cats walked out into the cordoned circle between home plate and first base. The trainer cooed at one of the cats to jump through a hoop she was holding. The cat hopped through and ate his treat. The second cat followed right behind.
-
-"This is sooo fucking cute," she said as she held both of her hands over her chest. "How did you know about this? How did Rose Garden know?"
-
-"Permits," I said. "All these obscure events need city permits. Food events, parades, cat circuses. They bottleneck at City Hall. And permits are in the public domain."
-
-"Haha such a good move," she said.
-
 My phone rang with a picture of Darth Vader on it. "What up Francis?"
 
 "Dude I got it."
 
 "Got what?" I asked.
 
-"What you told me to get."
-
-"You finally got that shit checked out?" I joked.
-
-"The schme-schme. From her phone," he mumbled with cryptic words.
+"What you told me to get. From her phone," he mumbled.
 
 "Oh hell yeah. How?" I leaned toward Britten and told her "I gotta bounce." She nodded and motioned that she was going to stay.
 
-"I just plugged in that USB thing you gave me just like you said and I think it downloaded everything," he said.
+"I just plugged in that thing you gave me just like you said and I think it downloaded everything," he said.
 
 He explained how the opportunity arose when Melody's phone had slipped out of her pocket in his car while he was driving her home. Before bringing it back to her, he downloaded everything off her phone and got exactly what I needed. Francis had been seeing Melody for a few days now. It was unprecedented.
 
-I raced home to meet Francis leaning on the picket fence in the front yard, dangling the USB device in his hand, not too happy.
+I raced home to meet Francis leaning on the picket fence in the front yard, dangling the device in his hand, not too happy.
 
 "What's with the sadness?" I asked him.
 
-"I don't know. It's pretty fucked up what I did," he said. He handed me the USB device. "Take this. I want to forget I ever did that."
+"I don't know. It's pretty fucked up what I did," he said. He handed me the data. "Take this. I want to forget I ever did that."
 
 "Thank you thank you!" I gave him a pat on the back and quickly walked inside.
+
+*
 
 It was a goldmine; database queries, notes on algorithms, passwords stored in plain text. Stupid girl.
 
 ***he can't have dived into the database before getting this
 
-As I rifled through the data, it became even more confusing. There was data about a few hundred users, maybe her personal sample population. The info dated back a few years into the past and a few days into the future. Future data was marked as 'Eclipse' with what looked like probability ratios coupling each future action. Most were around 0.3 but some as high as 0.9.
+As I rifled through the data, it became even more confusing.  It dated back a few years into the past and a few days into the future. Future data was marked as 'Eclipse' with what looked like probability ratios coupling each future action. Most were around 0.3, but some above 0.9.
 
-At 4:20pm tomorrow a 'Cordelia' was going to be at the Miser Lounge. Two other people were to meet her there at a probability of 0.6. This notification set to be sent 39 minutes prior to the 'Eclipse'.
+After work tomorrow, a 'Cordelia' was going to be at the Miser Lounge. Two other people were to meet her there at a 51% probability. Individual notifications were queued to be sent to the three of them beforehand.
 
-The data was enormous. It was late into the night when I hit something unsettling. If I was reading it correctly, it said 'Melodic' was going to arrive at '1UP' (our house) to cross paths with Francix in 10 minutes. A 0.4 Eclipse. Francis was asleep, though.
+The data was enormous. It was late into the night when I hit something unsettling. If I was reading it correctly, it said 'Melodic' was going to arrive at '1UP' (our house) to cross paths with Francix in a few minutes. A 0.4 Eclipse. Francis was asleep, though.
 
-10 minutes later, nothing.
+Several minutes later, nothing.
 
 I stood at the window of the War room atop the house waiting for some strangeness to occur. The streets were empty.
 
 It was late and time for sleep.
 
-It was late and time for sleep.
+*
 
 The door bell rang.
+
 The doorbell rang again.
+
 And again.
+
 It was pouring rain in the middle of the night. Who would be at the door at this ungodly hour in this torrential storm?
 
 I stumbled through the dark house to get to the front door. The door bell kept ringing.
@@ -118,6 +91,8 @@ I looked behind her to see who her backup was. It was Francis. His state was col
 The door bell rang again. And again. And again. I put my hand over the button to stop the ringing. Melody pressed her freezing ice cold hand against mine to force me to press it.
 
 When I woke, it was still night. And there was a storm. My phone was ringing. By the time I went to answer it, the call had ended. It was Celeste.
+
+*
 
 I was hoping this was the place. She told me to meet her. Her only remark was "at the place we threw rocks at when we were walking in the rain". We threw some pebbles at a McDonalds sign when we were walking home from the bocci ball bar a few weeks ago so it was probably the place she was talking about.
 
