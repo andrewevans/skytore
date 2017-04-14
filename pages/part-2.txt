@@ -91,6 +91,9 @@ When I looked at the audience through my Squarecam, there were dozens of artisti
 
 "Oh shit. I almost forgot to check in," I mentioned to Francis as I booted up Foursquare. The app was still on Celestival's profile.
 
+>check-in celestival
+@ The Trough
+
 "See if she checked in here," Francis suggested as he looked at my phone curiously.
 
 "Good idea," I replied. He was right. She had checked in a minute ago. I felt the giddiness overwhelm me. With this full house, I figured that meant she was probably still near the door.
@@ -102,6 +105,12 @@ I immediately get up and shimmy my way through the crowd to greet her. "Celeste,
 "Really?" she replies. "Actually it's funny to see *you* here. Hi Andrew."
 
 "Come sit with me and my friend over at the bar," I say as I point toward Francis who nods back. We make our way to our seats, Francis getting up like a gentleman to let her sit.
+
+>check-in francix
+@ The Trough
+
+>-check-in ander
+@ The Trough
 
 After a few introductory comments we focus back on the show. Right when she spun her barstool to face the stage, Gabo the dummy looked at her and raised one eyebrow. I thought to myself, *I'd better not get outdone by a talking doll*.
 
@@ -122,6 +131,9 @@ I waited a few minutes to ask her, to make it seem like I was enjoying the show,
 "If she is, we'll scare him off." I assure him again. "We're good at that."
 
 A few minutes and a couple drinks had passed.
+
+>-$ check-in melodic
+@ The Trough
 
 "Silly!" a girl's voice excitedly rings out. Celeste gives Melody a strong hug as if they hadn't seen each other for a long time. Melody then turns to me. "I remember you."
 
