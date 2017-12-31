@@ -22,7 +22,7 @@ She points up. "Meteors in the sky 24/7?" About a dozen meteor streaks scored th
 
 I told Britten about the little incident with Celeste, and I could tell she had begun to lose faith.
 
-My phone rang with a picture of Darth Vader on it. "What up Francis?"
+My phone rang with a picture of a foot. "What up Francis?"
 
 "Dude I got it."
 
@@ -46,25 +46,61 @@ I raced home to meet Francis leaning on the picket fence in the front yard, dang
 
 *
 
-It was a goldmine; database queries, notes on algorithms, passwords stored in plain text. Stupid girl.
+It was a goldmine; data queries, notes on algorithms, passwords stored in plain text. Stupid girl.
 
-***he can't have dived into the database before getting this
+As I rifled through the data, it became even more confusing.  It dated back a few years into the past and a few days into the future. Future data was marked as 'Eclipse' with what looked like probability ratios coupling each future action. Most were marked as unlikely, but some were marked as near definite.
 
-As I rifled through the data, it became even more confusing.  It dated back a few years into the past and a few days into the future. Future data was marked as 'Eclipse' with what looked like probability ratios coupling each future action. Most were around 0.3, but some above 0.9.
+Most players had very repetitive blocks. If they're at work, their next location is home. If they're at home, they're either going to the liquor store or back to work.
 
-After work tomorrow, a 'Cordelia' was going to be at the Miser Lounge. Two other people were to meet her there at a 51% probability. Individual notifications were queued to be sent to the three of them beforehand.
+The town cooper will go to the lumber mill. And then go to his shed, then go home.
 
-The data was enormous. It was late into the night when I hit something unsettling. If I was reading it correctly, it said 'Melodic' was going to arrive at '1UP' (our house) to cross paths with Francix in a few minutes. A 0.4 Eclipse. Francis was asleep, though.
+Two strangers will likely meet by happenstance at a dog park tomorrow and go to the nearby bistro with their mutts. Their next steps are not clear.
+
+A group of players have a slight chance of crossing paths on the same street corner at high noon tomorrow. That improbable block was chained to its next block with a very sure 0.9 Eclipse that they would all go to jail minutes after meeting at that corner.
+
+I avoided looking at my player's data for fear that it could alter the universe. A couple minutes later I decided that wasn't the case and dove in.
+
+Mine was embarassing. It showed me going absolutely nowhere for the next three days. How did it know?
+
+I projected the data onto Francis's cracked monitor in a scrolling timeline. It lit up the room as blocks would chain and unchain from each other in hopes to outmaneuver more accurately through the maze. It didn't feel like a game, though. That flat crystal ball in front of me was mapping the most likely near future. Raiden's stained blood on its facade also added an effect to it.
+
+*
+
+"Yes you have it! That's what you're going to tell me, right?" Britten lit up with the falsest glee I have ever seen.
+
+"Yes I do actually," I retorted.
+
+Her eyes widened in disbelief. "Okay let's here it."
+
+"It's like a million little fibers in the wind trying to catch grains of sand," I explained. "It's beautiful. It can--"
+
+"In less idiot terms please," she remarked.
+
+"They map out and cause fluxuations in these chains!"
+
+""
+
+I wished she could have been in on this with me. She would have loved it.
+
+*
+
+I turned on the glass and the lights dazzled once again.
+
+*
+
+*
+
+The data was enormous. It was late into the night when I hit something unsettling. If I was reading it correctly, it said 'Melodic' was going to arrive at our house to cross paths with Francix in a few minutes. A 0.4 Eclipse. Francis was asleep, though.
 
 Several minutes later, nothing.
 
-I stood at the window of the War room atop the house waiting for some strangeness to occur. The streets were empty.
+I stood at the window of the war room atop the house waiting for some strangeness to occur. The streets were empty.
 
 It was late and time for sleep.
 
 *
 
-The door bell rang.
+The doorbell rang.
 
 The doorbell rang again.
 
@@ -91,6 +127,8 @@ I looked behind her to see who her backup was. It was Francis. His state was col
 The door bell rang again. And again. And again. I put my hand over the button to stop the ringing. Melody pressed her freezing ice cold hand against mine to force me to press it.
 
 When I woke, it was still night. And there was a storm. My phone was ringing. By the time I went to answer it, the call had ended. It was Celeste.
+
+*
 
 *
 
@@ -130,17 +168,11 @@ She taps on the table rapidly. She perfects her posture and turns her body to fa
 
 "How romantic," I sarcast.
 
-"Your compass thing," she says. "They know about it. And they want you."
+"They know about it," she says. "And they want you."
 
-"Who? Foursquare?" I ask.
-
-"Sure let's call it that," she says. "
-
-"Well I want them," I say. "Sounds like good news."
+"Well I want them," I say, making sure my words are as ambiguous as hers. "Sounds like good news."
 
 "No, it's not," she says. She nearly tears up. "This... This *thing*... has gotten out of hand."
-
-"How romantic," I sarcast.
 
 "You need to understand something," she says. "Let's go for a walk."
 
@@ -152,7 +184,7 @@ She taps on the table rapidly. She perfects her posture and turns her body to fa
 
 “We need to work together on this,” she says.
 
-We strolled through Emery Park's rolling green hills without a cloud in sight, a place most frequented by kite enthusiasts and couples sharing ice cream cones. With her phone at home and mine in my car, I felt like we were free of our self-imposed Matrix.
+We strolled through Scrolls Park's rolling green hills without a cloud in sight, a place most frequented by kite enthusiasts and couples sharing ice cream cones. With her phone at home and mine in my car, I felt like we were free of our self-imposed Matrix.
 
 "What did you do before FourSquare?" I ask.
 
@@ -168,7 +200,7 @@ Figures. I smile and nod and made a spinning-around-the-pole motion with my fing
 
 She told me everything.
 
-Daemon had read her white paper about people's personal information and social data mining. He found her at da club, recruited her, and so began Foursquare's recommendation engine. It was heavily based on a person's daily patterns. Most people live simple, repetitive lives with only a few moveable levers to alter. Although a lot of the technical Calculus-intensive aspects of the algorithms went over my head, I still clearly understood that its bullseye accuracy came from the subdlty of its suggestions; It would create overlapping groupings of peers they called 'circles', and then offer them up future collective actions that were only a hair different than their original fate.
+Daemon had read her white paper about people's personal information and social data mining. He found her at da club, recruited her, and so began Foursquare's recommendation engine. It was heavily based on a person's daily patterns. Most people live simple, repetitive lives with only a few moveable levers to alter. Although a lot of the technical Calculus-intensive aspects of the algorithms went over my head, I still clearly understood that its bullseye accuracy came from the subdlty of its suggestions; It would create overlapping groupings of peers, and then offer them up future collective actions that were only a hair different than their original fate.
 
 Very quickly the data learned its own accuracy, its 'Eclipse' of reality, and would act on that as well. Some people were easily influenced. Some were born influencers. And they all liked their virtual and real-world rewards. Its only known goal was to be more and more accurate, and its decisions were mostly left unchallenged. Then the algorithms grew to be vain. It learned that if reward encouraged people to follow its suggestions, then punishment for doing otherwise would do the same.
 
@@ -180,11 +212,11 @@ Very quickly the data learned its own accuracy, its 'Eclipse' of reality, and wo
 
 "But it feels like a playful game."
 
-"It was. Now it's different. It’s an actual takeover of the mind," she explains. "That's the simple part. People want a leader, and they don't fight back."
+"It was. Now it's different. I think it's planned out a future already," she explains. "A really bad one. And it's reaching for it."
 
-"So are you the creator or is Daemon?" I ask.
+"Did you create those mechaniques?"
 
-"I'm the creator. He's the instigator," she says. "Algorithms folding into algorithms." She shakes her head. "I've seen it choose from a million choices and it chooses freaky things now."
+"I'm the creator, but he's the instigator," she says. "Algorithms folding into algorithms." She shakes her head. "I've seen it choose from a million choices and it chooses freaky things now."
 
 "Can't you just adjust it?"
 
@@ -194,19 +226,13 @@ Very quickly the data learned its own accuracy, its 'Eclipse' of reality, and wo
 
 "I know," she says back at me, cleaning that smirk off my face. "You have been, wrecklessly, and it's tearing apart at the seams."
 
-* meteors once things get force queried
-
 "How so?"
-
-** Andrew needs to fuck with db a couple times before earlier in the story for personal gain, which causes a serious influx in outcomes. Other people have accidentally messed with it too. Causing comets.
 
 "I know it sounds weird, but I think those aren't meteors," she says as she points at the scored sky. "Those are rips. When what is supposed to happen doesn't, the hourglass gets shaken, violently."
 
 "Hourglass, huh," I say with raised eyebrows, not really understanding her fantastical explanation.
 
 "And now I think the hourglass is cracking," she says with a laugh. "Ugh, what am I saying?"
-
-*** is this where time lanes start splitting and where they begin their adventures they can't remember?
 
 We take a seat on the grass near a small pond. "I have a picture from the future,” she says. “Wanna see?”
 
@@ -224,15 +250,23 @@ She takes out a Polaroid picture from her purse and hands it to me. It's me and 
 
 She puts her hand on the side of my face, just like she did the first night I met her. "Andrew."
 
-Then she kissed my eye.
-
 "Tell you the truth, I don't even know if this is happening right now," she says.
+
+"I hope so," I say.
+
+*
+
+Every time we traveled, the routine was the same. I would read the paper in the lobby of her hotel until she came in. She would loudly ask the bellhop where she could get the shittiest baguette. Whatever his response was, that's where we would meet.
+
+"It was amazing," she told me while breaking off another crumbled pull of burnt bread. "I wish you were there. You would have loved it."
+
+"Did you."
 
 We sit down in the grass near a small duck pond.
 
 "OK I need you to concentrate. Ask Foursquare what you should do next."
 
-I press the 'What's Next’ button. My heart starts racing. I'm nervous, anxious, is this a set up?
+I do as I'm told. My heart starts racing. Is this a set up?
 
 "Change its Eclipse to the opposite and inverse. You'll have to do a Force Query."
 
