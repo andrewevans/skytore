@@ -13,15 +13,15 @@ I woke up a few hours later to the cackling of gunfire and explosions. It was a 
 
 The shower was a brief 20 minutes as I pieced together the night before. Some of it seemed real, and some of it seemed like I had dreamt it in my car. I toweled up and wiped the fog from the mirror. The reflection revealed a small vertical incision on my chest, heart-side. It looked manmade. Or womanmade, although those were usually on my back.
 
-I suited up for the coldness swirling around my stand up desk and got back to work. It was in good working condition; a user's movement could be tracked by the app, they could mark a geographical area as theirs, and could reap the virtual goods in that area.
+I suited up for the coldness swirling around my stand up desk and got back to work. It was in good working condition; a player's movement could be tracked by the app, they could mark a geographical area as theirs, and could reap the virtual goods in that area.
 
-The end goal of Rose Garden was to encourage less fortunate areas of the country to become more lucrative by giving players more prestige for literally building, or helping build, or being frequent visitors to, real libraries, recreation centers, authentic food joints, or to improve upon already existing socially positive businesses in places that would have otherwise gone ignored. One milestone of success was for a nearby slum to increase its schools' educational ratings by 25% within the next three years by actions directly caused by Rose Garden. It was a feat nearly impossible to accomplish, but I was confident that if I could get the funding and interest in this app that we would see a Vegas-type of growth in places that were not expected to succeed.
+The end goal of Rose Garden was to encourage less fortunate areas of the country to become more lucrative by giving players more prestige for literally building, or helping build, or being frequent visitors to, real libraries, recreation centers, authentic food joints, or to improve upon already existing socially positive businesses in places that would have otherwise gone ignored. One milestone of success was for a nearby slum to increase its schools' educational ratings by 25% within the next three years by actions directly caused by Rose Garden. It was a feat nearly impossible to accomplish, but I was confident that if I could get the funding and interest in this app that we would see a New Vegas-type of growth in places that were not expected to succeed.
 
 Popular places that were already succeeding would be saturated in players trying to reap the rewards of those establishments, but the abundance of players in that area would water down each player's gain, encouraging them to look into more obscure areas, like low-income neighborhoods.
 
-We hopped in Francis’s car and headed to the new dump down the street. His car stereo turned on blaring a commercial about a ventriloquist named "Gabo" coming to town, followed by a permanent flow of nonsensical radio personality voices.
+We hopped on Francis’s ride and headed to the new dump down the street. His radio turned on blaring a bulletin about a ventriloquist named "Gabo" coming to town, followed by a permanent flow of nonsensical chatter.
 
-I ordered the classic shawarma from the beefy Greek woman behind the counter and took a seat near the window. I put my coin into my wallet and saw a metal card with a finely etched image of a desolate plain at sundown. I squinted to see a tiny character in the distance, a smiling jack-in-the-box Joker skipping along. I froze. The Joker's face even kind of looked like that magic guy from the night before. Below the image the caption read:
+I ordered the classic and took a seat near the window. I put my coin into my wallet and saw a metal card with a finely etched image of a desolate plain at sundown. I squinted to see a tiny character in the distance, a smiling jack-in-the-box Joker skipping along. I froze. The Joker's face even kind of looked like that magic guy from the night before. Below the image the caption read:
 
 GABØ
 
@@ -37,19 +37,19 @@ GABØ
 
 "He put this in my wallet, but I forgot he said that. Then I told him that there was an ass in his --" I stopped my vulgarity just as our order arrived. "He's one of Celeste's friends. Celeste is the girl from last night."
 
-"Good job, man," he said. "I think the radio said he'll be at The Trough tonite."
+"Good job, man," he said. "I think the radio said he'll be at The Gin tonite."
 
-I checked when we got home and sure enough, Gabo was doing a gig at The Trough. 8pm. I needed to get as much work done before then to ensure meeting my deadline. Rose Garden had to be a "Minimum Viable Product" by Monday morning or the investors would second guess my team's ability to deliver in a timely fashion.
+I needed to get as much work done before then to ensure meeting my deadline. Rose Garden had to be a "Minimum Viable Product" by the morning or the investors would second guess my team's ability to deliver in a timely fashion.
 
 Most of the necessary game mechanics were in place for a very rudimentary version of the game. I had tied into different maps for landmarks and business locations, public tax documents for revenue gains and losses, US census data for population density, local police crime reports, Foursquare for a trove of location stats, and a handful of manual entries for things that lacked granular geographical data.
 
-For a game like this, it wasn't always clear what to set certain constants to, like how many beacons a user starts with to lay claim to areas, or how much reputation a user earns, but these were all adjustable once we got our beta group playing the game and churning through the algorithms. Some aspects were simple, like less crime meant more points. Other aspects were very subjective, like what more churches should earn an area, or whether more bars was good or bad. It was clearly skewed to my personal beliefs, but all of that was adjustable once we saw it in action.
+For a game like this, it wasn't always clear what to set certain constants to, like how many beacons a player starts with to lay claim to areas, or how much reputation a player earns, but these were all adjustable once we got our beta group playing the game and churning through the algorithms. Some aspects were simple, like less crime meant more points. Other aspects were very subjective, like what more churches should earn an area, or whether more bars was good or bad. It was clearly skewed to my personal beliefs, but all of that was adjustable once we saw it in action.
 
 The game had a map interface showcasing potential future plans, from large licensed developments to small local gatherings that did not have any official standing. Players could place their beacons near locations that they thought would become successful, however large and any amount of time. The more precise the beacon, the heavier the reward.
 
 One of the biggest missing components was whether the game had a victory for a player, or if it went on indefinitely. And what were the real-world rewards? I intentionally left those unanswered because of their complexity, and also to give the investors a void to through their idiot ideas into until something fits.
 
-The night had begun. Francis and I lit up our spliffs and began the walk to The Trough.
+The night had begun. Francis and I lit up our spliffs and began the walk to The Gin.
 
 "What are you going to do if she's there?" Francis inquired.
 
@@ -92,7 +92,7 @@ When I looked at the audience through my Squarecam, there were dozens of artisti
 "Oh shit. I almost forgot to check in," I mentioned to Francis as I booted up Foursquare. The app was still on Celestival's profile.
 
 >check-in celestival
-@ The Trough
+@ The Cotton Gin
 
 "See if she checked in here," Francis suggested as he looked at my phone curiously.
 
@@ -107,18 +107,18 @@ I immediately get up and shimmy my way through the crowd to greet her. "Celeste,
 "Come sit with me and my friend over at the bar," I say as I point toward Francis who nods back. We make our way to our seats, Francis getting up like a gentleman to let her sit.
 
 >check-in francix
-@ The Trough
+@ The Cotton Gin
 
 >-check-in ander
-@ The Trough
+@ The Cotton Gin
 
 After a few introductory comments we focus back on the show. Right when she spun her barstool to face the stage, Gabo the dummy looked at her and raised one eyebrow. I thought to myself, *I'd better not get outdone by a talking doll*.
 
 I waited a few minutes to ask her, to make it seem like I was enjoying the show, which I was, "So is Melody with you?" Francis and I both held our breaths for her answer.
 
-"Oh you remember Melody!" she says happily. "She'll be here in a few minutes. Save a spot for her. Where's the restroom?"
+"Oh you remember Melody!" she says happily. "She'll be here in a few. Save a spot for her. Where's the restroom?"
 
-"It's behind the stage," I reply as I point to the hall behind where Gabo was performing. She slips off the barstool in her painted on jeans and makes her way to the restrooms. While Gabo the dummy was in the middle of one of his bits, he follows her with his eyes, step for step, to the point where his head is turned all the way around when she finally gets to the restroom door.
+"It's behind the stage," I reply as I point to the hall behind where Gabo was performing. She slips off the barstool in her painted on jeans and makes her way. While Gabo the dummy was in the middle of one of his bits, he follows her with his eyes, step for step, to the point where his head is turned all the way around when she finally gets to the restroom door.
 
 "Oo la la!" the dummy remarks at Celeste. She waves at him and closes the door behind her. The crowd laughs. I pretend to laugh.
 
@@ -130,10 +130,10 @@ I waited a few minutes to ask her, to make it seem like I was enjoying the show,
 
 "If she is, we'll scare him off." I assure him again. "We're good at that."
 
-A few minutes and a couple drinks had passed.
+Some time and a couple drinks had passed.
 
 >-$ check-in melodic
-@ The Trough
+@ The Cotton Gin
 
 "Silly!" a girl's voice excitedly rings out. Celeste gives Melody a strong hug as if they hadn't seen each other for a long time. Melody then turns to me. "I remember you."
 
@@ -155,15 +155,15 @@ She keeps her gaze on him as she answers. "Foursquare. Duh."
 
 "Let's get another round," I suggest. Everyone was on board.
 
-The night went smoothly, and I successfully dodged any mention of Rose Garden. Gabo joined our quatro after his performance, shared a couple jokes, got some kisses on the cheeks from the girls, and was off. I'm pretty sure he recognized me. At th exit, Gabo pointed at us, mimed a square to the bartender, then pointed to himself. The bartender nodded and waved him goodbye.
+The night went smoothly, and I successfully dodged any mention of Rose Garden. Gabo joined our quatro after his performance, shared a couple jokes, got some kisses on the cheeks from the girls, and was off. I'm pretty sure he recognized me. At the exit, Gabo pointed at us, mimed a square to the barkeep, then pointed to himself.
 
-The bartender walked over to us and said, "Drinks are on your friend." The girls looked at each other with puppy dog eyes and exhaled every last bit of breath they had in their lungs in astonishment.
+The barkeep walked over to us and said, "Drinks are on your friend." The girls looked at each other with puppy dog eyes and exhaled every last bit of breath they had in their lungs in astonishment.
 
 "Hahahaha", Francis laughs.
 
 The whole night I couldn't decide if I should chat up Celeste like I wanted to or extract Foursquare secrets from her. She was sharp and on her toes, though. So juicing an orange without the orange knowing would not be easy.
 
-She worked in Foursquare's Game Theory department, which meant she was one of a handful of people who created features in the app’s core mechanics. She would know the secrets of how the app flowed behind the scenes, what worked and what didn't, and how to *cause* the users to do what they wanted them to do. It was clear they were creating playful rivalries between users, but in recent time the app started recommending strange actions, like checking into natural disasters before they happened and reward the user generously for being there.
+She worked in Foursquare's Game Theory department, which meant she was one of a handful of people who created features in the app’s core mechanics. She would know the secrets of how the app flowed behind the scenes, what worked and what didn't, and how to *cause* the players to do what they wanted them to do. It was clear they were creating playful rivalries between players, but in recent time the app started recommending strange actions, like checking into natural disasters before they happened and reward the player generously for being there.
 
 "Your hair looks cute in a bun like that," I say.
 
@@ -177,7 +177,7 @@ Out of the corner of my eye I can see Francis taking Melody's hand as he leads h
 
 "My thoughts exactly," I say, slightly disappointed that she beat me to my own punchline.
 
-When the tatt'ed out singer chick wrapped up her set, so did we. On the street in front of The Trough I exchanged numbers with Celeste, and Melody and Francis the same. Finally.
+When the tatt'ed out singer chick wrapped up her set, so did we. On the street in front of The Gin I exchanged numbers with Celeste, and Melody and Francis the same. Finally.
 
 The walk home was the usual debriefing of "I did this then I did that I should have done this should I have done that".
 
