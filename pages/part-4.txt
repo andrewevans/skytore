@@ -4,37 +4,28 @@
 
 "Wow, your eye," Britten said. "It's all jacked up."
 
-"Foursquare," I said. "Gave me a shiner."
+"Thanks," I said.
 
-"Um, OK. Did she give you any more clues?"
+"Have you set up the light client yet? We need it for our test net."
 
-I point at my eye. "This may have been the last clue."
+"No it's still really fat," I said. "Britten, listen to me. This is bigger than we think. Something extra ordinary is happening."
 
-"Dammit Andrew. We *need* her," she said. "What did you do?"
-
-"A girl died a few nights ago and I saw her injuries on my squarecam before it happened," I explained. "Britten, listen to me. This is bigger than we think. Something extra ordinary is happening."
-
-She points up. "Meteors in the sky 24/7?" About a dozen meteor streaks scored the afternoon sky, which became a normal occurrence.
-
-~~~
-
-~~~
+She points up. "Meteors in the sky all the time?" About a dozen meteor streaks scored the afternoon sky, which became a normal occurrence.
 
 I told Britten about the little incident with Celeste, and I could tell she had begun to lose faith.
 
-My phone rang with a picture of a foot. "What up Francis?"
+>check-in ander
+@ Bee Theory
 
-"Dude I got it."
+I checked in just as Francis called. "What up Francis?"
 
-"Got what?" I asked.
+"I got it, what you told me to get. From her phone," he said.
 
-"What you told me to get. From her phone," he mumbled.
-
-"Oh hell yeah. How?" I leaned toward Britten and told her "I gotta bounce." She nodded and motioned that she was going to stay.
+"That's grouch. How?" I leaned toward Britten and told her "I gotta bounce." She nodded and waved me away.
 
 "I just plugged in that thing you gave me just like you said and I think it downloaded everything," he said.
 
-He explained how the opportunity arose when Melody's phone had slipped out of her pocket in his car while he was driving her home. Before bringing it back to her, he downloaded everything off her phone and got exactly what I needed. Francis had been seeing Melody for a few days now. It was unprecedented.
+He explained how the opportunity arose when Melody's phone had slipped from her pocket while he was taking her home. Before bringing it back, he downloaded everything off her phone and got exactly what I needed. Francis had been seeing Melody for a few days now. It was unprecedented.
 
 I raced home to meet Francis leaning on the picket fence in the front yard, dangling the device in his hand, not too happy.
 
@@ -46,9 +37,9 @@ I raced home to meet Francis leaning on the picket fence in the front yard, dang
 
 *
 
-It was a goldmine; data queries, notes on algorithms, passwords stored in plain text. Stupid girl.
+It was a goldmine. Data queries, notes on algorithms, passwords stored in plain text. Stupid girl.
 
-As I rifled through the data, it became even more confusing.  It dated back a few years into the past and a few days into the future. Future data was marked with an 'Eclipse' that looked like probability ratios coupling each future action. Most were marked as unlikely, and a few as near definite.
+As I rifled through the data, it became even more confusing.  It dated a few weeks into the past and a few days into the future. Future data was marked with an 'Eclipse' that looked like probability ratios coupling each future action. Most blocks were marked as unlikely, and a few as near definite.
 
 Most players had very repetitive blocks: from work to home, and back again. But it appeared even these simple lives were inticed with blocks ever so slightly off their beaten paths.
 
@@ -60,19 +51,52 @@ Another player would be persuaded to use 5th Street that morning as well. Its Ec
 
 Every moment that passed affected the data. It never went more than a couple of seconds without adjusting Eclipses, creating new blocks, or destroying failed ones. And when high eclipsed blocks were missed, it sent the laundry flying.
 
-// each step is also a breath?
-
-The fireworks from it being wrong were amusing. It would loop through countless drafts of possibilities in a dazzle of glowing threads rearranging in hopes of discovering a better path through the Eclipsed. But each of those changes caused resounding changes around it as far as the eye could see. This helpless fit could go on for minutes until it found a comfortable match, and then all was calm again.
+The fireworks from it being wrong were amusing. It would loop through countless drafts of possibilities in a dazzle of glittering threads rearranging in hopes of linking to a better path through the Eclipsed. But each of those changes caused resounding changes around it as far as the eye could see. This helpless fit could go on for minutes until it found a comfortable match, and then all was calm again.
 
 My player was embarassing. It showed me going absolutely nowhere for days. How did it know?
 
+*
+
+"Yes you have it and its ready! That's what you're going to tell me, right?" Britten lit up with the falsest glee I had ever seen.
+
+"Yes I do actually," I retorted.
+
+Her eyes widened in disbelief. She prepared her plume over her notes. "Okay let's here it."
+
+"It's like a million little fibers in the wind trying to catch grains of sand," I explained. "It's beautiful. It can--"
+
+"In less idiot terms please," she remarked.
+
+"They map out and cause fluxuations in these chains!"
+
+"..."
+
+"Our blocks, " I said motioning around us. "These blocks are chained together, sometimes combining, sometimes splitting. And it lights up like crazy when it's way off target." I did the best I could to explain what I thought the Eclipse ratios were and everything else I saw that night.
+
+>check-in ander
+@ Bee Theory
+
+Her notes still didn't have a drop of ink on them. "Is it immutable? Do you have write access?"
+
+"No, but," I began while I realized I did not know. I hadn't tried. "No. I don't."
+
+*
+
+I watched my tiny edit reach the top of the queue, and then disappear into the abyss.
+
+>-$ block #4f3k8
+$ confirmed
+$ @ e0.900 -rf
+
+Since I was still home as the next block suggested, that block was confirmed. It didn't mind that I overwrote an Eclipse from a 0.8 to a 0.9 and deleted some maximum constants there were getting in the way.
+
+Every edit I made after that jumped in and sailed away, too. But they were all nearly inconsequential. I wanted to see it cry.
+
 It was late into the night when I hit something unsettling. If I was reading it correctly, it said player melodic was going to arrive at our house to cross paths with player francix in a few minutes. A 0.4 Eclipse. Francis was asleep, though.
 
-Several minutes later, nothing.
+Several minutes later, nothing happened. I stood at the window of the war room atop the house waiting for some strangeness to occur. The streets were empty. I walked back to the screen and changed it to near definite.
 
-I stood at the window of the war room atop the house waiting for some strangeness to occur. The streets were empty. The monitor's glimmer pored over the accent chair, and I did too.
-
-It was late and time for sleep.
+The monitor's frantic glimmer pored over the accent chair, and I did too. I wanted to watch, but it was late and time for sleep.
 
 *
 
@@ -104,45 +128,11 @@ The door bell rang again. And again. And again. I put my hand over the button to
 
 When I woke, it was still night. And there was a storm. My phone was ringing. By the time I went to answer it, the call had ended. It was Celeste.
 
-*
-
-"Yes you have it! That's what you're going to tell me, right?" Britten lit up with the falsest glee I have ever seen.
-
-"Yes I do actually," I retorted.
-
-Her eyes widened in disbelief. She prepared her plume over her notes. "Okay let's here it."
-
-"It's like a million little fibers in the wind trying to catch grains of sand," I explained. "It's beautiful. It can--"
-
-"In less idiot terms please," she remarked.
-
-"They map out and cause fluxuations in these chains!"
-
-"..."
-
-"The blocks are chained together, one by one, sometimes combining, sometimes splitting. And it lights up like crazy when it's way off target." I did the best I could to explain what I thought the Eclipse ratios were and everything else I saw that night.
-
-Her notes didn't have a drop of ink on them. "Is it immutable? Do you have write access?"
-
-"No, but," I began while I realized I did not know. I hadn't tried. "No. I don't."
-
-*
-
-// learns he has write access :)
-
-// needs to check that some things it said would happen did when he gets back to it
-
-// A switch operator
-
-"Submitted for the approval," I said while all the equipment in the war room sat quietly waiting for the command to get executed. We watched my tiny edit reach the top of the queue, and then disappear into the abyss.
-
-Nothing happened. All the other machines were unplugged, so they had no reaction. "Nothing was supposed to happen, my friends," I explained to the silent room. "I only changed my next Eclipse from very possible to very very possible."
-
-Since I was still home as the next block suggested, that block was confirmed. But was that success or coincidence? There was only one way to tell.
+Staring at my transparent reflection in the glass was supposed to change my mind, but it didn't. My blurry vision suggested I go back to sleep before I did anything unwise. I thought it was wrong, and then I thought I didn't care.
 
 Come to me, I thought. That will be the test.
 
-Staring at my transparent reflection in the glass was supposed to change my mind, but it didn't. My blurry vision suggested I go back to sleep before I did anything unwise. I thought it was wrong, and then I thought I didn't care. To simplify the data on the screen, I hid everything but my player's paths and those of player celestival.
+To simplify the data on the screen, I hid everything but my player's paths and those of player celestival.
 
 *
 
@@ -168,7 +158,7 @@ Celeste leaned against the post.
 
 "OK."
 
-"I don't want my work to know I'm here."
+"I don't want them to know I'm here."
 
 "Well your phone could probably be tracked easily."
 
@@ -196,7 +186,7 @@ She taps on the rail rapidly. She perfects her posture and turns her body to fac
 
 "Hmm," I say, both of us silent as I juggle whether to admit or deny what I'm sure she already knows about. "Yeah let's go for a walk."
 
-We strolled through Scrolls Park's rolling green coastal hills without a cloud in sight, a place most frequented by kite enthusiasts and couples sharing sorbet. With her phone at home and mine left at my ride, I felt like we were free of our self-imposed matrix.
+We strolled atop the rolling green coastal hills without a cloud in sight, a place most frequented by kite enthusiasts and couples sharing sorbet. With her phone at home and mine left at my ride, I felt like we were free of our self-imposed matrix.
 
 "What did you do before Foursquare?" I ask.
 
@@ -272,7 +262,7 @@ I turned off the monitor and sat back down next to her. "What do you think?"
 
 "I made that?" she giggled. We both laughed at the joke and then laughed that it was true. "I didn't know."
 
-I wanted to wringe every bit of knowledge out of that pretty head of hers, but I knew it was best to go at her pace. "What did you not know?"
+I wanted to wring every bit of knowledge out of that pretty head of hers, but I knew it was best to go at her pace. "What did you not know?"
 
 "This projection," she started. "It was supposed to only reach out a block or two. This is infinite."
 
@@ -282,16 +272,13 @@ I began to turn on the glass when she asked, "What are you on?"
 
 "I already told you that I won't tell you how I got my access," repeating words I had already said a couple of times.
 
-// she needs to see more
-"You're using a super user," she muttered. "Andrew, you're using the entire Foursquare fucking network right now as your sandbox!"
+"You're using a super user," she muttered. "Andrew, you're using the entire Foursquare fucking network as your sandbox!"
 
 "I... what?"
 
-"Look at this," she said. She underlined a single line of information on the screen.
+"Look at this," she said. She underlined a single line on the screen. It read, 'Source: Network'.
 
-Source: Network
-
-"Every device running the app is, at this moment, Andrew," she said through heavy breaths. "Is also being farmed to power this very screen. It's based on processing power!" She tapped a couple of commands into the terminal and the timeline zoomed out drastically. "It's infinite."
+"Every device running the app is, at this moment, Andrew," she said through heavy breaths. "Is being farmed to power the data on this very screen. I wrote it to use one player's device. It's based on processing power!" She tapped a couple of commands into the terminal and the timeline zoomed out drastically. "It's infinite."
 
 "Nice," I said.
 
@@ -301,13 +288,13 @@ The faucet always leaked, but Celeste could never hear that everpresent metronom
 
 "I still don't hear it!" she laughed. "Dammit I lost my place."
 
-It always looked like we were looking at each other because we were looking at the same data on either side of the screen. Our fingers traced through the blocks like we were reach for each other too.
+It always looked like we were looking at each other because we were looking at the same data on either side of the glass. Our fingers traced through the blocks like we were reaching for each other too.
 
-"Says plumber'll fix that sink tomorrow, point 8 something," I said.
+"Says I'm going to fix that sink tomorrow, point 0 something," I said.
 
 "It's not broken."
 
-We met at the front door after she pulled her beach cloak from its hook. "It's in here." She pulled out four viles. We cracked two and made our way to the bay.
+We met at the front door after she plucked her beach cloak from its hook. "It's in here." She pulled out two viles and cracked them both. "This one's for you." We were completely silent after that for the entire walk to the bay.
 
 "The sand feels good, but cold," she said, covering her toes beneath it. "Yeah we need to make sure we don't burn out people's devices with this."
 
@@ -327,114 +314,96 @@ She exhaled her final sighing sound, and she was done. She came up to my collar 
 
 *
 
-How many minutes or days or weeks passed by, I wondered. My fingers were threaded through her tresses keeping them warm. The brisk morning breeze clenched her hair with my fist, just enough to wake her.
+How many minutes or days or weeks passed by, I wondered. That shit was strong. My fingers were still threaded through her tresses keeping them warm. The brisk morning breeze clenched her hair with my fist, just enough to wake her.
 
 “Whoa that was fucking crazy,” she yelped with her head still resting on me. “Alright it’s cold let’s go home.”
 
-*
+**
 
-"We're undercover because we're *not* tapped," she said with a giggle.
+The last few days of our travels flew by in an instant. There was usually enough time at the end of each day for us to skip rocks in the river or throw the ball around. We had been oddly responsible the entire trip, so we decided to take our last night to the limit. I arranged the blocks to guarantee it was a success in a, and after minutes of fits, it fit nicely.
 
-"It's that easy," I agreed.
-
-
-
-"It's nighttime where I live right now," she said in a deep voice with a coy bat of her lashes.
+"It's nighttime where I live right now," she said in a deep voice with a coy bat of her lashes. She was already waiting on the new bridge as I arrived, and casually acted like I was a stranger and she a whore, I think.
 
 "Me too," I replied. "Let's go to sleep."
 
-"No you dog," she quickly retorted. "We're doing gifts."
+"No you dog," she quickly retorted. "We're doing gifts, remember?"
 
-We hugged and shook each other underneath that giant radio tower, and so that block was confirmed.
+>block #4f3d9 $
+confirmed $
+@ e0.800 -rf $
 
-We sat on the grass and enjoyed our wines until the light show went on.
+We hugged and shook each other underneath that giant radio tower after being apart for many hours, and so that block was confirmed.
 
-"Here's yours," she said as she produced a gadget. She slipped it on my fingers and said, "Now you can tell time, and you can see how it works." I wore the skeleton watch like brass knuckles from that point forward.
+She had already set up our blanket and vino on the lush grass with a perfect view of where the light show would show. Being half a world away and surrounded by empty fields gave the night a weightless care.
+
+"That's our queue. Okay, here's yours," she said as she produced a gadget once the lights began. She slipped it on my fingers and said, "Now you can tell time, and you can see how it works." I wore the skeleton watch like brass knuckles from that point forward.
 
 "Yours is because you made it," I said.
 
-"Put it on me," she says as I show her the double-chain necklace with a gold cube as the medalion.
+"Put it on me," she says as I show her the double-chain necklace with a gold cube as the medallion.
 
 She bows her head for me to do the honors. "You and I made this," I say. She stops my placement with both of her hands.
 
-She twined the chain and her ponytail together to tighten the necklace as a headdress. "I'll wear it like this,"
-
-"Is there something inside of it?" she asked. "In the block?"
+She twined the chain and her ponytail together to tighten the necklace as a headdress. "I'll wear it like this. Is there something inside of it?" she asked. "In the block?"
 
 "There will be," I told her.
 
 *
 
-I traced the parallel lines on my chest like I did every time I got out of the shower.
+
+"Melody said you could," Celeste argued.
+
+"Fine let's do it," I responded. She brought the wine glass to both of our lips and we finished it together.
+
+"How much was in that?" I asked.
+
+"Like four or more."
+
+"That sounds like a lot," I said. I stood up and kicked the spheroid ball into her hand. "This stuff works quick so I'm gonna go deep before I can't!" She stood up while I began my route.
+
+"Bullseye!" I exclaimed when I caught the ball after its second bounce and admired it. I studied the ball's eliptical edge and thought it was strange for a ball to be shaped to intentionally go in random directions. "Wow I've never seen such chaos in a--" I began when Celeste tackled me head on.
+
+It took me a moment to realize I was flat on the turf and the ball was gone. Celeste was staring at me from above trying to smile while I was laying there trying to breathe. She undid her pony tale which caused her crown to become a necklace again. It rested on my neck as she brought herself closer to me.
+
+There was a while that the only thing I could see was the emerald in her iris.
+
+>-$ block #4f001
+$ missed
+$ @ e0.712
+
+The truth could not overwhelm the perception. Was this universe all created to been seen by just my eyes? Am I her eyes? I tried to translate every detail in her kaleidoscopes, flickered by the occasional flutter of her eyelashes blinking. Everything in there was wonderful.
+
+She arched her back enough to let her finger trace the incision on my chest. "Two," she whispered. "I can feel the green of the grass. I hear your warmth."
+
+>block #4f033 $
+missed $
+@ e0.770 $
+
+We spoke of everything, from different pasts and other paths we had seen. We threw the ball around again, and enoyed more wine and cheese, and drew images in the grass, but in between everything we would end up right back just like this. It was a break from our fabricated reality we dosed ourselves with. It was a break from everything.
+
+she draped the necklace down to her neck
+
+"This is for this." I pulled the little trinket from my shirt pocket and put it to her necklace. She let her hair down and draped the necklace down to her neck."I found it in the wind over there." The rosey metal flower had its four pedals extending outside of the cube by the time I got it through, but it fit.
+
+"Thank you," she said. "It's my crimoson clover. If nothing else, I'll remember this."
+
+She snugged her ear against my neck and said a few things I could not hear. Then, "I’d rather be in no other place than right now."
+
+"How did you know me before?" I asked her softly. She was asleep. She had been asleep for some time.
+
+>-$ block #4f099
+$ missed
+$ @ e0.851
+
+>block #40001 $
+missed $
+@ e0.999 $
+
+**
+
+*
 
 
-// this needs to signify a big jump in time and to reference how we got here. this is great because it allows a lot of the intermediary bullshit to be passed over, less words!
-
-Every time we traveled, the routine was the same. I would read the local paper in the lobby of her inn until she came in. She would loudly ask the bellhop where she could get the shittiest baguette. Whatever his response was, that's where we would meet.
-
-"It was amazing," she told me while breaking off another crumbled pull of burnt bread. "I wish you were there. You would have loved it."
-
-"So no one's noticed?"
-
-She meant to speak, but her open grin was too bright for her to make words.
-
-"I told you," I remarked while I blew an 'O' in her direction. She deflected it without remark, and looked at me intently once again.
-
-// the gm got cracked more in travel"
-
-it finessed its way in"
-
-// they became closer
-
-// he tries to lure her in closer by showing how he can loop time blocks
-// i gave her the cc even knowing that would be her ruin.
-
-// sum up how we got here, thru cute banter fomo
-// but memba shes in it to get him to change shit, reader kinda sees that
-
-"It's like when I carried you to your car!" <-- huh she did?
-
-"Did you."
-
-We sit down in the grass near a small duck pond.
-
-"OK I need you to concentrate. Ask Foursquare what you should do next."
-
-I do as I'm told. My heart starts racing. Is this a set up?
-
-"Change its Eclipse to the opposite and inverse. You'll have to do a Force Query."
-
-"That's risky," I say. "Someone might notice my change on the diff. But OK." Foursquare suggests I 'skip rocks in the pond' with an Eclipse of .8. I change the Eclipse to its negative inverse, -1/.8, and submit the change to Foursquare via a Force Query. A few seconds pass. The update updates the entire database's recommendations, and my new rec shows on the screen.
-
-"Notice anything?"
-
-"It says lay down with a flower and enjoy the sun." She nods and motions me to do that. I take the flower from behind her ear as she leads me to lay down in the grass.
-
-I lay down. She lays down next to me and holds on to me tightly. "It's a nice day," I say. It gets brighter and brighter then a sharp flash of light --
-
-"... it what you should do next. Then change its Eclipse to the opposite and inverse."
-
-I'm sitting upright. Celeste is too.
-
-"You'll have to do a Force Query," she tells me.
-
-"Thats risky. Someone might notice a... Wait. What. Wait."
-
-"Notice anything?" she asks.
-
-"Uhh."
-
-*** he needs to do the force query again.
-
-"What happened?"
-
-"It says... lay down with a flower and enjoy the sun." I take the flower from behind her ear then lay down and she too. She holds on to me tightly. "It feels like I’ve already..." It gets brighter and brighter then a sharp flash of light--
-
-"...what you should do next," she says.
-
-We're sitting upright again.
-
-"I think I'm going to be sick," I say.
 
 "Why now?" Britten said. "We're so close. Don't be afraid."
 
@@ -448,15 +417,13 @@ We're sitting upright again.
 
 "What?"
 
-"The, you told me... um, when you were wasted," she says. "I mean, you're--" both our phones chirp with a message about a meteor warning from the city, telling us to head inside. "Um, OK we need to head out." She gets up and abruptly grabs her leather jacket off the back of her chair. "We'll continue this later. We need to go over your compass thing. I'll call you."
+"The, you told me... um, when you were wasted," she says. "I mean, you're--" both our phones chirp with a message about a meteor warning from the city, telling us to head inside. "Um, OK we need to head out." She gets up and abruptly grabs her leather jacket off the back of her chair. "We'll continue this later. I'll call you."
 
 "Cool," I say. "So I'll catch you later?" I spin my phone between my fingers and notice she's looking at it intently.
 
-Then she looks into my eyes with deep concern. "Be careful. Seriously." She puts her hands on my shoulders and takes a deep breath. "OK." She gives me a tight hug goodbye and walks away without looking at me.
+Then she looks into my eyes with deep concern. "Be careful. Seriously." She puts her hands on my shoulders and takes a deep breath. "OK?" She gives me a tight hug goodbye and walks away without looking at me.
 
 I quickly pull up my backdoor entrance to Foursquare's database and search for her account. Her next rec has those strange characters I remember seeing on Celeste's history. Weird shit would happen when I would do Force Queries, but my curiosity got the best of me. I looked up and she was still in sight about a block away.
-
---- that's fucked up to adjust someone's future knowing that its often a bad outcome---
 
 I flipped her Eclipse to the opposite and inverse, and submitted.
 
