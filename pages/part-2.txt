@@ -5,7 +5,7 @@ I wanted to tell my roommates the hilarious night I had, but they were still asl
 
 I woke up a while later to the cackling of gunfire and explosions. It was time to get up.
 
-"You fuckin chance!" Francis yelled at his glass monitor with one hand on the keys and the other sliding weapons across the screen. "Nah nah, I kid I kid. What up Ander," he said as he welcomed me to the new day without breaking his concentration from his monitor. "Did you gather that intel you were looking for last night? How'd it go?"
+"You fuckin chance!" Francis yelled at his glass monitor with one hand on the keys and the other sliding weapons across the screen. "Nah nah, I kid I kid. What up Ander," he said as he welcomed me to the new day without breaking his concentration from the battlefield in front of him. "Did you gather that intel you were looking for last night? How'd it go?"
 
 "Dude it was awesome. I met this girl and her friend and I think I kissed her friend. I don't know." I tried to recount what exactly had happened. "It was like a dream I swear."
 
@@ -13,19 +13,19 @@ I woke up a while later to the cackling of gunfire and explosions. It was time t
 
 I thought a shower might help me piece together the night before. Some of it seemed real, and some of it seemed like I had dreamt it by my hitch. I toweled up and wiped the fog from the mirror. The reflection revealed a small vertical incision on my chest. It looked manmade. Or womanmade, although those were usually on my back.
 
-I suited up for the coldness swirling around my bartop desk and got back to work. It was already in a fairly stable condition: the app could track the player's movement, they could claim geographical areas, and reap its virtual bounty.
+I suited up for the coldness swirling around my bartop desk and got back to work. It was already in fairly stable condition: the app could track the player's movement, they could claim geographical areas, and reap its virtual bounty.
 
-The end goal of Rose Garden was to encourage less fortunate areas to become more lucrative by giving players more prestige for literally building, or helping build, or being frequent visitors to real libraries, recreation centers, authentic food joints, or to improve upon already existing socially positive businesses in places that would have otherwise gone ignored. One milestone of success was for a nearby slum to increase its schools' educational ratings within the next couple of years by actions directly caused by Rose Garden. It was a feat nearly impossible to accomplish, but I was confident that if I could get the funding and interest in this app, then would see a New Vegas-type of growth in places that were not expected to succeed.
+The end goal of Rose Garden was to encourage development of socially positive businesses in places that would have otherwise gone ignored. Popular places that were already succeeding would be saturated in players trying to reap the rewards of those establishments, but the abundance of players in that area would dilute each player's gain, encouraging them to look into more obscure areas, like districts of lesser means.
 
-Popular places that were already succeeding would be saturated in players trying to reap the rewards of those establishments, but the abundance of players in that area would water down each player's gain, encouraging them to look into more obscure areas, like districts of lesser means.
+One milestone of success was for a nearby slum to increase its educational ratings within the next couple of years by actions directly caused by Rose Garden. It was a feat nearly impossible to accomplish, but I was confident that if I could get the funding and interest in this app, then we would see a New Vegas-type of growth in places that were not expected to succeed.
 
 There was fresh grub to be had, so Francis and I walked to the new dump down the street. He brought his radio tuned to a bulletin about a ventriloquist named Hilbert coming to town, followed by a permanent flow of nonsensical chatter.
 
-I ordered the classic and took a seat near the exit. I put my coin into my wallet and saw a metal card with a finely etched image of a desolate plain at sundown. I squinted to see a character in the distance: a smiling jack-in-the-box joker skipping along. I froze. The joker's face even kind of looked like that magic guy from the night before. The caption below the image read:
+I ordered the classic and took a seat near the front. I put my coin into my wallet and saw a metal card with a finely etched image of a desolate plain at sundown. I squinted to see a character in the distance: a smiling jack-in-the-block joker skipping along. I froze. The joker's face even kind of looked like that magic guy from the night before. The caption below the image read:
 
 HILBERT
 
-"Dude, check this out!" I began to hand Francis the card before he was even half way to our seats.
+"Dude, check this out!" I began to hand Francis the card before he was even half way to our table.
 
 "Hilbert!" he said. "Hilbert's coming to town. I heard about this on that garbage radio."
 
@@ -35,7 +35,7 @@ HILBERT
 
 "No, it was some showman guy, like the kind you see at a carnival sideshow. He wasn't doing ventriloquist stuff. He stole my wallet." I knew my words made little sense, but it was difficult to describe quickly.
 
-"He put this in my wallet, but I forgot he said that. Then I told him that there was an ass in his --" I stopped my vulgarity just as our order landed. "He's one of Celeste's friends. Celeste is the girl from last night."
+"He put this in my wallet, but I forgot he said that. Then I told him that there was an ass in his--" I stopped my vulgarity just as our order landed. "He's one of Celeste's friends. Celeste is the girl from last night."
 
 "Good job, man," he said. "I think the radio said he'll be at The Gin tonite."
 
@@ -153,7 +153,7 @@ The night went smoothly, and I successfully dodged any mention of Rose Garden. T
 
 The whole night I couldn't decide whether I should chat up Celeste like I wanted to or extract computational secrets from her. She was sharp and on her toes, though. Taking what I needed from this gem would not go unnoticed.
 
-She was one of few in their game theory department who worked on the core mechanics of the app down to the metal. She would know the secrets of how it flowed behind the scenes, what worked and what didn't, and how to *cause* the players to do what they wanted them to do. It was clear they were creating playful rivalries between players, but in recent time the app started recommending strange actions, like checking in to natural disasters before they happened and reward the player generously for being there.
+She was one of few in their game theory department who worked on the core mechanics of the app down to the metal. She would know the secrets of how it flowed, what worked and what didn't, and how to *cause* the players to do what they wanted them to do. It was clear they were creating playful rivalries between players, but in recent time the app started recommending strange actions, like checking in to natural disasters before they happened and reward the player generously for being there.
 
 "Your hair looks cute in a bun like that," I say.
 
