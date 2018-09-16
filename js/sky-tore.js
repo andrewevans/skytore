@@ -14,7 +14,7 @@ var pages = ['1','2','3','3_2', '4', '5'],
 page_current = getParameterByName('page'),
 page_index = pages.indexOf(page_current);
 
-$.get( "pages/part-" + page_current + ".txt", function( data ) {
+$.get( "pages/part-" + page_current + ".txt?t=" + (new Date().getTime()), function( data ) {
 
   $('.box').html(data);
   $('.box').append(">&#8592; BACK\n\n>-NEXT &#8594;");
