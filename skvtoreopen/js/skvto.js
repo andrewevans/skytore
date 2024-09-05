@@ -2,6 +2,11 @@ const skvto = {
   reader: document.getElementById('reader'),
   url: new URL(document.URL),
   page: 1,
+  h1: document.getElementsByTagName('h1')[0],
+  nav: {
+    next: document.querySelector("#nav-next"),
+    previous: document.querySelector("#nav-back"),
+  }
 }
 
 skvto.page = parseInt(skvto.url.searchParams.get('page')) || skvto.page
@@ -18,27 +23,21 @@ async function getData(newPage) {
     skvto.page = newPage
     putData(text)
   } catch (error) {
+    window.console.info(error)
   }
 }
 
 function putData(text) {
+  if (skvto.page !== 1) skvto.h1.innerHTML = '&#9632;'
   skvto.reader.innerHTML = text
 }
 
 getData(skvto.page)
 
-const navNext = document.querySelector("#nav-next");
-navNext.addEventListener("click", navClickNext);
+skvto.nav.next.addEventListener("click", event => navClicked(event, 1))
+skvto.nav.previous.addEventListener("click", event => navClicked(event, -1))
 
-const navPrevious = document.querySelector("#nav-back");
-navPrevious.addEventListener("click", navClickPrevious);
-
-function navClickNext(event) {
+function navClicked(event, direction) {
   event.preventDefault();
-  getData(skvto.page + 1)
-}
-
-function navClickPrevious(event) {
-  event.preventDefault();
-  getData(skvto.page - 1)
+  getData(skvto.page + direction)
 }
