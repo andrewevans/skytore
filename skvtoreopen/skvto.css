@@ -28,6 +28,10 @@ nav {
 }
 
 h1 {
+    font-size: 80px;
+}
+
+h1 {
     line-height: 1.8em;
     font-family: Georgia, "Times New Roman", Times, serif;
     text-align: center;
@@ -98,6 +102,10 @@ nav a {
 @media (max-width: 1025px) {
     p {
         font-size: 24px;
+    }
+
+    h1 {
+        font-size: 32px;
     }
 
     aside {
