@@ -159,12 +159,11 @@ let touchstartX = 0
 let touchendX = 0
 
 function checkDirection() {
-  if (touchendX < touchstartX) {
+  if (touchendX < touchstartX && 200 < (touchstartX - touchendX)) {
     goToNavLink(1)
-
   }
 
-  if (touchendX > touchstartX) {
+  if (touchendX > touchstartX && 200 < (touchendX - touchstartX)) {
     goToNavLink(-1)
   }
 }
