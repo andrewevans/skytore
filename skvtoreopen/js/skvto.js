@@ -126,3 +126,29 @@ function navClicked(event, direction) {
   event.preventDefault()
   getData(skvto.page + direction)
 }
+
+window.addEventListener(
+  "keydown",
+  (event) => {
+    if (event.defaultPrevented) {
+      return; // Do nothing if the event was already processed
+    }
+
+    switch (event.key) {
+      case "ArrowLeft":
+        window.scrollTo(0,0)
+        getData(skvto.page - 1)
+        break;
+      case "ArrowRight":
+        window.scrollTo(0,0)
+        getData(skvto.page + 1)
+        break;
+      default:
+        return; // Quit when this doesn't handle the key event.
+    }
+
+    // Cancel the default action to avoid it being handled twice
+    event.preventDefault();
+  },
+  true,
+)
