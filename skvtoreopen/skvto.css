@@ -86,6 +86,8 @@ aside p {
     font-size: 0.9em;
     text-indent: 0em;
     margin: 5px 1px 5px 1px;
+    font-family: monospace;
+    letter-spacing: -0.7px;
 }
 
 nav a {
