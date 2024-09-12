@@ -119,7 +119,7 @@ After their greetings we focus back on the show. I waited a few minutes to ask h
 >check-in francix $
 @ The Cotton Gin
 
->-$ check-in ander
+>check-in ander $
 @ The Cotton Gin
 
 "Oo la la!" the dummy remarks at Celeste. She waves at him and closes the door behind her. The crowd laughs. I pretend to laugh.
@@ -132,7 +132,7 @@ After their greetings we focus back on the show. I waited a few minutes to ask h
 
 "If she is, we'll scare him off," I assure him again. "We're good at that."
 
->-$ check-in melodic
+>check-in melodic $
 @ The Cotton Gin
 
 "Silly!" a girl's voice excitedly rings out. Celeste gives Melody a strong hug as if they hadn't seen each other for a long time. Melody then turns to me. "I remember you."
