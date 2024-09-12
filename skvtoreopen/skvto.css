@@ -12,6 +12,13 @@ body {
     min-height: 30px;
 }
 
+nav {
+    margin: 0 auto;
+    max-width: 600px;
+    word-wrap: break-word;
+    min-height: 30px;
+}
+
 @media (max-width: 1025px) {
     #reader {
         margin: 10px;
@@ -32,7 +39,7 @@ p {
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
     text-indent: 2em;
     -webkit-font-smoothing: antialiased;
-    font-size: 23px;
+    font-size: 20px;
     line-height: 1.6666666667;
 }
 
@@ -79,7 +86,20 @@ aside p {
     margin: 5px 1px 5px 1px;
 }
 
+nav a {
+    background: #1f2228;
+    color: #ccc;
+    padding: 10px;
+    font-size: 0.9em;
+    text-indent: 0em;
+    margin: 5px 1px 5px 1px;
+}
+
 @media (max-width: 1025px) {
+    p {
+        font-size: 23px;
+    }
+
     aside {
         display: inline-block;
         float: left;
