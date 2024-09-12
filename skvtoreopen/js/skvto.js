@@ -9,6 +9,8 @@ const skvto = {
   markdown: {
     h1: /\n============/gm,
     break: /\* \* \*/,
+    checkIn: /\&gt\;/gm,
+    checkInAt: /\n/gm,
   },
   currentText: '',
   currentBlocks: [],
@@ -36,6 +38,21 @@ const skvto = {
       if (this.markdown.break.test(block.innerHTML)) {
         const newEl = document.createElement('hr')
         newEl.dataset.val = block.innerHTML
+        block = newEl
+      }
+
+      return block
+    })
+  },
+  setCheckIns() {
+    this.currentBlocks = this.currentBlocks.map((block) => {
+      if (this.markdown.checkIn.test(block.innerHTML)) {
+        const newEl = document.createElement('aside')
+        const p = document.createElement('p')
+        p.innerHTML = block.innerHTML.replaceAll(this.markdown.checkIn, '')
+        p.innerHTML = p.innerHTML.replaceAll(this.markdown.checkInAt, '<br />')
+        newEl.innerHTML = p.outerHTML
+
         block = newEl
       }
 
@@ -95,6 +112,7 @@ function putData() {
   skvto.setBlocks()
   skvto.setH1()
   skvto.setBreaks()
+  skvto.setCheckIns()
   skvto.fillReader()
 }
 

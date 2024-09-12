@@ -45,3 +45,26 @@ nav {
     list-style: none;
     display: flex;
 }
+
+aside {
+    text-align: right;
+    width: 33%;
+    display: block;
+    float: left;
+    margin: 0 40px 0 -40%;
+    background: #1f2228;
+    color: #ccc;
+}
+
+aside:nth-of-type(2n) {
+    float: right;
+    text-align: left;
+    margin: 0 -40% 0 40px;
+}
+
+aside p {
+    margin: 10px;
+    padding: 10px;
+    font-size: 0.9em;
+    text-indent: 0em;
+}
