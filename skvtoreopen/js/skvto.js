@@ -121,10 +121,14 @@ getData(skvto.page)
 skvto.nav.next.addEventListener("click", event => navClicked(event, 1))
 skvto.nav.previous.addEventListener("click", event => navClicked(event, -1))
 
-function navClicked(event, direction) {
+function goToNavLink(direction) {
   window.scrollTo(0,0)
-  event.preventDefault()
   getData(skvto.page + direction)
+}
+
+function navClicked(event, direction) {
+  event.preventDefault()
+  goToNavLink(direction)
 }
 
 window.addEventListener(
@@ -136,12 +140,10 @@ window.addEventListener(
 
     switch (event.key) {
       case "ArrowLeft":
-        window.scrollTo(0,0)
-        getData(skvto.page - 1)
+        goToNavLink(-1)
         break;
       case "ArrowRight":
-        window.scrollTo(0,0)
-        getData(skvto.page + 1)
+        goToNavLink(1)
         break;
       default:
         return; // Quit when this doesn't handle the key event.
@@ -152,3 +154,26 @@ window.addEventListener(
   },
   true,
 )
+
+let touchstartX = 0
+let touchendX = 0
+
+function checkDirection() {
+  if (touchendX < touchstartX) {
+    goToNavLink(1)
+
+  }
+
+  if (touchendX > touchstartX) {
+    goToNavLink(-1)
+  }
+}
+
+document.addEventListener('touchstart', e => {
+  touchstartX = e.changedTouches[0].screenX
+})
+
+document.addEventListener('touchend', e => {
+  touchendX = e.changedTouches[0].screenX
+  checkDirection()
+})
