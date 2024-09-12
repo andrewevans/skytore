@@ -62,9 +62,20 @@ async function getData(newPage) {
 
     skvto.currentText = await response.text()
     skvto.page = newPage
+
+    updateUrl()
     putData()
   } catch (error) {
     window.console.info(error)
+  }
+}
+
+function updateUrl() {
+  if (skvto.url.searchParams.has('page')) {
+    skvto.url.searchParams.set('page', skvto.page)
+    history.pushState({}, "", skvto.url);
+  } else {
+    skvto.url.searchParams.set('page', skvto.page)
   }
 }
 
