@@ -2,3 +2,36 @@ body {
     background: #000;
     color: #fff;
 }
+
+#reader {
+    margin: 10px auto 1000px;
+    max-width: 600px;
+    padding: 40px;
+}
+
+h1 {
+    line-height: 1.8em;
+    font-size: 5em;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    text-align: center;
+    text-indent: 0;
+    font-weight: normal;
+}
+
+p {
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    text-indent: 2em;
+    -webkit-font-smoothing: antialiased;
+    font-size: 1.2rem;
+    line-height: 1.6666666667;
+}
+
+hr {
+    border: none;
+    text-align: center;
+}
+
+hr[data-val]::after {
+    content: attr(data-val);
+    letter-spacing: 24px;
+}

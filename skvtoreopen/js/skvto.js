@@ -2,24 +2,50 @@ const skvto = {
   reader: document.getElementById('reader'),
   url: new URL(document.URL),
   page: 1,
-  h1: document.createElement('h1'),
   nav: {
     next: document.querySelector("#nav-next"),
     previous: document.querySelector("#nav-back"),
   },
   markdown: {
-    h1: '\n============\n',
+    h1: /\n============/gm,
+    break: /\* \* \*/,
   },
   currentText: '',
-  setH1() {
-    if (this.page === 1) {
-      this.h1.innerHTML = this.currentText.slice(0, this.currentText.indexOf(this.markdown.h1))
-      this.reader.prepend(this.h1)
-      this.currentText = this.currentText.replace(`${this.h1.innerHTML}${this.markdown.h1}`, '')
-    }
+  currentBlocks: [],
+  setBlocks() {
+    this.currentBlocks = this.currentText.split(/\n\n/)
+    this.currentBlocks = this.currentBlocks.map((block) => {
+      const el = document.createElement('p')
+      el.innerHTML = block
+      return el
+    })
   },
-  setParagraphs() {
-    this.reader.innerHTML = this.reader.innerHTML.replaceAll(/\n(.*)\n/g, '<p>$1</p>')
+  setH1() {
+    this.currentBlocks = this.currentBlocks.map((block) => {
+      if (this.markdown.h1.test(block.innerHTML)) {
+        const newEl = document.createElement('h1')
+        newEl.innerHTML = block.innerHTML.replaceAll(this.markdown.h1, '')
+        block = newEl
+      }
+
+      return block
+    })
+  },
+  setBreaks() {
+    this.currentBlocks = this.currentBlocks.map((block) => {
+      if (this.markdown.break.test(block.innerHTML)) {
+        const newEl = document.createElement('hr')
+        newEl.dataset.val = block.innerHTML
+        block = newEl
+      }
+
+      return block
+    })
+  },
+  fillReader() {
+    this.reader.innerHTML = this.currentBlocks.map((block) => {
+      return block.outerHTML
+    }).join('')
   },
 }
 
@@ -44,9 +70,10 @@ async function getData(newPage) {
 
 function putData() {
   skvto.reader.replaceChildren()
+  skvto.setBlocks()
   skvto.setH1()
-  skvto.reader.append(skvto.currentText)
-  skvto.setParagraphs()
+  skvto.setBreaks()
+  skvto.fillReader()
 }
 
 getData(skvto.page)
