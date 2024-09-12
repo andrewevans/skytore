@@ -35,3 +35,13 @@ hr[data-val]::after {
     content: attr(data-val);
     letter-spacing: 24px;
 }
+
+nav {
+    display: flex;
+    justify-content: center;
+}
+
+.pagination {
+    list-style: none;
+    display: flex;
+}
