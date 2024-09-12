@@ -70,6 +70,15 @@ async function getData(newPage) {
   }
 }
 
+function updateNav() {
+  const newPageUrl = new URL(document.URL)
+
+  newPageUrl.searchParams.set('page', skvto.page + 1)
+  skvto.nav.next.href = newPageUrl
+  newPageUrl.searchParams.set('page', skvto.page - 1)
+  skvto.nav.previous.href = newPageUrl
+}
+
 function updateUrl() {
   if (skvto.url.searchParams.has('page')) {
     skvto.url.searchParams.set('page', skvto.page)
@@ -77,6 +86,8 @@ function updateUrl() {
   } else {
     skvto.url.searchParams.set('page', skvto.page)
   }
+
+  updateNav()
 }
 
 function putData() {
