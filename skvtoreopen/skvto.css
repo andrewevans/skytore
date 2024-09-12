@@ -16,7 +16,10 @@ nav {
     margin: 0 auto;
     max-width: 600px;
     word-wrap: break-word;
-    min-height: 30px;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: calc(100vh - 52px);
 }
 
 @media (max-width: 1025px) {
@@ -57,11 +60,6 @@ hr[data-val]::after {
     letter-spacing: 24px;
 }
 
-nav {
-    display: flex;
-    justify-content: center;
-}
-
 .pagination {
     list-style: none;
     display: flex;
@@ -94,9 +92,20 @@ nav a {
     background: #1f2228;
     color: #ccc;
     padding: 10px;
-    font-size: 0.9em;
-    text-indent: 0em;
     margin: 5px 1px 5px 1px;
+    flex-basis: 25%;
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6666666667;
+    text-decoration: none;
+}
+
+nav a:nth-of-type(2n) {
+    text-align: right;
+}
+
+nav span {
+    margin: 0 10px;
 }
 
 @media (max-width: 1025px) {

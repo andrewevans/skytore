@@ -122,6 +122,7 @@ skvto.nav.next.addEventListener("click", event => navClicked(event, 1))
 skvto.nav.previous.addEventListener("click", event => navClicked(event, -1))
 
 function navClicked(event, direction) {
-  event.preventDefault();
+  window.scrollTo(0,0)
+  event.preventDefault()
   getData(skvto.page + direction)
 }
