@@ -82,12 +82,16 @@ aside:nth-of-type(2n) {
 }
 
 aside p {
-    padding: 10px;
+    padding: 10px 10px 10px 5px;
     font-size: 0.9em;
     text-indent: 0em;
     margin: 5px 1px 5px 1px;
     font-family: monospace;
     letter-spacing: -0.7px;
+}
+
+aside:nth-of-type(2n) p {
+    padding: 10px 5px 10px 10px;
 }
 
 nav a {
