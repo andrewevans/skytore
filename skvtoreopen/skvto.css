@@ -136,3 +136,9 @@ nav span {
         margin: 0 -10px 0 10px;
     }
 }
+
+#all {
+    padding-top: 300vh;
+    background-image: url('assets/stars-loop.png');
+    background-attachment: fixed;
+}

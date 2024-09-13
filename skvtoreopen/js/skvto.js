@@ -176,3 +176,23 @@ document.addEventListener('touchend', e => {
   touchendX = e.changedTouches[0].screenX
   checkDirection()
 })
+
+let lastKnownScrollPosition = 0;
+let ticking = false;
+
+function doSomething(scrollPos) {
+  document.getElementById('all').style.backgroundPositionY = `${scrollPos}px`
+}
+
+document.addEventListener("scroll", (event) => {
+  lastKnownScrollPosition = window.scrollY;
+
+  if (!ticking) {
+    window.requestAnimationFrame(() => {
+      doSomething(lastKnownScrollPosition);
+      ticking = false;
+    });
+
+    ticking = true;
+  }
+});
