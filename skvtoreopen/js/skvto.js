@@ -7,6 +7,7 @@ const skvto = {
     previous: document.querySelector("#nav-back"),
   },
   markdown: {
+    block: /\n\n/,
     h1: /\n============/gm,
     break: /\* \* \*/,
     shortBreak: /^\*$/,
@@ -16,7 +17,7 @@ const skvto = {
   currentText: '',
   currentBlocks: [],
   setBlocks() {
-    this.currentBlocks = this.currentText.split(/\n\n/)
+    this.currentBlocks = this.currentText.split(this.markdown.block)
     this.currentBlocks = this.currentBlocks.map((block) => {
       const el = document.createElement('p')
       el.innerHTML = block
