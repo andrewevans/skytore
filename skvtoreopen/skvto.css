@@ -1,3 +1,7 @@
+:root {
+    scroll-behavior: smooth;
+}
+
 body {
     background: #000;
     color: #fff;
@@ -138,7 +142,8 @@ nav span {
 }
 
 #all {
-    padding-top: 300vh;
+    /*padding-top: 300vh;*/
     background-image: url('assets/stars-loop.png');
     background-attachment: fixed;
+    background-size: cover;
 }
