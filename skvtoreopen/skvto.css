@@ -28,8 +28,8 @@ nav {
 
 @media (max-width: 1025px) {
     #reader {
-        margin: 10px;
-        max-width: inherit;
+        /*margin: 10px;*/
+        /*max-width: inherit;*/
         padding: 0;
     }
 }
@@ -146,4 +146,35 @@ nav span {
     background-image: url('assets/stars-loop.png');
     background-attachment: fixed;
     background-size: cover;
+}
+
+#all {
+    background: #141515;
+}
+
+@font-face {
+    font-family: "Trickster";
+    src:
+            local("Trickster"),
+            url("imperial-normal-500.ttf") format("opentype") tech(color-COLRv1),
+}
+
+p {
+    padding: 0;
+    border: 0;
+    text-size-adjust: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    margin-bottom: 0.78125rem;
+    margin-top: 0;
+    overflow-wrap: break-word;
+    /*color: var(--color-content-secondary,#363636);*/
+    color: #cccdcc;
+    font-family: 'Trickster', nyt-imperial,georgia,'times new roman',times,serif;
+    font-size: 1.125rem;
+    line-height: 1.7625rem;
+    margin-left: 20px;
+    margin-right: 20px;
+    /*width: calc(100% - 40px);*/
+    /*max-width: 600px;*/
 }
