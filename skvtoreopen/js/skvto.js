@@ -128,6 +128,7 @@ function goToNavLink(direction) {
 
 function navClicked(event, direction) {
   event.preventDefault()
+  skvto.reader.replaceChildren()
   goToNavLink(direction)
 }
 
