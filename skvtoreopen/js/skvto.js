@@ -9,6 +9,7 @@ const skvto = {
   markdown: {
     h1: /\n============/gm,
     break: /\* \* \*/,
+    shortBreak: /^\*$/,
     checkIn: /\&gt\;/gm,
     checkInAt: /\n/gm,
   },
@@ -36,6 +37,17 @@ const skvto = {
   setBreaks() {
     this.currentBlocks = this.currentBlocks.map((block) => {
       if (this.markdown.break.test(block.innerHTML)) {
+        const newEl = document.createElement('hr')
+        newEl.dataset.val = block.innerHTML
+        block = newEl
+      }
+
+      return block
+    })
+  },
+  setShortBreaks() {
+    this.currentBlocks = this.currentBlocks.map((block) => {
+      if (this.markdown.shortBreak.test(block.innerHTML)) {
         const newEl = document.createElement('hr')
         newEl.dataset.val = block.innerHTML
         block = newEl
@@ -112,6 +124,7 @@ function putData() {
   skvto.setBlocks()
   skvto.setH1()
   skvto.setBreaks()
+  skvto.setShortBreaks()
   skvto.setCheckIns()
   skvto.fillReader()
 }
