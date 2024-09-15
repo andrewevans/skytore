@@ -178,3 +178,17 @@ p {
     /*width: calc(100% - 40px);*/
     /*max-width: 600px;*/
 }
+
+pre {
+    font-size: 36px;
+    line-height: 36px;
+    display: block;
+    letter-spacing: 21px; /* or 3 */
+    word-wrap: break-word;
+    line-height: 43px; /* or 25 */
+    font-family: monospace;
+    margin: 0;
+    padding: 0;
+    display:table-caption;
+    white-space: break-spaces;
+}
