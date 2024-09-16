@@ -6,12 +6,23 @@ const skvto = {
     next: document.querySelector("#nav-next"),
     previous: document.querySelector("#nav-back"),
   },
+  propers: {
+    four: 'Vour',
+    a: 'Ander',
+    cx: 'caressival',
+    c: 'Caresse',
+  },
   markdown: {
     block: /\n\n/,
     h1: /\n============/gm,
+    four: /\$four/gm,
+    a: /\$A/gm,
+    cx: /\$CX/gm,
+    c: /\$C/gm,
     box: /\■/,
     break: /\* \* \*/,
     shortBreak: /^\*$/,
+    em: /\*([^*]+?)\*/g,
     checkIn: /\&gt\;/gm,
     checkInAt: /\n/gm,
   },
@@ -89,6 +100,19 @@ const skvto = {
       return block
     })
   },
+  setVars() {
+    this.currentBlocks.forEach((block) => {
+      block.innerHTML = block.innerHTML.replaceAll(this.markdown.four, this.propers.four)
+      block.innerHTML = block.innerHTML.replaceAll(this.markdown.a, this.propers.a)
+      block.innerHTML = block.innerHTML.replaceAll(this.markdown.cx, this.propers.cx) // Order matters
+      block.innerHTML = block.innerHTML.replaceAll(this.markdown.c, this.propers.c)
+    })
+  },
+  setEm() {
+    this.currentBlocks.forEach((block) => {
+        block.innerHTML = block.innerHTML.replace(this.markdown.em, "<i>$1<\/i>")
+    })
+  },
   fillReader() {
     this.reader.innerHTML = this.currentBlocks.map((block) => {
       return block.outerHTML
@@ -140,10 +164,12 @@ function updateUrl() {
 function putData() {
   skvto.reader.replaceChildren()
   skvto.setBlocks()
+  skvto.setVars()
   skvto.setH1()
   skvto.setBoxes()
   skvto.setBreaks()
   skvto.setShortBreaks()
+  // skvto.setEm()
   skvto.setCheckIns()
   skvto.fillReader()
 }
