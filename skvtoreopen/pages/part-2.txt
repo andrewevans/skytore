@@ -34,7 +34,7 @@ HILBERT
 
 "No, it was some showman guy, like the kind you see at a carnival sideshow. He wasn't doing ventriloquist stuff. He stole my wallet." I knew my words made little sense, but it was difficult to describe quickly.
 
-"He put this in my wallet, but I forgot he said that. Then I told him that there was an ass in his--" I stopped my vulgarity just as our order landed. "He's one of Celeste's friends. Celeste is the girl from last night."
+"He put this in my wallet, but I forgot he said that. Then I told him that there was an ass in his--" I stopped my vulgarity just as our order landed. "He's one of $C's friends. $C is the girl from last night."
 
 "Good job, man," he said. "I think the radio said he'll be at The Gin tonite."
 
@@ -42,7 +42,7 @@ HILBERT
 
 I needed to get as much work done as possible before then to ensure meeting my deadline. Rose Garden had to be a loosely stitched prototype by morning or the investors would second-guess my team's ability to deliver in a timely fashion.
 
-Most of the necessary game mechanics were in place for a very rudimentary version. I tied into various maps for landmarks and business locations, public tax documents for revenues, census data for population density, police reports for criminal activity, Foursquare for the motherload of human traffic stats, and a handful of manual entries for things that lacked mineable data.
+Most of the necessary game mechanics were in place for a very rudimentary version. I tied into various maps for landmarks and business locations, public tax documents for revenues, census data for population density, police reports for criminal activity, $four for the motherload of human traffic stats, and a handful of manual entries for things that lacked mineable data.
 
 For a game like this, it wasn't always clear what to set certain constants to, like how many beacons a player starts with to lay claim to areas or how much reputation a player earns, but these were all adjustable once our beta group began playing the game and churning through the algorithms. Some aspects were simple, like less crime meant more points. Other aspects were very subjective, like what more churches should earn an area or whether more bars was a good thing. It was clearly skewed to my personal beliefs, but all of that was adjustable once we saw it in action.
 
@@ -92,9 +92,9 @@ We both looked around the room for a minute, but to no avail. I told Francis the
 
 When I looked at the audience through my Squarecam, there were dozens of artistic Squarememes floating around the venue. A couple transparent colorful unicorns prancing around the tops of everyone’s heads, clearly made by a very skilled artist, and a few people with the usual animal heads in place of their own. Sights like those where so many memes were condensed in a small area and interacting with one another made the real world seem so dull. When I put the phone away I noticed that most of the crowd was actually just wearing their customary all-black wardrobes.
 
-"Oh shit. I almost forgot to check in," I mentioned to Francis as I booted up Foursquare. It was still on Celestival's profile.
+"Oh shit. I almost forgot to check in," I mentioned to Francis as I booted up $four. It was still on $CX's profile.
 
->check-in celestival $
+>check-in $CX $
 @ The Cotton Gin
 
 "See if she checked in here," Francis suggested as he looked at my phone curiously.
@@ -103,9 +103,9 @@ He was right. She had checked in a minute ago. I felt the giddiness overwhelm me
 
 "There you go," Francis says as he motions his head toward the door. There she is, looking right at us, showing a bit of excitement herself.
 
-I shimmy my way through the crowd to greet her. "Celeste, funny to see you here." I tried to hide my anxiety with a stupid comment as we hugged.
+I shimmy my way through the crowd to greet her. "$C, funny to see you here." I tried to hide my anxiety with a stupid comment as we hugged.
 
-"Really?" she replies. "Actually it's funny to see *you* here. Hi Andrew."
+"Really?" she replies. "Actually it's funny to see *you* here. Hi $A."
 
 "Come sit with me and my friend," I say as I point toward Francis who nods back. We make our way to our seats with Francis getting up to let her sit.
 
@@ -121,7 +121,7 @@ After their greetings we focus back on the show. I waited a few minutes to ask h
 >check-in ander $
 @ The Cotton Gin
 
-"Oo la la!" the dummy remarks at Celeste. She waves at him and closes the door behind her. The crowd laughs. I pretend to laugh.
+"Oo la la!" the dummy remarks at $C. She waves at him and closes the door behind her. The crowd laughs. I pretend to laugh.
 
 "Niiice," Francis says in approval.
 
@@ -134,7 +134,7 @@ After their greetings we focus back on the show. I waited a few minutes to ask h
 >check-in melodic $
 @ The Cotton Gin
 
-"Silly!" a girl's voice excitedly rings out. Celeste gives Melody a strong hug as if they hadn't seen each other for a long time. Melody then turns to me. "I remember you."
+"Silly!" a girl's voice excitedly rings out. $C gives Melody a strong hug as if they hadn't seen each other for a long time. Melody then turns to me. "I remember you."
 
 "Hi," I say. We give each other a quick hug, just long enough to qualify as a hug, with a world's distance between us.
 
@@ -148,7 +148,7 @@ After their greetings we focus back on the show. I waited a few minutes to ask h
 
 "How did you know him?" I ask.
 
-She keeps her gaze on him as she answers. "Foursquare, dummy."
+She keeps her gaze on him as she answers. "$four, dummy."
 
 "Ahahaha," Francis chuckles again, as if he is a wind-up toy with two lines.
 
@@ -156,13 +156,13 @@ She keeps her gaze on him as she answers. "Foursquare, dummy."
 
 The night went smoothly, and I successfully dodged any mention of Rose Garden. The traveling clown joined our cuatro after his performance, shared a couple jokes, and was off. I'm pretty sure he recognized me.
 
-The whole night I couldn't decide whether I should chat up Celeste like I wanted to or extract computational secrets from her. She was sharp and on her toes, though. Taking what I needed from this gem would not go unnoticed.
+The whole night I couldn't decide whether I should chat up $C like I wanted to or extract computational secrets from her. She was sharp and on her toes, though. Taking what I needed from this gem would not go unnoticed.
 
 She was one of few in their game theory department who worked on the core mechanics of the app down to the metal. She would know the secrets of how it flowed, what worked and what didn't, and how to *cause* the players to do what they wanted them to do. It was clear they were creating playful rivalries between players, but recently the app started recommending strange actions, like checking in to natural disasters before they happened and rewarding the player generously for being there.
 
 "Your hair looks cute in a bun like that," I say.
 
-"You think?" Celeste says as she studies me for veracity and tightens her hair.
+"You think?" $C says as she studies me for veracity and tightens her hair.
 
 Francis takes Melody's hand as he leads her to the dance floor. There was a female vocalist who had taken the stage singing some kickass rock 'n roll jams with her raspy soulful voice.
 
@@ -172,7 +172,7 @@ Francis takes Melody's hand as he leads her to the dance floor. There was a fema
 
 "My thoughts exactly," I say, slightly disappointed that she beat me to my own punchline.
 
-When the tatt'ed out singer wrapped up her set, so did we. On the street in front of The Gin, I exchanged numbers with Celeste. Melody and Francis did the same. Finally.
+When the tatt'ed out singer wrapped up her set, so did we. On the street in front of The Gin, I exchanged numbers with $C. Melody and Francis did the same. Finally.
 
 The walk home was the usual debriefing of "I did this then I did that I should have done this should I have done that."
 
