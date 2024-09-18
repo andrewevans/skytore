@@ -39,11 +39,16 @@ h1 {
 }
 
 h1 {
+    margin: 0 20px;
+    padding-top: 5vh;
+    padding-bottom: calc(33vh - 5vh - 1.8em);
     line-height: 1.8em;
-    font-family: Georgia, "Times New Roman", Times, serif;
-    text-align: center;
+    font-family: 'Trickster', nyt-imperial,georgia,'times new roman',times,serif;
+    color: #cccdcc;
+    text-align: right;
     text-indent: 0;
     font-weight: normal;
+    -webkit-font-smoothing: antialiased;
 }
 
 p {
@@ -74,7 +79,7 @@ aside {
     width: 33%;
     display: block;
     float: left;
-    margin: 0 40px 0 -40%;
+    margin: 10px 40px 10px -40%;
     background: #1f2228;
     color: #ccc;
 }
@@ -180,6 +185,7 @@ p {
 }
 
 pre {
+    margin: 0 20px 12px 20px;
     font-size: 36px;
     line-height: 36px;
     display: block;
@@ -187,7 +193,6 @@ pre {
     word-wrap: break-word;
     line-height: 43px; /* or 25 */
     font-family: monospace;
-    margin: 0;
     padding: 0;
     display:table-caption;
     white-space: break-spaces;
