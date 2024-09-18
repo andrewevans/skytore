@@ -185,15 +185,16 @@ p {
 }
 
 pre {
-    margin: 0 20px 12px 20px;
+    margin: 0 20px;
+    padding-top: 5vh;
+    padding-bottom: calc(33vh - 5vh - 1.8em);
     font-size: 36px;
-    line-height: 36px;
     display: block;
     letter-spacing: 21px; /* or 3 */
     word-wrap: break-word;
     line-height: 43px; /* or 25 */
     font-family: monospace;
-    padding: 0;
-    display:table-caption;
-    white-space: break-spaces;
+    word-spacing: 600px;
+    white-space: pre-line;
+    text-align: right;
 }
