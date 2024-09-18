@@ -40,13 +40,13 @@ HILBERT
 
 "Then we're going," I responded. "Let's kill this gruel quick so I can get back to my post."
 
-I needed to get as much work done as possible before then to ensure meeting my deadline. Rose Garden had to be a loosely stitched prototype by morning or the investors would second-guess my team's ability to deliver in a timely fashion.
+I needed to get as much work done as possible before then to ensure meeting my deadline. Rose Garden had to be a loosely stitched prototype by the morrow or the investors would second-guess my team's ability to deliver in a timely fashion.
 
 Most of the necessary game mechanics were in place for a very rudimentary version. I tied into various maps for landmarks and business locations, public tax documents for revenues, census data for population density, police reports for criminal activity, $four for the motherload of human traffic stats, and a handful of manual entries for things that lacked mineable data.
 
 For a game like this, it wasn't always clear what to set certain constants to, like how many beacons a player starts with to lay claim to areas or how much reputation a player earns, but these were all adjustable once our beta group began playing the game and churning through the algorithms. Some aspects were simple, like less crime meant more points. Other aspects were very subjective, like what more churches should earn an area or whether more bars was a good thing. It was clearly skewed to my personal beliefs, but all of that was adjustable once we saw it in action.
 
-The game's map interface showcased potential future plans for the player to consider, from large licensed developments to small local gatherings that did not have any official standing. Players could place their beacons near locations that they thought would become successful. Beacons could span any chosen distance for any chosen amount of time. The more precise the beacon, the heavier the reward.
+Players could place their beacons near locations that they thought would become successful. Beacons could span any chosen distance for any chosen amount of time. The more precise the beacon, the heavier the reward.
 
 One of the biggest missing components was whether the game had a victory for a player or went on infinitely. And what were the real-world rewards? I intentionally left those unanswered because of their complexity and also to give the investors a void to throw their idiot ideas into until something fit.
 
