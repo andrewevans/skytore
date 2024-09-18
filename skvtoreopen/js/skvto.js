@@ -118,9 +118,12 @@ const skvto = {
       return block.outerHTML
     }).join('')
   },
+  init() {
+    this.page = parseInt(this.url.searchParams.get('page')) || this.page
+  },
 }
 
-skvto.page = parseInt(skvto.url.searchParams.get('page')) || skvto.page
+skvto.init()
 
 async function getData(newPage) {
   const url = `pages/part-${newPage}.txt`;
