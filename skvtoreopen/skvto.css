@@ -134,7 +134,7 @@ nav span {
         display: inline-block;
         float: left;
         margin: 0 10px 0 0;
-        width: 46%;
+        width: calc(50% - 10px);
     }
 
     aside:nth-of-type(2n) {
