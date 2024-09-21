@@ -19,11 +19,9 @@ body {
 nav {
     margin: 0 auto;
     max-width: 600px;
-    word-wrap: break-word;
     display: flex;
     justify-content: space-between;
-    position: sticky;
-    top: calc(100vh - 52px);
+    clear: both;
 }
 
 @media (max-width: 1025px) {
