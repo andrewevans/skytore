@@ -221,11 +221,11 @@ let touchstartX = 0
 let touchendX = 0
 
 function checkDirection() {
-  if (touchendX < touchstartX && 200 < (touchstartX - touchendX)) {
+  if (touchendX < touchstartX && 150 < (touchstartX - touchendX)) {
     goToNavLink(1)
   }
 
-  if (touchendX > touchstartX && 200 < (touchendX - touchstartX)) {
+  if (touchendX > touchstartX && 150 < (touchendX - touchstartX)) {
     goToNavLink(-1)
   }
 }
