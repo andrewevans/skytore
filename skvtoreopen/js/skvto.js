@@ -8,17 +8,21 @@ const skvto = {
   },
   propers: {
     four: 'Vour',
+    fourmeme: 'Vourmeme',
     a: 'Ander',
     cx: 'caressival',
     c: 'Caresse',
+    g: '4elix',
   },
   markdown: {
     block: /\n\n/,
     h1: /\n============/gm,
     four: /\$four/gm,
+    fourmeme: /\$fourmeme/gm,
     a: /\$A/gm,
     cx: /\$CX/gm,
     c: /\$C/gm,
+    g: /\$G/gm,
     box: /\■/,
     break: /\* \* \*/,
     shortBreak: /^\*$/,
@@ -103,6 +107,8 @@ const skvto = {
   setVars() {
     this.currentBlocks.forEach((block) => {
       block.innerHTML = block.innerHTML.replaceAll(this.markdown.four, this.propers.four)
+      block.innerHTML = block.innerHTML.replaceAll(this.markdown.fourmeme, this.propers.fourmeme)
+      block.innerHTML = block.innerHTML.replaceAll(this.markdown.g, this.propers.g)
       block.innerHTML = block.innerHTML.replaceAll(this.markdown.a, this.propers.a)
       block.innerHTML = block.innerHTML.replaceAll(this.markdown.cx, this.propers.cx) // Order matters
       block.innerHTML = block.innerHTML.replaceAll(this.markdown.c, this.propers.c)
