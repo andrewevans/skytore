@@ -182,7 +182,7 @@ p {
     /*max-width: 600px;*/
 }
 
-pre {
+h2 {
     margin: 0 20px;
     padding-top: 5vh;
     padding-bottom: calc(33vh - 5vh - 1.8em);

@@ -55,7 +55,7 @@ const skvto = {
         // 4 = block size, 2 = width of block aka sq root of block size
         const breakAt = (Math.floor(boxLength/4) * 2) + Math.min(2, boxLength % 4)
         boxes.splice(breakAt, 0, ' ')
-        const newEl = document.createElement('pre')
+        const newEl = document.createElement('h2')
         newEl.innerHTML = boxes.join('')
         block = newEl
       }
