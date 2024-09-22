@@ -34,6 +34,8 @@ const skvto = {
   },
   currentText: '',
   currentBlocks: [],
+  intervalId: 0,
+  intervalIdOuter: 0,
   setBlocks() {
     this.currentBlocks = this.currentText.split(this.markdown.block)
     this.currentBlocks = this.currentBlocks.map((block) => {
@@ -122,9 +124,47 @@ const skvto = {
     })
   },
   fillReader() {
-    this.reader.innerHTML = this.currentBlocks.map((block) => {
-      return block.outerHTML
-    }).join('')
+    this.reader.replaceChildren()
+
+    let outerCount = 0
+    let innerCount = 0
+
+    const doInnerThing = function (newBlock, innerHTML) {
+      newBlock.innerHTML = innerHTML.substring(0, innerCount * 15 + (outerCount) * 15)
+      // newBlock.innerHTML = '■ '.repeat(innerCount * 15 + (outerCount) * 15)
+      // newBlock.style.transform = "scale(-1, -1)"
+      // newBlock.style.textAlign = "right"
+      // newBlock.style.fontSize = '0.75rem'
+      // newBlock.style.letterSpacing = '-3px'
+      newBlock.style.fontFamily = '"Webdings"'
+      newBlock.style.color = '#bfbfbf'
+      if ((innerCount * 15 + (outerCount) * 15) <= innerHTML.length) {
+
+        innerCount++
+        this.intervalId = setTimeout(doInnerThing, 0, newBlock, innerHTML)
+      } else {
+        newBlock.innerHTML = innerHTML
+        newBlock.removeAttribute('style') // This removes the attribute regardless of what's in it
+
+        innerCount = 0
+        doOuterThing()
+      }
+    }.bind(this)
+
+    const doOuterThing = function () {
+      const newBlock = this.currentBlocks[outerCount]
+
+      if (outerCount < this.currentBlocks.length) {
+        this.reader.appendChild(newBlock)
+        const innerHTML = newBlock.innerHTML
+        newBlock.innerHTML = '■'
+        this.intervalIdOuter = setTimeout(doInnerThing, 0, newBlock, innerHTML)
+        outerCount++
+      } else {
+      }
+    }.bind(this)
+
+    doOuterThing()
   },
   init() {
     this.page = parseInt(this.url.searchParams.get('page')) || this.page
@@ -142,6 +182,8 @@ async function getData(newPage) {
       throw new Error(`Response status: ${response.status}`);
     }
 
+    clearInterval(skvto.intervalId);
+    clearInterval(skvto.intervalIdOuter);
     skvto.currentText = await response.text()
     skvto.page = newPage
 
