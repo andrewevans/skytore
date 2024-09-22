@@ -136,7 +136,7 @@ const skvto = {
       // newBlock.style.textAlign = "right"
       // newBlock.style.fontSize = '0.75rem'
       // newBlock.style.letterSpacing = '-3px'
-      newBlock.style.fontFamily = '"Webdings"'
+      newBlock.style.fontFamily = '"Webdings-Regular"'
       newBlock.style.color = '#bfbfbf'
       if ((innerCount * 15 + (outerCount) * 15) <= innerHTML.length) {
 
