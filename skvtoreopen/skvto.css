@@ -4,7 +4,7 @@
 
 body {
     background: #000;
-    color: #fff;
+    color: #d3d3d3;
     margin: 0;
 }
 
@@ -153,6 +153,7 @@ nav span {
 
 #all {
     background: #141515;
+    background: #121212;
 }
 
 @font-face {
@@ -179,7 +180,7 @@ p {
     margin-top: 0;
     overflow-wrap: break-word;
     /*color: var(--color-content-secondary,#363636);*/
-    color: #cccdcc;
+    color: #d3d3d3;
     font-family: 'Trickster', nyt-imperial,georgia,'times new roman',times,serif;
     font-size: 1.125rem;
     line-height: 1.7625rem;
