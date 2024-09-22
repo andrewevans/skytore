@@ -141,7 +141,7 @@ const skvto = {
       if ((innerCount * 15 + (outerCount) * 15) <= innerHTML.length) {
 
         innerCount++
-        this.intervalId = setTimeout(doInnerThing, 0, newBlock, innerHTML)
+        this.intervalId = setTimeout(doInnerThing, 5, newBlock, innerHTML)
       } else {
         newBlock.innerHTML = innerHTML
         newBlock.removeAttribute('style') // This removes the attribute regardless of what's in it
@@ -158,7 +158,7 @@ const skvto = {
         this.reader.appendChild(newBlock)
         const innerHTML = newBlock.innerHTML
         newBlock.innerHTML = '■'
-        this.intervalIdOuter = setTimeout(doInnerThing, 0, newBlock, innerHTML)
+        this.intervalIdOuter = setTimeout(doInnerThing, 5, newBlock, innerHTML)
         outerCount++
       } else {
       }
