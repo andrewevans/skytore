@@ -9,6 +9,7 @@ const skvto = {
   propers: {
     four: 'Vour',
     fourmeme: 'Vourmeme',
+    fourcam: 'Vourcam',
     a: 'Ander',
     cx: 'caressival',
     c: 'Caresse',
@@ -19,6 +20,7 @@ const skvto = {
     h1: /\n============/gm,
     four: /\$four/gm,
     fourmeme: /\$fourmeme/gm,
+    fourcam: /\$fourcam/gm,
     a: /\$A/gm,
     cx: /\$CX/gm,
     c: /\$C/gm,
