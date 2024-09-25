@@ -20,17 +20,23 @@ I walked back inside with my fist clenched in victory. Karl walked out of his ro
 
 "Yeah I did," I said. "And the whole world's gonna hear about it!"
 
-"Yeah man, I think they already did," he said. "I heard it. Francis probably heard it. Neighbors. Neighbors' neighbors."
+"Yeah man, I think they already did," he said. "I heard it. Francis probably heard it. Nearest neighbors. Yeah."
 
-I motioned with my hands to let him know I had settled down. "This next set," I said in a calmer voice. "It’s this next set. All hell can't stop us now."
+I motioned with my hands to let him know I had settled down. "This next go," I said in a calmer voice. "It’s this go. All hell can't stop us now."
 
-I called up my team of three to meet me in the war room on my house’s freshly built second story. It was a flat room with a wooden floor surrounded by windows on all sides, awkwardly poking out the top of my house. The celebration was only minutes long and consisted of all of us shotgunning beers all over the equipment. Then we got back to work. We sat side by side each other along the walls with more monitors than people, more server racks than monitors, and one really expensive air conditioner to stop everything from exploding.
+I called up my team of three to meet me in the war room on my house’s freshly built second story. It was a flat room with a wooden floor surrounded by windows on all sides, awkwardly poking out the top of my house. The celebration was only minutes long and consisted of all of us shotgunning beers all over the equipment. Then we got back to work. We sat side by side each other along the walls with more monitors than people, more server racks than monitors, and a solid rack of warm ones.
 
 Most of the heavy lifting had already been done. Beacons would pop up all around the map from our hundreds of bots pretending to play. We could artificially feed in a park here, destroy a library there, delete some crime across town, or create dozens of check-ins at a nearby historical site.
 
 There was still one enormous missing thread to this gamified social quilt: how does it all end? Or at least, what is the point of playing? I needed my social experts.
 
 *
+
+>check-in $A $
+@ La Rotonde
+
+>check-in Bri10 $
+@ La Rotonde
 
 "They will need both a sense of purpose and a sense of accomplishment," Britten explained as we sat in front of my favorite cafe. She held a couple Masters degrees in Art Business and Sociology, she was young, cute, and kind of a bitch. "I think this game is ridden with holes. And your main competitor?"
 
@@ -60,7 +66,7 @@ She raised her chin in defiance. "I will work with you," she said. "But I will t
 
 "I'll call you," I said, tired of the conversation.
 
-Right before she got into the buggy whip that pulled up, she looked at me and put her hand on her forehead. "A strip club. A strip club creates a positive wave effect in the area? What does that even mean?" She closed the door before I could answer.
+Right before she got into the buggy whip that pulled up, she looked at me and put her hand on her forehead. "A harem. A harem club creates a positive wave effect in the area? What does that even mean?" She closed the door before I could answer.
 
 "That’s only for top-shelf!" I said loud enough for her to hear me through the window. I leaned back in my chair and softly said, "I'm working out the kinks."
 
@@ -68,7 +74,7 @@ Right before she got into the buggy whip that pulled up, she looked at me and pu
 
 I hadn't seen $C for some while. Neither of us were even reaching out to one another. But then I hit *the* snag. I couldn't figure out how $four suggested a person's next movement. $four would crunch the data it had in such a way that it would very accurately tell you where you *should* go next. It was clear that it had something to do with your friends and your geolocation, but how did it know that I could meet someone at a nearby park when they weren't even there... yet?
 
-After some back and forth texts, we decided to meet at a tequila joint that was hip enough to earn a user a handful of points if they had a beacon nearby.
+After some back and forth texts, we decided to meet at a tiki joint that was hip enough to earn a user a handful of points if they had a beacon nearby.
 
 >check-in $CX $
 @ The Edit
@@ -105,6 +111,12 @@ She burst into laughter nearly falling out of her seat. She set her drink down a
 "Deal," she said. We cheersed.
 
 We went down the street to an indoor ball field that served fashionable cocktails, and was open late at night. We played a couple rounds, ending in a tie.
+
+>check-in $CX $
+@ The Edit
+
+>check-in $A $
+@ The Edit
 
 "Because!" she said. "It's just fun. I can't see the future. Why do you care so much anyways?"
 
@@ -156,11 +168,9 @@ The red can empty beers had piled up. The lines of powdered residue on the table
 
 "Well," she said, trying to hide her own drunken druggedness. "We're all boundedly rational agents with infinite choices. But I get to--" She stops herself mid-sentence. "It needs balance, first of all," she said as she raised one finger in the air. "And... and you guys sucked at this game."
 
-"It's called humility," I said as I pretended to hand her a tea cup of humility. "Have some."
+"And since Silly won, I don’t have to teach you any moves and you have to give me a tour."
 
-"No thanks," she said as she brushed aside my imaginary tea cup. "I'll pour myself a Stanley Cup of pure, unadulterated victory." She had her hands out wide like she was drinking from a giant goblet. “Mmm, Silly wins,” she said. She set her imaginary goblet down and kind of snapped to. "Since I won, I don’t have to teach you any moves and you have to give me a tour."
-
-"Of the house?"
+"Of the house?" I asked.
 
 "Yeah," she said. "All else I've seen is the bathroom and that was hideous."
 
@@ -240,7 +250,7 @@ The night wrapped up quickly after that, with all of us bandaging Raiden’s han
 
 “And then,” he said in a more conciliatory voice. “And then for us to stand here on--” then his voice rang louder than the rest of the night. “-- Our Pride Rock! Shootin’ the shit just cuz we wanna!”
 
-“Shootin’ the bullshit!” I screamed as I joined in.
+“Shootin’ the bullshit!” I joined in.
 
 “It’s like DNA can’t even catch us!” he shouted at the sky. “It’s like we’re moving faster than time now!”
 
@@ -296,13 +306,13 @@ We stood in front of the bay windows overlooking The Bay smoking our half cigars
 
 "The carnival might be canceled, they said." Karl said.
 
-"$C said it was still on. We're meeting them there tonite at 10. There's a lot more dangerous things at a carnival than meteors."
+"$C said it was still on. We're meeting them there tonite. There's a lot more dangerous things at a carnival than meteors."
 
 "Carneys," he said.
 
-"Deep fried twinkies," I said.
+"Deep fried $Twinkies," I said.
 
-"Twinkies is out of business," he said.
+"$Twinkies is out of business," he said.
 
 "Well I'm out of business if I don't figure out $C's predictive recommendations."
 
@@ -336,7 +346,7 @@ There was buzz about a scary haunted house and a lot of encouragement to swarm t
 
 "Hahaha I got it just like I told you I would," Francis gloated. "Goomsense!"
 
-Goomsense was a synthetic form of psilocybin mushrooms in pill form. No sick stomach. Exact dosages. And it wasn't even illegal since it was just invented. Our chemist friend Lassie had been working on it for a couple of years, and it was finally ready.
+Goomsense was a new not-yet-illegal synthetic toadstool in pill form. No sick stomach. Exact dosages.
 
 I called $C to double-check our plans.
 
@@ -348,13 +358,11 @@ I called $C to double-check our plans.
 
 She sighed. "See you then."
 
-It was quite a drive to the first ever county fair, but obviously worth it. This was a textbook carnival: poorly built rides, star spangled wrist bands, Cheeto-dieted disgusting white trash folk, the bearded woman, all of it.
+*
 
-“She’s like me, see?” Karl said as he pointed at his quilted chin warmer beard and then at the bearded woman. His girlfriend tried to silence him, but she was just too small.
+It was quite a drive to the first ever county fair, but obviously worth it. This was a textbook carnival: poorly built rides, all the colors of the bow, trashy folk, all of it.
 
 The freak show was only in town for one night, it had never been there before, and would most likely never legally continue, so we all made a night out of it.
-
-“No, that’s like you,” Lila, Karl’s girlfriend, said. She motioned her elbow toward a drunken homeless man caught in a trapeze net, trying to wrestle his way out to freedom.
 
 A phone playing a live video shows up in front of my face. It’s facing me showing me in a cowboy hat and a girl next to me wearing daisy dukes. It’s me and $C on her $fourcam.
 
@@ -364,13 +372,13 @@ A phone playing a live video shows up in front of my face. It’s facing me show
 
 “I remember,” I say. “Good job $four. You told it, huh?”
 
-“It’s getting sooo good!” she says in excitement. “The show’s about to start at the main stage. Let’s get up there! Stay by my side." Melody pulls out a contraption holding jello shots, and they both shoot two each.
+"It’s getting sooo good!” she says in excitement. “The show’s about to start at the main stage. Let’s get up there! Stay by my side." Melody pulls out a contraption holding jello shots, and they both shoot two each.
 
-"Here comes Gabo," I say, half amused, trying to pay attention through the Goomsense trickle.
+"Here comes $G," I say, half amused, trying to pay attention through the Goomsense trickle.
 
-My phone chimes in my pocket. It says I just checked in to 'Gabo'.
+My phone chimes in my pocket. It says I just checked in to '$G'.
 
-"What the fuck," I say. "$C, why did my phone just check me in to Gabo?"
+"What the fuck," I say. "$C, why did my phone just check me in to $G?"
 
 I look at her for an answer. She looks at me like she's surprised. Then my phone chimes again. This time it says I've checked in to '$CX'.
 
@@ -396,7 +404,7 @@ Chime.
 
 Karl is clearly much farther along on his Goomgsense ingestion than myself. He's playing with the tassels on his sweatshirt.
 
-I walk up to a mother and child and greet them. "Good evening to the both of you. Of you too." Nothing. $C is at my side like an Asian concubine. I see her motion to the guy with the tablet to let him know it's OK.
+I walk up to a mother and child and greet them. "Good evening to the both of you. Of you too." Nothing. $C is at my side like a concubine. I see her motion to the guy with the tablet to let him know it's OK.
 
 "$C, come onnnn," I say. "Let me in on this. $four's picking up on my... Oh boy here we go." The psychedelics just kicked in for sure.
 
@@ -424,7 +432,7 @@ The two clowns welcoming people into the tent also have earpieces. The drug may 
 
 They motion us in without a word.
 
-Everyone inside is wandering around with their phones out Squarecam'ing the experience. The music is dancy and everyone's having a great time. There doesn't appear to be any other purpose of this tent but to cam each other. There must be something special about this tent.
+Everyone inside is wandering around with their phones out $fourcam'ing the experience. The music is dancy and everyone's having a great time. There doesn't appear to be any other purpose of this tent but to cam each other. There must be something special about this tent.
 
 I'm pulling my phone out when I notice Francis already has his out giggling at what he sees.
 
@@ -432,9 +440,9 @@ I'm pulling my phone out when I notice Francis already has his out giggling at w
 
 "Hahahaha dude where are we?"
 
-My squarecam shows him without any extras. $C has a tornado-like wind swirling around her. She has a red liquid decorating her hair, even more when her neck turned so.
+My $fourcam shows him without any extras. $C has a tornado-like wind swirling around her. She has a red liquid decorating her hair, even more when her neck turned so.
 
-I mozy away from my friends to enjoy the psychedelics and the Squarecam. It's way more realistic than normal. None of the usual fantasy creatures floating around. Seconds later, $C is again by my side.
+I mozy away from my friends to enjoy the psychedelics and the $fourcam. It's way more realistic than normal. None of the usual fantasy creatures floating around. Seconds later, $C is again by my side.
 
 A girl, clearly drunk, walks up to me with her phone pointed at me. "Haha you're all wet," she says.
 
@@ -470,7 +478,7 @@ The workers are standing all around me ready to swing, wanting to swing. "Let's 
 
 She hurries me out of the tent. Karl and Lila are standing outside. "Um, we should go," Karl says.
 
-Lila and $C brace each other as if they've never seen a shroomer and a clown battle it out in a circus tent.
+Lila and $C brace each other as if they've never seen a goomer and a clown battle it out in a circus tent.
 
 "Hahahahaha," Francis stumbles out of the tent laughing. "You're a maaaniac!"
 
@@ -524,7 +532,7 @@ Out of the corner of my eye I saw the girl from the tent, the one who was covere
 
 The drive home was Mr. Toad’s Wild Ride, Goodie Lila at the small helm. Lights flying by, voices drifting in the wind. I stood through the sunroof with my arms spread out screaming at the sky, a galactic spaceship tour of the Milky Way, the now hundreds of meteors racing us down the freeway.
 
-Karl and Lila had set up the bedding in the living room for $C (before I could get a word in edge-wise). Lila tuned the TV to YouTube Live. There was a news report that sounded serious.
+Karl and Lila had set up the bedding in the living room for $C (before I could get a word in edge-wise). Lila tuned the Glass to the local news. There was a news report that sounded serious.
 
 "That's so sad," Lila said.
 
@@ -579,6 +587,8 @@ I walk over to her while she lay on the couch, mostly unscathed by anything I've
 "Fucking tell me right fucking now fucking tell me bitch this isn’t a game anymore I could have stopped someone from getting their face smashed in from a carnival truck what is it with you and carnivals anyways?! Tell me!"
 
 With one swift plant of her palm in my eye followed a solid push with both of her hands to my chest, I fall.
+
+One swift plant of her palm in my eye followed by two more to the chest, I dropped.
 
 "Don't ever fucking touch me," she says calmly.
 
