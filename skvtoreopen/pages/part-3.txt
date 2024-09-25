@@ -77,10 +77,10 @@ I hadn't seen $C for some while. Neither of us were even reaching out to one ano
 After some back and forth texts, we decided to meet at a tiki joint that was hip enough to earn a user a handful of points if they had a beacon nearby.
 
 >check-in $CX $
-@ The Edit
+@ Lucky Charm
 
 >check-in $A $
-@ The Edit
+@ Lucky Charm
 
 "So, tell me, how do you track future movements?" I asked her bluntly after some tapas and a small drink that was kind of gross. "This drink is gross."
 
