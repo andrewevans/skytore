@@ -82,7 +82,7 @@ After some back and forth texts, we decided to meet at a tiki joint that was hip
 >check-in $A $
 @ The Edit
 
-"So, tell me, how do you track future movements?" I asked her bluntly after some tapas and a small drink that was kind of gross. “This drink is gross.”
+"So, tell me, how do you track future movements?" I asked her bluntly after some tapas and a small drink that was kind of gross. "This drink is gross."
 
 "What do you mean?" she asked.
 
@@ -156,11 +156,11 @@ The walk took a while but we eventually made it through the mildest of drizzling
 
 "Salutations," he said. "You play Risk?"
 
-"I've played a lot of Risk, and according to this guy", she said as she motioned toward me. "I KGB on people through $four.”
+"I've played a lot of Risk, and according to this guy", she said as she motioned toward me. "I KGB on people through $four."
 
 "Of course you do," Raiden said. "Well. You're playing then. You can be red."
 
-$C was leaning against the pole in the middle of the room with one arm wrapped around it behind her back. She turned toward it and twirled around the pole doing a fly kick trick with ease. When her spinning finished, she looked at me with a smirk and a shrug. She sat down and made herself at home as if I had already agreed that I wanted to play Risk, and play Risk with her involved. She put her coat over her seat and looked at me, waiting for me to sit. I cracked my neck and threw my jacket in the corner and said, "Alright, let's do this. And if I win, you have to teach me that move.”
+$C was leaning against the pole in the middle of the room with one arm wrapped around it behind her back. She turned toward it and twirled around the pole doing a fly kick trick with ease. When her spinning finished, she looked at me with a smirk and a shrug. She sat down and made herself at home as if I had already agreed that I wanted to play Risk, and play Risk with her involved. She put her coat over her seat and looked at me, waiting for me to sit. I cracked my neck and threw my jacket in the corner and said, "Alright, let's do this. And if I win, you have to teach me that move."
 
 The red can empty beers had piled up. The lines of powdered residue on the table were so obvious a blind person could see it. She had won. There was no contest. Raiden in a distant second.
 
@@ -196,63 +196,63 @@ She was on to me just like I was on to her. She was good at that. But I was so f
 
 "I want to know."
 
-"You first," I popped back. “You started at $four two years ago, right?”
+"You first," I popped back. "You started at $four two years ago, right?"
 
-“That’s right.”
+"That’s right."
 
-“And that’s also when $four added its recommendation feature, right?” I asked.
+"And that’s also when $four added its recommendation feature, right?" I asked.
 
-“Soon after, yes,” she said. “I’m pretty much in charge of that. I spearheaded that initiative.”
+"Soon after, yes," she said. "I’m pretty much in charge of that. I spearheaded that initiative."
 
-“You what? Anyways, what databases do you feed off of to figure out the--” I said, interrupted by a person falling and glass breaking.
+"You what? Anyways, what databases do you feed off of to figure out the--" I said, interrupted by a person falling and glass breaking.
 
-“Ouwwwww,” Raiden muttered as he laid on the floor with his broken water glass surrounding his arm.
+"Ouwwwww," Raiden muttered as he laid on the floor with his broken water glass surrounding his arm.
 
-“Oh my god he’s bleeding,” $C said.
+"Oh my god he’s bleeding," $C said.
 
 The night wrapped up quickly after that, with all of us bandaging Raiden’s hand and calling a taxi for $C. I had learned two things that night: one, that she was a dangerous Risk player, and, two, that she was in charge of $four’s recommendation engine. I was on the right track, but I had yet to get any details that I could emulate. There was a lot of thinking to do, so Francis and I headed to the roof.
 
-“But how does a computer beat the best human player at chess?” Francis asked.
+"But how does a computer beat the best human player at chess?" Francis asked.
 
-“It’s a decision tree,” I said. “The machine has the luxury of going through innumerable amounts of possibilities and actually experiencing the outcomes. Then it chooses its favorite next move according to its favorite outcome.”
+"It’s a decision tree," I said. "The machine has the luxury of going through innumerable amounts of possibilities and actually experiencing the outcomes. Then it chooses its favorite next move according to its favorite outcome."
 
-“Then how can the human ever win?” he asked.
+"Then how can the human ever win?" he asked.
 
-“Because, after a few permutations, the possibilities are almost infinite,” I said. “It has to draw the line somewhere so that the game can continue in a reasonable amount of time. And sometimes it draws the line before it figured out the best move.”
+"Because, after a few permutations, the possibilities are almost infinite," I said. "It has to draw the line somewhere so that the game can continue in a reasonable amount of time. And sometimes it draws the line before it figured out the best move."
 
-“Let’s just say,” Francis began, scooting himself back upright on the slanted roof. “Let’s say it could go on forever.”
+"Let’s just say," Francis began, scooting himself back upright on the slanted roof. "Let’s say it could go on forever."
 
-“It could,” I responded. “But no one wants to play a machine that takes *forever* to respond.”
+"It could," I responded. "But no one wants to play a machine that takes *forever* to respond."
 
-“OK,” he said. “Let’s say it had more information. More information on you.”
+"OK," he said. "Let’s say it had more information. More information on you."
 
-“Continue.”
+"Continue."
 
-“Let’s say the machine knew your favorite piece was the knight, and your weakest moments were after Blitzkreig offenses. And it knew you were left-handed and 52% partial to moves on the left side of the board, and when you took a long time that meant you were working on getting your rooks and bishops out into battle.” He was on to something. “If $four, or your app, could combine the machine’s ability to cycle through a billion permutations with the ability to reason with you, to convince you, to misdirect you... that would be unstoppable.”
+"Let’s say the machine knew your favorite piece was the knight, and your weakest moments were after Blitzkreig offenses. And it knew you were left-handed and 52% partial to moves on the left side of the board, and when you took a long time that meant you were working on getting your rooks and bishops out into battle." He was on to something. "If $four, or your app, could combine the machine’s ability to cycle through a billion permutations with the ability to reason with you, to convince you, to misdirect you... that would be unstoppable."
 
-“Fuckin a, man,” I mumbled. It didn’t answer how $four did what it did, but it brought to light the method of a solid future-guessing algorithm. “She said something about a blueprint when I first met her. It’s like the data actually becomes building blocks. Like how our DNA transcribes who we are going to be, from what we have been before, 4.5 billion years in the making.”
+"Fuckin a, man," I mumbled. It didn’t answer how $four did what it did, but it brought to light the method of a solid future-guessing algorithm. "She said something about a blueprint when I first met her. It’s like the data actually becomes building blocks. Like how our DNA transcribes who we are going to be, from what we have been before, 4.5 billion years in the making."
 
-“Sitting on a roof,” he said. I looked at him puzzled as I sealed the rolling paper of my spliff. He was already waiting patiently with his spliff rolled. “And after all those years, this is what the blueprint has for us.” He laughed. “We’re sitting on a roof, a billion years in the making!”
+"Sitting on a roof," he said. I looked at him puzzled as I sealed the rolling paper of my spliff. He was already waiting patiently with his spliff rolled. "And after all those years, this is what the blueprint has for us." He laughed. "We’re sitting on a roof, a billion years in the making!"
 
-“You’re goddamn right!” I shouted. I hoisted myself up to stand on the steep slant, and so did Francis. We raised our plastic football-shaped cups to a toast. “To billions of years of swimming around, and crawling around, and knuckle-dragging around, and --”
+"You’re goddamn right!" I shouted. I hoisted myself up to stand on the steep slant, and so did Francis. We raised our plastic football-shaped cups to a toast. "To billions of years of swimming around, and crawling around, and knuckle-dragging around, and --"
 
-“And the pyramids and being slaves and shit!” Francis said.
+"And the pyramids and being slaves and shit!" Francis said.
 
-“And the fuckin’ wars and the Gold Rush!” I shouted, bringing relevance to our location.
+"And the fuckin’ wars and the Gold Rush!" I shouted, bringing relevance to our location.
 
-“And the railroads!”
+"And the railroads!"
 
-“And the railroads and the undocumented migrant workers building this piece!”
+"And the railroads and the undocumented migrant workers building this piece!"
 
-“And the college! And the house purchase. And the dream app. And the stolen Costco booze!”
+"And the codes! And the house. And the dream app. And the booze!" <-- all of this is showing what the world is, use it!!!
 
-“And the bright idea to climb up here, against our DNA’s best judgment!”
+"And the bright idea to climb up here, against our DNA’s best judgment!"
 
-“And then,” he said in a more conciliatory voice. “And then for us to stand here on--” then his voice rang louder than the rest of the night. “-- Our Pride Rock! Shootin’ the shit just cuz we wanna!”
+"And then," he said in a more conciliatory voice. "And then for us to stand here on--" then his voice rang louder than the rest of the night. "-- Our Pride Rock! Shootin’ the shit just cuz we wanna!"
 
-“Shootin’ the bullshit!” I joined in.
+"Shootin’ the bullshit!" I joined in.
 
-“It’s like DNA can’t even catch us!” he shouted at the sky. “It’s like we’re moving faster than time now!”
+"It’s like DNA can’t even catch us!" he shouted at the sky. "It’s like we’re moving faster than time now!"
 
 Those words hit. Again, he uncovered more clues, mostly accidentally this time. 
 
@@ -260,13 +260,13 @@ It was like we were at a passage where our DNA, the core building blocks for eve
 
 We cheersed and both nearly fell off of the roof right after our plastic glasses collided. Francis slid a lot further than me, his drink following close behind, pouring his whiskey ginger cocktail all over him.
 
-“I’m going down,” Francis said. He tried to move with the inertia he had built from his fall into a seemingly graceful roof exit. I decided I would climb down the tree, the way we had come up.
+"I’m going down," Francis said. He tried to move with the inertia he had built from his fall into a seemingly graceful roof exit. I decided I would climb down the tree, the way we had come up.
 
-“It’s -- AHH! -- AHH!” Francis’ voice went instantly from coherent to a female werewolf’s howl. From my view, it looked like he was adhered to the edge of the roof by his waste, no, his stomach. He was batting at the rooftop, looking for mercy. After a few seconds of that, he finally slipped over the edge as it appeared he had intended to do.
+"It’s -- AHH! -- AHH!" Francis’ voice went instantly from coherent to a female werewolf’s howl. From my view, it looked like he was adhered to the edge of the roof by his waste, no, his stomach. He was batting at the rooftop, looking for mercy. After a few seconds of that, he finally slipped over the edge as it appeared he had intended to do.
 
-I took the last step off the tree and ran over to where he toppled. “Gawl-lee, are you okay?” I asked him as he laid in the dirt on the side of the house.
+I took the last step off the tree and ran over to where he toppled. "Gawl-lee, are you okay?" I asked him as he laid in the dirt on the side of the house.
 
-“It’s over. It’s just over,” he said in a breathless voice. “It’s good now.”
+"It’s over. It’s just over," he said in a breathless voice. "It’s good now."
 
 Francis had apparently caught his jewels on the rain gutter of the house while sliding down, sending him into a whirlwind of panic and disbelief as he was literally hanging from his jewels, with no hope of survival.
 
@@ -278,29 +278,29 @@ I hobbled through the empty funeral parlor toward an open coffin. It looked comf
 
 *
 
-“They’ve been around for a long time,” Britten said as she closed her menu. “They’re still a privately held company. We don’t know what they’re investing in. Now everyone has these phones and everyone has $four. ”
+"They’ve been around for a long time," Britten said as she closed her menu. "They’re still a privately held company. We don’t know what they’re investing in. Now everyone has $four. "
 
-“All of the cool ideas on these devices are based off of data that we have already given it,” I said. “But it’s like $four sees into the future. Or even crazier, it writes it.”
+"All of the cool ideas on these devices are based off of data that we have already given it," I said. "But it’s like $four sees into the future. Or even crazier, it writes it."
 
-“Well then, my next question is very obvious,” she said. “What have you uncovered from your girlfriend?”
+"Well then, my next question is very obvious," she said. "What have you uncovered from your girlfriend?"
 
-I knew the question was coming. “Nothing yet,” I said.
+I knew the question was coming. "Nothing yet," I said.
 
-She smacked her lips together in disappointment, closed her eyes, and took a deep breath. “I believe in what you’re doing. Now I do.” It felt like it was the first time she was talking to me and not chastising me. “And I think you’re right; your girlfriend has the answers we need. It’s that simple.”
+She smacked her lips together in disappointment, closed her eyes, and took a deep breath. "I believe in what you’re doing. Now I do." It felt like it was the first time she was talking to me and not chastising me. "And I think you’re right; your girlfriend has the answers we need. It’s that simple."
 
-“She’s not my girlfriend,” I said.
+"She’s not my girlfriend," I said.
 
-“I don’t give a shit,” she said, returning to her normal demeanor.
+"I don’t give a shit," she said, returning to her normal demeanor.
 
 *
 
-“More reports of meteors around here,” Karl said as he sat in front of the radio, smoking his cigar. “They’re telling people to stay inside.”
+"More reports of meteors around here," Karl said as he sat in front of the radio, smoking his cigar. "They’re telling people to stay inside."
 
-“Smoking cigars inside again?” I asked.
+"Smoking cigars inside again?" I asked.
 
-“There’s meteors outside,” he said. "I can break you off a piece.”
+"There’s meteors outside," he said. "I can break you off a piece."
 
-“Hell yeah.”
+"Hell yeah."
 
 We stood in front of the bay windows overlooking The Bay smoking our half cigars. There were streaks in the sky from meteors that disintegrated in the atmosphere. There were already a few dozen incidents of meteors hitting land. Their remains were extremely valuable. I uncovered that $four had twice already recommended going to places near where the meteors were going to hit. Being there too soon would mean catastrophe, but being there soon after could mean riches.
 
@@ -366,13 +366,13 @@ The freak show was only in town for one night, it had never been there before, a
 
 A phone playing a live video shows up in front of my face. It’s facing me showing me in a cowboy hat and a girl next to me wearing daisy dukes. It’s me and $C on her $fourcam.
 
-“Nice one,” I say. I turn around to hug her. Melody is with her. “That looked pretty real.”
+"Nice one," I say. I turn around to hug her. Melody is with her. "That looked pretty real."
 
-“We’re going to that rodeo tomorrow, remember?” she asks.
+"We’re going to that rodeo tomorrow, remember?" she asks.
 
-“I remember,” I say. “Good job $four. You told it, huh?”
+"I remember," I say. "Good job $four. You told it, huh?"
 
-"It’s getting sooo good!” she says in excitement. “The show’s about to start at the main stage. Let’s get up there! Stay by my side." Melody pulls out a contraption holding jello shots, and they both shoot two each.
+"It’s getting sooo good!" she says in excitement. "The show’s about to start at the main stage. Let’s get up there! Stay by my side." Melody pulls out a contraption holding jello shots, and they both shoot two each.
 
 "Here comes $G," I say, half amused, trying to pay attention through the Goomsense trickle.
 
@@ -498,37 +498,37 @@ I hurry us away from the tent.
 
 Then there’s silence on the earpiece. I inspect it for a mic. There is none. Good. I don’t want $C to see what I have so I put it on my ear and flip my hood over my head.
 
-“Eagle confirmed. Site B1 to D7.”
+"Eagle confirmed. Site B1 to D7."
 
-“Eagle failed. Site B1 to D9. Increase Eclipse on D7. We need her to go to D7.”
+"Eagle failed. Site B1 to D9. Increase Eclipse on D7. We need her to go to D7."
 
-“Eclipse increased on D7.”
+"Eclipse increased on D7."
 
-“Kill $fourcam on all Plaza. People are starting to notice.”
+"Kill $fourcam on all Plaza. People are starting to notice."
 
-“Hey guys, this is Station. We have, uh, I need Game Theory on this. There’s an individual showing 95% Eagle. She has been all night. She's in Plaza. It doesn’t look good. It’s been six hours. Everything accurate, but, uh, it doesn’t look good.”
+"Hey guys, this is Station. We have, uh, I need Game Theory on this. There’s an individual showing 95% Eagle. She has been all night. She's in Plaza. It doesn’t look good. It’s been six hours. Everything accurate, but, uh, it doesn’t look good."
 
-“Station, this is Black. Do not interfere. Carry on.”
+"Station, this is Black. Do not interfere. Carry on."
 
-“10-4.”
+"10-4."
 
 I recognize that voice. That voice is Daemon’s, $four’s CEO. The lingo was cryptic, but I could tell that some of them were worried about something. And Daemon told them to stand down.
 
-“My car’s over here, guys,” Lila said. It wasn’t easy for her to keep us all corralled together as we wandered the parking lot since Karl, Francis, and I were high as kites. And $C and Melody had enjoyed a few Jell-O shots, although Melody was not around.
+"My car’s over here, guys," Lila said. It wasn’t easy for her to keep us all corralled together as we wandered the parking lot since Karl, Francis, and I were high as kites. And $C and Melody had enjoyed a few Jell-O shots, although Melody was not around.
 
 Out of the corner of my eye I saw the girl from the tent, the one who was covered in blood. She was laughing with her friends, stumbling through the parking lot. I wanted to tell her what I saw on her in the tent, and how horrible it was.
 
-“You in the pants!” I shout at her. $C immediately yanks the tassels on my hood to face her square on.
+"You in the pants!" I shout at her. $C immediately yanks the tassels on my hood to face her square on.
 
-“We’re leaving, *right now*,” she tells me with eyes wide open and no smile to show.
+"We’re leaving, *right now*," she tells me with eyes wide open and no smile to show.
 
-“Be safe my friend!” I shout at her again. She didn’t hear me.
+"Be safe my friend!" I shout at her again. She didn’t hear me.
 
-“I just want to lean against a tree with all my friends,” Karl says.
+"I just want to lean against a tree with all my friends," Karl says.
 
-“Yeah me too!” I say.
+"Yeah me too!" I say.
 
-“Me too,” Francis says. "With babies."
+"Me too," Francis says. "With babies."
 
 The drive home was Mr. Toad’s Wild Ride, Goodie Lila at the small helm. Lights flying by, voices drifting in the wind. I stood through the sunroof with my arms spread out screaming at the sky, a galactic spaceship tour of the Milky Way, the now hundreds of meteors racing us down the freeway.
 
@@ -568,7 +568,7 @@ I look around at the others, thoroughly passed out, understandably so. I would b
 
 She raises her eyebrows at me in disinterest.
 
-"You." I point at her just like I did the clown. “You knew. You knew. You did nothing."
+"You." I point at her just like I did the clown. "You knew. You knew. You did nothing."
 
 She wipes the tired from her eyes, comfortably tucked in beneath her blankets.
 
