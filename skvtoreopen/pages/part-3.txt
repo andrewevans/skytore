@@ -32,10 +32,10 @@ There was still one enormous missing thread to this gamified social quilt: how d
 
 *
 
->check-in $A $
+>check-in $AX $
 @ La Rotonde
 
->check-in Bri10 $
+>check-in bri10 $
 @ La Rotonde
 
 "They will need both a sense of purpose and a sense of accomplishment," Britten explained as we sat in front of my favorite cafe. She held a couple Masters degrees in Art Business and Sociology, she was young, cute, and kind of a bitch. "I think this game is ridden with holes. And your main competitor?"
@@ -79,7 +79,7 @@ After some back and forth texts, we decided to meet at a tiki joint that was hip
 >check-in $CX $
 @ Lucky Charm
 
->check-in ander $
+>check-in $AX $
 @ Lucky Charm
 
 "So, tell me, how do you track future movements?" I asked her bluntly after some bites and a small drink that was kind of gross. "This drink is gross."
@@ -115,7 +115,7 @@ We went down the street to an indoor ball field that served fashionable cocktail
 >check-in $CX $
 @ The Edit
 
->check-in $A $
+>check-in $AX $
 @ The Edit
 
 "Because!" she said. "It's just fun. I can't see the future. Why do you care so much anyways?"
@@ -278,10 +278,10 @@ I hobbled through the empty funeral parlor toward an open coffin. It looked comf
 
 *
 
->check-in $A $
+>check-in $AX $
 @ La Rotonde
 
->check-in Bri10 $
+>check-in bri10 $
 @ La Rotonde
 
 "They’ve been around for a long time," Britten said as she closed her menu. "They’re still a privately held company. We don’t know what they’re investing in. Now everyone has $four. "
@@ -380,14 +380,14 @@ A phone playing a live video shows up in front of my face. It’s facing me show
 
 "Here comes $G," I say, half amused, trying to pay attention through the Goomsense trickle.
 
-> $check-in ander
+> check-in $AX $
 @ $G
 
 My phone chimes in my pocket. It says I just checked in to '$G'.
 
 "What the fuck," I say. "$C, why did my phone just check me in to $G?"
 
-> $check-in ander
+> check-in $AX $
 @ $C
 
 I look at her for an answer. She looks at me like she's surprised. Then my phone chimes again. This time it says I've checked in to '$CX'.
@@ -398,7 +398,7 @@ I look at her for an answer. She looks at me like she's surprised. Then my phone
 
 It chimes again.
 
-> $check-in
+> check-in $AX
 @ francix
 
 "It knows who I'm interacting with. Awesome!" I exclaim.
