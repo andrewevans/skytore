@@ -225,7 +225,7 @@ function putData() {
   skvto.setBoxes()
   skvto.setBreaks()
   skvto.setShortBreaks()
-  // skvto.setEm()
+  skvto.setEm()
   skvto.setCheckIns()
   skvto.fillReader()
 }
