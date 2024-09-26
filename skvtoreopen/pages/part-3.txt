@@ -380,14 +380,14 @@ A phone playing a live video shows up in front of my face. It’s facing me show
 
 "Here comes $G," I say, half amused, trying to pay attention through the Goomsense trickle.
 
-> check-in $AX $
+>check-in $AX $
 @ $G
 
 My phone chimes in my pocket. It says I just checked in to '$G'.
 
 "What the fuck," I say. "$C, why did my phone just check me in to $G?"
 
-> check-in $AX $
+>check-in $AX $
 @ $C
 
 I look at her for an answer. She looks at me like she's surprised. Then my phone chimes again. This time it says I've checked in to '$CX'.
@@ -398,7 +398,7 @@ I look at her for an answer. She looks at me like she's surprised. Then my phone
 
 It chimes again.
 
-> check-in $AX
+>check-in $AX
 @ francix
 
 "It knows who I'm interacting with. Awesome!" I exclaim.

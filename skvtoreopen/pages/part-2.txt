@@ -118,7 +118,7 @@ After their greetings we focus back on the show. I waited a few minutes to ask h
 >check-in francix $
 @ The Cotton Gin
 
->check-in ander $
+>check-in $AX $
 @ The Cotton Gin
 
 "Oo la la!" the dummy remarks at $C. She waves at him and closes the door behind her. The crowd laughs. I pretend to laugh.
