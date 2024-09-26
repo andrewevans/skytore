@@ -24,7 +24,7 @@ I walked back inside with my fist clenched in victory. Karl walked out of his ro
 
 I motioned with my hands to let him know I had settled down. "This next go," I said in a calmer voice. "It’s this go. All hell can't stop us now."
 
-I called up my team of three to meet me in the war room on my house’s freshly built second story. It was a flat room with a wooden floor surrounded by windows on all sides, awkwardly poking out the top of my house. The celebration was only minutes long and consisted of all of us shotgunning beers all over the equipment. Then we got back to work. We sat side by side each other along the walls with more monitors than people, more server racks than monitors, and a solid rack of warm ones.
+I called up my team of three to meet me in the war room on my house’s freshly built second story. It was a flat room with a wooden floor surrounded by windows on all sides, awkwardly poking out the top of my house. The celebration was only minutes long and consisted of all of us shotgunning beers all over the equipment. Then we got back to work. We sat side by side each other along the walls with more Glass than people, more server racks than monitors, and a solid rack of warm ones.
 
 Most of the heavy lifting had already been done. Beacons would pop up all around the map from our hundreds of bots pretending to play. We could artificially feed in a park here, destroy a library there, delete some crime across town, or create dozens of check-ins at a nearby historical site.
 
@@ -42,7 +42,7 @@ There was still one enormous missing thread to this gamified social quilt: how d
 
 "$four," I said.
 
-"Yes," she said. "They will sue you. Very quickly."
+"Yes," she said. "They will coin you. Very quickly."
 
 "How do you know?" I asked.
 
@@ -79,10 +79,10 @@ After some back and forth texts, we decided to meet at a tiki joint that was hip
 >check-in $CX $
 @ Lucky Charm
 
->check-in $A $
+>check-in ander $
 @ Lucky Charm
 
-"So, tell me, how do you track future movements?" I asked her bluntly after some tapas and a small drink that was kind of gross. "This drink is gross."
+"So, tell me, how do you track future movements?" I asked her bluntly after some bites and a small drink that was kind of gross. "This drink is gross."
 
 "What do you mean?" she asked.
 
@@ -158,11 +158,11 @@ The walk took a while but we eventually made it through the mildest of drizzling
 
 "I've played a lot of Risk, and according to this guy", she said as she motioned toward me. "I KGB on people through $four."
 
-"Of course you do," Raiden said. "Well. You're playing then. You can be red."
+"Of course you do," Raiden said. "You're playing then. You can be red."
 
 $C was leaning against the pole in the middle of the room with one arm wrapped around it behind her back. She turned toward it and twirled around the pole doing a fly kick trick with ease. When her spinning finished, she looked at me with a smirk and a shrug. She sat down and made herself at home as if I had already agreed that I wanted to play Risk, and play Risk with her involved. She put her coat over her seat and looked at me, waiting for me to sit. I cracked my neck and threw my jacket in the corner and said, "Alright, let's do this. And if I win, you have to teach me that move."
 
-The red can empty beers had piled up. The lines of powdered residue on the table were so obvious a blind person could see it. She had won. There was no contest. Raiden in a distant second.
+The red can empty beers had piled up. The lines of powdered residue on the table were so obvious a blind man could see it. She had won. There was no contest. Raiden in a distant second.
 
 "What is Game Theory exactly?" Raiden asked $C in a slurred, drunken, but polite tone. The three of us were sitting lounged back in our chairs smoking spliffs in defeat as $C sat surprisingly stoked and leaned forward.
 
@@ -182,13 +182,13 @@ The red can empty beers had piled up. The lines of powdered residue on the table
 
 "What about upstairs?" she quickly asked.
 
-She was on to me just like I was on to her. She was good at that. But I was so fucked up it was hard to decipher if she was diving into something or if she was just being inquisitive.
+She was on to me just like I was on to her. She was good at that. But I was so fucked up it was hard to decipher if she was diving into something or just being inquisitive.
 
 "Upstairs?" I said. "Upstairs, also a rape room."
 
 "Can you show me?" she, again, quickly asked.
 
-"You *want* to go to the depths of the second story in a house that is clearly haunted by crunked out dudes who call the basement *and* the second story the 'rape room'?"
+"You *want* to go to the depths of the second story in a house that is clearly haunted by crunked out dudes who call the basement *and* the second story the rape room?"
 
 "Show me."
 
@@ -210,7 +210,7 @@ She was on to me just like I was on to her. She was good at that. But I was so f
 
 "Oh my god he’s bleeding," $C said.
 
-The night wrapped up quickly after that, with all of us bandaging Raiden’s hand and calling a taxi for $C. I had learned two things that night: one, that she was a dangerous Risk player, and, two, that she was in charge of $four’s recommendation engine. I was on the right track, but I had yet to get any details that I could emulate. There was a lot of thinking to do, so Francis and I headed to the roof.
+The night wrapped up quickly after that, with all of us bandaging Raiden’s hand and hailing a taxi for $C. I had learned two things that night: one, that she was a dangerous Risk player, and, two, that she was in charge of $four’s recommendation engine. I was on the right track, but I had yet to get any details that I could emulate. There was a lot of thinking to do, so Francis and I headed to the roof.
 
 "But how does a computer beat the best human player at chess?" Francis asked.
 
@@ -234,7 +234,7 @@ The night wrapped up quickly after that, with all of us bandaging Raiden’s han
 
 "Sitting on a roof," he said. I looked at him puzzled as I sealed the rolling paper of my spliff. He was already waiting patiently with his spliff rolled. "And after all those years, this is what the blueprint has for us." He laughed. "We’re sitting on a roof, a billion years in the making!"
 
-"You’re goddamn right!" I shouted. I hoisted myself up to stand on the steep slant, and so did Francis. We raised our plastic football-shaped cups to a toast. "To billions of years of swimming around, and crawling around, and knuckle-dragging around, and --"
+"You’re goddamn right!" I shouted. I hoisted myself up to stand on the steep slant, and so did Francis. We raised our plastic cups to a toast. "To billions of years of swimming around, and crawling around, and knuckle-dragging around, and --"
 
 "And the pyramids and being slaves and shit!" Francis said.
 
@@ -262,7 +262,7 @@ We cheersed and both nearly fell off of the roof right after our glasses collide
 
 "I’m going down," Francis said. He tried to move with the inertia he had built from his fall into a seemingly graceful roof exit. I decided I would climb down the tree, the way we had come up.
 
-"It’s -- AHH! -- AHH!" Francis’ voice went instantly from coherent to a female werewolf’s howl. From my view, it looked like he was adhered to the edge of the roof by his waste, no, his stomach. He was batting at the rooftop, looking for mercy. After a few seconds of that, he finally slipped over the edge as it appeared he had intended to do.
+"It’s -- AHH! -- AHH!" Francis’ voice went instantly from coherent to a female werewolf’s howl. From my view, it looked like he was adhered to the edge of the roof by his waist, no, his stomach. He was batting at the rooftop, looking for mercy. After a few seconds of that, he finally slipped over the edge as it appeared he had intended to do.
 
 I took the last step off the tree and ran over to where he toppled. "Gawl-lee, are you okay?" I asked him as he laid in the dirt on the side of the house.
 
@@ -277,6 +277,12 @@ He was okay, though, probably.
 I hobbled through the empty funeral parlor toward an open coffin. It looked comfortable. The candles around the room being the only light, off the inside of the casket's cushioned lid I could see the flickering shadow of the body inside. I walked closer, my limp and weak legs slowed my progress. I could see the tailored tuxedo and his dirty shoes. He had a book, a short story, on his chest that he held calmly. His last possession. And his face, it was me. Like standing in front of a mirror I brushed the hair from my face, and then from his. Then I saw as him, through his eyes as I laid in that coffin. The man standing above me was me. His hair grey, his beard unkempt. His lips twitched to hide back his tears. An old man, filled with regret. The coffin closed.
 
 *
+
+>check-in $A $
+@ La Rotonde
+
+>check-in Bri10 $
+@ La Rotonde
 
 "They’ve been around for a long time," Britten said as she closed her menu. "They’re still a privately held company. We don’t know what they’re investing in. Now everyone has $four. "
 
@@ -374,9 +380,15 @@ A phone playing a live video shows up in front of my face. It’s facing me show
 
 "Here comes $G," I say, half amused, trying to pay attention through the Goomsense trickle.
 
+> $check-in ander
+@ $G
+
 My phone chimes in my pocket. It says I just checked in to '$G'.
 
 "What the fuck," I say. "$C, why did my phone just check me in to $G?"
+
+> $check-in ander
+@ $C
 
 I look at her for an answer. She looks at me like she's surprised. Then my phone chimes again. This time it says I've checked in to '$CX'.
 
@@ -386,7 +398,10 @@ I look at her for an answer. She looks at me like she's surprised. Then my phone
 
 It chimes again.
 
-"Ew what?" I wince at my phone. "I checked in to Francix?"
+> $check-in
+@ francix
+
+"It knows who I'm interacting with. Awesome!" I exclaim.
 
 I think I know what's going on. A man with a tablet in his hand steps closer to me looking at my phone. He does the 'kill it' motion to another man wearing a headset.
 
@@ -394,11 +409,7 @@ I think I know what's going on. A man with a tablet in his hand steps closer to 
 
 "Hey man," Karl says. "She's mine."
 
-Chime.
-
-"See?!" I say. "It knows who I'm interacting with. Awesome!"
-
-"Karl hey hi how are you so I says to mables I says," I say to Karl, pretending to have a conversation with him. "We're talking hey hi. Hey -- hmm. Stopped working."
+"Lila hey hi how are you so I says to mables I says," I say to Lila, pretending to have a conversation with her. "We're talking hey hi. Hey -- hmm. Stopped working."
 
 Karl is clearly much farther along on his Goomgsense ingestion than myself. He's playing with the tassels on his sweatshirt.
 
