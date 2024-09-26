@@ -14,7 +14,7 @@ const skvto = {
     a: 'Ander',
     cx: 'caressival',
     c: 'Caresse',
-    g: '4elix',
+    g: '4Élix',
   },
   markdown: {
     block: /\n\n/,
