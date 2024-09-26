@@ -11,6 +11,7 @@ const skvto = {
     fourmeme: 'Vourmeme',
     fourcam: 'Vourcam',
     capital: 'Capital',
+    ax: 'ander',
     a: 'Ander',
     cx: 'caressival',
     c: 'Caresse',
@@ -23,6 +24,7 @@ const skvto = {
     fourmeme: /\$fourmeme/gm,
     fourcam: /\$fourcam/gm,
     capital: /\$capital/gm,
+    ax: /\$AX/gm,
     a: /\$A/gm,
     cx: /\$CX/gm,
     c: /\$C/gm,
@@ -115,6 +117,7 @@ const skvto = {
       block.innerHTML = block.innerHTML.replaceAll(this.markdown.four, this.propers.four)
       block.innerHTML = block.innerHTML.replaceAll(this.markdown.fourmeme, this.propers.fourmeme)
       block.innerHTML = block.innerHTML.replaceAll(this.markdown.g, this.propers.g)
+      block.innerHTML = block.innerHTML.replaceAll(this.markdown.ax, this.propers.ax)
       block.innerHTML = block.innerHTML.replaceAll(this.markdown.a, this.propers.a)
       block.innerHTML = block.innerHTML.replaceAll(this.markdown.cx, this.propers.cx) // Order matters
       block.innerHTML = block.innerHTML.replaceAll(this.markdown.c, this.propers.c)
