@@ -241,6 +241,7 @@ skvto.nav.next.addEventListener("click", event => navClicked(event, 1))
 skvto.nav.previous.addEventListener("click", event => navClicked(event, -1))
 
 function goToNavLink(direction) {
+  synth.cancel()
   window.scrollTo(0,0)
   getData(skvto.page + direction)
 }
@@ -356,7 +357,7 @@ function readText()
 
 function pauseOrPlay()
 {
-  if (!utterThis) {
+  if (!synth.speaking) {
     synth.cancel()
     readText()
   } else if (synth.paused && navigator.userAgent.indexOf('Android') === -1) {
@@ -364,7 +365,6 @@ function pauseOrPlay()
   } else if (navigator.userAgent.indexOf('Android') === -1) {
     synth.pause()
   } else {
-    utterThis = null
     synth.cancel()
   }
 }
