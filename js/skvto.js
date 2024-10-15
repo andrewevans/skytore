@@ -70,6 +70,7 @@ const skvto = {
         const newEl = document.createElement('h2')
         newEl.innerHTML = boxes.join('')
         block = newEl
+        block.addEventListener("click", event => pauseOrPlay(event, 1))
       }
 
       return block
@@ -314,3 +315,57 @@ document.addEventListener("scroll", (event) => {
     ticking = true;
   }
 });
+
+// Text to Speech
+const synth = window.speechSynthesis;
+
+let utterThis = null
+
+function readText()
+{
+  skvto.currentBlocks.forEach((block, index) => {
+
+    utterThis = new SpeechSynthesisUtterance();
+    utterThis.voice = synth.getVoices().find(voice => voice.name === 'Nicky')
+    if (utterThis.voice) {
+      utterThis.rate = 1.1;
+      utterThis.pitch = 1.2;
+    } else {
+      utterThis.voice = synth.getVoices().find(voice => voice.name === 'Moira')
+      utterThis.rate = 0.9;
+      utterThis.pitch = 1.2;
+    }
+
+    utterThis.text = block.innerText
+    utterThis.addEventListener("start", (event) => {
+      block.classList.add('marked')
+
+      if (!isElementInViewport(block)) {
+        block.scrollIntoView({ behavior: 'smooth' })
+      }
+    });
+    
+    utterThis.addEventListener("end", (event) => {
+      block.classList.remove('marked')
+    });
+    synth.speak(utterThis)
+  })
+}
+
+function pauseOrPlay()
+{
+  if (!utterThis) {
+    synth.cancel()
+    readText()
+  } else if (synth.paused) {
+    synth.resume()
+  } else {
+    synth.pause()
+  }
+}
+
+function isElementInViewport(el) {
+  const rect = el.getBoundingClientRect()
+
+  return rect.bottom > 0 && rect.bottom < window.innerHeight
+}

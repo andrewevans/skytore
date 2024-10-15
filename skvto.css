@@ -203,4 +203,18 @@ h2 {
     word-spacing: 600px;
     white-space: pre-line;
     text-align: right;
+    transition: all 0.5s;
+}
+
+p.marked {
+    transition: all 0.5s;
+    color: #121212;
+    background-color: #d3d3d3;
+    scroll-margin-top: 10vh;
+}
+
+aside.marked p {
+    color: #121212;
+    background-color: #d3d3d3;
+    scroll-margin-top: 10vh;
 }
