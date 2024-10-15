@@ -324,6 +324,7 @@ let utterThis = null
 function readText()
 {
   skvto.currentBlocks.forEach((block, index) => {
+    block.classList.remove('marked') // Remove in case the synth was canceled
 
     utterThis = new SpeechSynthesisUtterance();
     utterThis.voice = synth.getVoices().find(voice => voice.name === 'Nicky')
@@ -357,10 +358,13 @@ function pauseOrPlay()
   if (!utterThis) {
     synth.cancel()
     readText()
-  } else if (synth.paused) {
+  } else if (synth.paused && navigator.userAgent.indexOf('Android') === -1) {
     synth.resume()
-  } else {
+  } else if (navigator.userAgent.indexOf('Android') === -1) {
     synth.pause()
+  } else {
+    utterThis = null
+    synth.cancel()
   }
 }
 
