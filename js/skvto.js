@@ -54,6 +54,7 @@ const skvto = {
         const newEl = document.createElement('h1')
         newEl.innerHTML = block.innerHTML.replaceAll(this.markdown.h1, '')
         block = newEl
+        block.addEventListener("click", event => pauseOrPlay(event, 1))
       }
 
       return block
