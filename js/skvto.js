@@ -42,8 +42,9 @@ const skvto = {
   intervalIdOuter: 0,
   setBlocks() {
     this.currentBlocks = this.currentText.split(this.markdown.block)
-    this.currentBlocks = this.currentBlocks.map((block) => {
+    this.currentBlocks = this.currentBlocks.map((block, i) => {
       const el = document.createElement('p')
+      el.setAttribute('block', i.toString())
       el.innerHTML = block
       el.addEventListener("click", event => pauseOrPlay(event, 1))
       return el
@@ -324,9 +325,16 @@ const synth = window.speechSynthesis;
 
 let utterThis = null
 
-function readText()
+function readText(atBlock)
 {
+  const blockValue = atBlock?.block?.value || 0
+  const currentBlocksStartingAt = skvto.currentBlocks.slice(blockValue)
+
   skvto.currentBlocks.forEach((block, index) => {
+    block.classList.remove('marked') // Remove in case the synth was canceled
+  })
+
+  currentBlocksStartingAt.forEach((block, index) => {
     block.classList.remove('marked') // Remove in case the synth was canceled
 
     utterThis = new SpeechSynthesisUtterance();
@@ -356,13 +364,17 @@ function readText()
   })
 }
 
-function pauseOrPlay()
+function pauseOrPlay(event)
 {
+  const atBlock = event.srcElement.attributes
+
   if (!synth.speaking) {
     synth.cancel()
-    readText()
+    readText(atBlock)
   } else if (synth.paused && navigator.userAgent.indexOf('Android') === -1) {
-    synth.resume()
+    synth.cancel()
+    readText(atBlock)
+//    synth.resume()
   } else if (navigator.userAgent.indexOf('Android') === -1) {
     synth.pause()
   } else {
