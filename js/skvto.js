@@ -45,6 +45,7 @@ const skvto = {
     this.currentBlocks = this.currentBlocks.map((block) => {
       const el = document.createElement('p')
       el.innerHTML = block
+      el.addEventListener("click", event => pauseOrPlay(event, 1))
       return el
     })
   },
