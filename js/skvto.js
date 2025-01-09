@@ -333,7 +333,8 @@ function audioSetup()
 {
   if (!(window.track instanceof MediaElementAudioSourceNode)) {
     // get the audio element
-    window.audioElement = document.querySelector("audio");
+    window.audioElement = document.createElement('audio')
+    window.audioElement.src = 'assets/spooky-dinkus.mp3'
     window.audioContext = new AudioContext();
     window.track = window.audioContext.createMediaElementSource(window.audioElement);
 
