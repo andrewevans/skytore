@@ -102,9 +102,10 @@ const skvto = {
     })
   },
   setCheckIns() {
-    this.currentBlocks = this.currentBlocks.map((block) => {
+    this.currentBlocks = this.currentBlocks.map((block, i) => {
       if (this.markdown.checkIn.test(block.innerHTML)) {
         const newEl = document.createElement('aside')
+        newEl.setAttribute('block', i.toString())
         const p = document.createElement('p')
         p.innerHTML = block.innerHTML.replaceAll(this.markdown.checkIn, '')
         p.innerHTML = p.innerHTML.replaceAll(this.markdown.checkInAt, '<br />')
@@ -329,12 +330,25 @@ window.track = {};
 window.audioContext = {}
 window.track = {}
 
-function audioSetup(atBlock)
+function audioSetup(atBlock, audioTitle)
 {
   if (true) {
     // get the audio element
     window.audioElement = document.createElement('audio')
-    window.audioElement.src = 'assets/spooky-dinkus.mp3'
+
+    switch (audioTitle) {
+      case '* * *':
+        window.audioElement.src = 'assets/spooky-dinkus.mp3'
+        break;
+
+      case '*':
+        window.audioElement.src = 'assets/wall-clock-tick-clock.mp3'
+        break;
+
+      default:
+        window.audioElement.src = 'assets/spooky-dinkus.mp3'
+        break;
+    }
     window.audioContext = new AudioContext();
     window.track = window.audioContext.createMediaElementSource(window.audioElement);
 
@@ -402,8 +416,8 @@ function readText(atBlock)
         block.scrollIntoView({ behavior: 'smooth' })
       }
 
-      if (utterThis.text === '') {
-        audioSetup(currentBlocksStartingAt[index + 1])
+      if (block?.dataset?.val) {
+        audioSetup(currentBlocksStartingAt[index + 1], block.dataset.val)
         synth.cancel()
         window.audioElement.play()
       }
