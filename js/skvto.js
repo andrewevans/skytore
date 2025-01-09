@@ -329,7 +329,7 @@ window.track = {};
 window.audioContext = {}
 window.track = {}
 
-function audioSetup()
+function audioSetup(atBlock)
 {
   if (!(window.track instanceof MediaElementAudioSourceNode)) {
     // get the audio element
@@ -359,7 +359,7 @@ function audioSetup()
     window.audioElement.addEventListener(
       "ended",
       () => {
-        synth.resume()
+        pauseForAudio(atBlock)
       },
       false,
     );
@@ -371,9 +371,7 @@ function audioSetup()
 
 function readText(atBlock)
 {
-  audioSetup()
-
-  const blockValue = atBlock?.block?.value || 0
+  const blockValue = atBlock?.block?.value || atBlock?.attributes?.block?.value || 0
   const currentBlocksStartingAt = skvto.currentBlocks.slice(blockValue)
 
   skvto.currentBlocks.forEach((block, index) => {
@@ -405,8 +403,9 @@ function readText(atBlock)
       }
 
       if (utterThese[index].text === '') {
-        synth.pause()
-        window.audioElement.play();
+        audioSetup(currentBlocksStartingAt[index + 1])
+        synth.cancel()
+        window.audioElement.play()
       }
     });
 
@@ -416,6 +415,15 @@ function readText(atBlock)
 
     synth.speak(utterThis)
   })
+}
+
+function pauseForAudio(atBlock)
+{
+  synth.cancel()
+
+  if (!synth.speaking) {
+    readText(atBlock)
+  }
 }
 
 function pauseOrPlay(event)
