@@ -323,10 +323,55 @@ document.addEventListener("scroll", (event) => {
 // Text to Speech
 const synth = window.speechSynthesis;
 
-let utterThis = null
+let utterThese = []
+
+window.track = {};
+window.audioContext = {}
+window.track = {}
+
+function audioSetup()
+{
+  if (!(window.track instanceof MediaElementAudioSourceNode)) {
+    // get the audio element
+    window.audioElement = document.querySelector("audio");
+    window.audioContext = new AudioContext();
+    window.track = window.audioContext.createMediaElementSource(window.audioElement);
+
+    window.panner = new StereoPannerNode(window.audioContext)
+
+    window.track.connect(window.panner).connect(window.audioContext.destination);
+
+    window.audioElement.addEventListener("timeupdate", (event) => {
+      if (window.audioElement.currentTime > 5) {
+        window.audioElement.ended = true
+      }
+
+      window.panner.pan.value = Math.max(-1, window.panner.pan.value - 0.1)
+
+      if (window.panner.pan.value > -1 && window.panner.pan.value < 0) {
+        window.audioElement.volume = Math.max(window.audioElement.volume - 0.1, 0)
+      } else if (window.panner.pan.value >= 0 && window.panner.pan.value < 1) {
+        window.audioElement.volume = Math.min(window.audioElement.volume + 0.1, 1)
+      }
+    });
+
+    window.audioElement.addEventListener(
+      "ended",
+      () => {
+        synth.resume()
+      },
+      false,
+    );
+  }
+
+  window.panner.pan.value = 1
+  window.audioElement.volume = 0.2
+}
 
 function readText(atBlock)
 {
+  audioSetup()
+
   const blockValue = atBlock?.block?.value || 0
   const currentBlocksStartingAt = skvto.currentBlocks.slice(blockValue)
 
@@ -337,7 +382,7 @@ function readText(atBlock)
   currentBlocksStartingAt.forEach((block, index) => {
     block.classList.remove('marked') // Remove in case the synth was canceled
 
-    utterThis = new SpeechSynthesisUtterance();
+    let utterThis = new SpeechSynthesisUtterance();
     utterThis.voice = synth.getVoices().find(voice => voice.name === 'Nicky')
     if (utterThis.voice) {
       utterThis.rate = 1.1;
@@ -349,17 +394,25 @@ function readText(atBlock)
     }
 
     utterThis.text = block.innerText
+    utterThese.push(utterThis)
+
     utterThis.addEventListener("start", (event) => {
       block.classList.add('marked')
 
       if (!isElementInViewport(block)) {
         block.scrollIntoView({ behavior: 'smooth' })
       }
+
+      if (utterThese[index].text === '') {
+        synth.pause()
+        window.audioElement.play();
+      }
     });
-    
+
     utterThis.addEventListener("end", (event) => {
       block.classList.remove('marked')
     });
+
     synth.speak(utterThis)
   })
 }
