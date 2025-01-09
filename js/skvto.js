@@ -331,7 +331,7 @@ window.track = {}
 
 function audioSetup(atBlock)
 {
-  if (!(window.track instanceof MediaElementAudioSourceNode)) {
+  if (true) {
     // get the audio element
     window.audioElement = document.createElement('audio')
     window.audioElement.src = 'assets/spooky-dinkus.mp3'
@@ -402,7 +402,7 @@ function readText(atBlock)
         block.scrollIntoView({ behavior: 'smooth' })
       }
 
-      if (utterThese[index].text === '') {
+      if (utterThis.text === '') {
         audioSetup(currentBlocksStartingAt[index + 1])
         synth.cancel()
         window.audioElement.play()
