@@ -264,7 +264,6 @@ async function getData(newPage) {
 
     skvto.currentText = await response.text()
     skvto.page = newPage
-
     updateUrl()
     putData()
   } catch (error) {
@@ -273,8 +272,11 @@ async function getData(newPage) {
 }
 
 function updateNav() {
-  pageNavigator.nav.next.href = new URL(document.URL).searchParams.set('page', (skvto.page + 1).toString())
-  pageNavigator.nav.previous.href = new URL(document.URL).searchParams.set('page', (skvto.page + 1).toString())
+  const newPageUrl = new URL(document.URL)
+  newPageUrl.searchParams.set('page', (skvto.page + 1).toString())
+  pageNavigator.nav.next.href = newPageUrl
+  newPageUrl.searchParams.set('page', (skvto.page - 1).toString())
+  pageNavigator.nav.previous.href = newPageUrl
 }
 
 function updateUrl() {
@@ -377,7 +379,6 @@ function readText(atBlock) {
 
   currentBlocksStartingAt.forEach((block, index) => {
     block.classList.remove('marked') // Remove in case the synth was canceled
-
     let utterThis = new SpeechSynthesisUtterance();
     utterThis.voice = synth.getVoices().find(voice => voice.name === 'Nicky')
     if (utterThis.voice) {
