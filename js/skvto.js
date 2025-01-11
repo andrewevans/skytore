@@ -38,7 +38,7 @@ const skvto = {
   intervalIdOuter: 0,
   pauseOrPlay: function (event) {
     skvto.audio.audioStop()
-    const atBlock = event.srcElement.attributes
+    const atBlock = event.target.attributes
 
     if (!synth.speaking) {
       synth.cancel()
@@ -320,7 +320,7 @@ const pageNavigator = {
     synth.cancel()
     skvto.audio.audioStop()
     window.scrollTo(0, 0)
-    getData(skvto.page + direction)
+    getData(skvto.page + direction).then()
   },
   navClicked: function (event, direction) {
     event.preventDefault()
@@ -454,6 +454,6 @@ skvto.init()
 // Text to Speech
 const synth = window.speechSynthesis;
 let utterThese = []
-getData(skvto.page)
+getData(skvto.page).then()
 pageNavigator.init()
 backgroundMotion.init()
