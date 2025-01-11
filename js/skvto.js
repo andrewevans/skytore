@@ -442,6 +442,7 @@ function readText(atBlock) {
 
 
 function pauseOrPlay(event) {
+  skvto.audio.audioStop()
   const atBlock = event.srcElement.attributes
 
   if (!synth.speaking) {
