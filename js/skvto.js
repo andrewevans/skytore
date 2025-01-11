@@ -68,7 +68,7 @@ const skvto = {
         const boxes = Array.from(block.innerHTML)
         const boxLength = boxes.length
         // 4 = block size, 2 = width of block aka sq root of block size
-        const breakAt = (Math.floor(boxLength/4) * 2) + Math.min(2, boxLength % 4)
+        const breakAt = (Math.floor(boxLength / 4) * 2) + Math.min(2, boxLength % 4)
         boxes.splice(breakAt, 0, ' ')
         const newEl = document.createElement('h2')
         newEl.innerHTML = boxes.join('')
@@ -131,20 +131,20 @@ const skvto = {
   },
   setEm() {
     this.currentBlocks.forEach((block) => {
-        block.innerHTML = block.innerHTML.replace(this.markdown.em, "<i>$1<\/i>")
+      block.innerHTML = block.innerHTML.replace(this.markdown.em, "<i>$1<\/i>")
     })
   },
   audio: {
     track: {},
     audioContext: {},
     audioElement: {},
-    audioLength: 2,
+    audioLength: 5,
     breakAudio: [
       {
         audioTitle: '',
         audioAsset: 'assets/wall-clock-tick.mp3',
         direction: 0,
-        panner(pannerPanValue) {
+        panner() {
           return 0
         },
       },
@@ -308,7 +308,7 @@ skvto.nav.previous.addEventListener("click", event => navClicked(event, -1))
 
 function goToNavLink(direction) {
   synth.cancel()
-  window.scrollTo(0,0)
+  window.scrollTo(0, 0)
   getData(skvto.page + direction)
 }
 
@@ -389,8 +389,7 @@ const synth = window.speechSynthesis;
 
 let utterThese = []
 
-function readText(atBlock)
-{
+function readText(atBlock) {
   const blockValue = atBlock?.block?.value || atBlock?.attributes?.block?.value || 0
   const currentBlocksStartingAt = skvto.currentBlocks.slice(blockValue)
 
@@ -419,7 +418,7 @@ function readText(atBlock)
       block.classList.add('marked')
 
       if (!isElementInViewport(block)) {
-        block.scrollIntoView({ behavior: 'smooth' })
+        block.scrollIntoView({behavior: 'smooth'})
       }
 
       if (block?.dataset?.val) {
@@ -438,8 +437,7 @@ function readText(atBlock)
 }
 
 
-function pauseOrPlay(event)
-{
+function pauseOrPlay(event) {
   const atBlock = event.srcElement.attributes
 
   if (!synth.speaking) {
