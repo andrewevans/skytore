@@ -134,6 +134,69 @@ const skvto = {
         block.innerHTML = block.innerHTML.replace(this.markdown.em, "<i>$1<\/i>")
     })
   },
+  audio: {
+    track: {},
+    audioContext: {},
+    audioElement: {},
+    audioLength: 2,
+    breakAudio: [
+      {
+        audioTitle: '',
+        audioAsset: 'assets/wall-clock-tick.mp3',
+        direction: 0,
+        panner(pannerPanValue) {
+          return 0
+        },
+      },
+      {
+        audioTitle: '* * *',
+        audioAsset: 'assets/spooky-dinkus.mp3',
+        direction: 1,
+        panner(pannerPanValue) {
+          return Math.max(-1, pannerPanValue - 0.1)
+        },
+      },
+      {
+        audioTitle: '*',
+        audioAsset: 'assets/old-radio-static-noise-short.mp4',
+        direction: -1,
+        panner(pannerPanValue) {
+          return Math.min(1, pannerPanValue + 0.1)
+        },
+      },
+    ],
+    audioPlay() {
+      this.audioElement.play()
+    },
+    audioSetup(atBlock, audioTitle) {
+      this.audioContext = new AudioContext();
+      this.audioElement = document.createElement('audio')
+      this.track = this.audioContext.createMediaElementSource(this.audioElement);
+      let playBackIteration = 1
+      let audioIsCut = false
+      const breakAudio = this.breakAudio.find(each => each.audioTitle === audioTitle) || this.breakAudio[0]
+      this.audioElement.src = breakAudio.audioAsset
+      this.audioElement.volume = 0.2
+
+      const panner = new StereoPannerNode(this.audioContext, {pan: breakAudio.direction || 0})
+      this.track.connect(panner).connect(this.audioContext.destination);
+
+      this.audioElement.addEventListener("timeupdate", (event) => {
+        if (this.audioElement.currentTime > this.audioLength && !audioIsCut) {
+          this.audioElement.currentTime = this.audioElement.duration
+          audioIsCut = true
+        }
+
+        panner.pan.value = breakAudio.panner(panner.pan.value)
+        this.audioElement.volume = (playBackIteration > 0 && playBackIteration <= 1) ? Math.min(this.audioElement.volume + 0.1, 1) : Math.max(this.audioElement.volume - 0.1, 0)
+        playBackIteration = (this.audioElement.volume >= 1) ? 0 : playBackIteration - 0.1
+      });
+
+      this.audioElement.addEventListener("ended", () => {
+        readText(atBlock)
+      });
+    },
+  },
   fillReader() {
     this.reader.replaceChildren()
 
@@ -326,49 +389,6 @@ const synth = window.speechSynthesis;
 
 let utterThese = []
 
-window.track = {};
-window.audioContext = {}
-window.track = {}
-
-function audioSetup(atBlock, audioTitle) {
-  window.audioElement = document.createElement('audio')
-  switch (audioTitle) {
-    case '* * *':
-      window.audioElement.src = 'assets/spooky-dinkus.mp3'
-      break;
-    case '*':
-      window.audioElement.src = 'assets/old-radio-static-noise.mp4'
-      break;
-    default:
-      window.audioElement.src = 'assets/spooky-dinkus.mp3'
-      break;
-  }
-  window.audioContext = new AudioContext();
-  window.track = window.audioContext.createMediaElementSource(window.audioElement);
-  window.panner = new StereoPannerNode(window.audioContext)
-  window.track.connect(window.panner).connect(window.audioContext.destination);
-  window.audioElement.addEventListener("timeupdate", (event) => {
-    if (window.audioElement.currentTime > 5) {
-      window.audioElement.ended = true
-    }
-    window.panner.pan.value = Math.max(-1, window.panner.pan.value - 0.1)
-    if (window.panner.pan.value > -1 && window.panner.pan.value < 0) {
-      window.audioElement.volume = Math.max(window.audioElement.volume - 0.1, 0)
-    } else if (window.panner.pan.value >= 0 && window.panner.pan.value < 1) {
-      window.audioElement.volume = Math.min(window.audioElement.volume + 0.1, 1)
-    }
-  });
-  window.audioElement.addEventListener(
-    "ended",
-    () => {
-      pauseForAudio(atBlock)
-    },
-    false,
-  );
-  window.panner.pan.value = 1
-  window.audioElement.volume = 0.2
-}
-
 function readText(atBlock)
 {
   const blockValue = atBlock?.block?.value || atBlock?.attributes?.block?.value || 0
@@ -403,9 +423,9 @@ function readText(atBlock)
       }
 
       if (block?.dataset?.val) {
-        audioSetup(currentBlocksStartingAt[index + 1], block.dataset.val)
         synth.cancel()
-        window.audioElement.play()
+        skvto.audio.audioSetup(currentBlocksStartingAt[index + 1], block.dataset.val)
+        skvto.audio.audioPlay()
       }
     });
 
@@ -417,14 +437,6 @@ function readText(atBlock)
   })
 }
 
-function pauseForAudio(atBlock)
-{
-  synth.cancel()
-
-  if (!synth.speaking) {
-    readText(atBlock)
-  }
-}
 
 function pauseOrPlay(event)
 {
@@ -433,12 +445,6 @@ function pauseOrPlay(event)
   if (!synth.speaking) {
     synth.cancel()
     readText(atBlock)
-  } else if (synth.paused && navigator.userAgent.indexOf('Android') === -1) {
-    synth.cancel()
-    readText(atBlock)
-//    synth.resume()
-  } else if (navigator.userAgent.indexOf('Android') === -1) {
-    synth.pause()
   } else {
     synth.cancel()
   }
