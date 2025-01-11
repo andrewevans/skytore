@@ -25,11 +25,11 @@ const skvto = {
     cx: /\$CX/gm,
     c: /\$C/gm,
     g: /\$G/gm,
-    box: /\■/,
+    box: /■/,
     break: /\* \* \*/,
     shortBreak: /^\*$/,
     em: /\*([^*]+?)\*/g,
-    checkIn: /\&gt\;/gm,
+    checkIn: /&gt;/gm,
     checkInAt: /\n/gm,
   },
   currentText: '',
@@ -138,7 +138,7 @@ const skvto = {
   },
   setEm() {
     this.currentBlocks.forEach((block) => {
-      block.innerHTML = block.innerHTML.replace(this.markdown.em, "<i>$1<\/i>")
+      block.innerHTML = block.innerHTML.replace(this.markdown.em, "<i>$1</i>")
     })
   },
   audio: {
@@ -191,7 +191,7 @@ const skvto = {
       const panner = new StereoPannerNode(audioContext, {pan: breakAudio.direction || 0})
       track.connect(panner).connect(audioContext.destination);
 
-      this.audioElement.addEventListener("timeupdate", (event) => {
+      this.audioElement.addEventListener("timeupdate", () => {
         if (this.audioElement.currentTime > audioLength && !audioIsCut) {
           this.audioElement.currentTime = this.audioElement.duration
           audioIsCut = true
@@ -280,9 +280,9 @@ function updateNav() {
   const newPageUrl = new URL(document.URL)
 
   newPageUrl.searchParams.set('page', (skvto.page + 1).toString())
-  navigation.nav.next.href = newPageUrl
+  pageNavigator.nav.next.href = newPageUrl
   newPageUrl.searchParams.set('page', (skvto.page - 1).toString())
-  navigation.nav.previous.href = newPageUrl
+  pageNavigator.nav.previous.href = newPageUrl
 }
 
 function updateUrl() {
@@ -309,7 +309,7 @@ function putData() {
   skvto.fillReader()
 }
 
-const navigation = {
+const pageNavigator = {
   touchstartX: 0,
   touchendX: 0,
   nav: {
@@ -382,7 +382,7 @@ const backgroundMotion = {
     document.getElementById('all').style.backgroundPositionY = `${scrollPos}px`
   },
   init: function () {
-    document.addEventListener("scroll", (event) => {
+    document.addEventListener("scroll", () => {
       this.lastKnownScrollPosition = window.scrollY;
 
       if (!this.ticking) {
@@ -401,7 +401,7 @@ function readText(atBlock) {
   const blockValue = atBlock?.block?.value || atBlock?.attributes?.block?.value || 0
   const currentBlocksStartingAt = skvto.currentBlocks.slice(blockValue)
 
-  skvto.currentBlocks.forEach((block, index) => {
+  skvto.currentBlocks.forEach((block) => {
     block.classList.remove('marked') // Remove in case the synth was canceled
   })
 
@@ -422,7 +422,7 @@ function readText(atBlock) {
     utterThis.text = block.innerText
     utterThese.push(utterThis)
 
-    utterThis.addEventListener("start", (event) => {
+    utterThis.addEventListener("start", () => {
       block.classList.add('marked')
 
       if (!isElementInViewport(block)) {
@@ -436,7 +436,7 @@ function readText(atBlock) {
       }
     });
 
-    utterThis.addEventListener("end", (event) => {
+    utterThis.addEventListener("end", () => {
       block.classList.remove('marked')
     });
 
@@ -455,5 +455,5 @@ skvto.init()
 const synth = window.speechSynthesis;
 let utterThese = []
 getData(skvto.page)
-navigation.init()
+pageNavigator.init()
 backgroundMotion.init()
