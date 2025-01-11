@@ -326,7 +326,7 @@ const navigation = {
     window.scrollTo(0, 0)
     getData(skvto.page + direction)
   },
-  navClicked: function(event, direction) {
+  navClicked: function (event, direction) {
     event.preventDefault()
     skvto.reader.replaceChildren()
     this.goToNavLink(direction)
@@ -387,7 +387,7 @@ const backgroundMotion = {
   doSomething: function (scrollPos) {
     document.getElementById('all').style.backgroundPositionY = `${scrollPos}px`
   },
-  init: function() {
+  init: function () {
     document.addEventListener("scroll", (event) => {
       this.lastKnownScrollPosition = window.scrollY;
 
