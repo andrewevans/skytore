@@ -40,13 +40,24 @@ const skvto = {
   currentBlocks: [],
   intervalId: 0,
   intervalIdOuter: 0,
+  pauseOrPlay: function (event) {
+    skvto.audio.audioStop()
+    const atBlock = event.srcElement.attributes
+
+    if (!synth.speaking) {
+      synth.cancel()
+      readText(atBlock)
+    } else {
+      synth.cancel()
+    }
+  },
   setBlocks() {
     this.currentBlocks = this.currentText.split(this.markdown.block)
     this.currentBlocks = this.currentBlocks.map((block, i) => {
       const el = document.createElement('p')
       el.setAttribute('block', i.toString())
       el.innerHTML = block
-      el.addEventListener("click", event => pauseOrPlay(event, 1))
+      el.addEventListener("click", event => this.pauseOrPlay(event, 1))
       return el
     })
   },
@@ -56,7 +67,7 @@ const skvto = {
         const newEl = document.createElement('h1')
         newEl.innerHTML = block.innerHTML.replaceAll(this.markdown.h1, '')
         block = newEl
-        block.addEventListener("click", event => pauseOrPlay(event, 1))
+        block.addEventListener("click", event => this.pauseOrPlay(event, 1))
       }
 
       return block
@@ -73,7 +84,7 @@ const skvto = {
         const newEl = document.createElement('h2')
         newEl.innerHTML = boxes.join('')
         block = newEl
-        block.addEventListener("click", event => pauseOrPlay(event, 1))
+        block.addEventListener("click", event => this.pauseOrPlay(event, 1))
       }
 
       return block
@@ -306,87 +317,93 @@ function putData() {
 
 getData(skvto.page)
 
-skvto.nav.next.addEventListener("click", event => navClicked(event, 1))
-skvto.nav.previous.addEventListener("click", event => navClicked(event, -1))
-
-function goToNavLink(direction) {
-  synth.cancel()
-  skvto.audio.audioStop()
-  window.scrollTo(0, 0)
-  getData(skvto.page + direction)
-}
-
-function navClicked(event, direction) {
-  event.preventDefault()
-  skvto.reader.replaceChildren()
-  goToNavLink(direction)
-}
-
-window.addEventListener(
-  "keydown",
-  (event) => {
-    if (event.defaultPrevented) {
-      return; // Do nothing if the event was already processed
-    }
-
-    switch (event.key) {
-      case "ArrowLeft":
-        goToNavLink(-1)
-        break;
-      case "ArrowRight":
-        goToNavLink(1)
-        break;
-      default:
-        return; // Quit when this doesn't handle the key event.
-    }
-
-    // Cancel the default action to avoid it being handled twice
-    event.preventDefault();
+const navigation = {
+  touchstartX: 0,
+  touchendX: 0,
+  goToNavLink: function (direction) {
+    synth.cancel()
+    skvto.audio.audioStop()
+    window.scrollTo(0, 0)
+    getData(skvto.page + direction)
   },
-  true,
-)
+  navClicked: function(event, direction) {
+    event.preventDefault()
+    skvto.reader.replaceChildren()
+    this.goToNavLink(direction)
+  },
+  checkDirection: function () {
+    if (this.touchendX < this.touchstartX && 150 < (this.touchstartX - this.touchendX)) {
+      this.goToNavLink(1)
+    }
 
-let touchstartX = 0
-let touchendX = 0
+    if (this.touchendX > this.touchstartX && 150 < (this.touchendX - this.touchstartX)) {
+      this.goToNavLink(-1)
+    }
+  },
+  init: function () {
+    window.addEventListener(
+      "keydown",
+      (event) => {
+        if (event.defaultPrevented) {
+          return; // Do nothing if the event was already processed
+        }
 
-function checkDirection() {
-  if (touchendX < touchstartX && 150 < (touchstartX - touchendX)) {
-    goToNavLink(1)
-  }
+        switch (event.key) {
+          case "ArrowLeft":
+            this.goToNavLink(-1)
+            break;
+          case "ArrowRight":
+            this.goToNavLink(1)
+            break;
+          default:
+            return; // Quit when this doesn't handle the key event.
+        }
 
-  if (touchendX > touchstartX && 150 < (touchendX - touchstartX)) {
-    goToNavLink(-1)
-  }
+        // Cancel the default action to avoid it being handled twice
+        event.preventDefault();
+      },
+      true,
+    )
+
+    document.addEventListener('touchstart', e => {
+      this.touchstartX = e.changedTouches[0].screenX
+    })
+
+    document.addEventListener('touchend', e => {
+      this.touchendX = e.changedTouches[0].screenX
+      this.checkDirection()
+    })
+
+    skvto.nav.next.addEventListener("click", event => this.navClicked(event, 1))
+    skvto.nav.previous.addEventListener("click", event => this.navClicked(event, -1))
+  },
 }
 
-document.addEventListener('touchstart', e => {
-  touchstartX = e.changedTouches[0].screenX
-})
+navigation.init()
 
-document.addEventListener('touchend', e => {
-  touchendX = e.changedTouches[0].screenX
-  checkDirection()
-})
+const backgroundMotion = {
+  lastKnownScrollPosition: 0,
+  ticking: false,
+  doSomething: function (scrollPos) {
+    document.getElementById('all').style.backgroundPositionY = `${scrollPos}px`
+  },
+  init: function() {
+    document.addEventListener("scroll", (event) => {
+      this.lastKnownScrollPosition = window.scrollY;
 
-let lastKnownScrollPosition = 0;
-let ticking = false;
+      if (!this.ticking) {
+        window.requestAnimationFrame(() => {
+          this.doSomething(this.lastKnownScrollPosition);
+          this.ticking = false;
+        });
 
-function doSomething(scrollPos) {
-  document.getElementById('all').style.backgroundPositionY = `${scrollPos}px`
-}
-
-document.addEventListener("scroll", (event) => {
-  lastKnownScrollPosition = window.scrollY;
-
-  if (!ticking) {
-    window.requestAnimationFrame(() => {
-      doSomething(lastKnownScrollPosition);
-      ticking = false;
+        this.ticking = true;
+      }
     });
-
-    ticking = true;
   }
-});
+}
+
+backgroundMotion.init()
 
 // Text to Speech
 const synth = window.speechSynthesis;
@@ -438,19 +455,6 @@ function readText(atBlock) {
 
     synth.speak(utterThis)
   })
-}
-
-
-function pauseOrPlay(event) {
-  skvto.audio.audioStop()
-  const atBlock = event.srcElement.attributes
-
-  if (!synth.speaking) {
-    synth.cancel()
-    readText(atBlock)
-  } else {
-    synth.cancel()
-  }
 }
 
 function isElementInViewport(el) {
