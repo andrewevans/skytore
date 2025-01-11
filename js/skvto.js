@@ -257,6 +257,9 @@ const skvto = {
 
 async function getData(newPage) {
   const url = `pages/part-${newPage}.txt`;
+  clearInterval(skvto.intervalId);
+  clearInterval(skvto.intervalIdOuter);
+
   try {
     const response = await fetch(url);
 
@@ -264,8 +267,6 @@ async function getData(newPage) {
       throw new Error(`Response status: ${response.status}`);
     }
 
-    clearInterval(skvto.intervalId);
-    clearInterval(skvto.intervalIdOuter);
     skvto.currentText = await response.text()
     skvto.page = newPage
 
@@ -320,6 +321,7 @@ const pageNavigator = {
     synth.cancel()
     skvto.audio.audioStop()
     window.scrollTo(0, 0)
+    skvto.reader.replaceChildren()
     getData(skvto.page + direction).then()
   },
   navClicked: function (event, direction) {
