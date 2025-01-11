@@ -117,7 +117,6 @@ const skvto = {
         p.innerHTML = block.innerHTML.replaceAll(this.markdown.checkIn, '')
         p.innerHTML = p.innerHTML.replaceAll(this.markdown.checkInAt, '<br />')
         newEl.innerHTML = p.outerHTML
-
         block = newEl
       }
 
@@ -229,7 +228,6 @@ const skvto = {
       } else {
         newBlock.innerHTML = innerHTML
         newBlock.removeAttribute('style') // This removes the attribute regardless of what's in it
-
         innerCount = 0
         doOuterThing()
       }
@@ -262,9 +260,7 @@ async function getData(newPage) {
   try {
     const response = await fetch(url);
 
-    if (!response.ok) {
-      throw new Error(`Response status: ${response.status}`);
-    }
+    if (!response.ok) throw new Error(`Response status: ${response.status}`)
 
     skvto.currentText = await response.text()
     skvto.page = newPage
@@ -422,8 +418,7 @@ function isElementInViewport(el) {
 }
 
 skvto.init()
-// Text to Speech
-const synth = window.speechSynthesis;
+const synth = window.speechSynthesis; // Text to Speech
 let utterThese = []
 getData(skvto.page).then()
 pageNavigator.init()
