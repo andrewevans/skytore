@@ -52,7 +52,7 @@ One of the biggest missing components was whether the game had a victory for a p
 
 The prototype now had just enough of a heartbeat to trek wildly into the unknown, but I didn't expect them to know where it could go. I didn't know either.
 
-* * *
+*
 
 The night had begun. We lit our spliffs and began the walk to The Gin.
 
