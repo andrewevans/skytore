@@ -198,7 +198,9 @@ const skvto = {
         }
 
         panner.pan.value = breakAudio.panner(panner.pan.value)
-        this.audioElement.volume = (playBackIteration > 0 && playBackIteration <= 1) ? Math.min(this.audioElement.volume + 0.1, 1) : Math.max(this.audioElement.volume - 0.1, 0)
+        this.audioElement.volume = (playBackIteration > 0 && playBackIteration <= 1) ?
+          Math.min(this.audioElement.volume + 0.1, 1) :
+          Math.max(this.audioElement.volume - 0.1, 0)
         playBackIteration = (this.audioElement.volume >= 1) ? 0 : playBackIteration - 0.1
       });
 
