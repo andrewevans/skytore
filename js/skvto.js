@@ -257,8 +257,6 @@ const skvto = {
   },
 }
 
-skvto.init()
-
 async function getData(newPage) {
   const url = `pages/part-${newPage}.txt`;
   try {
@@ -312,8 +310,6 @@ function putData() {
   skvto.setCheckIns()
   skvto.fillReader()
 }
-
-getData(skvto.page)
 
 const navigation = {
   touchstartX: 0,
@@ -377,8 +373,6 @@ const navigation = {
   },
 }
 
-navigation.init()
-
 const backgroundMotion = {
   lastKnownScrollPosition: 0,
   ticking: false,
@@ -400,13 +394,6 @@ const backgroundMotion = {
     });
   }
 }
-
-backgroundMotion.init()
-
-// Text to Speech
-const synth = window.speechSynthesis;
-
-let utterThese = []
 
 function readText(atBlock) {
   const blockValue = atBlock?.block?.value || atBlock?.attributes?.block?.value || 0
@@ -460,3 +447,11 @@ function isElementInViewport(el) {
 
   return rect.bottom > 0 && rect.bottom < window.innerHeight
 }
+
+skvto.init()
+// Text to Speech
+const synth = window.speechSynthesis;
+let utterThese = []
+getData(skvto.page)
+navigation.init()
+backgroundMotion.init()
