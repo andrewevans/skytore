@@ -227,7 +227,6 @@ const skvto = {
       newBlock.style.fontFamily = '"Webdings-Regular"'
       newBlock.style.color = '#808080'
       if ((innerCount * 15 + (outerCount) * 15) <= innerHTML.length) {
-
         innerCount++
         this.intervalId = setTimeout(doInnerThing, 5, newBlock, innerHTML)
       } else {
@@ -248,7 +247,6 @@ const skvto = {
         newBlock.innerHTML = '■'
         this.intervalIdOuter = setTimeout(doInnerThing, 5, newBlock, innerHTML)
         outerCount++
-      } else {
       }
     }.bind(this)
 
@@ -285,9 +283,9 @@ async function getData(newPage) {
 function updateNav() {
   const newPageUrl = new URL(document.URL)
 
-  newPageUrl.searchParams.set('page', skvto.page + 1)
+  newPageUrl.searchParams.set('page', (skvto.page + 1).toString())
   skvto.nav.next.href = newPageUrl
-  newPageUrl.searchParams.set('page', skvto.page - 1)
+  newPageUrl.searchParams.set('page', (skvto.page - 1).toString())
   skvto.nav.previous.href = newPageUrl
 }
 
