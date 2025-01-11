@@ -135,10 +135,8 @@ const skvto = {
     })
   },
   audio: {
-    track: {},
-    audioContext: {},
     audioElement: {},
-    audioLength: 5,
+    audioEnded: false,
     breakAudio: [
       {
         audioTitle: '',
@@ -165,24 +163,29 @@ const skvto = {
         },
       },
     ],
+    audioStop() {
+      this.audioElement.currentTime = this.audioElement.duration
+      this.audioEnded = true
+    },
     audioPlay() {
       this.audioElement.play()
     },
     audioSetup(atBlock, audioTitle) {
-      this.audioContext = new AudioContext();
+      const audioContext = new AudioContext();
+      const audioLength = 5
       this.audioElement = document.createElement('audio')
-      this.track = this.audioContext.createMediaElementSource(this.audioElement);
-      let playBackIteration = 1
-      let audioIsCut = false
+      const track = audioContext.createMediaElementSource(this.audioElement);
       const breakAudio = this.breakAudio.find(each => each.audioTitle === audioTitle) || this.breakAudio[0]
       this.audioElement.src = breakAudio.audioAsset
       this.audioElement.volume = 0.2
-
-      const panner = new StereoPannerNode(this.audioContext, {pan: breakAudio.direction || 0})
-      this.track.connect(panner).connect(this.audioContext.destination);
+      let playBackIteration = 1
+      let audioIsCut = false
+      this.audioEnded = false
+      const panner = new StereoPannerNode(audioContext, {pan: breakAudio.direction || 0})
+      track.connect(panner).connect(audioContext.destination);
 
       this.audioElement.addEventListener("timeupdate", (event) => {
-        if (this.audioElement.currentTime > this.audioLength && !audioIsCut) {
+        if (this.audioElement.currentTime > audioLength && !audioIsCut) {
           this.audioElement.currentTime = this.audioElement.duration
           audioIsCut = true
         }
@@ -193,7 +196,7 @@ const skvto = {
       });
 
       this.audioElement.addEventListener("ended", () => {
-        readText(atBlock)
+        if (!this.audioEnded) readText(atBlock)
       });
     },
   },
@@ -308,6 +311,7 @@ skvto.nav.previous.addEventListener("click", event => navClicked(event, -1))
 
 function goToNavLink(direction) {
   synth.cancel()
+  skvto.audio.audioStop()
   window.scrollTo(0, 0)
   getData(skvto.page + direction)
 }
