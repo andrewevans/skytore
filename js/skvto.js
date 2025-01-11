@@ -2,10 +2,6 @@ const skvto = {
   reader: document.getElementById('reader'),
   url: new URL(document.URL),
   page: 1,
-  nav: {
-    next: document.querySelector("#nav-next"),
-    previous: document.querySelector("#nav-back"),
-  },
   propers: {
     four: 'Vour',
     fourmeme: 'Vourmeme',
@@ -282,9 +278,9 @@ function updateNav() {
   const newPageUrl = new URL(document.URL)
 
   newPageUrl.searchParams.set('page', (skvto.page + 1).toString())
-  skvto.nav.next.href = newPageUrl
+  navigation.nav.next.href = newPageUrl
   newPageUrl.searchParams.set('page', (skvto.page - 1).toString())
-  skvto.nav.previous.href = newPageUrl
+  navigation.nav.previous.href = newPageUrl
 }
 
 function updateUrl() {
@@ -314,6 +310,10 @@ function putData() {
 const navigation = {
   touchstartX: 0,
   touchendX: 0,
+  nav: {
+    next: document.querySelector("#nav-next"),
+    previous: document.querySelector("#nav-back"),
+  },
   goToNavLink: function (direction) {
     synth.cancel()
     skvto.audio.audioStop()
@@ -368,8 +368,8 @@ const navigation = {
       this.checkDirection()
     })
 
-    skvto.nav.next.addEventListener("click", event => this.navClicked(event, 1))
-    skvto.nav.previous.addEventListener("click", event => this.navClicked(event, -1))
+    this.nav.next.addEventListener("click", event => this.navClicked(event, 1))
+    this.nav.previous.addEventListener("click", event => this.navClicked(event, -1))
   },
 }
 
