@@ -326,42 +326,24 @@ const pageNavigator = {
   },
   navClicked: function (event, direction) {
     event.preventDefault()
-    skvto.reader.replaceChildren()
     this.goToNavLink(direction)
   },
-  checkDirection: function () {
-    if (this.touchendX < this.touchstartX && 150 < (this.touchstartX - this.touchendX)) {
+  checkDirection: function (event) {
+    if (event?.key === 'ArrowRight' || this.touchendX < this.touchstartX && 150 < (this.touchstartX - this.touchendX)) {
       this.goToNavLink(1)
+      event?.preventDefault() // Cancel the default action to avoid it being handled twice
     }
 
-    if (this.touchendX > this.touchstartX && 150 < (this.touchendX - this.touchstartX)) {
+    if (event?.key === 'ArrowLeft' || this.touchendX > this.touchstartX && 150 < (this.touchendX - this.touchstartX)) {
       this.goToNavLink(-1)
+      event?.preventDefault() // Cancel the default action to avoid it being handled twice
     }
   },
   init: function () {
-    window.addEventListener(
-      "keydown",
-      (event) => {
-        if (event.defaultPrevented) {
-          return; // Do nothing if the event was already processed
-        }
-
-        switch (event.key) {
-          case "ArrowLeft":
-            this.goToNavLink(-1)
-            break;
-          case "ArrowRight":
-            this.goToNavLink(1)
-            break;
-          default:
-            return; // Quit when this doesn't handle the key event.
-        }
-
-        // Cancel the default action to avoid it being handled twice
-        event.preventDefault();
-      },
-      true,
-    )
+    window.addEventListener('keydown', (event) => {
+        if (event.defaultPrevented) return // Do nothing if the event was already processed
+        this.checkDirection(event)
+      })
 
     document.addEventListener('touchstart', e => {
       this.touchstartX = e.changedTouches[0].screenX
