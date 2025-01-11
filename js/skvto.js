@@ -37,7 +37,7 @@ const skvto = {
   intervalId: 0,
   intervalIdOuter: 0,
   pauseOrPlay: function (event) {
-    skvto.audio.audioStop()
+    this.audio.audioStop()
     const atBlock = event.target.attributes
 
     if (!synth.speaking) {
@@ -373,9 +373,7 @@ function readText(atBlock) {
   const blockValue = atBlock?.block?.value || atBlock?.attributes?.block?.value || 0
   const currentBlocksStartingAt = skvto.currentBlocks.slice(blockValue)
 
-  skvto.currentBlocks.forEach((block) => {
-    block.classList.remove('marked') // Remove in case the synth was canceled
-  })
+  skvto.currentBlocks.forEach(block => block.classList.remove('marked')) // Remove in case the synth was canceled
 
   currentBlocksStartingAt.forEach((block, index) => {
     block.classList.remove('marked') // Remove in case the synth was canceled
