@@ -330,55 +330,41 @@ window.track = {};
 window.audioContext = {}
 window.track = {}
 
-function audioSetup(atBlock, audioTitle)
-{
-  if (true) {
-    // get the audio element
-    window.audioElement = document.createElement('audio')
-
-    switch (audioTitle) {
-      case '* * *':
-        window.audioElement.src = 'assets/spooky-dinkus.mp3'
-        break;
-
-      case '*':
-        window.audioElement.src = 'assets/wall-clock-tick-clock.mp3'
-        break;
-
-      default:
-        window.audioElement.src = 'assets/spooky-dinkus.mp3'
-        break;
-    }
-    window.audioContext = new AudioContext();
-    window.track = window.audioContext.createMediaElementSource(window.audioElement);
-
-    window.panner = new StereoPannerNode(window.audioContext)
-
-    window.track.connect(window.panner).connect(window.audioContext.destination);
-
-    window.audioElement.addEventListener("timeupdate", (event) => {
-      if (window.audioElement.currentTime > 5) {
-        window.audioElement.ended = true
-      }
-
-      window.panner.pan.value = Math.max(-1, window.panner.pan.value - 0.1)
-
-      if (window.panner.pan.value > -1 && window.panner.pan.value < 0) {
-        window.audioElement.volume = Math.max(window.audioElement.volume - 0.1, 0)
-      } else if (window.panner.pan.value >= 0 && window.panner.pan.value < 1) {
-        window.audioElement.volume = Math.min(window.audioElement.volume + 0.1, 1)
-      }
-    });
-
-    window.audioElement.addEventListener(
-      "ended",
-      () => {
-        pauseForAudio(atBlock)
-      },
-      false,
-    );
+function audioSetup(atBlock, audioTitle) {
+  window.audioElement = document.createElement('audio')
+  switch (audioTitle) {
+    case '* * *':
+      window.audioElement.src = 'assets/spooky-dinkus.mp3'
+      break;
+    case '*':
+      window.audioElement.src = 'assets/old-radio-static-noise.mp4'
+      break;
+    default:
+      window.audioElement.src = 'assets/spooky-dinkus.mp3'
+      break;
   }
-
+  window.audioContext = new AudioContext();
+  window.track = window.audioContext.createMediaElementSource(window.audioElement);
+  window.panner = new StereoPannerNode(window.audioContext)
+  window.track.connect(window.panner).connect(window.audioContext.destination);
+  window.audioElement.addEventListener("timeupdate", (event) => {
+    if (window.audioElement.currentTime > 5) {
+      window.audioElement.ended = true
+    }
+    window.panner.pan.value = Math.max(-1, window.panner.pan.value - 0.1)
+    if (window.panner.pan.value > -1 && window.panner.pan.value < 0) {
+      window.audioElement.volume = Math.max(window.audioElement.volume - 0.1, 0)
+    } else if (window.panner.pan.value >= 0 && window.panner.pan.value < 1) {
+      window.audioElement.volume = Math.min(window.audioElement.volume + 0.1, 1)
+    }
+  });
+  window.audioElement.addEventListener(
+    "ended",
+    () => {
+      pauseForAudio(atBlock)
+    },
+    false,
+  );
   window.panner.pan.value = 1
   window.audioElement.volume = 0.2
 }
