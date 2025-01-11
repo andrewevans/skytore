@@ -211,7 +211,6 @@ const skvto = {
   },
   fillReader() {
     this.reader.replaceChildren()
-
     let outerCount = 0
     let innerCount = 0
 
@@ -278,12 +277,8 @@ async function getData(newPage) {
 }
 
 function updateNav() {
-  const newPageUrl = new URL(document.URL)
-
-  newPageUrl.searchParams.set('page', (skvto.page + 1).toString())
-  pageNavigator.nav.next.href = newPageUrl
-  newPageUrl.searchParams.set('page', (skvto.page - 1).toString())
-  pageNavigator.nav.previous.href = newPageUrl
+  pageNavigator.nav.next.href = new URL(document.URL).searchParams.set('page', (skvto.page + 1).toString())
+  pageNavigator.nav.previous.href = new URL(document.URL).searchParams.set('page', (skvto.page + 1).toString())
 }
 
 function updateUrl() {
@@ -338,17 +333,17 @@ const pageNavigator = {
     }
   },
   init: function () {
-    window.addEventListener('keydown', (event) => {
+    window.addEventListener('keydown', event => {
       if (event.defaultPrevented) return // Do nothing if the event was already processed
       this.checkDirection(event)
     })
 
-    document.addEventListener('touchstart', e => {
-      this.touchstartX = e.changedTouches[0].screenX
+    document.addEventListener('touchstart', event => {
+      this.touchstartX = event.changedTouches[0].screenX
     })
 
-    document.addEventListener('touchend', e => {
-      this.touchendX = e.changedTouches[0].screenX
+    document.addEventListener('touchend', event => {
+      this.touchendX = event.changedTouches[0].screenX
       this.checkDirection()
     })
 
@@ -360,16 +355,13 @@ const pageNavigator = {
 const backgroundMotion = {
   lastKnownScrollPosition: 0,
   ticking: false,
-  doSomething: function (scrollPos) {
-    document.getElementById('all').style.backgroundPositionY = `${scrollPos}px`
-  },
   init: function () {
     document.addEventListener("scroll", () => {
       this.lastKnownScrollPosition = window.scrollY;
 
       if (!this.ticking) {
         window.requestAnimationFrame(() => {
-          this.doSomething(this.lastKnownScrollPosition);
+          document.getElementById('all').style.backgroundPositionY = `${this.lastKnownScrollPosition}px`
           this.ticking = false;
         });
 
@@ -426,7 +418,6 @@ function readText(atBlock) {
 
 function isElementInViewport(el) {
   const rect = el.getBoundingClientRect()
-
   return rect.bottom > 0 && rect.bottom < window.innerHeight
 }
 
