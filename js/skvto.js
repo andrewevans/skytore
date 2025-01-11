@@ -317,33 +317,31 @@ const pageNavigator = {
     next: document.querySelector("#nav-next"),
     previous: document.querySelector("#nav-back"),
   },
-  goToNavLink: function (direction) {
+  goToNavLink: function (direction, event) {
     synth.cancel()
     skvto.audio.audioStop()
     window.scrollTo(0, 0)
     skvto.reader.replaceChildren()
+    event?.preventDefault() // Cancel the default action to avoid it being handled twice
     getData(skvto.page + direction).then()
   },
   navClicked: function (event, direction) {
-    event.preventDefault()
-    this.goToNavLink(direction)
+    this.goToNavLink(direction, event)
   },
   checkDirection: function (event) {
     if (event?.key === 'ArrowRight' || this.touchendX < this.touchstartX && 150 < (this.touchstartX - this.touchendX)) {
       this.goToNavLink(1)
-      event?.preventDefault() // Cancel the default action to avoid it being handled twice
     }
 
     if (event?.key === 'ArrowLeft' || this.touchendX > this.touchstartX && 150 < (this.touchendX - this.touchstartX)) {
       this.goToNavLink(-1)
-      event?.preventDefault() // Cancel the default action to avoid it being handled twice
     }
   },
   init: function () {
     window.addEventListener('keydown', (event) => {
-        if (event.defaultPrevented) return // Do nothing if the event was already processed
-        this.checkDirection(event)
-      })
+      if (event.defaultPrevented) return // Do nothing if the event was already processed
+      this.checkDirection(event)
+    })
 
     document.addEventListener('touchstart', e => {
       this.touchstartX = e.changedTouches[0].screenX
@@ -409,9 +407,7 @@ function readText(atBlock) {
     utterThis.addEventListener("start", () => {
       block.classList.add('marked')
 
-      if (!isElementInViewport(block)) {
-        block.scrollIntoView({behavior: 'smooth'})
-      }
+      if (!isElementInViewport(block)) block.scrollIntoView({behavior: 'smooth'})
 
       if (block?.dataset?.val) {
         synth.cancel()
