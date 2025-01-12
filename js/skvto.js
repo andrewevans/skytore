@@ -267,18 +267,14 @@ async function getData(newPage) {
   newEl.style.color = '#808080'
   skvto.reader.appendChild(newEl)
 
-  try {
-    const response = await fetch(url);
+  const response = await fetch(url);
 
-    if (!response.ok) throw new Error(`Response status: ${response.status}`)
+  if (!response.ok) throw new Error(`Response status: ${response.status}`)
 
-    skvto.currentText = await response.text()
-    skvto.page = newPage
-    updateUrl()
-    putData()
-  } catch (error) {
-    window.console.info(error)
-  }
+  skvto.currentText = await response.text()
+  skvto.page = newPage
+  updateUrl()
+  putData()
 }
 
 function updateNav() {
@@ -326,7 +322,9 @@ const pageNavigator = {
     window.scrollTo(0, 0)
     skvto.reader.replaceChildren()
     event?.preventDefault() // Cancel the default action to avoid it being handled twice
-    getData(skvto.page + direction).then()
+    getData(skvto.page + direction).catch(() => {
+      getData(skvto.page, event).then()
+    })
   },
   navClicked: function (event, direction) {
     this.goToNavLink(direction, event)
