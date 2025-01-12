@@ -257,6 +257,16 @@ async function getData(newPage) {
   clearInterval(skvto.intervalId);
   clearInterval(skvto.intervalIdOuter);
 
+  const boxes = Array.from('■'.repeat(Math.max(newPage - 1, 1)))
+  const boxLengthLoader = boxes.length
+  // 4 = block size, 2 = width of block aka sq root of block size
+  const breakAt = (Math.floor(boxLengthLoader / 4) * 2) + Math.min(2, boxLengthLoader % 4)
+  boxes.splice(breakAt, 0, ' ')
+  const newEl = document.createElement('h2')
+  newEl.innerHTML = boxes.join('')
+  newEl.style.color = '#808080'
+  skvto.reader.appendChild(newEl)
+
   try {
     const response = await fetch(url);
 
