@@ -426,6 +426,7 @@ function isElementInViewport(el) {
 
 skvto.init()
 const synth = window.speechSynthesis; // Text to Speech
+synth.cancel()
 let utterThese = []
 getData(skvto.page).then()
 pageNavigator.init()
