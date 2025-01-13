@@ -38,14 +38,23 @@ const skvto = {
   intervalId: 0,
   intervalIdOuter: 0,
   createNewEditor: function (block) {
-    const editor = new MediumEditor(block)
+    let handler;
+    if (block.tagName === 'P' && !block.dataset.mediumEditorElement) {
+      block.blockEditor = new MediumEditor(block)
+
+      block.addEventListener('blur', handler = () => {
+        block.blockEditor?.destroy()
+        block.removeEventListener('blur', handler)
+      })
+    }
   },
   pauseOrPlayOrEdit: function (event) {
+    const atBlock = event.target
+
     if (this.isEditing) {
       this.createNewEditor(event.target)
     } else {
       this.audio.audioStop()
-      const atBlock = event.target
 
       if (!synth.speaking) {
         synth.cancel()
@@ -53,17 +62,6 @@ const skvto = {
       } else {
         synth.cancel()
       }
-    }
-  },
-  pauseOrPlay: function (event) {
-    this.audio.audioStop()
-    const atBlock = event.target
-
-    if (!synth.speaking) {
-      synth.cancel()
-      readText(atBlock)
-    } else {
-      synth.cancel()
     }
   },
   setBlocks() {
