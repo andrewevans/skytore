@@ -38,7 +38,7 @@ const skvto = {
   intervalIdOuter: 0,
   pauseOrPlay: function (event) {
     this.audio.audioStop()
-    const atBlock = event.target.attributes
+    const atBlock = event.target
 
     if (!synth.speaking) {
       synth.cancel()
@@ -51,7 +51,7 @@ const skvto = {
     this.currentBlocks = this.currentText.split(this.markdown.block)
     this.currentBlocks = this.currentBlocks.map((block, i) => {
       const el = document.createElement('p')
-      el.setAttribute('block', i.toString())
+      el.setAttribute('data-block', i.toString())
       el.innerHTML = block
       el.addEventListener("click", event => this.pauseOrPlay(event, 1))
       return el
@@ -112,7 +112,7 @@ const skvto = {
     this.currentBlocks = this.currentBlocks.map((block, i) => {
       if (this.markdown.checkIn.test(block.innerHTML)) {
         const newEl = document.createElement('aside')
-        newEl.setAttribute('block', i.toString())
+        newEl.setAttribute('data-block', i.toString())
         const p = document.createElement('p')
         p.innerHTML = block.innerHTML.replaceAll(this.markdown.checkIn, '')
         p.innerHTML = p.innerHTML.replaceAll(this.markdown.checkInAt, '<br />')
@@ -378,7 +378,7 @@ const backgroundMotion = {
 }
 
 function readText(atBlock) {
-  const blockValue = atBlock?.block?.value || atBlock?.attributes?.block?.value || 0
+  const blockValue = atBlock?.dataset.block || 0
   const currentBlocksStartingAt = skvto.currentBlocks.slice(blockValue)
 
   skvto.currentBlocks.forEach(block => block.classList.remove('marked')) // Remove in case the synth was canceled
