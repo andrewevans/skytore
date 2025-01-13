@@ -1,3 +1,5 @@
+/*global MediumEditor */
+
 const skvto = {
   reader: document.getElementById('reader'),
   url: new URL(document.URL),
@@ -39,7 +41,7 @@ const skvto = {
   intervalIdOuter: 0,
   createNewEditor: function (block) {
     let handler;
-    if (block.tagName === 'P' && !block.dataset.mediumEditorElement) {
+    if (typeof MediumEditor !== 'undefined' && block.tagName === 'P' && !block.dataset.mediumEditorElement) {
       block.blockEditor = new MediumEditor(block)
 
       block.addEventListener('blur', handler = () => {
