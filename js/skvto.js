@@ -32,10 +32,29 @@ const skvto = {
     checkIn: /&gt;/gm,
     checkInAt: /\n/gm,
   },
+  isEditing: false,
   currentText: '',
   currentBlocks: [],
   intervalId: 0,
   intervalIdOuter: 0,
+  createNewEditor: function (block) {
+    const editor = new MediumEditor(block)
+  },
+  pauseOrPlayOrEdit: function (event) {
+    if (this.isEditing) {
+      this.createNewEditor(event.target)
+    } else {
+      this.audio.audioStop()
+      const atBlock = event.target
+
+      if (!synth.speaking) {
+        synth.cancel()
+        readText(atBlock)
+      } else {
+        synth.cancel()
+      }
+    }
+  },
   pauseOrPlay: function (event) {
     this.audio.audioStop()
     const atBlock = event.target
@@ -52,8 +71,9 @@ const skvto = {
     this.currentBlocks = this.currentBlocks.map((block, i) => {
       const el = document.createElement('p')
       el.setAttribute('data-block', i.toString())
+      el.tabIndex = i
       el.innerHTML = block
-      el.addEventListener("click", event => this.pauseOrPlay(event, 1))
+      el.addEventListener("click", event => this.pauseOrPlayOrEdit(event, 1))
       return el
     })
   },
@@ -63,7 +83,7 @@ const skvto = {
         const newEl = document.createElement('h1')
         newEl.innerHTML = block.innerHTML.replaceAll(this.markdown.h1, '')
         block = newEl
-        block.addEventListener("click", event => this.pauseOrPlay(event, 1))
+        block.addEventListener("click", event => this.pauseOrPlayOrEdit(event, 1))
       }
 
       return block
@@ -80,7 +100,7 @@ const skvto = {
         const newEl = document.createElement('h2')
         newEl.innerHTML = boxes.join('')
         block = newEl
-        block.addEventListener("click", event => this.pauseOrPlay(event, 1))
+        block.addEventListener("click", event => this.pauseOrPlayOrEdit(event, 1))
       }
 
       return block
@@ -431,3 +451,17 @@ let utterThese = []
 getData(skvto.page).then()
 pageNavigator.init()
 backgroundMotion.init()
+
+document.getElementById('edit-reader').addEventListener("click", event => {
+  event.preventDefault()
+  skvto.isEditing = !skvto.isEditing
+
+  if (skvto.isEditing) {
+    synth.cancel()
+    skvto.audio.audioStop()
+    skvto.currentBlocks.forEach(block => block.classList.remove('marked'))
+    document.getElementById('edit-reader').innerHTML = `CAUTION: Editing... ${skvto.isEditing}`
+  } else {
+    document.getElementById('edit-reader').innerHTML = `Edit now ${skvto.isEditing}`
+  }
+})
