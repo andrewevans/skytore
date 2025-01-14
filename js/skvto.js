@@ -42,11 +42,21 @@ const skvto = {
   createNewEditor: function (block) {
     let handler;
     if (typeof MediumEditor !== 'undefined' && block.tagName === 'P' && !block.dataset.mediumEditorElement) {
-      block.blockEditor = new MediumEditor(block)
+      block.blockEditor = new MediumEditor(block, {
+        disableReturn: true,
+        disableDoubleReturn: true,
+        disableExtraSpaces: true,
+      })
+
+      block.editOriginal = block.innerHTML
 
       block.addEventListener('blur', handler = () => {
         block.blockEditor?.destroy()
         block.removeEventListener('blur', handler)
+
+        if (block.innerHTML !== block.editOriginal) {
+          localStorage.setItem(`page-${this.page}-block-${block.dataset.block}`, block.innerHTML)
+        }
       })
     }
   },
@@ -73,6 +83,11 @@ const skvto = {
       el.setAttribute('data-block', i.toString())
       el.tabIndex = i
       el.innerHTML = block
+
+      if (localStorage.getItem(`page-${skvto.page}-block-${el.dataset.block}`)) {
+        el.innerHTML = localStorage.getItem(`page-${skvto.page}-block-${el.dataset.block}`)
+      }
+
       el.addEventListener("click", event => this.pauseOrPlayOrEdit(event, 1))
       return el
     })
