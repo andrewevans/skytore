@@ -336,11 +336,11 @@ const pageNavigator = {
   nav: {
     next: document.querySelector("#nav-next"),
     previous: document.querySelector("#nav-back"),
+    edit: document.querySelector('#edit-reader')
   },
   goToNavLink: function (direction, event) {
     if (skvto.isEditing) return
 
-    document.getElementById('edit-reader').innerHTML = `Edit now ${skvto.isEditing}`
     synth.cancel()
     skvto.audio.audioStop()
     window.scrollTo(0, 0)
@@ -465,8 +465,8 @@ document.getElementById('edit-reader').addEventListener("click", event => {
     synth.cancel()
     skvto.audio.audioStop()
     skvto.currentBlocks.forEach(block => block.classList.remove('marked'))
-    document.getElementById('edit-reader').innerHTML = `CAUTION: Editing... ${skvto.isEditing}`
+    document.getElementById('edit').classList.add('editing')
   } else {
-    document.getElementById('edit-reader').innerHTML = `Edit now ${skvto.isEditing}`
+    document.getElementById('edit').classList.remove('editing')
   }
 })
