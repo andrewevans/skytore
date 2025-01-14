@@ -50,12 +50,14 @@ const skvto = {
 
       block.editOriginal = block.innerHTML
 
-      block.addEventListener('blur', handler = () => {
+      block.addEventListener('blur', handler = (event) => {
+        if (event.relatedTarget instanceof HTMLElement) return // TODO: Hack to allow ctrl-v paste
+
         block.blockEditor?.destroy()
         block.removeEventListener('blur', handler)
 
         if (block.innerHTML !== block.editOriginal) {
-          localStorage.setItem(`page-${this.page}-block-${block.dataset.block}`, block.innerHTML)
+          localStorage.setItem(`page-${this.page}-block-${block.dataset.block}`, block.innerHTML.replace(/[\n\r\t]/gm, ''))
         }
       })
     }
