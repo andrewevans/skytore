@@ -67,6 +67,11 @@ hr[data-val]::after {
     letter-spacing: 24px;
 }
 
+p.data-dirty {
+    border-left: 1px solid #d3d3d3;
+    padding-left: 1em;
+}
+
 .pagination {
     list-style: none;
     display: flex;

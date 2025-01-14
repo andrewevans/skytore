@@ -88,6 +88,7 @@ const skvto = {
 
       if (localStorage.getItem(`page-${skvto.page}-block-${el.dataset.block}`)) {
         el.innerHTML = localStorage.getItem(`page-${skvto.page}-block-${el.dataset.block}`)
+        el.classList.add('data-dirty')
       }
 
       el.addEventListener("click", event => this.pauseOrPlayOrEdit(event, 1))
