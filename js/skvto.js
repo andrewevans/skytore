@@ -487,3 +487,11 @@ document.getElementById('edit-reader').addEventListener("click", event => {
     document.getElementById('edit').classList.remove('editing')
   }
 })
+
+document.getElementById('edit-clear').addEventListener("click", event => {
+  event.preventDefault()
+
+  Object.keys(window.localStorage).forEach(key => {
+    if (key.indexOf('page-') !== -1) window.localStorage.removeItem(key)
+  })
+})
