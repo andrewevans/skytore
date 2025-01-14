@@ -268,6 +268,7 @@ const skvto = {
     doOuterThing()
   },
   init() {
+    this.isEditing = false
     this.page = parseInt(this.url.searchParams.get('page')) || this.page
   },
 }
@@ -337,6 +338,9 @@ const pageNavigator = {
     previous: document.querySelector("#nav-back"),
   },
   goToNavLink: function (direction, event) {
+    if (skvto.isEditing) return
+
+    document.getElementById('edit-reader').innerHTML = `Edit now ${skvto.isEditing}`
     synth.cancel()
     skvto.audio.audioStop()
     window.scrollTo(0, 0)
@@ -347,6 +351,7 @@ const pageNavigator = {
     })
   },
   navClicked: function (event, direction) {
+    event.preventDefault()
     this.goToNavLink(direction, event)
   },
   checkDirection: function (event) {
