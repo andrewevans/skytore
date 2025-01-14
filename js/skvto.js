@@ -496,3 +496,13 @@ document.getElementById('edit-clear').addEventListener("click", event => {
     if (key.indexOf('page-') !== -1) window.localStorage.removeItem(key)
   })
 })
+
+document.getElementById('edit-save').addEventListener("click", event => {
+  event.preventDefault()
+
+  Object.keys(window.localStorage).forEach(key => {
+    if (key.indexOf('page-') === 0) {
+      window.console.info(`Saving... ${key}`)
+    }
+  })
+})
