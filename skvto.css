@@ -215,6 +215,11 @@ p {
     /*max-width: 600px;*/
 }
 
+p.webdinged {
+    font-family: Webdings-Regular;
+    color: #808080;
+}
+
 h2 {
     margin: 0 20px;
     padding-top: 5vh;

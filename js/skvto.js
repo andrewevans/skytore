@@ -252,19 +252,14 @@ const skvto = {
 
     const doInnerThing = function (newBlock, innerHTML) {
       newBlock.innerHTML = innerHTML.substring(0, innerCount * 15 + (outerCount) * 15)
-      // newBlock.innerHTML = '■ '.repeat(innerCount * 15 + (outerCount) * 15)
-      // newBlock.style.transform = "scale(-1, -1)"
-      // newBlock.style.textAlign = "right"
-      // newBlock.style.fontSize = '0.75rem'
-      // newBlock.style.letterSpacing = '-3px'
-      newBlock.style.fontFamily = '"Webdings-Regular"'
-      newBlock.style.color = '#808080'
+      newBlock.classList.add('webdinged')
       if ((innerCount * 15 + (outerCount) * 15) <= innerHTML.length) {
         innerCount++
         this.intervalId = setTimeout(doInnerThing, 5, newBlock, innerHTML)
       } else {
         newBlock.innerHTML = innerHTML
-        newBlock.removeAttribute('style') // This removes the attribute regardless of what's in it
+        newBlock.classList.remove('webdinged')
+        newBlock.removeAttribute('class') // This removes the attribute regardless of what's in it
         innerCount = 0
         doOuterThing()
       }
