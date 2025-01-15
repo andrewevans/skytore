@@ -417,10 +417,14 @@ const backgroundMotion = {
 function readText(atBlock) {
   const currentBlocksStartingAt = skvto.currentBlocks.slice(atBlock?.blockId || 0)
 
-  skvto.currentBlocks.forEach(block => block.classList.remove('marked')) // Remove in case the synth was canceled
+  skvto.currentBlocks.forEach(block => {
+    block.classList.remove('marked') // Remove in case the synth was canceled
+    block.removeAttribute('class')
+  })
 
   currentBlocksStartingAt.forEach((block, index) => {
     block.classList.remove('marked') // Remove in case the synth was canceled
+    block.removeAttribute('class')
     let utterThis = new SpeechSynthesisUtterance();
     utterThis.voice = synth.getVoices().find(voice => voice.name === 'Nicky')
     if (utterThis.voice) {
