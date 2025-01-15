@@ -57,7 +57,7 @@ const skvto = {
         block.removeEventListener('blur', handler)
 
         if (block.innerHTML !== block.editOriginal) {
-          localStorage.setItem(`page-${this.page}-block-${block.dataset.block}`, block.innerHTML.replace(/[\n\r\t]/gm, ''))
+          localStorage.setItem(`page-${this.page}-block-${block.blockId}`, block.innerHTML.replace(/[\n\r\t]/gm, ''))
         }
       })
     }
@@ -85,8 +85,8 @@ const skvto = {
       el.innerHTML = block
       el.blockId = i
 
-      if (localStorage.getItem(`page-${skvto.page}-block-${el.dataset.block}`)) {
-        el.innerHTML = localStorage.getItem(`page-${skvto.page}-block-${el.dataset.block}`)
+      if (localStorage.getItem(`page-${skvto.page}-block-${el.blockId}`)) {
+        el.innerHTML = localStorage.getItem(`page-${skvto.page}-block-${el.blockId}`)
         el.classList.add('data-dirty')
       }
 
