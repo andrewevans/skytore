@@ -82,9 +82,8 @@ const skvto = {
     this.currentBlocks = this.currentText.split(this.markdown.block)
     this.currentBlocks = this.currentBlocks.map((block, i) => {
       const el = document.createElement('p')
-      el.setAttribute('data-block', i.toString())
-      el.tabIndex = i
       el.innerHTML = block
+      el.blockId = i
 
       if (localStorage.getItem(`page-${skvto.page}-block-${el.dataset.block}`)) {
         el.innerHTML = localStorage.getItem(`page-${skvto.page}-block-${el.dataset.block}`)
@@ -421,8 +420,7 @@ const backgroundMotion = {
 }
 
 function readText(atBlock) {
-  const blockValue = atBlock?.dataset.block || 0
-  const currentBlocksStartingAt = skvto.currentBlocks.slice(blockValue)
+  const currentBlocksStartingAt = skvto.currentBlocks.slice(atBlock?.blockId || 0)
 
   skvto.currentBlocks.forEach(block => block.classList.remove('marked')) // Remove in case the synth was canceled
 
