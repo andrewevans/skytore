@@ -1,19 +1,19 @@
 /*global MediumEditor */
 
 const skvto = {
-  reader: document.getElementById('reader'),
+  reader: document.getElementById("reader"),
   url: new URL(document.URL),
   page: 1,
   propers: {
-    four: 'Vour',
-    fourmeme: 'Vourmeme',
-    fourcam: 'Vourcam',
-    capital: 'Capital',
-    ax: 'ander',
-    a: 'Ander',
-    cx: 'caressival',
-    c: 'Caresse',
-    g: '4élix',
+    four: "Vour",
+    fourmeme: "Vourmeme",
+    fourcam: "Vourcam",
+    capital: "Capital",
+    ax: "ander",
+    a: "Ander",
+    cx: "caressival",
+    c: "Caresse",
+    g: "4élix",
   },
   markdown: {
     block: /\n\n/,
@@ -35,30 +35,42 @@ const skvto = {
     checkInAt: /\n/gm,
   },
   isEditing: false,
-  currentText: '',
+  currentText: "",
   currentBlocks: [],
   intervalId: 0,
   intervalIdOuter: 0,
   postEdits: async function () {
     const editsList = []
-    Object.keys(window.localStorage).forEach(key => {
-      if ((key.indexOf('page-') === 0)) {
+
+    Object.keys(window.localStorage).forEach((key) => {
+      if (key.indexOf("page-") === 0) {
         editsList.push(`${key} :: ${window.localStorage.getItem(key)}`)
       }
     })
 
-    let editsBody = editsList.join('\n')
-    const checksum = editsBody.split('').reduce((accumulator, currentValue) => accumulator + currentValue.charCodeAt(0), 0) % 256
+    let editsBody = editsList.join("\n")
+    const checksum =
+      editsBody
+        .split("")
+        .reduce(
+          (accumulator, currentValue) =>
+            accumulator + currentValue.charCodeAt(0),
+          0,
+        ) % 256
     editsBody += `\nchecksum :: ${checksum}`
 
-    await fetch('http://rebellynd.local:3000', {
-      method: 'POST',
-      body: editsBody
+    await fetch("http://rebellynd.local:3000", {
+      method: "POST",
+      body: editsBody,
     })
   },
   createNewEditor: function (block) {
-    let handler;
-    if (typeof MediumEditor !== 'undefined' && block.tagName === 'P' && !block.dataset.mediumEditorElement) {
+    let handler
+    if (
+      typeof MediumEditor !== "undefined" &&
+      block.tagName === "P" &&
+      !block.dataset.mediumEditorElement
+    ) {
       block.blockEditor = new MediumEditor(block, {
         disableReturn: true,
         disableDoubleReturn: true,
@@ -67,16 +79,23 @@ const skvto = {
 
       block.editOriginal = block.innerHTML
 
-      block.addEventListener('blur', handler = (event) => {
-        if (event.relatedTarget instanceof HTMLElement) return // TODO: Hack to allow ctrl-v paste
+      block.addEventListener(
+        "blur",
+        (handler = () => {
+          window.console.info("blur")
+          // if (event.relatedTarget instanceof HTMLElement) return // TODO: Hack to allow ctrl-v paste
 
-        block.blockEditor?.destroy()
-        block.removeEventListener('blur', handler)
+          block.blockEditor?.destroy()
+          block.removeEventListener("blur", handler)
 
-        if (block.innerHTML !== block.editOriginal) {
-          localStorage.setItem(`page-${this.page}-block-${block.blockId}`, block.innerHTML.replace(/[\n\r\t]/gm, ''))
-        }
-      })
+          if (block.innerHTML !== block.editOriginal) {
+            localStorage.setItem(
+              `page-${this.page}-block-${block.blockId}`,
+              block.innerHTML.replace(/[\n\r\t]/gm, ""),
+            )
+          }
+        }),
+      )
     }
   },
   pauseOrPlayOrEdit: function (event) {
@@ -98,26 +117,29 @@ const skvto = {
   setBlocks() {
     this.currentBlocks = this.currentText.split(this.markdown.block)
     this.currentBlocks = this.currentBlocks.map((block, i) => {
-      const el = document.createElement('p')
+      const el = document.createElement("p")
       el.innerHTML = block
       el.blockId = i
 
       if (localStorage.getItem(`page-${skvto.page}-block-${el.blockId}`)) {
-        el.innerHTML = localStorage.getItem(`page-${skvto.page}-block-${el.blockId}`)
-        el.classList.add('data-dirty')
+        ;(el.innerHTML = localStorage.getItem(`
+        page-${skvto.page}-block-${el.blockId}`)),
+          el.classList.add("data-dirty")
       }
 
-      el.addEventListener("click", event => this.pauseOrPlayOrEdit(event, 1))
+      el.addEventListener("click", (event) => this.pauseOrPlayOrEdit(event, 1))
       return el
     })
   },
   setH1() {
     this.currentBlocks = this.currentBlocks.map((block) => {
       if (this.markdown.h1.test(block.innerHTML)) {
-        const newEl = document.createElement('h1')
-        newEl.innerHTML = block.innerHTML.replaceAll(this.markdown.h1, '')
+        const newEl = document.createElement("h1")
+        newEl.innerHTML = block.innerHTML.replaceAll(this.markdown.h1, "")
         block = newEl
-        block.addEventListener("click", event => this.pauseOrPlayOrEdit(event, 1))
+        block.addEventListener("click", (event) =>
+          this.pauseOrPlayOrEdit(event, 1),
+        )
       }
 
       return block
@@ -129,12 +151,15 @@ const skvto = {
         const boxes = Array.from(block.innerHTML)
         const boxLength = boxes.length
         // 4 = block size, 2 = width of block aka sq root of block size
-        const breakAt = (Math.floor(boxLength / 4) * 2) + Math.min(2, boxLength % 4)
-        boxes.splice(breakAt, 0, ' ')
-        const newEl = document.createElement('h2')
-        newEl.innerHTML = boxes.join('')
+        const breakAt =
+          Math.floor(boxLength / 4) * 2 + Math.min(2, boxLength % 4)
+        boxes.splice(breakAt, 0, " ")
+        const newEl = document.createElement("h2")
+        newEl.innerHTML = boxes.join("")
         block = newEl
-        block.addEventListener("click", event => this.pauseOrPlayOrEdit(event, 1))
+        block.addEventListener("click", (event) =>
+          this.pauseOrPlayOrEdit(event, 1),
+        )
       }
 
       return block
@@ -143,7 +168,7 @@ const skvto = {
   setBreaks() {
     this.currentBlocks = this.currentBlocks.map((block) => {
       if (this.markdown.break.test(block.innerHTML)) {
-        const newEl = document.createElement('hr')
+        const newEl = document.createElement("hr")
         newEl.dataset.val = block.innerHTML
         block = newEl
       }
@@ -154,7 +179,7 @@ const skvto = {
   setShortBreaks() {
     this.currentBlocks = this.currentBlocks.map((block) => {
       if (this.markdown.shortBreak.test(block.innerHTML)) {
-        const newEl = document.createElement('hr')
+        const newEl = document.createElement("hr")
         newEl.dataset.val = block.innerHTML
         block = newEl
       }
@@ -165,11 +190,11 @@ const skvto = {
   setCheckIns() {
     this.currentBlocks = this.currentBlocks.map((block, i) => {
       if (this.markdown.checkIn.test(block.innerHTML)) {
-        const newEl = document.createElement('aside')
-        newEl.setAttribute('data-block', i.toString())
-        const p = document.createElement('p')
-        p.innerHTML = block.innerHTML.replaceAll(this.markdown.checkIn, '')
-        p.innerHTML = p.innerHTML.replaceAll(this.markdown.checkInAt, '<br />')
+        const newEl = document.createElement("aside")
+        newEl.setAttribute("data-block", i.toString())
+        const p = document.createElement("p")
+        p.innerHTML = block.innerHTML.replaceAll(this.markdown.checkIn, "")
+        p.innerHTML = p.innerHTML.replaceAll(this.markdown.checkInAt, "<br />")
         newEl.innerHTML = p.outerHTML
         block = newEl
       }
@@ -179,14 +204,38 @@ const skvto = {
   },
   setVars() {
     this.currentBlocks.forEach((block) => {
-      block.innerHTML = block.innerHTML.replaceAll(this.markdown.four, this.propers.four)
-      block.innerHTML = block.innerHTML.replaceAll(this.markdown.fourmeme, this.propers.fourmeme)
-      block.innerHTML = block.innerHTML.replaceAll(this.markdown.g, this.propers.g)
-      block.innerHTML = block.innerHTML.replaceAll(this.markdown.ax, this.propers.ax)
-      block.innerHTML = block.innerHTML.replaceAll(this.markdown.a, this.propers.a)
-      block.innerHTML = block.innerHTML.replaceAll(this.markdown.cx, this.propers.cx) // Order matters
-      block.innerHTML = block.innerHTML.replaceAll(this.markdown.c, this.propers.c)
-      block.innerHTML = block.innerHTML.replaceAll(this.markdown.capital, this.propers.capital)
+      block.innerHTML = block.innerHTML.replaceAll(
+        this.markdown.four,
+        this.propers.four,
+      )
+      block.innerHTML = block.innerHTML.replaceAll(
+        this.markdown.fourmeme,
+        this.propers.fourmeme,
+      )
+      block.innerHTML = block.innerHTML.replaceAll(
+        this.markdown.g,
+        this.propers.g,
+      )
+      block.innerHTML = block.innerHTML.replaceAll(
+        this.markdown.ax,
+        this.propers.ax,
+      )
+      block.innerHTML = block.innerHTML.replaceAll(
+        this.markdown.a,
+        this.propers.a,
+      )
+      block.innerHTML = block.innerHTML.replaceAll(
+        this.markdown.cx,
+        this.propers.cx,
+      ) // Order matters
+      block.innerHTML = block.innerHTML.replaceAll(
+        this.markdown.c,
+        this.propers.c,
+      )
+      block.innerHTML = block.innerHTML.replaceAll(
+        this.markdown.capital,
+        this.propers.capital,
+      )
     })
   },
   setEm() {
@@ -199,24 +248,24 @@ const skvto = {
     audioEnded: false,
     breakAudio: [
       {
-        audioTitle: '',
-        audioAsset: 'assets/wall-clock-tick.mp3',
+        audioTitle: "",
+        audioAsset: "assets/wall-clock-tick.mp3",
         direction: 0,
         panner() {
           return 0
         },
       },
       {
-        audioTitle: '* * *',
-        audioAsset: 'assets/spooky-dinkus.mp3',
+        audioTitle: "* * *",
+        audioAsset: "assets/spooky-dinkus.mp3",
         direction: 1,
         panner(pannerPanValue) {
           return Math.max(-1, pannerPanValue - 0.1)
         },
       },
       {
-        audioTitle: '*',
-        audioAsset: 'assets/old-radio-static-noise-short.mp4',
+        audioTitle: "*",
+        audioAsset: "assets/old-radio-static-noise-short.mp4",
         direction: -1,
         panner(pannerPanValue) {
           return Math.min(1, pannerPanValue + 0.1)
@@ -231,18 +280,22 @@ const skvto = {
       this.audioElement.play()
     },
     audioSetup(atBlock, audioTitle) {
-      const audioContext = new AudioContext();
+      const audioContext = new AudioContext()
       const audioLength = 5
-      this.audioElement = document.createElement('audio')
-      const track = audioContext.createMediaElementSource(this.audioElement);
-      const breakAudio = this.breakAudio.find(each => each.audioTitle === audioTitle) || this.breakAudio[0]
+      this.audioElement = document.createElement("audio")
+      const track = audioContext.createMediaElementSource(this.audioElement)
+      const breakAudio =
+        this.breakAudio.find((each) => each.audioTitle === audioTitle) ||
+        this.breakAudio[0]
       this.audioElement.src = breakAudio.audioAsset
       this.audioElement.volume = 0.2
       let playBackIteration = 1
       let audioIsCut = false
       this.audioEnded = false
-      const panner = new StereoPannerNode(audioContext, {pan: breakAudio.direction || 0})
-      track.connect(panner).connect(audioContext.destination);
+      const panner = new StereoPannerNode(audioContext, {
+        pan: breakAudio.direction || 0,
+      })
+      track.connect(panner).connect(audioContext.destination)
 
       this.audioElement.addEventListener("timeupdate", () => {
         if (this.audioElement.currentTime > audioLength && !audioIsCut) {
@@ -251,15 +304,17 @@ const skvto = {
         }
 
         panner.pan.value = breakAudio.panner(panner.pan.value)
-        this.audioElement.volume = (playBackIteration > 0 && playBackIteration <= 1) ?
-          Math.min(this.audioElement.volume + 0.1, 1) :
-          Math.max(this.audioElement.volume - 0.1, 0)
-        playBackIteration = (this.audioElement.volume >= 1) ? 0 : playBackIteration - 0.1
-      });
+        this.audioElement.volume =
+          playBackIteration > 0 && playBackIteration <= 1
+            ? Math.min(this.audioElement.volume + 0.1, 1)
+            : Math.max(this.audioElement.volume - 0.1, 0)
+        playBackIteration =
+          this.audioElement.volume >= 1 ? 0 : playBackIteration - 0.1
+      })
 
       this.audioElement.addEventListener("ended", () => {
         if (!this.audioEnded) readText(atBlock)
-      });
+      })
     },
   },
   fillReader() {
@@ -268,15 +323,18 @@ const skvto = {
     let innerCount = 0
 
     const doInnerThing = function (newBlock, innerHTML) {
-      newBlock.innerHTML = innerHTML.substring(0, innerCount * 15 + (outerCount) * 15)
-      newBlock.classList.add('webdinged')
-      if ((innerCount * 15 + (outerCount) * 15) <= innerHTML.length) {
+      newBlock.innerHTML = innerHTML.substring(
+        0,
+        innerCount * 15 + outerCount * 15,
+      )
+      newBlock.classList.add("webdinged")
+      if (innerCount * 15 + outerCount * 15 <= innerHTML.length) {
         innerCount++
         this.intervalId = setTimeout(doInnerThing, 5, newBlock, innerHTML)
       } else {
         newBlock.innerHTML = innerHTML
-        newBlock.classList.remove('webdinged')
-        newBlock.removeAttribute('class') // This removes the attribute regardless of what's in it
+        newBlock.classList.remove("webdinged")
+        newBlock.removeAttribute("class") // This removes the attribute regardless of what's in it
         innerCount = 0
         doOuterThing()
       }
@@ -288,7 +346,7 @@ const skvto = {
       if (outerCount < this.currentBlocks.length) {
         this.reader.appendChild(newBlock)
         const innerHTML = newBlock.innerHTML
-        newBlock.innerHTML = '■'
+        newBlock.innerHTML = "■"
         this.intervalIdOuter = setTimeout(doInnerThing, 5, newBlock, innerHTML)
         outerCount++
       }
@@ -298,26 +356,27 @@ const skvto = {
   },
   init() {
     this.isEditing = false
-    this.page = parseInt(this.url.searchParams.get('page')) || this.page
+    this.page = parseInt(this.url.searchParams.get("page")) || this.page
   },
 }
 
 async function getData(newPage) {
-  const url = `pages/part-${newPage}.txt`;
-  clearInterval(skvto.intervalId);
-  clearInterval(skvto.intervalIdOuter);
+  const url = `pages/part-${newPage}.txt`
+  clearInterval(skvto.intervalId)
+  clearInterval(skvto.intervalIdOuter)
 
-  const boxes = Array.from('■'.repeat(Math.max(newPage - 1, 1)))
+  const boxes = Array.from("■".repeat(Math.max(newPage - 1, 1)))
   const boxLengthLoader = boxes.length
   // 4 = block size, 2 = width of block aka sq root of block size
-  const breakAt = (Math.floor(boxLengthLoader / 4) * 2) + Math.min(2, boxLengthLoader % 4)
-  boxes.splice(breakAt, 0, ' ')
-  const newEl = document.createElement('h2')
-  newEl.innerHTML = boxes.join('')
-  newEl.style.color = '#808080'
+  const breakAt =
+    Math.floor(boxLengthLoader / 4) * 2 + Math.min(2, boxLengthLoader % 4)
+  boxes.splice(breakAt, 0, " ")
+  const newEl = document.createElement("h2")
+  newEl.innerHTML = boxes.join("")
+  newEl.style.color = "#808080"
   skvto.reader.appendChild(newEl)
 
-  const response = await fetch(url);
+  const response = await fetch(url)
 
   if (!response.ok) throw new Error(`Response status: ${response.status}`)
 
@@ -329,18 +388,18 @@ async function getData(newPage) {
 
 function updateNav() {
   const newPageUrl = new URL(document.URL)
-  newPageUrl.searchParams.set('page', (skvto.page + 1).toString())
+  newPageUrl.searchParams.set("page", (skvto.page + 1).toString())
   pageNavigator.nav.next.href = newPageUrl
-  newPageUrl.searchParams.set('page', (skvto.page - 1).toString())
+  newPageUrl.searchParams.set("page", (skvto.page - 1).toString())
   pageNavigator.nav.previous.href = newPageUrl
 }
 
 function updateUrl() {
-  if (skvto.url.searchParams.has('page')) {
-    skvto.url.searchParams.set('page', skvto.page)
-    history.pushState({}, "", skvto.url);
+  if (skvto.url.searchParams.has("page")) {
+    skvto.url.searchParams.set("page", skvto.page)
+    history.pushState({}, "", skvto.url)
   } else {
-    skvto.url.searchParams.set('page', skvto.page)
+    skvto.url.searchParams.set("page", skvto.page)
   }
 
   updateNav()
@@ -365,7 +424,7 @@ const pageNavigator = {
   nav: {
     next: document.querySelector("#nav-next"),
     previous: document.querySelector("#nav-back"),
-    edit: document.querySelector('#edit-reader')
+    edit: document.querySelector("#edit-reader"),
   },
   goToNavLink: function (direction, event) {
     if (skvto.isEditing) return
@@ -384,31 +443,43 @@ const pageNavigator = {
     this.goToNavLink(direction, event)
   },
   checkDirection: function (event) {
-    if (event?.key === 'ArrowRight' || this.touchendX < this.touchstartX && 150 < (this.touchstartX - this.touchendX)) {
+    if (
+      event?.key === "ArrowRight" ||
+      (this.touchendX < this.touchstartX &&
+        150 < this.touchstartX - this.touchendX)
+    ) {
       this.goToNavLink(1)
     }
 
-    if (event?.key === 'ArrowLeft' || this.touchendX > this.touchstartX && 150 < (this.touchendX - this.touchstartX)) {
+    if (
+      event?.key === "ArrowLeft" ||
+      (this.touchendX > this.touchstartX &&
+        150 < this.touchendX - this.touchstartX)
+    ) {
       this.goToNavLink(-1)
     }
   },
   init: function () {
-    window.addEventListener('keydown', event => {
+    window.addEventListener("keydown", (event) => {
       if (event.defaultPrevented) return // Do nothing if the event was already processed
       this.checkDirection(event)
     })
 
-    document.addEventListener('touchstart', event => {
+    document.addEventListener("touchstart", (event) => {
       this.touchstartX = event.changedTouches[0].screenX
     })
 
-    document.addEventListener('touchend', event => {
+    document.addEventListener("touchend", (event) => {
       this.touchendX = event.changedTouches[0].screenX
       this.checkDirection()
     })
 
-    this.nav.next.addEventListener("click", event => this.navClicked(event, 1))
-    this.nav.previous.addEventListener("click", event => this.navClicked(event, -1))
+    this.nav.next.addEventListener("click", (event) =>
+      this.navClicked(event, 1),
+    )
+    this.nav.previous.addEventListener("click", (event) =>
+      this.navClicked(event, -1),
+    )
   },
 }
 
@@ -417,60 +488,69 @@ const backgroundMotion = {
   ticking: false,
   init: function () {
     document.addEventListener("scroll", () => {
-      this.lastKnownScrollPosition = window.scrollY;
+      this.lastKnownScrollPosition = window.scrollY
 
       if (!this.ticking) {
         window.requestAnimationFrame(() => {
-          document.getElementById('all').style.backgroundPositionY = `${this.lastKnownScrollPosition}px`
-          this.ticking = false;
-        });
+          document.getElementById("all").style.backgroundPositionY =
+            `${this.lastKnownScrollPosition}px`
+          this.ticking = false
+        })
 
-        this.ticking = true;
+        this.ticking = true
       }
-    });
-  }
+    })
+  },
 }
 
 function readText(atBlock) {
-  const currentBlocksStartingAt = skvto.currentBlocks.slice(atBlock?.blockId || 0)
+  const currentBlocksStartingAt = skvto.currentBlocks.slice(
+    atBlock?.blockId || 0,
+  )
 
-  skvto.currentBlocks.forEach(block => {
-    block.classList.remove('marked') // Remove in case the synth was canceled
-    block.removeAttribute('class')
+  skvto.currentBlocks.forEach((block) => {
+    block.classList.remove("marked") // Remove in case the synth was canceled
+    block.removeAttribute("class")
   })
 
   currentBlocksStartingAt.forEach((block, index) => {
-    block.classList.remove('marked') // Remove in case the synth was canceled
-    block.removeAttribute('class')
-    let utterThis = new SpeechSynthesisUtterance();
-    utterThis.voice = synth.getVoices().find(voice => voice.name === 'Nicky')
+    block.classList.remove("marked") // Remove in case the synth was canceled
+    block.removeAttribute("class")
+    let utterThis = new SpeechSynthesisUtterance()
+    utterThis.voice = synth.getVoices().find((voice) => voice.name === "Nicky")
     if (utterThis.voice) {
-      utterThis.rate = 1.1;
-      utterThis.pitch = 1.2;
+      utterThis.rate = 1.1
+      utterThis.pitch = 1.2
     } else {
-      utterThis.voice = synth.getVoices().find(voice => voice.name === 'Moira')
-      utterThis.rate = 0.9;
-      utterThis.pitch = 1.2;
+      utterThis.voice = synth
+        .getVoices()
+        .find((voice) => voice.name === "Moira")
+      utterThis.rate = 0.9
+      utterThis.pitch = 1.2
     }
 
     utterThis.text = block.innerText
     utterThese.push(utterThis)
 
     utterThis.addEventListener("start", () => {
-      block.classList.add('marked')
+      block.classList.add("marked")
 
-      if (!isElementInViewport(block)) block.scrollIntoView({behavior: 'smooth'})
+      if (!isElementInViewport(block))
+        block.scrollIntoView({ behavior: "smooth" })
 
       if (block?.dataset?.val) {
         synth.cancel()
-        skvto.audio.audioSetup(currentBlocksStartingAt[index + 1], block.dataset.val)
+        skvto.audio.audioSetup(
+          currentBlocksStartingAt[index + 1],
+          block.dataset.val,
+        )
         skvto.audio.audioPlay()
       }
-    });
+    })
 
     utterThis.addEventListener("end", () => {
-      block.classList.remove('marked')
-    });
+      block.classList.remove("marked")
+    })
 
     synth.speak(utterThis)
   })
@@ -482,42 +562,42 @@ function isElementInViewport(el) {
 }
 
 skvto.init()
-const synth = window.speechSynthesis; // Text to Speech
+const synth = window.speechSynthesis // Text to Speech
 synth.cancel()
 let utterThese = []
 getData(skvto.page).then()
 pageNavigator.init()
 backgroundMotion.init()
 
-document.getElementById('edit-reader').addEventListener("click", event => {
+document.getElementById("edit-reader").addEventListener("click", (event) => {
   event.preventDefault()
   skvto.isEditing = !skvto.isEditing
 
   if (skvto.isEditing) {
     synth.cancel()
     skvto.audio.audioStop()
-    skvto.currentBlocks.forEach(block => block.classList.remove('marked'))
-    document.getElementById('edit').classList.add('editing')
+    skvto.currentBlocks.forEach((block) => block.classList.remove("marked"))
+    document.getElementById("edit").classList.add("editing")
   } else {
-    document.getElementById('edit').classList.remove('editing')
+    document.getElementById("edit").classList.remove("editing")
   }
 })
 
-document.getElementById('edit-clear').addEventListener("click", event => {
+document.getElementById("edit-clear").addEventListener("click", (event) => {
   event.preventDefault()
 
-  Object.keys(window.localStorage).forEach(key => {
-    if (key.indexOf('page-') !== -1) window.localStorage.removeItem(key)
+  Object.keys(window.localStorage).forEach((key) => {
+    if (key.indexOf("page-") !== -1) window.localStorage.removeItem(key)
   })
 })
 
-document.getElementById('edit-save').addEventListener("click", event => {
+document.getElementById("edit-save").addEventListener("click", (event) => {
   event.preventDefault()
 
   skvto.postEdits().then()
 
-  Object.keys(window.localStorage).forEach(key => {
-    if (key.indexOf('page-') === 0) {
+  Object.keys(window.localStorage).forEach((key) => {
+    if (key.indexOf("page-") === 0) {
       window.console.info(`Saving... ${key}`)
     }
   })
