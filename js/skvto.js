@@ -39,6 +39,23 @@ const skvto = {
   currentBlocks: [],
   intervalId: 0,
   intervalIdOuter: 0,
+  postEdits: async function () {
+    const editsList = []
+    Object.keys(window.localStorage).forEach(key => {
+      if ((key.indexOf('page-') === 0)) {
+        editsList.push(`${key} :: ${window.localStorage.getItem(key)}`)
+      }
+    })
+
+    let editsBody = editsList.join('\n')
+    const checksum = editsBody.split('').reduce((accumulator, currentValue) => accumulator + currentValue.charCodeAt(0), 0) % 256
+    editsBody += `\nchecksum :: ${checksum}`
+
+    await fetch('http://rebellynd.local:3000', {
+      method: 'POST',
+      body: editsBody
+    })
+  },
   createNewEditor: function (block) {
     let handler;
     if (typeof MediumEditor !== 'undefined' && block.tagName === 'P' && !block.dataset.mediumEditorElement) {
@@ -496,6 +513,8 @@ document.getElementById('edit-clear').addEventListener("click", event => {
 
 document.getElementById('edit-save').addEventListener("click", event => {
   event.preventDefault()
+
+  skvto.postEdits().then()
 
   Object.keys(window.localStorage).forEach(key => {
     if (key.indexOf('page-') === 0) {
