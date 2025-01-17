@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "mylint": "./node_modules/eslint/bin/eslint.js -c eslint.config.mjs app.mjs"
+    "mylint": "./node_modules/eslint/bin/eslint.js -c eslint.config.mjs app.mjs",
+    "myweb": "nohup node web.mjs > prod.log &",
+    "myapp": "nohup node app.mjs > prod.log &",
+    "mybrowser": "open -a 'google chrome' http://localhost",
+    "myall": "nohup node web.mjs > prod.log & nohup node app.mjs > prod.log & open -a 'google chrome' http://localhost"
   },
   "author": "",
   "license": "ISC",
