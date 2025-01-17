@@ -1,6 +1,11 @@
 /*global MediumEditor */
 
 const skvto = {
+  hostname: (function () {
+    return new URL(document.URL).hostname === "skvto.re"
+      ? "http://skvto.re:3000"
+      : "http://localhost:3000"
+  })(),
   reader: document.getElementById("reader"),
   url: new URL(document.URL),
   page: 1,
@@ -59,7 +64,7 @@ const skvto = {
         ) % 256
     editsBody += `\nchecksum :: ${checksum}`
 
-    await fetch("http://rebellynd.local:3000", {
+    await fetch(this.hostname, {
       method: "POST",
       body: editsBody,
     })
