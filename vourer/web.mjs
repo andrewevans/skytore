@@ -1,6 +1,12 @@
 import express from "express"
 
-const app = express()
-const port = 80
+function web() {
+  const app = express()
+  const port = 80
 
-app.use(express.static('../')).listen(port)
+  app.use(express.static("../")).listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
+  })
+}
+
+export default web()

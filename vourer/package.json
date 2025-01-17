@@ -4,16 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "mylint": "./node_modules/eslint/bin/eslint.js -c eslint.config.mjs app.mjs",
     "npmInstall": "npm install",
-    "myweb": "nohup node web.mjs > prod.log &",
-    "myapp": "nohup node app.mjs > prod.log &",
-    "mybrowser": "open -a 'google chrome' http://localhost"
+    "buildAll": "esbuild all.mjs --bundle --platform=node --outfile=all.js",
+    "runAll": "nohup node all.js > prod.log &",
+    "runApp": "nohup node app.mjs > prod.log &",
+    "openBrowser": "open -a \"google chrome\" http://localhost &",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "mylint": "./node_modules/eslint/bin/eslint.js -c eslint.config.mjs app.mjs"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "esbuild": "^0.24.2",
     "express": "^4.21.2",
     "globals": "^15.14.0"
   },
