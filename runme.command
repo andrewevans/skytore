@@ -1,4 +1,5 @@
 #!/bin/bash
+pwd
 cd $( dirname -- "$0"; )
 npm run --prefix vourer npmInstall
 npm run --prefix vourer myweb
