@@ -2,9 +2,9 @@
 
 const skvto = {
   hostname: (function () {
-    return new URL(document.URL).hostname === "skvto.re"
-      ? "http://skvto.re:3000"
-      : "http://localhost:3000"
+    const url = new URL(document.URL)
+
+    return `${url.origin}:${url.protocol === "http:" ? 3000 : 3030}`
   })(),
   reader: document.getElementById("reader"),
   url: new URL(document.URL),

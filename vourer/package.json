@@ -7,10 +7,12 @@
     "npmInstall": "npm install",
     "buildAll": "esbuild all.mjs --bundle --platform=node --outfile=all.js",
     "runAll": "nohup node all.js > prod.log &",
+    "runWeb": "node web.mjs",
+    "runSecure": "nohup node secure.mjs > prod.log &",
     "runApp": "nohup node app.mjs > prod.log &",
-    "openBrowser": "open -a \"google chrome\" http://localhost &",
+    "openBrowser": "open -a \"google chrome\" https://localhost &",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "mylint": "./node_modules/eslint/bin/eslint.js -c eslint.config.mjs app.mjs"
+    "mylint": "./node_modules/eslint/bin/eslint.js -c eslint.config.mjs"
   },
   "author": "",
   "license": "ISC",
