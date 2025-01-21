@@ -25,7 +25,7 @@
 <script src="js/skvto.js"></script>
 <script>
   if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("vourer/sw.js").then(
+    navigator.serviceWorker.register("sw.js", { scope: "/" }).then(
       (registration) => {
         console.log("Service worker registration successful:", registration);
       },

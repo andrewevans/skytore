@@ -3,7 +3,17 @@ import fs from "fs"
 import https from "https"
 
 const app = express()
-app.use(express.static("../"))
+
+app
+  .use(
+    express.static("../", {
+      setHeaders: function (res, path) {
+        if (path.indexOf("sw.js") !== -1) // TODO: Get filename from config
+          res.set("Service-Worker-Allowed", "/")
+      },
+    }),
+  )
+
 app.get("/", function (req, res) {
   return res.end("<p>This server serves up static files.</p>")
 })
