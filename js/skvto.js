@@ -127,9 +127,9 @@ const skvto = {
       el.blockId = i
 
       if (localStorage.getItem(`page-${skvto.page}-block-${el.blockId}`)) {
-        ;(el.innerHTML = localStorage.getItem(`
-        page-${skvto.page}-block-${el.blockId}`)),
-          el.classList.add("data-dirty")
+        el.innerHTML = localStorage.getItem(`
+        page-${skvto.page}-block-${el.blockId}`)
+        el.classList.add("data-dirty")
       }
 
       el.addEventListener("click", (event) => this.pauseOrPlayOrEdit(event, 1))
