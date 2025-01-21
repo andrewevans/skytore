@@ -127,8 +127,8 @@ const skvto = {
       el.blockId = i
 
       if (localStorage.getItem(`page-${skvto.page}-block-${el.blockId}`)) {
-        el.innerHTML = localStorage.getItem(`
-        page-${skvto.page}-block-${el.blockId}`)
+        const itemKey = `page-${skvto.page}-block-${el.blockId}`
+        el.innerHTML = localStorage.getItem(itemKey)
         el.classList.add("data-dirty")
       }
 
