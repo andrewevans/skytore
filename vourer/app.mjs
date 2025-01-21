@@ -22,6 +22,7 @@ function app() {
 
   app.post("/", (req, res) => {
     let newData = []
+    let previousData = []
 
     res.setHeader("Content-Type", "text/plain")
     res.setHeader("Access-Control-Allow-Origin", "*")
@@ -35,12 +36,21 @@ function app() {
       })
       .on("end", () => {
         newData = Buffer.concat(newData).toString()
+        previousData = Buffer.concat(previousData).toString()
         res.statusCode = 201
         let previousChecksum
         let newChecksum
         const date = new Date().toLocaleDateString()
         const entry = `\n${date}:\n${newData}`
-        const previousData = fs.readFileSync("diary.txt", { encoding: "utf8" })
+
+        try {
+          previousData = fs.readFileSync("diary.txt", { encoding: "utf8" })
+        } catch (err) {
+          fs.writeFile('diary.txt', '',"utf8",(err) => {
+            if (err) throw err;
+            console.log('The file has been saved!');
+          });
+        }
 
         newChecksum = getChecksum(newData)
         previousChecksum = getChecksum(previousData)
