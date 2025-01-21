@@ -15,7 +15,10 @@ const APP_STATIC_RESOURCES = [
   "/js/skvto.js",
   "vourer/favicon_io/android-chrome-512x512.png",
   "vourer/favicon_io/android-chrome-192x192.png",
+  "favicon.ico",
   "vourer/offline.html",
+  "pages/part-1.txt",
+  "pages/part-2.txt",
 ]
 
 const offlineFallbackPage = "vourer/offline.html"
@@ -56,25 +59,50 @@ self.addEventListener("activate", (event) => {
   )
 })
 
-self.addEventListener("fetch", (event) => {
-  if (event.request.mode === "navigate") {
-    event.respondWith(
-      (async () => {
-        try {
-          const preloadResp = await event.preloadResponse
+const putInCache = async (request, response) => {
+  const cache = await caches.open("v1")
+  await cache.put(request, response)
+}
 
-          if (preloadResp) {
-            return preloadResp
-          }
-
-          const networkResp = await fetch(event.request)
-          return networkResp
-        } catch (error) {
-          const cache = await caches.open(CACHE_NAME)
-          const cachedResp = await cache.match(offlineFallbackPage)
-          return cachedResp
-        }
-      })(),
-    )
+const cacheFirst = async ({ request, fallbackUrl }) => {
+  // First try to get the resource from the cache.
+  const responseFromCache = await caches.match(request)
+  if (responseFromCache) {
+    return responseFromCache
   }
+
+  // If the response was not found in the cache,
+  // try to get the resource from the network.
+  try {
+    const responseFromNetwork = await fetch(request)
+    // If the network request succeeded, clone the response:
+    // - put one copy in the cache, for the next time
+    // - return the original to the app
+    // Cloning is needed because a response can only be consumed once.
+    putInCache(request, responseFromNetwork.clone())
+    return responseFromNetwork
+  } catch (error) {
+    // If the network request failed,
+    // get the fallback response from the cache.
+    const fallbackResponse = await caches.match(fallbackUrl)
+    if (fallbackResponse) {
+      return fallbackResponse
+    }
+    // When even the fallback response is not available,
+    // there is nothing we can do, but we must always
+    // return a Response object.
+    return new Response("Network error happened", {
+      status: 408,
+      headers: { "Content-Type": "text/plain" },
+    })
+  }
+}
+
+self.addEventListener("fetch", (event) => {
+  event.respondWith(
+    cacheFirst({
+      request: event.request,
+      fallbackUrl: offlineFallbackPage,
+    }),
+  )
 })
