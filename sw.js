@@ -19,6 +19,7 @@ const APP_STATIC_RESOURCES = [
   "vourer/offline.html",
   "pages/part-1.txt",
   "pages/part-2.txt",
+  "vourer/skvto.json",
 ]
 
 const offlineFallbackPage = "vourer/offline.html"
@@ -64,9 +65,9 @@ const putInCache = async (request, response) => {
   await cache.put(request, response)
 }
 
-const cacheFirst = async ({ request, fallbackUrl }) => {
-  // First try to get the resource from the cache.
-  const responseFromCache = await caches.match(request)
+const cacheFirst = async ({ request }) => {
+  // First try to get the resource from the cache...
+  const responseFromCache = await caches.match(request, { ignoreSearch: true })
   if (responseFromCache) {
     return responseFromCache
   }
@@ -82,12 +83,6 @@ const cacheFirst = async ({ request, fallbackUrl }) => {
     putInCache(request, responseFromNetwork.clone())
     return responseFromNetwork
   } catch (error) {
-    // If the network request failed,
-    // get the fallback response from the cache.
-    const fallbackResponse = await caches.match(fallbackUrl)
-    if (fallbackResponse) {
-      return fallbackResponse
-    }
     // When even the fallback response is not available,
     // there is nothing we can do, but we must always
     // return a Response object.
