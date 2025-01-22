@@ -3,7 +3,8 @@
   "short_name": "skvto",
   "start_url": "/index.html",
   "display": "fullscreen",
-  "background_color": "#ff0000",
+  "background_color": "#121212",
+  "theme_color": "#121212",
   "icons": [
     {
       "src": "favicon_io/android-chrome-192x192.png",

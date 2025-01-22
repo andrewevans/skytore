@@ -607,3 +607,13 @@ document.getElementById("edit-save").addEventListener("click", (event) => {
     }
   })
 })
+
+const setThemeColor = function () {
+  const meta = document.createElement("meta")
+  meta.name = "theme-color"
+  meta.content = "#121212"
+  const head = document.getElementsByTagName("head")[0]
+  head.appendChild(meta)
+}
+
+setThemeColor()
