@@ -540,6 +540,8 @@ function readText(atBlock) {
     utterThis.addEventListener("start", () => {
       block.classList.add("marked")
 
+      if (block.tagName === "ASIDE") showNotification(block)
+
       if (!isElementInViewport(block))
         block.scrollIntoView({ behavior: "smooth" })
 
@@ -617,3 +619,20 @@ const setThemeColor = function () {
 }
 
 setThemeColor()
+
+function showNotification(block) {
+  const blockText = block.innerText.split("\n")
+
+  if (blockText.length < 2) return
+
+  Notification.requestPermission().then((result) => {
+    if (result === "granted") {
+      navigator.serviceWorker.ready.then((registration) => {
+        registration.showNotification(blockText[0], {
+          body: blockText[1],
+          icon: "vourer/favicon_io/android-chrome-192x192.png",
+        })
+      })
+    }
+  })
+}
