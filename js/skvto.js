@@ -132,7 +132,10 @@ const skvto = {
         el.classList.add("data-dirty")
       }
 
-      el.addEventListener("click", (event) => this.pauseOrPlayOrEdit(event, 1))
+      el.addEventListener("click", (event) => {
+        Notification.requestPermission() // This must be directly in the "click" event listener for Safari
+        this.pauseOrPlayOrEdit(event, 1)
+      })
       return el
     })
   },
@@ -620,19 +623,20 @@ const setThemeColor = function () {
 
 setThemeColor()
 
-function showNotification(block) {
+const showNotification = (block) => {
   const blockText = block.innerText.split("\n")
 
   if (blockText.length < 2) return
 
-  Notification.requestPermission().then((result) => {
-    if (result === "granted") {
-      navigator.serviceWorker.ready.then((registration) => {
-        registration.showNotification(blockText[0], {
-          body: blockText[1],
-          icon: "vourer/favicon_io/android-chrome-192x192.png",
-        })
-      })
-    }
+  if (Notification.permission !== "granted") {
+    window.console.info("Needs Notification permission. Please reload")
+    return
+  }
+
+  navigator.serviceWorker.ready.then((registration) => {
+    registration.showNotification(blockText[0], {
+      body: blockText[1],
+      icon: "vourer/favicon_io/android-chrome-192x192.png",
+    })
   })
 }
