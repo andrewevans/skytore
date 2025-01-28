@@ -133,7 +133,7 @@ const skvto = {
       }
 
       el.addEventListener("click", (event) => {
-        Notification.requestPermission() // This must be directly in the "click" event listener for Safari
+        Notification.requestPermission().then() // This must be directly in the "click" event listener for Safari
         this.pauseOrPlayOrEdit(event, 1)
       })
       return el
@@ -637,6 +637,6 @@ const showNotification = (block) => {
     registration.showNotification(blockText[0], {
       body: blockText[1],
       icon: "vourer/favicon_io/android-chrome-192x192.png",
-    })
+    }).then()
   })
 }
