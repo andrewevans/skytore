@@ -199,7 +199,7 @@ const skvto = {
     this.currentBlocks = this.currentBlocks.map((block, i) => {
       if (this.markdown.checkIn.test(block.innerHTML)) {
         const newEl = document.createElement("aside")
-        newEl.setAttribute("data-block", i.toString())
+        newEl.blockId = i
         const p = document.createElement("p")
         p.innerHTML = block.innerHTML.replaceAll(this.markdown.checkIn, "")
         p.innerHTML = p.innerHTML.replaceAll(this.markdown.checkInAt, "<br />")
