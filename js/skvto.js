@@ -44,6 +44,7 @@ const skvto = {
   currentBlocks: [],
   intervalId: 0,
   intervalIdOuter: 0,
+  bellsAndWhistles: false,
   postEdits: async function () {
     const editsList = []
 
@@ -404,7 +405,25 @@ const skvto = {
 
     doOuterThing()
   },
+  addBellToggle() {
+    document.querySelectorAll(".switch").forEach((theSwitch) => {
+      theSwitch.addEventListener("click", handleClickEvent.bind(this), false)
+    })
+
+    function handleClickEvent(evt) {
+      const el = evt.target
+
+      if (el.getAttribute("aria-checked") === "true") {
+        el.setAttribute("aria-checked", "false")
+        this.bellsAndWhistles = false
+      } else {
+        el.setAttribute("aria-checked", "true")
+        this.bellsAndWhistles = true
+      }
+    }
+  },
   init() {
+    this.addBellToggle()
     this.isEditing = false
     this.page = parseInt(this.url.searchParams.get("page")) || this.page
   },

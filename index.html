@@ -11,10 +11,26 @@
 </head>
 <body>
 <div id="all">
+  <button
+    type="button"
+    role="switch"
+    aria-checked="true"
+    id="bellsAndWhistles"
+    class="switch">
+    <span>off</span>
+    <span>on</span>
+  </button>
+  <label for="bellsAndWhistles" class="switch">Bells & Whistles</label>
+
   <div id="reader"></div>
   <nav aria-label="pagination">
     <a id="nav-back" href="#back"><span aria-hidden="true">«</span>Turn Back</a>
     <a id="nav-next" href="#next">Turn the Page<span aria-hidden="true">»</span></a>
+  </nav>
+  <nav id="bell-toggle" aria-label="bells">
+    <!--    <a id="edit-reader" href="#edit"><span>Edit</span><span aria-hidden="true">»</span></a>-->
+    <!--    <a id="edit-clear" href="#edit-clear"><span>Clear</span><span aria-hidden="true">x</span></a>-->
+    <!--    <a id="edit-save" href="#edit-save"><span>Save</span><span aria-hidden="true">s</span></a>-->
   </nav>
   <nav id="edit" aria-label="edit">
     <a id="edit-reader" href="#edit"><span>Edit</span><span aria-hidden="true">»</span></a>
