@@ -210,27 +210,44 @@ const skvto = {
       return block
     })
   },
+  handleIntersection: function (entries, observer, theBlock, controller) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        document.addEventListener("scroll", theBlock, {
+          signal: controller.signal,
+        })
+        observer.unobserve(entry.target)
+      } else {
+        console.log("Element is out of view!")
+      }
+    })
+  },
+  showBlock: function (controller) {
+    const rect = this.getBoundingClientRect()
+
+    if (rect.y < window.innerHeight / 3) {
+      this.classList.remove("hidden-checkin")
+      controller.abort() // remove listener
+    }
+  },
   setCheckinFades() {
     const options = {
       root: null, // Use the viewport as the root
       rootMargin: "0px", // No margin
       threshold: 0, // Trigger when >0% of the element is visible
-    };
+    }
 
-    this.currentBlocks.forEach((block, i) => {
-      if (block.tagName === 'ASIDE') {
+    this.currentBlocks.forEach((block) => {
+      if (block.tagName === "ASIDE") {
         block.classList.add("hidden-checkin")
+        const controller = new AbortController() // Add an abortable event listener to table
+        const showBlock = this.showBlock.bind(block, controller)
 
-        const controller = new AbortController(); // Add an abortable event listener to table
+        const handleIntersection = (entries, observer) =>
+          this.handleIntersection(entries, observer, showBlock, controller)
 
-        const theBlock = thisBlock.bind(block, thisBlock, controller)
-
-        const handleThis = (entries, observer) => {
-          return handleIntersection(entries, observer, theBlock, controller)
-        }
-
-        const observer = new IntersectionObserver(handleThis, options);
-        observer.observe(block);
+        const observer = new IntersectionObserver(handleIntersection, options)
+        observer.observe(block)
       }
     })
   },
@@ -659,32 +676,11 @@ const showNotification = (block) => {
   }
 
   navigator.serviceWorker.ready.then((registration) => {
-    registration.showNotification(blockText[0], {
-      body: blockText[1],
-      icon: "vourer/favicon_io/android-chrome-192x192.png",
-    }).then()
+    registration
+      .showNotification(blockText[0], {
+        body: blockText[1],
+        icon: "vourer/favicon_io/android-chrome-192x192.png",
+      })
+      .then()
   })
-}
-
-function handleIntersection(entries, observer, theBlock, controller) {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      document.addEventListener("scroll", theBlock, { signal: controller.signal });
-      observer.unobserve(entry.target)
-    } else {
-      console.log("Element is out of view!");
-    }
-  });
-}
-
-
-function thisBlock(blockFunc, controller) {
-  const rect = this.getBoundingClientRect()
-
-  if (rect.y < (window.innerHeight)/3) {
-    this.classList.remove('hidden-checkin')
-    controller.abort(); // remove listener
-  } else {
-
-  }
 }
