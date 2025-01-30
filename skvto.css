@@ -248,3 +248,11 @@ aside.marked p {
     background-color: #d3d3d3;
     scroll-margin-top: 10vh;
 }
+
+.hidden-checkin p {
+    font-size: 0.5em;
+    color: transparent;
+    font-family: Webdings-Regular;
+    text-shadow: #d3d3d3 0 0 5px;
+    /*visibility: hidden;*/
+}
