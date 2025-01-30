@@ -560,12 +560,12 @@ function readText(atBlock) {
 
   skvto.currentBlocks.forEach((block) => {
     block.classList.remove("marked") // Remove in case the synth was canceled
-    block.removeAttribute("class")
+    if (block.classList.length === 0) block.removeAttribute("class")
   })
 
   currentBlocksStartingAt.forEach((block, index) => {
     block.classList.remove("marked") // Remove in case the synth was canceled
-    block.removeAttribute("class")
+    if (block.classList.length === 0) block.removeAttribute("class")
     let utterThis = new SpeechSynthesisUtterance()
     utterThis.voice = synth.getVoices().find((voice) => voice.name === "Nicky")
     if (utterThis.voice) {
@@ -583,6 +583,7 @@ function readText(atBlock) {
     utterThese.push(utterThis)
 
     utterThis.addEventListener("start", () => {
+      block.removeAttribute("class")
       block.classList.add("marked")
 
       if (block.tagName === "ASIDE") showNotification(block)
