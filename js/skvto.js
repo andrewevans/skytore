@@ -210,6 +210,30 @@ const skvto = {
       return block
     })
   },
+  setCheckinFades() {
+    const options = {
+      root: null, // Use the viewport as the root
+      rootMargin: "0px", // No margin
+      threshold: 0, // Trigger when >0% of the element is visible
+    };
+
+    this.currentBlocks.forEach((block, i) => {
+      if (block.tagName === 'ASIDE') {
+        block.classList.add("hidden-checkin")
+
+        const controller = new AbortController(); // Add an abortable event listener to table
+
+        const theBlock = thisBlock.bind(block, thisBlock, controller)
+
+        const handleThis = (entries, observer) => {
+          return handleIntersection(entries, observer, theBlock, controller)
+        }
+
+        const observer = new IntersectionObserver(handleThis, options);
+        observer.observe(block);
+      }
+    })
+  },
   setVars() {
     this.currentBlocks.forEach((block) => {
       block.innerHTML = block.innerHTML.replaceAll(
@@ -342,7 +366,7 @@ const skvto = {
       } else {
         newBlock.innerHTML = innerHTML
         newBlock.classList.remove("webdinged")
-        newBlock.removeAttribute("class") // This removes the attribute regardless of what's in it
+        if (newBlock.classList.length === 0) newBlock.removeAttribute("class") // This removes the attribute regardless of what's in it
         innerCount = 0
         doOuterThing()
       }
@@ -423,6 +447,7 @@ function putData() {
   skvto.setShortBreaks()
   skvto.setEm()
   skvto.setCheckIns()
+  skvto.setCheckinFades()
   skvto.fillReader()
 }
 
@@ -639,4 +664,27 @@ const showNotification = (block) => {
       icon: "vourer/favicon_io/android-chrome-192x192.png",
     }).then()
   })
+}
+
+function handleIntersection(entries, observer, theBlock, controller) {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      document.addEventListener("scroll", theBlock, { signal: controller.signal });
+      observer.unobserve(entry.target)
+    } else {
+      console.log("Element is out of view!");
+    }
+  });
+}
+
+
+function thisBlock(blockFunc, controller) {
+  const rect = this.getBoundingClientRect()
+
+  if (rect.y < (window.innerHeight)/3) {
+    this.classList.remove('hidden-checkin')
+    controller.abort(); // remove listener
+  } else {
+
+  }
 }
