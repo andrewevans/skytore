@@ -41,7 +41,7 @@ h1 {
     padding-top: 5vh;
     padding-bottom: calc(33vh - 5vh - 1.8em);
     line-height: 1.8em;
-    font-family: 'Trickster', nyt-imperial,georgia,'times new roman',times,serif;
+    font-family: 'Trickster', nyt-imperial, georgia, 'times new roman', times, serif;
     color: #cccdcc;
     text-align: right;
     text-indent: 0;
@@ -141,7 +141,7 @@ nav#edit span:nth-child(1) {
     display: none;
 }
 
-nav#edit span:nth-child(2){
+nav#edit span:nth-child(2) {
     display: inline-block;
     transform: rotate(90deg);
 }
@@ -183,16 +183,14 @@ nav#edit span:nth-child(2){
 
 @font-face {
     font-family: "Trickster";
-    src:
-            local("Trickster"),
-            url("imperial-normal-500.ttf") format("opentype") tech(color-COLRv1),
+    src: local("Trickster"),
+    url("imperial-normal-500.ttf") format("opentype") tech(color-COLRv1),
 }
 
 @font-face {
     font-family: "Webdings-Regular";
-    src:
-            local("Webdings-Regular"),
-            url("Webdings-Regular.ttf") format("opentype") tech(color-COLRv1),
+    src: local("Webdings-Regular"),
+    url("Webdings-Regular.ttf") format("opentype") tech(color-COLRv1),
 }
 
 p {
@@ -206,7 +204,7 @@ p {
     overflow-wrap: break-word;
     /*color: var(--color-content-secondary,#363636);*/
     color: #d3d3d3;
-    font-family: 'Trickster', nyt-imperial,georgia,'times new roman',times,serif;
+    font-family: 'Trickster', nyt-imperial, georgia, 'times new roman', times, serif;
     font-size: 1.125rem;
     line-height: 1.7625rem;
     margin-left: 20px;
@@ -268,10 +266,9 @@ button.switch {
     line-height: 20px;
     vertical-align: middle;
     text-align: center;
-    font:
-            12px "Open Sans",
-            "Arial",
-            serif;
+    font: 12px "Open Sans",
+    "Arial",
+    serif;
 }
 
 button.switch span {
@@ -291,10 +288,9 @@ button.switch span {
 }
 
 label.switch {
-    font:
-            16px "Open Sans",
-            "Arial",
-            sans-serif;
+    font: 16px "Open Sans",
+    "Arial",
+    sans-serif;
     line-height: 20px;
     vertical-align: middle;
     user-select: none;
