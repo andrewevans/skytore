@@ -227,6 +227,7 @@ const skvto = {
 
     if (rect.y < window.innerHeight / 3) {
       this.classList.remove("hidden-checkin")
+      showNotification(this)
       controller.abort() // remove listener
     }
   },
@@ -669,7 +670,9 @@ setThemeColor()
 const showNotification = (block) => {
   const blockText = block.innerText.split("\n")
 
-  if (blockText.length < 2) return
+  if (blockText.length < 2 || block.notificationShown) return
+
+  block.notificationShown = true // Mark as shown so this function will short-circuit after the first pass
 
   if (Notification.permission !== "granted") {
     window.console.info("Needs Notification permission. Please reload")
