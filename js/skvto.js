@@ -134,7 +134,6 @@ const skvto = {
       }
 
       el.addEventListener("click", (event) => {
-        Notification.requestPermission().then() // This must be directly in the "click" event listener for Safari
         this.pauseOrPlayOrEdit(event, 1)
       })
       return el
@@ -419,6 +418,7 @@ const skvto = {
       } else {
         el.setAttribute("aria-checked", "true")
         this.bellsAndWhistles = true
+        Notification.requestPermission().then() // This must be directly in the "click" event listener for Safari
       }
     }
   },
