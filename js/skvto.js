@@ -216,8 +216,7 @@ const skvto = {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return
 
-      const handleScroll = throttle(theBlock, 300)
-      document.addEventListener("scroll", handleScroll, {
+      document.addEventListener("scroll", throttle(theBlock, 300), {
         signal: controller.signal,
       })
       observer.unobserve(entry.target)
@@ -226,7 +225,10 @@ const skvto = {
   showBlock: function (controller) {
     const rect = this.getBoundingClientRect()
 
-    if (rect.y < window.innerHeight / 3) {
+    if (rect.y < 0) {
+      this.classList.remove("hidden-checkin")
+      controller.abort() // remove listener
+    } else if (rect.y < window.innerHeight / 3) {
       this.classList.remove("hidden-checkin")
       showNotification(this)
       controller.abort() // remove listener
@@ -244,11 +246,16 @@ const skvto = {
     this.currentBlocks.forEach((block) => {
       if (block.tagName === "ASIDE") {
         block.classList.add("hidden-checkin")
-        const controller = new AbortController() // Add an abortable event listener to table
-        const showBlock = this.showBlock.bind(block, controller)
+        block.controller = new AbortController() // Add an abortable event listener to table
+        const showBlock = this.showBlock.bind(block, block.controller)
 
         const handleIntersection = (entries, observer) =>
-          this.handleIntersection(entries, observer, showBlock, controller)
+          this.handleIntersection(
+            entries,
+            observer,
+            showBlock,
+            block.controller,
+          )
 
         block.observer = new IntersectionObserver(handleIntersection, options)
         block.observer.observe(block)
@@ -433,6 +440,7 @@ const skvto = {
         this.currentBlocks.forEach((block) => {
           block.classList.remove("hidden-checkin")
           block.observer?.disconnect()
+          block.controller?.abort()
         })
       } else {
         el.setAttribute("aria-checked", "true")
@@ -524,6 +532,7 @@ const pageNavigator = {
     window.scrollTo(0, 0)
     skvto.currentBlocks.forEach((block) => {
       block.observer?.disconnect()
+      block.controller?.abort()
     })
 
     skvto.reader.replaceChildren()
