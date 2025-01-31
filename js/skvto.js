@@ -232,6 +232,8 @@ const skvto = {
     }
   },
   setCheckinFades() {
+    if (!skvto.bellsAndWhistles) return // TODO: Needs to distinguish between features "edit" and "speak"
+
     const options = {
       root: null, // Use the viewport as the root
       rootMargin: "0px", // No margin
@@ -247,8 +249,8 @@ const skvto = {
         const handleIntersection = (entries, observer) =>
           this.handleIntersection(entries, observer, showBlock, controller)
 
-        const observer = new IntersectionObserver(handleIntersection, options)
-        observer.observe(block)
+        block.observer = new IntersectionObserver(handleIntersection, options)
+        block.observer.observe(block)
       }
     })
   },
@@ -418,14 +420,19 @@ const skvto = {
         this.bellsAndWhistles = false
         this.isEditing = false
 
-        skvto.currentBlocks.forEach((block) => {
+        this.currentBlocks.forEach((block) => {
           block.classList.remove("marked") // Remove in case the synth was canceled
           if (block.classList.length === 0) block.removeAttribute("class")
         })
 
         synth.cancel()
-        skvto.audio.audioStop()
+        this.audio.audioStop()
         window.scrollTo(0, 0)
+
+        this.currentBlocks.forEach((block) => {
+          block.classList.remove("hidden-checkin")
+          block.observer?.disconnect()
+        })
       } else {
         el.setAttribute("aria-checked", "true")
         this.bellsAndWhistles = true
@@ -513,6 +520,10 @@ const pageNavigator = {
     synth.cancel()
     skvto.audio.audioStop()
     window.scrollTo(0, 0)
+    skvto.currentBlocks.forEach((block) => {
+      block.observer?.disconnect()
+    })
+
     skvto.reader.replaceChildren()
     event?.preventDefault() // Cancel the default action to avoid it being handled twice
     getData(skvto.page + direction).catch(() => {
