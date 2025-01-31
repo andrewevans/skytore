@@ -414,7 +414,9 @@ const skvto = {
 
       if (el.getAttribute("aria-checked") === "true") {
         el.setAttribute("aria-checked", "false")
+        document.getElementById("edit").classList.remove("editing")
         this.bellsAndWhistles = false
+        this.isEditing = false
       } else {
         el.setAttribute("aria-checked", "true")
         this.bellsAndWhistles = true
