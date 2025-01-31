@@ -419,6 +419,15 @@ const skvto = {
         document.getElementById("edit").classList.remove("editing")
         this.bellsAndWhistles = false
         this.isEditing = false
+
+        skvto.currentBlocks.forEach((block) => {
+          block.classList.remove("marked") // Remove in case the synth was canceled
+          if (block.classList.length === 0) block.removeAttribute("class")
+        })
+
+        synth.cancel()
+        skvto.audio.audioStop()
+        window.scrollTo(0, 0)
       } else {
         el.setAttribute("aria-checked", "true")
         this.bellsAndWhistles = true
@@ -578,6 +587,8 @@ const backgroundMotion = {
 }
 
 function readText(atBlock) {
+  if (!skvto.bellsAndWhistles) return // TODO: Needs to distinguish between features "edit" and "speak"
+
   const currentBlocksStartingAt = skvto.currentBlocks.slice(
     atBlock?.blockId || 0,
   )
