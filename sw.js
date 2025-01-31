@@ -20,6 +20,8 @@ const APP_STATIC_RESOURCES = [
   "pages/part-1.txt",
   "pages/part-2.txt",
   "vourer/skvto.json",
+  "/Webdings-Regular.ttf",
+  "/imperial-normal-500.ttf",
 ]
 
 const offlineFallbackPage = "vourer/offline.html"
@@ -101,3 +103,20 @@ self.addEventListener("fetch", (event) => {
     }),
   )
 })
+
+/*
+const deleteCache = async (key) => {
+  await caches.delete(key);
+};
+
+const deleteOldCaches = async () => {
+  const cacheKeepList = ["v2"];
+  const keyList = await caches.keys();
+  const cachesToDelete = keyList.filter((key) => !cacheKeepList.includes(key));
+  await Promise.all(cachesToDelete.map(deleteCache));
+};
+
+self.addEventListener("activate", (event) => {
+  event.waitUntil(deleteOldCaches());
+});
+*/
