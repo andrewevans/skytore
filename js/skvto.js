@@ -105,6 +105,8 @@ const skvto = {
     }
   },
   pauseOrPlayOrEdit: function (event) {
+    if (!this.bellsAndWhistles) return // TODO: Needs to distinguish between features "edit" and "speak"
+
     const atBlock = event.target
 
     if (this.isEditing) {
@@ -645,6 +647,8 @@ pageNavigator.init()
 backgroundMotion.init()
 
 document.getElementById("edit-reader").addEventListener("click", (event) => {
+  if (!skvto.bellsAndWhistles) return // TODO: Needs to distinguish between features "edit" and "speak"
+
   event.preventDefault()
   skvto.isEditing = !skvto.isEditing
 
@@ -659,6 +663,8 @@ document.getElementById("edit-reader").addEventListener("click", (event) => {
 })
 
 document.getElementById("edit-clear").addEventListener("click", (event) => {
+  if (!skvto.bellsAndWhistles) return // TODO: Needs to distinguish between features "edit" and "speak"
+
   event.preventDefault()
 
   Object.keys(window.localStorage).forEach((key) => {
@@ -667,6 +673,8 @@ document.getElementById("edit-clear").addEventListener("click", (event) => {
 })
 
 document.getElementById("edit-save").addEventListener("click", (event) => {
+  if (!skvto.bellsAndWhistles) return // TODO: Needs to distinguish between features "edit" and "speak"
+
   event.preventDefault()
 
   skvto.postEdits().then()
