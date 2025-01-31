@@ -212,15 +212,15 @@ const skvto = {
       return block
     })
   },
-  handleIntersection: function (entries, observer, theBlock) {
+  handleIntersection: function (entries, block) {
     entries.forEach((entry) => {
-      if (entry.isIntersecting) theBlock()
+      if (entry.isIntersecting) this.showBlock(block)
     })
   },
-  showBlock: function (controller) {
-    this.classList.remove("hidden-checkin")
-    showNotification(this)
-    controller.abort() // remove listener
+  showBlock: function (block) {
+    block.observer.disconnect()
+    block.classList.remove("hidden-checkin")
+    showNotification(block)
   },
   setCheckinFades() {
     if (!skvto.bellsAndWhistles) return // TODO: Needs to distinguish between features "edit" and "speak"
@@ -234,17 +234,10 @@ const skvto = {
     this.currentBlocks.forEach((block) => {
       if (block.tagName === "ASIDE") {
         block.classList.add("hidden-checkin")
-        block.controller = new AbortController() // Add an abortable event listener to table
-        const showBlock = this.showBlock.bind(block, block.controller)
+        const handleIntersection = (entries) =>
+          this.handleIntersection(entries, block)
 
-        const handleIntersection = (entries, observer) =>
-          this.handleIntersection(
-            entries,
-            observer,
-            showBlock,
-            block.controller,
-          )
-
+        block.observer?.disconnect()
         block.observer = new IntersectionObserver(handleIntersection, options)
         block.observer.observe(block)
       }
@@ -428,7 +421,6 @@ const skvto = {
         this.currentBlocks.forEach((block) => {
           block.classList.remove("hidden-checkin")
           block.observer?.disconnect()
-          block.controller?.abort()
         })
       } else {
         el.setAttribute("aria-checked", "true")
@@ -520,7 +512,6 @@ const pageNavigator = {
     window.scrollTo(0, 0)
     skvto.currentBlocks.forEach((block) => {
       block.observer?.disconnect()
-      block.controller?.abort()
     })
 
     skvto.reader.replaceChildren()
