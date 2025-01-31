@@ -214,14 +214,12 @@ const skvto = {
   },
   handleIntersection: function (entries, observer, theBlock, controller) {
     entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        document.addEventListener("scroll", theBlock, {
-          signal: controller.signal,
-        })
-        observer.unobserve(entry.target)
-      } else {
-        console.log("Element is out of view!")
-      }
+      if (!entry.isIntersecting) return
+
+      document.addEventListener("scroll", theBlock, {
+        signal: controller.signal,
+      })
+      observer.unobserve(entry.target)
     })
   },
   showBlock: function (controller) {
