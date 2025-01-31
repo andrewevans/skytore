@@ -412,7 +412,7 @@ const skvto = {
     })
 
     function handleClickEvent(evt) {
-      const el = evt.target
+      const el = evt.currentTarget
 
       if (el.getAttribute("aria-checked") === "true") {
         el.setAttribute("aria-checked", "false")

@@ -12,17 +12,15 @@
 </head>
 <body>
 <div id="all">
-  <button
-    type="button"
-    role="switch"
-    aria-checked="false"
-    id="bells-and-whistles"
-    class="switch">
-    <span>off</span>
-    <span>on</span>
-  </button>
-  <label for="bells-and-whistles" class="switch">Bells & Whistles</label>
-
+  <nav id="bells" aria-label="bells">
+    <label for="bells-and-whistles" class="switch">
+      <span>Bells & Whistles</span>
+    </label>
+    <button type="button" role="switch" aria-checked="false" id="bells-and-whistles" class="switch">
+      <span>Off</span>
+      <span>On</span>
+    </button>
+  </nav>
   <div id="reader"></div>
   <nav aria-label="pagination">
     <a id="nav-back" href="#back"><span aria-hidden="true">«</span>Turn Back</a>

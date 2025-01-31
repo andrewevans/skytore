@@ -106,7 +106,8 @@ aside:nth-of-type(2n) p {
     padding: 10px 5px 10px 10px;
 }
 
-nav a {
+nav a,
+label.switch {
     background: #1f2228;
     color: #ccc;
     padding: 10px;
@@ -118,6 +119,11 @@ nav a {
     text-decoration: none;
 }
 
+label.switch {
+    cursor: pointer;
+    font-family: Webdings-Regular;
+}
+
 nav a:nth-of-type(2n) {
     text-align: right;
 }
@@ -126,18 +132,26 @@ nav span {
     margin: 0 10px;
 }
 
-nav#edit {
+nav#edit,
+nav#bells {
     display: block;
     width: fit-content;
     height: 3em;
     padding-top: 3em;
 }
 
-nav#edit.editing {
+nav#bells {
+    width: initial;
+    padding-top: 0;
+}
+
+nav#edit.editing,
+nav#bells label.switch[aria-checked="true"] {
     filter: invert();
 }
 
-nav#edit span:nth-child(1) {
+nav#edit span:nth-child(1),
+nav#bells span:nth-child(1) {
     display: none;
 }
 
@@ -255,44 +269,15 @@ aside.marked p {
     /*visibility: hidden;*/
 }
 
-button.switch {
-    margin: 0;
-    padding: 0;
-    width: 70px;
-    height: 26px;
-    border: 2px solid black;
-    display: inline-block;
-    margin-right: 0.25em;
-    line-height: 20px;
-    vertical-align: middle;
-    text-align: center;
-    font: 12px "Open Sans",
-    "Arial",
-    serif;
+nav#bells label.switch span,
+nav#bells [role="switch"] {
+    display: none;
 }
 
-button.switch span {
-    padding: 0 4px;
-    pointer-events: none;
+nav#bells label.switch::after {
+    content: ".";
 }
 
-[role="switch"][aria-checked="false"] :first-child,
-[role="switch"][aria-checked="true"] :last-child {
-    background: #262;
-    color: #eef;
+nav#bells label.switch[aria-checked="true"]::after {
+    content: "l";
 }
-
-[role="switch"][aria-checked="false"] :last-child,
-[role="switch"][aria-checked="true"] :first-child {
-    color: #bbd;
-}
-
-label.switch {
-    font: 16px "Open Sans",
-    "Arial",
-    sans-serif;
-    line-height: 20px;
-    vertical-align: middle;
-    user-select: none;
-}
-
