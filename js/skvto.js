@@ -216,7 +216,8 @@ const skvto = {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return
 
-      document.addEventListener("scroll", theBlock, {
+      const handleScroll = throttle(theBlock, 300)
+      document.addEventListener("scroll", handleScroll, {
         signal: controller.signal,
       })
       observer.unobserve(entry.target)
@@ -739,4 +740,15 @@ const showNotification = (block) => {
       })
       .then()
   })
+}
+
+function throttle(func, limit) {
+  let inThrottle
+  return function (...args) {
+    if (!inThrottle) {
+      func.apply(this, args)
+      inThrottle = true
+      setTimeout(() => (inThrottle = false), limit)
+    }
+  }
 }
