@@ -212,34 +212,22 @@ const skvto = {
       return block
     })
   },
-  handleIntersection: function (entries, observer, theBlock, controller) {
+  handleIntersection: function (entries, observer, theBlock) {
     entries.forEach((entry) => {
-      if (!entry.isIntersecting) return
-
-      document.addEventListener("scroll", throttle(theBlock, 300), {
-        signal: controller.signal,
-      })
-      observer.unobserve(entry.target)
+      if (entry.isIntersecting) theBlock()
     })
   },
   showBlock: function (controller) {
-    const rect = this.getBoundingClientRect()
-
-    if (rect.y < 0) {
-      this.classList.remove("hidden-checkin")
-      controller.abort() // remove listener
-    } else if (rect.y < window.innerHeight / 3) {
-      this.classList.remove("hidden-checkin")
-      showNotification(this)
-      controller.abort() // remove listener
-    }
+    this.classList.remove("hidden-checkin")
+    showNotification(this)
+    controller.abort() // remove listener
   },
   setCheckinFades() {
     if (!skvto.bellsAndWhistles) return // TODO: Needs to distinguish between features "edit" and "speak"
 
     const options = {
       root: null, // Use the viewport as the root
-      rootMargin: "0px", // No margin
+      rootMargin: "0px 0px -75% 0px", // 75% bottom margin delays observer until block is 75% up the viewport
       threshold: 0, // Trigger when >0% of the element is visible
     }
 
@@ -749,15 +737,4 @@ const showNotification = (block) => {
       })
       .then()
   })
-}
-
-function throttle(func, limit) {
-  let inThrottle
-  return function (...args) {
-    if (!inThrottle) {
-      func.apply(this, args)
-      inThrottle = true
-      setTimeout(() => (inThrottle = false), limit)
-    }
-  }
 }
