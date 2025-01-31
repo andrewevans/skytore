@@ -706,6 +706,8 @@ const setThemeColor = function () {
 setThemeColor()
 
 const showNotification = (block) => {
+  if (!skvto.bellsAndWhistles) return // TODO: Needs to distinguish between features "edit" and "speak"
+
   const blockText = block.innerText.split("\n")
 
   if (blockText.length < 2 || block.notificationShown) return
