@@ -437,6 +437,7 @@ const skvto = {
         el.setAttribute("aria-checked", "true")
         this.bellsAndWhistles = true
         Notification.requestPermission().then() // This must be directly in the "click" event listener for Safari
+        this.setCheckinFades()
       }
     }
   },
