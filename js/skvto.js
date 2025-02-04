@@ -9,8 +9,8 @@ const skvto = {
   reader: document.getElementById("reader"),
   url: new URL(document.URL),
   page: 1,
-  properNounMarkdown: new Map([ // Order matters
-    [/\$four/gm, "Vour"],
+  properNounMarkdown: new Map([
+    [/\$four/gm, "Vour"], // Order matters
     [/\$fourmeme/gm, "Vourmeme"],
     [/\$fourcam/gm, "Vourcam"],
     [/\$capital/gm, "Capital"],
