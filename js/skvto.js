@@ -444,8 +444,45 @@ const skvto = {
       }
     }
   },
+  addEditor() {
+    document.getElementById("edit-reader").addEventListener("click", (event) => {
+      if (!this.bellsAndWhistles) return // TODO: Needs to distinguish between features "edit" and "speak"
+
+      event.preventDefault()
+      this.isEditing = !this.isEditing
+      document.getElementById("edit").dataset.active = this.isEditing
+      synth.cancel()
+      this.audio.audioStop()
+      this.currentBlocks.forEach((block) => block.classList.remove("marked"))
+    })
+
+    document.getElementById("edit-clear").addEventListener("click", (event) => {
+      if (!this.bellsAndWhistles) return // TODO: Needs to distinguish between features "edit" and "speak"
+
+      event.preventDefault()
+
+      Object.keys(window.localStorage).forEach((key) => {
+        if (key.indexOf("page-") !== -1) window.localStorage.removeItem(key)
+      })
+    })
+
+    document.getElementById("edit-save").addEventListener("click", (event) => {
+      if (!this.bellsAndWhistles) return // TODO: Needs to distinguish between features "edit" and "speak"
+
+      event.preventDefault()
+
+      this.postEdits().then()
+
+      Object.keys(window.localStorage).forEach((key) => {
+        if (key.indexOf("page-") === 0) {
+          window.console.info(`Saving... ${key}`)
+        }
+      })
+    })
+  },
   init() {
     this.addBellToggle()
+    this.addEditor()
     this.isEditing = false
     this.page = parseInt(this.url.searchParams.get("page")) || this.page
   },
@@ -662,41 +699,6 @@ function isElementInViewport(el) {
   const rect = el.getBoundingClientRect()
   return rect.bottom > 0 && rect.bottom < window.innerHeight
 }
-
-document.getElementById("edit-reader").addEventListener("click", (event) => {
-  if (!skvto.bellsAndWhistles) return // TODO: Needs to distinguish between features "edit" and "speak"
-
-  event.preventDefault()
-  skvto.isEditing = !skvto.isEditing
-  document.getElementById("edit").dataset.active = skvto.isEditing
-  synth.cancel()
-  skvto.audio.audioStop()
-  skvto.currentBlocks.forEach((block) => block.classList.remove("marked"))
-})
-
-document.getElementById("edit-clear").addEventListener("click", (event) => {
-  if (!skvto.bellsAndWhistles) return // TODO: Needs to distinguish between features "edit" and "speak"
-
-  event.preventDefault()
-
-  Object.keys(window.localStorage).forEach((key) => {
-    if (key.indexOf("page-") !== -1) window.localStorage.removeItem(key)
-  })
-})
-
-document.getElementById("edit-save").addEventListener("click", (event) => {
-  if (!skvto.bellsAndWhistles) return // TODO: Needs to distinguish between features "edit" and "speak"
-
-  event.preventDefault()
-
-  skvto.postEdits().then()
-
-  Object.keys(window.localStorage).forEach((key) => {
-    if (key.indexOf("page-") === 0) {
-      window.console.info(`Saving... ${key}`)
-    }
-  })
-})
 
 const setThemeColor = function () {
   const meta = document.createElement("meta")
