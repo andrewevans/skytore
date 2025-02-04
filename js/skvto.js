@@ -41,9 +41,8 @@ const skvto = {
     const editsList = []
 
     Object.keys(window.localStorage).forEach((key) => {
-      if (key.indexOf("page-") === 0) {
+      if (key.indexOf("page-") === 0)
         editsList.push(`${key} :: ${window.localStorage.getItem(key)}`)
-      }
     })
 
     let editsBody = editsList.join("\n")
