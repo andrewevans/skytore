@@ -445,16 +445,18 @@ const skvto = {
     }
   },
   addEditor() {
-    document.getElementById("edit-reader").addEventListener("click", (event) => {
-      if (!this.bellsAndWhistles) return // TODO: Needs to distinguish between features "edit" and "speak"
+    document
+      .getElementById("edit-reader")
+      .addEventListener("click", (event) => {
+        if (!this.bellsAndWhistles) return // TODO: Needs to distinguish between features "edit" and "speak"
 
-      event.preventDefault()
-      this.isEditing = !this.isEditing
-      document.getElementById("edit").dataset.active = this.isEditing
-      synth.cancel()
-      this.audio.audioStop()
-      this.currentBlocks.forEach((block) => block.classList.remove("marked"))
-    })
+        event.preventDefault()
+        this.isEditing = !this.isEditing
+        document.getElementById("edit").dataset.active = this.isEditing
+        synth.cancel()
+        this.audio.audioStop()
+        this.currentBlocks.forEach((block) => block.classList.remove("marked"))
+      })
 
     document.getElementById("edit-clear").addEventListener("click", (event) => {
       if (!this.bellsAndWhistles) return // TODO: Needs to distinguish between features "edit" and "speak"
