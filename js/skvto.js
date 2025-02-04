@@ -38,6 +38,7 @@ const skvto = {
     em: /\*([^*]+?)\*/g,
     checkIn: /&gt;/gm,
     checkInAt: /\n/gm,
+    pre: /&lt;/gm,
   },
   isEditing: false,
   currentText: "",
@@ -211,6 +212,18 @@ const skvto = {
       return block
     })
   },
+  setPre() {
+    this.currentBlocks = this.currentBlocks.map((block, i) => {
+      if (this.markdown.pre.test(block.innerHTML)) {
+        const newEl = document.createElement("pre")
+        newEl.blockId = i
+        newEl.innerHTML = block.innerHTML
+        block = newEl
+      }
+
+      return block
+    })
+  },
   handleIntersection: function (entries, block) {
     entries.forEach((entry) => {
       if (entry.isIntersecting) this.showBlock(block)
@@ -280,7 +293,9 @@ const skvto = {
   },
   setEm() {
     this.currentBlocks.forEach((block) => {
-      block.innerHTML = block.innerHTML.replace(this.markdown.em, "<i>$1</i>")
+      if (["ASIDE", "P"].indexOf(block.tagName) !== -1) {
+        block.innerHTML = block.innerHTML.replace(this.markdown.em, "<i>$1</i>")
+      }
     })
   },
   audio: {
@@ -484,6 +499,7 @@ function updateUrl() {
 function putData() {
   skvto.reader.replaceChildren()
   skvto.setBlocks()
+  skvto.setPre()
   skvto.setVars()
   skvto.setH1()
   skvto.setBoxes()

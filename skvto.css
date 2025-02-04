@@ -281,3 +281,10 @@ nav#bells label.switch::after {
 nav#bells label.switch[aria-checked="true"]::after {
     content: "l";
 }
+
+pre {
+    font-size: 2px;
+    filter: invert(1);
+    background: #121212;
+    color: #d3d3d3;
+}
