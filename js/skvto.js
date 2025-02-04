@@ -652,15 +652,10 @@ document.getElementById("edit-reader").addEventListener("click", (event) => {
 
   event.preventDefault()
   skvto.isEditing = !skvto.isEditing
-
-  if (skvto.isEditing) {
-    synth.cancel()
-    skvto.audio.audioStop()
-    skvto.currentBlocks.forEach((block) => block.classList.remove("marked"))
-    document.getElementById("edit").classList.add("editing")
-  } else {
-    document.getElementById("edit").classList.remove("editing")
-  }
+  document.getElementById("edit").dataset.active = skvto.isEditing
+  synth.cancel()
+  skvto.audio.audioStop()
+  skvto.currentBlocks.forEach((block) => block.classList.remove("marked"))
 })
 
 document.getElementById("edit-clear").addEventListener("click", (event) => {

@@ -145,7 +145,7 @@ nav#bells {
     padding-top: 0;
 }
 
-nav#edit.editing,
+nav#edit[data-active="true"],
 nav#bells label.switch[aria-checked="true"] {
     filter: invert();
 }
