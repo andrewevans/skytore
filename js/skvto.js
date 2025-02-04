@@ -346,7 +346,7 @@ const skvto = {
       newBlock.classList.add("webdinged")
       if (innerCount * 15 + outerCount * 15 <= innerHTML.length) {
         innerCount++
-        this.intervalId = setTimeout(doInnerThing, 5, newBlock, innerHTML)
+        this.intervalId = setTimeout(doInnerThing, 0, newBlock, innerHTML)
       } else {
         newBlock.innerHTML = innerHTML
         newBlock.classList.remove("webdinged")
@@ -362,7 +362,7 @@ const skvto = {
         this.reader.appendChild(newBlock)
         const innerHTML = newBlock.innerHTML
         newBlock.innerHTML = "■"
-        this.intervalIdOuter = setTimeout(doInnerThing, 5, newBlock, innerHTML)
+        this.intervalIdOuter = setTimeout(doInnerThing, 0, newBlock, innerHTML)
         outerCount++
       }
     }.bind(this)
