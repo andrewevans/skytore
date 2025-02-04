@@ -135,9 +135,8 @@ const skvto = {
         el.classList.add("data-dirty")
       }
 
-      el.addEventListener("click", (event) => {
-        this.pauseOrPlayOrEdit(event, 1)
-      })
+      el.addEventListener("click", (event) => this.pauseOrPlayOrEdit(event, 1))
+
       return el
     })
   },
@@ -648,14 +647,6 @@ function isElementInViewport(el) {
   return rect.bottom > 0 && rect.bottom < window.innerHeight
 }
 
-skvto.init()
-const synth = window.speechSynthesis // Text to Speech
-synth.cancel()
-let utterThese = []
-getData(skvto.page).then()
-pageNavigator.init()
-backgroundMotion.init()
-
 document.getElementById("edit-reader").addEventListener("click", (event) => {
   if (!skvto.bellsAndWhistles) return // TODO: Needs to distinguish between features "edit" and "speak"
 
@@ -729,3 +720,11 @@ const showNotification = (block) => {
       .then()
   })
 }
+
+skvto.init()
+const synth = window.speechSynthesis // Text to Speech
+synth.cancel()
+let utterThese = []
+getData(skvto.page).then()
+pageNavigator.init()
+backgroundMotion.init()
