@@ -683,10 +683,7 @@ const showNotification = (block) => {
 
   block.notificationShown = true // Mark as shown so this function will short-circuit after the first pass
 
-  if (Notification.permission !== "granted") {
-    window.console.info("Needs Notification permission. Please reload")
-    return
-  }
+  if (Notification.permission !== "granted") return
 
   navigator.serviceWorker.ready.then((registration) => {
     setTimeout(() => {
