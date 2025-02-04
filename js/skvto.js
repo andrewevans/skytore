@@ -699,7 +699,7 @@ function readText(atBlock) {
 
 function isElementInViewport(el) {
   const rect = el.getBoundingClientRect()
-  return rect.bottom > 0 && rect.bottom < window.innerHeight
+  return rect.bottom > 0 && rect.bottom < window.innerHeight && rect.top > 0
 }
 
 const setThemeColor = function () {
