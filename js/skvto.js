@@ -381,6 +381,7 @@ const skvto = {
         el.setAttribute("aria-checked", "false")
         this.bellsAndWhistles = false
         this.isEditing = false
+        document.getElementById("edit").dataset.active = this.isEditing
 
         // Remove in case the synth was canceled
         this.currentBlocks.forEach((block) => block.classList.remove("marked"))
