@@ -9,29 +9,20 @@ const skvto = {
   reader: document.getElementById("reader"),
   url: new URL(document.URL),
   page: 1,
-  propers: {
-    four: "Vour",
-    fourmeme: "Vourmeme",
-    fourcam: "Vourcam",
-    capital: "Capital",
-    ax: "ander",
-    a: "Ander",
-    cx: "caressival",
-    c: "Caresse",
-    g: "4élix",
-  },
+  properNounMarkdown: new Map([ // Order matters
+    [/\$four/gm, "Vour"],
+    [/\$fourmeme/gm, "Vourmeme"],
+    [/\$fourcam/gm, "Vourcam"],
+    [/\$capital/gm, "Capital"],
+    [/\$AX/gm, "ander"],
+    [/\$A/gm, "Ander"],
+    [/\$CX/gm, "caressival"],
+    [/\$C/gm, "Caresse"],
+    [/\$G/gm, "4élix"],
+  ]),
   markdown: {
     block: /\n\n/,
     h1: /\n============/gm,
-    four: /\$four/gm,
-    fourmeme: /\$fourmeme/gm,
-    fourcam: /\$fourcam/gm,
-    capital: /\$capital/gm,
-    ax: /\$AX/gm,
-    a: /\$A/gm,
-    cx: /\$CX/gm,
-    c: /\$C/gm,
-    g: /\$G/gm,
     box: /■/,
     break: /\* \* \*/,
     shortBreak: /^\*$/,
@@ -257,38 +248,9 @@ const skvto = {
   },
   setVars() {
     this.currentBlocks.forEach((block) => {
-      block.innerHTML = block.innerHTML.replaceAll(
-        this.markdown.four,
-        this.propers.four,
-      )
-      block.innerHTML = block.innerHTML.replaceAll(
-        this.markdown.fourmeme,
-        this.propers.fourmeme,
-      )
-      block.innerHTML = block.innerHTML.replaceAll(
-        this.markdown.g,
-        this.propers.g,
-      )
-      block.innerHTML = block.innerHTML.replaceAll(
-        this.markdown.ax,
-        this.propers.ax,
-      )
-      block.innerHTML = block.innerHTML.replaceAll(
-        this.markdown.a,
-        this.propers.a,
-      )
-      block.innerHTML = block.innerHTML.replaceAll(
-        this.markdown.cx,
-        this.propers.cx,
-      ) // Order matters
-      block.innerHTML = block.innerHTML.replaceAll(
-        this.markdown.c,
-        this.propers.c,
-      )
-      block.innerHTML = block.innerHTML.replaceAll(
-        this.markdown.capital,
-        this.propers.capital,
-      )
+      for (const [key, value] of this.properNounMarkdown) {
+        block.innerHTML = block.innerHTML.replaceAll(key, value)
+      }
     })
   },
   setEm() {
