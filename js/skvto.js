@@ -44,7 +44,7 @@ const skvto = {
   currentBlocks: [],
   intervalId: 0,
   intervalIdOuter: 0,
-  bellsAndWhistles: false,
+  bellsAndWhistles: true,
   postEdits: async function () {
     const editsList = []
 
@@ -396,6 +396,7 @@ const skvto = {
   },
   addBellToggle() {
     document.querySelectorAll(".switch").forEach((theSwitch) => {
+      theSwitch.setAttribute("aria-checked", this.bellsAndWhistles.toString())
       theSwitch.addEventListener("click", handleClickEvent.bind(this), false)
     })
 
@@ -404,7 +405,6 @@ const skvto = {
 
       if (el.getAttribute("aria-checked") === "true") {
         el.setAttribute("aria-checked", "false")
-        document.getElementById("edit").classList.remove("editing")
         this.bellsAndWhistles = false
         this.isEditing = false
 
