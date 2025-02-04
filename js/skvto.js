@@ -522,9 +522,7 @@ const pageNavigator = {
     synth.cancel()
     skvto.audio.audioStop()
     window.scrollTo(0, 0)
-    skvto.currentBlocks.forEach((block) => {
-      block.observer?.disconnect()
-    })
+    skvto.currentBlocks.forEach((block) => block.observer?.disconnect())
 
     skvto.reader.replaceChildren()
     event?.preventDefault() // Cancel the default action to avoid it being handled twice
