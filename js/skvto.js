@@ -712,12 +712,16 @@ const showNotification = (block) => {
   }
 
   navigator.serviceWorker.ready.then((registration) => {
-    registration
-      .showNotification(blockText[0], {
-        body: blockText[1],
-        icon: "vourer/favicon_io/android-chrome-192x192.png",
-      })
-      .then()
+    setTimeout(() => {
+      if (isElementInViewport(block)) {
+        registration
+          .showNotification(blockText[0], {
+            body: blockText[1],
+            icon: "vourer/favicon_io/android-chrome-192x192.png",
+          })
+          .then()
+      }
+    }, 1000)
   })
 }
 
