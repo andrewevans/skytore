@@ -79,7 +79,6 @@ const skvto = {
       block.addEventListener(
         "blur",
         (handler = () => {
-          window.console.info("blur")
           // if (event.relatedTarget instanceof HTMLElement) return // TODO: Hack to allow ctrl-v paste
 
           block.blockEditor?.destroy()
