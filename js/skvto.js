@@ -351,7 +351,6 @@ const skvto = {
       } else {
         newBlock.innerHTML = innerHTML
         newBlock.classList.remove("webdinged")
-        if (newBlock.classList.length === 0) newBlock.removeAttribute("class") // This removes the attribute regardless of what's in it
         innerCount = 0
         doOuterThing()
       }
@@ -385,10 +384,8 @@ const skvto = {
         this.bellsAndWhistles = false
         this.isEditing = false
 
-        this.currentBlocks.forEach((block) => {
-          block.classList.remove("marked") // Remove in case the synth was canceled
-          if (block.classList.length === 0) block.removeAttribute("class")
-        })
+        // Remove in case the synth was canceled
+        this.currentBlocks.forEach((block) => block.classList.remove("marked"))
 
         synth.cancel()
         this.audio.audioStop()
@@ -607,15 +604,11 @@ function readText(atBlock) {
   const currentBlocksStartingAt = skvto.currentBlocks.slice(
     atBlock?.blockId || 0,
   )
-
-  skvto.currentBlocks.forEach((block) => {
-    block.classList.remove("marked") // Remove in case the synth was canceled
-    if (block.classList.length === 0) block.removeAttribute("class")
-  })
+  // Remove in case the synth was canceled
+  skvto.currentBlocks.forEach((block) => block.classList.remove("marked"))
 
   currentBlocksStartingAt.forEach((block, index) => {
     block.classList.remove("marked") // Remove in case the synth was canceled
-    if (block.classList.length === 0) block.removeAttribute("class")
     let utterThis = new SpeechSynthesisUtterance()
     utterThis.voice = synth.getVoices().find((voice) => voice.name === "Nicky")
     if (utterThis.voice) {
