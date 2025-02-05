@@ -371,36 +371,40 @@ const skvto = {
   addBellToggle() {
     document.querySelectorAll(".switch").forEach((theSwitch) => {
       theSwitch.setAttribute("aria-checked", this.bellsAndWhistles.toString())
-      theSwitch.addEventListener("click", handleClickEvent.bind(this), false)
+      theSwitch.addEventListener(
+        "click",
+        function (evt) {
+          const el = evt.currentTarget
+
+          if (el.getAttribute("aria-checked") === "true") {
+            el.setAttribute("aria-checked", "false")
+            this.bellsAndWhistles = false
+            this.isEditing = false
+            document.getElementById("edit").dataset.active = this.isEditing
+
+            // Remove in case the synth was canceled
+            this.currentBlocks.forEach((block) =>
+              block.classList.remove("marked"),
+            )
+
+            synth.cancel()
+            this.audio.audioStop()
+            window.scrollTo(0, 0)
+
+            this.currentBlocks.forEach((block) => {
+              block.classList.remove("hidden-checkin")
+              block.observer?.disconnect()
+            })
+          } else {
+            el.setAttribute("aria-checked", "true")
+            this.bellsAndWhistles = true
+            Notification.requestPermission().then() // This must be directly in the "click" event listener for Safari
+            this.setCheckinFades()
+          }
+        }.bind(this),
+        false,
+      )
     })
-
-    function handleClickEvent(evt) {
-      const el = evt.currentTarget
-
-      if (el.getAttribute("aria-checked") === "true") {
-        el.setAttribute("aria-checked", "false")
-        this.bellsAndWhistles = false
-        this.isEditing = false
-        document.getElementById("edit").dataset.active = this.isEditing
-
-        // Remove in case the synth was canceled
-        this.currentBlocks.forEach((block) => block.classList.remove("marked"))
-
-        synth.cancel()
-        this.audio.audioStop()
-        window.scrollTo(0, 0)
-
-        this.currentBlocks.forEach((block) => {
-          block.classList.remove("hidden-checkin")
-          block.observer?.disconnect()
-        })
-      } else {
-        el.setAttribute("aria-checked", "true")
-        this.bellsAndWhistles = true
-        Notification.requestPermission().then() // This must be directly in the "click" event listener for Safari
-        this.setCheckinFades()
-      }
-    }
   },
   addEditor() {
     document
