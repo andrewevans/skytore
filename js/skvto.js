@@ -623,7 +623,8 @@ function readText(atBlock) {
       utterThis.pitch = 1.2
     }
 
-    utterThis.text = block.innerText
+    utterThis.text =
+      block.tagName !== "PRE" ? block.innerText : "ASCII art image"
     utterThese.push(utterThis)
 
     utterThis.addEventListener("start", () => {
