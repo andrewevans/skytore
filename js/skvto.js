@@ -1,6 +1,7 @@
 /*global MediumEditor */
 
 const skvtoData = {
+  page: 1,
   currentText: "",
   currentBlocks: [],
   properNounMarkdown: new Map([
@@ -32,8 +33,8 @@ const skvtoData = {
       el.innerHTML = block
       el.blockId = i
 
-      if (localStorage.getItem(`page-${skvto.page}-block-${el.blockId}`)) {
-        const itemKey = `page-${skvto.page}-block-${el.blockId}`
+      if (localStorage.getItem(`page-${this.page}-block-${el.blockId}`)) {
+        const itemKey = `page-${this.page}-block-${el.blockId}`
         el.innerHTML = localStorage.getItem(itemKey)
         el.classList.add("data-dirty")
       }
@@ -142,17 +143,17 @@ const skvtoData = {
   },
   updateNav: function () {
     const newPageUrl = new URL(document.URL)
-    newPageUrl.searchParams.set("page", (skvto.page + 1).toString())
+    newPageUrl.searchParams.set("page", (this.page + 1).toString())
     pageNavigator.nav.next.href = newPageUrl
-    newPageUrl.searchParams.set("page", (skvto.page - 1).toString())
+    newPageUrl.searchParams.set("page", (this.page - 1).toString())
     pageNavigator.nav.previous.href = newPageUrl
   },
   updateUrl: function () {
     if (skvto.url.searchParams.has("page")) {
-      skvto.url.searchParams.set("page", skvto.page)
+      skvto.url.searchParams.set("page", this.page)
       history.pushState({}, "", skvto.url)
     } else {
-      skvto.url.searchParams.set("page", skvto.page)
+      skvto.url.searchParams.set("page", this.page)
     }
   },
   getData: async function (newPage) {
@@ -176,7 +177,7 @@ const skvtoData = {
     if (!response.ok) throw new Error(`Response status: ${response.status}`)
 
     this.currentText = await response.text()
-    skvto.page = newPage
+    this.page = newPage
   },
   putData: function () {
     skvto.reader.replaceChildren()
@@ -210,7 +211,6 @@ const skvto = {
   })(),
   reader: document.getElementById("reader"),
   url: new URL(document.URL),
-  page: 1,
   isEditing: false,
   intervalId: 0,
   intervalIdOuter: 0,
@@ -264,7 +264,7 @@ const skvto = {
 
           if (block.innerHTML !== block.editOriginal) {
             localStorage.setItem(
-              `page-${this.page}-block-${block.blockId}`,
+              `page-${skvtoData.page}-block-${block.blockId}`,
               block.innerHTML.replace(/[\n\r\t]/gm, ""),
             )
           }
@@ -512,7 +512,7 @@ const skvto = {
     this.addBellToggle()
     this.addEditor()
     this.isEditing = false
-    this.page = parseInt(this.url.searchParams.get("page")) || this.page
+    skvtoData.page = parseInt(this.url.searchParams.get("page")) || skvtoData.page
   },
 }
 
@@ -534,8 +534,8 @@ const pageNavigator = {
 
     skvto.reader.replaceChildren()
     event?.preventDefault() // Cancel the default action to avoid it being handled twice
-    skvtoData.setupNewPage(skvto.page + direction).catch(() => {
-      skvtoData.setupNewPage(skvto.page, event).then()
+    skvtoData.setupNewPage(skvtoData.page + direction).catch(() => {
+      skvtoData.setupNewPage(skvtoData.page, event).then()
     })
   },
   navClicked: function (event, direction) {
@@ -702,6 +702,6 @@ skvto.init()
 const synth = window.speechSynthesis // Text to Speech
 synth.cancel()
 let utterThese = []
-skvtoData.setupNewPage(skvto.page).then()
+skvtoData.setupNewPage(skvtoData.page).then()
 pageNavigator.init()
 backgroundMotion.init()
