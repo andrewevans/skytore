@@ -2,6 +2,7 @@
 
 const skvtoData = {
   page: 1,
+  reader: document.getElementById("reader"),
   currentText: "",
   currentBlocks: [],
   properNounMarkdown: new Map([
@@ -174,7 +175,7 @@ const skvtoData = {
     const newEl = document.createElement("h2")
     newEl.innerHTML = boxes.join("")
     newEl.classList.add("loading")
-    skvto.reader.appendChild(newEl)
+    this.reader.appendChild(newEl)
 
     const response = await fetch(url)
 
@@ -184,7 +185,7 @@ const skvtoData = {
     this.page = newPage
   },
   putData: function () {
-    skvto.reader.replaceChildren()
+    this.reader.replaceChildren()
     this.setBlocks()
     this.setEverything()
     skvto.setCheckinFades()
@@ -202,7 +203,6 @@ const skvto = {
 
     return `${url.origin}:${url.protocol === "http:" ? 3000 : 3030}`
   })(),
-  reader: document.getElementById("reader"),
   url: new URL(document.URL),
   isEditing: false,
   intervalId: 0,
@@ -377,7 +377,7 @@ const skvto = {
     )
   },
   fillReader() {
-    this.reader.replaceChildren()
+    skvtoData.reader.replaceChildren()
     let outerCount = 0
     let innerCount = 0
 
@@ -402,7 +402,7 @@ const skvto = {
       const newBlock = skvtoData.currentBlocks[outerCount]
 
       if (outerCount < skvtoData.currentBlocks.length) {
-        this.reader.appendChild(newBlock)
+        skvtoData.reader.appendChild(newBlock)
         const innerHTML = newBlock.innerHTML
         newBlock.innerHTML = "■"
         this.intervalIdOuter = setTimeout(doInnerThing, 0, newBlock, innerHTML)
@@ -579,7 +579,7 @@ const pageNavigator = {
     window.scrollTo(0, 0)
     skvtoData.currentBlocks.forEach((block) => block.observer?.disconnect())
 
-    skvto.reader.replaceChildren()
+    skvtoData.reader.replaceChildren()
     event?.preventDefault() // Cancel the default action to avoid it being handled twice
     skvtoReader.setupNewPage(direction)
   },
