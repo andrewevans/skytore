@@ -172,7 +172,6 @@ const skvtoData = {
   putData: function () {
     this.setBlocks()
     this.setEverything()
-    skvto.setCheckinFades()
   },
   setupNewData: async function (newPage) {
     await this.getData(newPage)
@@ -640,6 +639,7 @@ const skvtoReader = {
       .setupNewData(skvtoData.page + direction)
       .then(() => {
         this.fillReader()
+        skvto.setCheckinFades()
         skvto.setBlockEvents()
         pageNavigator.updateUrl()
         pageNavigator.updateNav()
