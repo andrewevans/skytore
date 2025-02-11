@@ -162,21 +162,6 @@ const skvtoData = {
   },
   getData: async function (newPage) {
     const url = `pages/part-${newPage}.txt`
-    skvtoReader.reader.replaceChildren()
-    clearInterval(skvto.intervalId)
-    clearInterval(skvto.intervalIdOuter)
-
-    const boxes = Array.from("■".repeat(Math.max(newPage - 1, 1)))
-    const boxLengthLoader = boxes.length
-    // 4 = block size, 2 = width of block aka sq root of block size
-    const breakAt =
-      Math.floor(boxLengthLoader / 4) * 2 + Math.min(2, boxLengthLoader % 4)
-    boxes.splice(breakAt, 0, " ")
-    const newEl = document.createElement("h2")
-    newEl.innerHTML = boxes.join("")
-    newEl.classList.add("loading")
-    skvtoReader.reader.appendChild(newEl)
-
     const response = await fetch(url)
 
     if (!response.ok) throw new Error(`Response status: ${response.status}`)
@@ -636,6 +621,21 @@ const skvtoReader = {
     skvto.resetReader()
     skvtoData.page =
       parseInt(skvto.url.searchParams.get("page")) || skvtoData.page
+
+    this.reader.replaceChildren()
+    clearInterval(skvto.intervalId)
+    clearInterval(skvto.intervalIdOuter)
+
+    const boxes = Array.from("■".repeat(Math.max(skvtoData.page - 1, 1)))
+    const boxLengthLoader = boxes.length
+    // 4 = block size, 2 = width of block aka sq root of block size
+    const breakAt =
+      Math.floor(boxLengthLoader / 4) * 2 + Math.min(2, boxLengthLoader % 4)
+    boxes.splice(breakAt, 0, " ")
+    const newEl = document.createElement("h2")
+    newEl.innerHTML = boxes.join("")
+    newEl.classList.add("loading")
+    this.reader.appendChild(newEl)
 
     skvtoData
       .setupNewData(skvtoData.page + direction)
