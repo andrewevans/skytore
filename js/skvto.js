@@ -1,14 +1,8 @@
 /*global MediumEditor */
 
-const skvto = {
-  hostname: (function () {
-    const url = new URL(document.URL)
-
-    return `${url.origin}:${url.protocol === "http:" ? 3000 : 3030}`
-  })(),
-  reader: document.getElementById("reader"),
-  url: new URL(document.URL),
-  page: 1,
+const skvtoData = {
+  currentText: "",
+  currentBlocks: [],
   properNounMarkdown: new Map([
     [/\$four/gm, "Vour"], // Order matters
     [/\$fourmeme/gm, "Vourmeme"],
@@ -30,87 +24,6 @@ const skvto = {
     checkIn: /&gt;/gm,
     checkInAt: /\n/gm,
     pre: /&lt;/gm,
-  },
-  isEditing: false,
-  currentText: "",
-  currentBlocks: [],
-  intervalId: 0,
-  intervalIdOuter: 0,
-  bellsAndWhistles: true,
-  postEdits: async function () {
-    const editsList = []
-
-    Object.keys(window.localStorage).forEach((key) => {
-      if (key.indexOf("page-") === 0)
-        editsList.push(`${key} :: ${window.localStorage.getItem(key)}`)
-    })
-
-    let editsBody = editsList.join("\n")
-    const checksum =
-      editsBody
-        .split("")
-        .reduce(
-          (accumulator, currentValue) =>
-            accumulator + currentValue.charCodeAt(0),
-          0,
-        ) % 256
-    editsBody += `\nchecksum :: ${checksum}`
-
-    await fetch(this.hostname, {
-      method: "POST",
-      body: editsBody,
-    })
-  },
-  createNewEditor: function (block) {
-    let handler
-    if (
-      typeof MediumEditor !== "undefined" &&
-      block.tagName === "P" &&
-      !block.dataset.mediumEditorElement
-    ) {
-      block.blockEditor = new MediumEditor(block, {
-        disableReturn: true,
-        disableDoubleReturn: true,
-        disableExtraSpaces: true,
-      })
-
-      block.editOriginal = block.innerHTML
-
-      block.addEventListener(
-        "blur",
-        (handler = () => {
-          // if (event.relatedTarget instanceof HTMLElement) return // TODO: Hack to allow ctrl-v paste
-
-          block.blockEditor?.destroy()
-          block.removeEventListener("blur", handler)
-
-          if (block.innerHTML !== block.editOriginal) {
-            localStorage.setItem(
-              `page-${this.page}-block-${block.blockId}`,
-              block.innerHTML.replace(/[\n\r\t]/gm, ""),
-            )
-          }
-        }),
-      )
-    }
-  },
-  pauseOrPlayOrEdit: function (event) {
-    if (!this.bellsAndWhistles) return // TODO: Needs to distinguish between features "edit" and "speak"
-
-    const atBlock = event.target
-
-    if (this.isEditing) {
-      this.createNewEditor(event.target)
-    } else {
-      this.audio.audioStop()
-
-      if (!synth.speaking) {
-        synth.cancel()
-        readText(atBlock)
-      } else {
-        synth.cancel()
-      }
-    }
   },
   setBlocks() {
     this.currentBlocks = this.currentText.split(this.markdown.block)
@@ -213,6 +126,171 @@ const skvto = {
       return block
     })
   },
+  setVars() {
+    this.currentBlocks.forEach((block) => {
+      for (const [key, value] of this.properNounMarkdown) {
+        block.innerHTML = block.innerHTML.replaceAll(key, value)
+      }
+    })
+  },
+  setEm() {
+    this.currentBlocks.forEach((block) => {
+      if (["ASIDE", "P"].indexOf(block.tagName) !== -1) {
+        block.innerHTML = block.innerHTML.replace(this.markdown.em, "<i>$1</i>")
+      }
+    })
+  },
+  updateNav: function () {
+    const newPageUrl = new URL(document.URL)
+    newPageUrl.searchParams.set("page", (skvto.page + 1).toString())
+    pageNavigator.nav.next.href = newPageUrl
+    newPageUrl.searchParams.set("page", (skvto.page - 1).toString())
+    pageNavigator.nav.previous.href = newPageUrl
+  },
+  updateUrl: function () {
+    if (skvto.url.searchParams.has("page")) {
+      skvto.url.searchParams.set("page", skvto.page)
+      history.pushState({}, "", skvto.url)
+    } else {
+      skvto.url.searchParams.set("page", skvto.page)
+    }
+  },
+  getData: async function (newPage) {
+    const url = `pages/part-${newPage}.txt`
+    clearInterval(skvto.intervalId)
+    clearInterval(skvto.intervalIdOuter)
+
+    const boxes = Array.from("■".repeat(Math.max(newPage - 1, 1)))
+    const boxLengthLoader = boxes.length
+    // 4 = block size, 2 = width of block aka sq root of block size
+    const breakAt =
+      Math.floor(boxLengthLoader / 4) * 2 + Math.min(2, boxLengthLoader % 4)
+    boxes.splice(breakAt, 0, " ")
+    const newEl = document.createElement("h2")
+    newEl.innerHTML = boxes.join("")
+    newEl.classList.add('loading')
+    skvto.reader.appendChild(newEl)
+
+    const response = await fetch(url)
+
+    if (!response.ok) throw new Error(`Response status: ${response.status}`)
+
+    this.currentText = await response.text()
+    skvto.page = newPage
+  },
+  putData: function () {
+    skvto.reader.replaceChildren()
+    this.setBlocks()
+    this.setPre()
+    this.setVars()
+    this.setH1()
+    this.setBoxes()
+    this.setBreaks()
+    this.setShortBreaks()
+    this.setEm()
+    this.setCheckIns()
+    skvto.setCheckinFades()
+    skvto.fillReader() // Part of reader
+  },
+  setupNewPage: async function (newPage) {
+    await this.getData(newPage)
+    await this.putData()
+    this.updateUrl()
+    this.updateNav()
+  },
+}
+
+const skvtoReader = {}
+
+const skvto = {
+  hostname: (function () {
+    const url = new URL(document.URL)
+
+    return `${url.origin}:${url.protocol === "http:" ? 3000 : 3030}`
+  })(),
+  reader: document.getElementById("reader"),
+  url: new URL(document.URL),
+  page: 1,
+  isEditing: false,
+  intervalId: 0,
+  intervalIdOuter: 0,
+  bellsAndWhistles: false,
+  postEdits: async function () {
+    const editsList = []
+
+    Object.keys(window.localStorage).forEach((key) => {
+      if (key.indexOf("page-") === 0)
+        editsList.push(`${key} :: ${window.localStorage.getItem(key)}`)
+    })
+
+    let editsBody = editsList.join("\n")
+    const checksum =
+      editsBody
+        .split("")
+        .reduce(
+          (accumulator, currentValue) =>
+            accumulator + currentValue.charCodeAt(0),
+          0,
+        ) % 256
+    editsBody += `\nchecksum :: ${checksum}`
+
+    await fetch(this.hostname, {
+      method: "POST",
+      body: editsBody,
+    })
+  },
+  createNewEditor: function (block) {
+    let handler
+    if (
+      typeof MediumEditor !== "undefined" &&
+      block.tagName === "P" &&
+      !block.dataset.mediumEditorElement
+    ) {
+      block.blockEditor = new MediumEditor(block, {
+        disableReturn: true,
+        disableDoubleReturn: true,
+        disableExtraSpaces: true,
+      })
+
+      block.editOriginal = block.innerHTML
+
+      block.addEventListener(
+        "blur",
+        (handler = () => {
+          // if (event.relatedTarget instanceof HTMLElement) return // TODO: Hack to allow ctrl-v paste
+
+          block.blockEditor?.destroy()
+          block.removeEventListener("blur", handler)
+
+          if (block.innerHTML !== block.editOriginal) {
+            localStorage.setItem(
+              `page-${this.page}-block-${block.blockId}`,
+              block.innerHTML.replace(/[\n\r\t]/gm, ""),
+            )
+          }
+        }),
+      )
+    }
+  },
+  pauseOrPlayOrEdit: function (event) {
+    if (!this.bellsAndWhistles) return // TODO: Needs to distinguish between features "edit" and "speak"
+
+    const atBlock = event.target
+
+    if (this.isEditing) {
+      this.createNewEditor(event.target)
+    } else {
+      this.audio.audioStop()
+
+      if (!synth.speaking) {
+        synth.cancel()
+        readText(atBlock)
+      } else {
+        synth.cancel()
+      }
+    }
+  },
+
   handleIntersection: function (entries, block) {
     entries.forEach((entry) => {
       if (entry.isIntersecting) this.showBlock(block)
@@ -232,7 +310,7 @@ const skvto = {
       threshold: 0, // Trigger when >0% of the element is visible
     }
 
-    this.currentBlocks.forEach((block) => {
+    skvtoData.currentBlocks.forEach((block) => {
       if (block.tagName === "ASIDE") {
         block.classList.add("hidden-checkin")
         const handleIntersection = (entries) =>
@@ -241,20 +319,6 @@ const skvto = {
         block.observer?.disconnect()
         block.observer = new IntersectionObserver(handleIntersection, options)
         block.observer.observe(block)
-      }
-    })
-  },
-  setVars() {
-    this.currentBlocks.forEach((block) => {
-      for (const [key, value] of this.properNounMarkdown) {
-        block.innerHTML = block.innerHTML.replaceAll(key, value)
-      }
-    })
-  },
-  setEm() {
-    this.currentBlocks.forEach((block) => {
-      if (["ASIDE", "P"].indexOf(block.tagName) !== -1) {
-        block.innerHTML = block.innerHTML.replace(this.markdown.em, "<i>$1</i>")
       }
     })
   },
@@ -355,9 +419,9 @@ const skvto = {
     }.bind(this)
 
     const doOuterThing = function () {
-      const newBlock = this.currentBlocks[outerCount]
+      const newBlock = skvtoData.currentBlocks[outerCount]
 
-      if (outerCount < this.currentBlocks.length) {
+      if (outerCount < skvtoData.currentBlocks.length) {
         this.reader.appendChild(newBlock)
         const innerHTML = newBlock.innerHTML
         newBlock.innerHTML = "■"
@@ -383,7 +447,7 @@ const skvto = {
             document.getElementById("edit").dataset.active = this.isEditing
 
             // Remove in case the synth was canceled
-            this.currentBlocks.forEach((block) =>
+            skvtoData.currentBlocks.forEach((block) =>
               block.classList.remove("marked"),
             )
 
@@ -391,7 +455,7 @@ const skvto = {
             this.audio.audioStop()
             window.scrollTo(0, 0)
 
-            this.currentBlocks.forEach((block) => {
+            skvtoData.currentBlocks.forEach((block) => {
               block.classList.remove("hidden-checkin")
               block.observer?.disconnect()
             })
@@ -417,7 +481,7 @@ const skvto = {
         document.getElementById("edit").dataset.active = this.isEditing
         synth.cancel()
         this.audio.audioStop()
-        this.currentBlocks.forEach((block) => block.classList.remove("marked"))
+        skvtoData.currentBlocks.forEach((block) => block.classList.remove("marked"))
       })
 
     document.getElementById("edit-clear").addEventListener("click", (event) => {
@@ -452,66 +516,6 @@ const skvto = {
   },
 }
 
-async function getData(newPage) {
-  const url = `pages/part-${newPage}.txt`
-  clearInterval(skvto.intervalId)
-  clearInterval(skvto.intervalIdOuter)
-
-  const boxes = Array.from("■".repeat(Math.max(newPage - 1, 1)))
-  const boxLengthLoader = boxes.length
-  // 4 = block size, 2 = width of block aka sq root of block size
-  const breakAt =
-    Math.floor(boxLengthLoader / 4) * 2 + Math.min(2, boxLengthLoader % 4)
-  boxes.splice(breakAt, 0, " ")
-  const newEl = document.createElement("h2")
-  newEl.innerHTML = boxes.join("")
-  newEl.style.color = "#808080"
-  skvto.reader.appendChild(newEl)
-
-  const response = await fetch(url)
-
-  if (!response.ok) throw new Error(`Response status: ${response.status}`)
-
-  skvto.currentText = await response.text()
-  skvto.page = newPage
-  updateUrl()
-  putData()
-}
-
-function updateNav() {
-  const newPageUrl = new URL(document.URL)
-  newPageUrl.searchParams.set("page", (skvto.page + 1).toString())
-  pageNavigator.nav.next.href = newPageUrl
-  newPageUrl.searchParams.set("page", (skvto.page - 1).toString())
-  pageNavigator.nav.previous.href = newPageUrl
-}
-
-function updateUrl() {
-  if (skvto.url.searchParams.has("page")) {
-    skvto.url.searchParams.set("page", skvto.page)
-    history.pushState({}, "", skvto.url)
-  } else {
-    skvto.url.searchParams.set("page", skvto.page)
-  }
-
-  updateNav()
-}
-
-function putData() {
-  skvto.reader.replaceChildren()
-  skvto.setBlocks()
-  skvto.setPre()
-  skvto.setVars()
-  skvto.setH1()
-  skvto.setBoxes()
-  skvto.setBreaks()
-  skvto.setShortBreaks()
-  skvto.setEm()
-  skvto.setCheckIns()
-  skvto.setCheckinFades()
-  skvto.fillReader()
-}
-
 const pageNavigator = {
   touchstartX: 0,
   touchendX: 0,
@@ -526,12 +530,12 @@ const pageNavigator = {
     synth.cancel()
     skvto.audio.audioStop()
     window.scrollTo(0, 0)
-    skvto.currentBlocks.forEach((block) => block.observer?.disconnect())
+    skvtoData.currentBlocks.forEach((block) => block.observer?.disconnect())
 
     skvto.reader.replaceChildren()
     event?.preventDefault() // Cancel the default action to avoid it being handled twice
-    getData(skvto.page + direction).catch(() => {
-      getData(skvto.page, event).then()
+    skvtoData.setupNewPage(skvto.page + direction).catch(() => {
+      skvtoData.setupNewPage(skvto.page, event).then()
     })
   },
   navClicked: function (event, direction) {
@@ -602,11 +606,11 @@ const backgroundMotion = {
 function readText(atBlock) {
   if (!skvto.bellsAndWhistles) return // TODO: Needs to distinguish between features "edit" and "speak"
 
-  const currentBlocksStartingAt = skvto.currentBlocks.slice(
+  const currentBlocksStartingAt = skvtoData.currentBlocks.slice(
     atBlock?.blockId || 0,
   )
   // Remove in case the synth was canceled
-  skvto.currentBlocks.forEach((block) => block.classList.remove("marked"))
+  skvtoData.currentBlocks.forEach((block) => block.classList.remove("marked"))
 
   currentBlocksStartingAt.forEach((block, index) => {
     block.classList.remove("marked") // Remove in case the synth was canceled
@@ -698,6 +702,6 @@ skvto.init()
 const synth = window.speechSynthesis // Text to Speech
 synth.cancel()
 let utterThese = []
-getData(skvto.page).then()
+skvtoData.setupNewPage(skvto.page).then()
 pageNavigator.init()
 backgroundMotion.init()
