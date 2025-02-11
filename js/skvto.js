@@ -172,7 +172,7 @@ const skvtoData = {
     boxes.splice(breakAt, 0, " ")
     const newEl = document.createElement("h2")
     newEl.innerHTML = boxes.join("")
-    newEl.classList.add('loading')
+    newEl.classList.add("loading")
     skvto.reader.appendChild(newEl)
 
     const response = await fetch(url)
@@ -216,7 +216,9 @@ const skvto = {
   bellsAndWhistles: false,
   setBlockEvents: function () {
     skvtoData.currentBlocks.forEach((block) => {
-      block.addEventListener("click", (event) => skvto.pauseOrPlayOrEdit(event, 1))
+      block.addEventListener("click", (event) =>
+        skvto.pauseOrPlayOrEdit(event, 1),
+      )
     })
   },
   postEdits: async function () {
@@ -294,7 +296,6 @@ const skvto = {
       }
     }
   },
-
   handleIntersection: function (entries, block) {
     entries.forEach((entry) => {
       if (entry.isIntersecting) this.showBlock(block)
@@ -459,7 +460,9 @@ const skvto = {
         document.getElementById("edit").dataset.active = this.isEditing
         synth.cancel()
         this.audio.audioStop()
-        skvtoData.currentBlocks.forEach((block) => block.classList.remove("marked"))
+        skvtoData.currentBlocks.forEach((block) =>
+          block.classList.remove("marked"),
+        )
       })
 
     document.getElementById("edit-clear").addEventListener("click", (event) => {
@@ -490,7 +493,8 @@ const skvto = {
     this.addBellToggle()
     this.addEditor()
     this.isEditing = false
-    skvtoData.page = parseInt(this.url.searchParams.get("page")) || skvtoData.page
+    skvtoData.page =
+      parseInt(this.url.searchParams.get("page")) || skvtoData.page
   },
 }
 
@@ -581,14 +585,17 @@ const skvtoReader = {
     pageNavigator.init()
     backgroundMotion.init()
   },
-  setupNewPage: function(direction = 0) {
-    skvtoData.setupNewPage(skvtoData.page + direction).then(() => {
-      skvto.setBlockEvents()
-      pageNavigator.updateUrl()
-      pageNavigator.updateNav()
-    }).catch(() => {
-      this.setupNewPage()
-    })
+  setupNewPage: function (direction = 0) {
+    skvtoData
+      .setupNewPage(skvtoData.page + direction)
+      .then(() => {
+        skvto.setBlockEvents()
+        pageNavigator.updateUrl()
+        pageNavigator.updateNav()
+      })
+      .catch(() => {
+        this.setupNewPage()
+      })
   },
 }
 
