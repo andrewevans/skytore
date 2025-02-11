@@ -190,7 +190,7 @@ const skvtoData = {
     skvto.setCheckinFades()
     skvto.fillReader() // Part of reader
   },
-  setupNewPage: async function (newPage) {
+  setupNewData: async function (newPage) {
     await this.getData(newPage)
     await this.putData()
   },
@@ -638,7 +638,7 @@ const skvtoReader = {
       parseInt(skvto.url.searchParams.get("page")) || skvtoData.page
 
     skvtoData
-      .setupNewPage(skvtoData.page + direction)
+      .setupNewData(skvtoData.page + direction)
       .then(() => {
         skvto.setBlockEvents()
         pageNavigator.updateUrl()
