@@ -202,18 +202,6 @@ const skvtoData = {
   },
 }
 
-const skvtoReader = {
-  setupNewPage: function(direction = 0) {
-    skvtoData.setupNewPage(skvtoData.page + direction).then(() => {
-      skvto.setBlockEvents()
-      pageNavigator.updateUrl()
-      pageNavigator.updateNav()
-    }).catch(() => {
-      this.setupNewPage()
-    })
-  },
-}
-
 const skvto = {
   hostname: (function () {
     const url = new URL(document.URL)
@@ -583,6 +571,18 @@ const pageNavigator = {
     this.nav.previous.addEventListener("click", (event) =>
       this.navClicked(event, -1),
     )
+  },
+}
+
+const skvtoReader = {
+  setupNewPage: function(direction = 0) {
+    skvtoData.setupNewPage(skvtoData.page + direction).then(() => {
+      skvto.setBlockEvents()
+      pageNavigator.updateUrl()
+      pageNavigator.updateNav()
+    }).catch(() => {
+      this.setupNewPage()
+    })
   },
 }
 
