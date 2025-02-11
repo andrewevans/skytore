@@ -425,16 +425,12 @@ const skvto = {
             this.isEditing = false
             document.getElementById("edit").dataset.active = this.isEditing
 
-            // Remove in case the synth was canceled
-            skvtoData.currentBlocks.forEach((block) =>
-              block.classList.remove("marked"),
-            )
-
             synth.cancel()
             this.audio.audioStop()
             window.scrollTo(0, 0)
 
             skvtoData.currentBlocks.forEach((block) => {
+              block.classList.remove("marked") // Remove in case the synth was canceled
               block.classList.remove("hidden-checkin")
               block.observer?.disconnect()
             })
