@@ -575,6 +575,12 @@ const pageNavigator = {
 }
 
 const skvtoReader = {
+  init: function () {
+    skvto.init()
+    skvtoReader.setupNewPage()
+    pageNavigator.init()
+    backgroundMotion.init()
+  },
   setupNewPage: function(direction = 0) {
     skvtoData.setupNewPage(skvtoData.page + direction).then(() => {
       skvto.setBlockEvents()
@@ -701,11 +707,8 @@ const showNotification = (block) => {
   })
 }
 
-skvto.init()
 const synth = window.speechSynthesis // Text to Speech
 synth.cancel()
 let utterThese = []
 
-skvtoReader.setupNewPage()
-pageNavigator.init()
-backgroundMotion.init()
+skvtoReader.init()
