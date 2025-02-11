@@ -173,7 +173,6 @@ const skvtoData = {
     this.setBlocks()
     this.setEverything()
     skvto.setCheckinFades()
-    skvtoReader.fillReader() // Part of reader
   },
   setupNewData: async function (newPage) {
     await this.getData(newPage)
@@ -626,7 +625,7 @@ const skvtoReader = {
     clearInterval(this.intervalId)
     clearInterval(this.intervalIdOuter)
 
-    const boxes = Array.from("■".repeat(Math.max(skvtoData.page - 1, 1)))
+    const boxes = Array.from("■".repeat(Math.max(skvtoData.page - 1 + direction, 1)))
     const boxLengthLoader = boxes.length
     // 4 = block size, 2 = width of block aka sq root of block size
     const breakAt =
@@ -640,6 +639,7 @@ const skvtoReader = {
     skvtoData
       .setupNewData(skvtoData.page + direction)
       .then(() => {
+        this.fillReader()
         skvto.setBlockEvents()
         pageNavigator.updateUrl()
         pageNavigator.updateNav()
