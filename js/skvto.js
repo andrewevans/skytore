@@ -284,7 +284,7 @@ const skvto = {
 
       if (!synth.speaking) {
         synth.cancel()
-        readText(atBlock)
+        this.readText(atBlock)
       } else {
         synth.cancel()
       }
@@ -331,43 +331,50 @@ const skvto = {
     audioPlay() {
       this.audioElement.play()
     },
-    audioSetup(atBlock, audioTitle) {
-      const audioContext = new AudioContext()
-      const audioLength = 5
-      this.audioElement = document.createElement("audio")
-      const track = audioContext.createMediaElementSource(this.audioElement)
-      const breakAudio =
-        skvtoData.breakAudio.find((each) => each.audioTitle === audioTitle) ||
-        skvtoData.breakAudio[0]
-      this.audioElement.src = breakAudio.audioAsset
-      this.audioElement.volume = 0.2
-      let playBackIteration = 1
-      let audioIsCut = false
-      this.audioEnded = false
-      const panner = new StereoPannerNode(audioContext, {
-        pan: breakAudio.direction || 0,
-      })
-      track.connect(panner).connect(audioContext.destination)
+  },
+  audioSetup(atBlock, audioTitle) {
+    const audioContext = new AudioContext()
+    const audioLength = 5
+    this.audio.audioElement = document.createElement("audio")
+    const track = audioContext.createMediaElementSource(this.audio.audioElement)
+    const breakAudio =
+      skvtoData.breakAudio.find((each) => each.audioTitle === audioTitle) ||
+      skvtoData.breakAudio[0]
+    this.audio.audioElement.src = breakAudio.audioAsset
+    this.audio.audioElement.volume = 0.2
+    let playBackIteration = 1
+    let audioIsCut = false
+    this.audio.audioEnded = false
+    const panner = new StereoPannerNode(audioContext, {
+      pan: breakAudio.direction || 0,
+    })
+    track.connect(panner).connect(audioContext.destination)
 
-      this.audioElement.addEventListener("timeupdate", () => {
-        if (this.audioElement.currentTime > audioLength && !audioIsCut) {
-          this.audioElement.currentTime = this.audioElement.duration
+    this.audio.audioElement.addEventListener(
+      "timeupdate",
+      function () {
+        if (this.audio.audioElement.currentTime > audioLength && !audioIsCut) {
+          this.audio.audioElement.currentTime = this.audio.audioElement.duration
           audioIsCut = true
         }
 
         panner.pan.value = breakAudio.panner(panner.pan.value)
-        this.audioElement.volume =
+        this.audio.audioElement.volume =
           playBackIteration > 0 && playBackIteration <= 1
-            ? Math.min(this.audioElement.volume + 0.1, 1)
-            : Math.max(this.audioElement.volume - 0.1, 0)
+            ? Math.min(this.audio.audioElement.volume + 0.1, 1)
+            : Math.max(this.audio.audioElement.volume - 0.1, 0)
         playBackIteration =
-          this.audioElement.volume >= 1 ? 0 : playBackIteration - 0.1
-      })
+          this.audio.audioElement.volume >= 1 ? 0 : playBackIteration - 0.1
+      }.bind(this),
+    )
 
-      this.audioElement.addEventListener("ended", () => {
-        if (!this.audioEnded) readText(atBlock)
-      })
-    },
+    this.audio.audioElement.addEventListener(
+      "ended",
+      function () {
+        if (!this.audio.audioEnded) this.readText(atBlock)
+      }.bind(this),
+      false,
+    )
   },
   fillReader() {
     this.reader.replaceChildren()
@@ -477,6 +484,61 @@ const skvto = {
           window.console.info(`Saving... ${key}`)
         }
       })
+    })
+  },
+  readText(atBlock) {
+    if (!skvto.bellsAndWhistles) return // TODO: Needs to distinguish between features "edit" and "speak"
+
+    const currentBlocksStartingAt = skvtoData.currentBlocks.slice(
+      atBlock?.blockId || 0,
+    )
+    // Remove in case the synth was canceled
+    skvtoData.currentBlocks.forEach((block) => block.classList.remove("marked"))
+
+    currentBlocksStartingAt.forEach((block, index) => {
+      block.classList.remove("marked") // Remove in case the synth was canceled
+      let utterThis = new SpeechSynthesisUtterance()
+      utterThis.voice = synth
+        .getVoices()
+        .find((voice) => voice.name === "Nicky")
+      if (utterThis.voice) {
+        utterThis.rate = 1.1
+        utterThis.pitch = 1.2
+      } else {
+        utterThis.voice = synth
+          .getVoices()
+          .find((voice) => voice.name === "Moira")
+        utterThis.rate = 0.9
+        utterThis.pitch = 1.2
+      }
+
+      utterThis.text =
+        block.tagName !== "PRE" ? block.innerText : "ASCII art image"
+      utterThese.push(utterThis)
+
+      utterThis.addEventListener("start", () => {
+        block.removeAttribute("class")
+        block.classList.add("marked")
+
+        if (block.tagName === "ASIDE") showNotification(block)
+
+        if (!isElementInViewport(block))
+          block.scrollIntoView({ behavior: "smooth" })
+
+        if (block?.dataset?.val) {
+          synth.cancel()
+
+          this.audioSetup(currentBlocksStartingAt[index + 1], block.dataset.val)
+
+          this.audio.audioPlay()
+        }
+      })
+
+      utterThis.addEventListener("end", () => {
+        block.classList.remove("marked")
+      })
+
+      synth.speak(utterThis)
     })
   },
   init() {
@@ -608,61 +670,6 @@ const backgroundMotion = {
       }
     })
   },
-}
-
-function readText(atBlock) {
-  if (!skvto.bellsAndWhistles) return // TODO: Needs to distinguish between features "edit" and "speak"
-
-  const currentBlocksStartingAt = skvtoData.currentBlocks.slice(
-    atBlock?.blockId || 0,
-  )
-  // Remove in case the synth was canceled
-  skvtoData.currentBlocks.forEach((block) => block.classList.remove("marked"))
-
-  currentBlocksStartingAt.forEach((block, index) => {
-    block.classList.remove("marked") // Remove in case the synth was canceled
-    let utterThis = new SpeechSynthesisUtterance()
-    utterThis.voice = synth.getVoices().find((voice) => voice.name === "Nicky")
-    if (utterThis.voice) {
-      utterThis.rate = 1.1
-      utterThis.pitch = 1.2
-    } else {
-      utterThis.voice = synth
-        .getVoices()
-        .find((voice) => voice.name === "Moira")
-      utterThis.rate = 0.9
-      utterThis.pitch = 1.2
-    }
-
-    utterThis.text =
-      block.tagName !== "PRE" ? block.innerText : "ASCII art image"
-    utterThese.push(utterThis)
-
-    utterThis.addEventListener("start", () => {
-      block.removeAttribute("class")
-      block.classList.add("marked")
-
-      if (block.tagName === "ASIDE") showNotification(block)
-
-      if (!isElementInViewport(block))
-        block.scrollIntoView({ behavior: "smooth" })
-
-      if (block?.dataset?.val) {
-        synth.cancel()
-        skvto.audio.audioSetup(
-          currentBlocksStartingAt[index + 1],
-          block.dataset.val,
-        )
-        skvto.audio.audioPlay()
-      }
-    })
-
-    utterThis.addEventListener("end", () => {
-      block.classList.remove("marked")
-    })
-
-    synth.speak(utterThis)
-  })
 }
 
 function isElementInViewport(el) {
