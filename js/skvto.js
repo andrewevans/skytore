@@ -68,96 +68,97 @@ const skvtoData = {
       return el
     })
   },
-  setH1() {
-    this.currentBlocks = this.currentBlocks.map((block) => {
-      if (this.markdown.h1.test(block.innerHTML)) {
-        const newEl = document.createElement("h1")
-        newEl.innerHTML = block.innerHTML.replaceAll(this.markdown.h1, "")
-        block = newEl
-      }
-
-      return block
-    })
-  },
-  setBoxes() {
-    this.currentBlocks = this.currentBlocks.map((block) => {
-      if (this.markdown.box.test(block.innerHTML)) {
-        const boxes = Array.from(block.innerHTML)
-        const boxLength = boxes.length
-        // 4 = block size, 2 = width of block aka sq root of block size
-        const breakAt =
-          Math.floor(boxLength / 4) * 2 + Math.min(2, boxLength % 4)
-        boxes.splice(breakAt, 0, " ")
-        const newEl = document.createElement("h2")
-        newEl.innerHTML = boxes.join("")
-        block = newEl
-      }
-
-      return block
-    })
-  },
-  setBreaks() {
-    this.currentBlocks = this.currentBlocks.map((block) => {
-      if (this.markdown.break.test(block.innerHTML)) {
-        const newEl = document.createElement("hr")
-        newEl.dataset.val = block.innerHTML
-        block = newEl
-      }
-
-      return block
-    })
-  },
-  setShortBreaks() {
-    this.currentBlocks = this.currentBlocks.map((block) => {
-      if (this.markdown.shortBreak.test(block.innerHTML)) {
-        const newEl = document.createElement("hr")
-        newEl.dataset.val = block.innerHTML
-        block = newEl
-      }
-
-      return block
-    })
-  },
-  setCheckIns() {
+  setEverything() {
     this.currentBlocks = this.currentBlocks.map((block, i) => {
-      if (this.markdown.checkIn.test(block.innerHTML)) {
-        const newEl = document.createElement("aside")
-        newEl.blockId = i
-        const p = document.createElement("p")
-        p.innerHTML = block.innerHTML.replaceAll(this.markdown.checkIn, "")
-        p.innerHTML = p.innerHTML.replaceAll(this.markdown.checkInAt, "<br />")
-        newEl.innerHTML = p.outerHTML
-        block = newEl
-      }
+      block = this.setPre(block, i)
+      block = this.setVars(block)
+      block = this.setH1(block)
+      block = this.setBoxes(block)
+      block = this.setBreaks(block)
+      block = this.setShortBreaks(block)
+      block = this.setEm(block)
+      block = this.setCheckIns(block, i)
 
       return block
     })
   },
-  setPre() {
-    this.currentBlocks = this.currentBlocks.map((block, i) => {
-      if (this.markdown.pre.test(block.innerHTML)) {
-        const newEl = document.createElement("pre")
-        newEl.blockId = i
-        newEl.innerHTML = block.innerHTML
-        block = newEl
-      }
+  setH1(block) {
+    if (this.markdown.h1.test(block.innerHTML)) {
+      const newEl = document.createElement("h1")
+      newEl.innerHTML = block.innerHTML.replaceAll(this.markdown.h1, "")
+      block = newEl
+    }
 
-      return block
-    })
+    return block
   },
-  setVars() {
-    this.currentBlocks.forEach((block) => {
-      for (const [key, value] of this.properNounMarkdown) {
-        block.innerHTML = block.innerHTML.replaceAll(key, value)
-      }
-    })
+  setBoxes(block) {
+    if (this.markdown.box.test(block.innerHTML)) {
+      const boxes = Array.from(block.innerHTML)
+      const boxLength = boxes.length
+      // 4 = block size, 2 = width of block aka sq root of block size
+      const breakAt = Math.floor(boxLength / 4) * 2 + Math.min(2, boxLength % 4)
+      boxes.splice(breakAt, 0, " ")
+      const newEl = document.createElement("h2")
+      newEl.innerHTML = boxes.join("")
+      block = newEl
+    }
+
+    return block
   },
-  setEm() {
-    this.currentBlocks.forEach((block) => {
-      if (["ASIDE", "P"].indexOf(block.tagName) !== -1) {
-        block.innerHTML = block.innerHTML.replace(this.markdown.em, "<i>$1</i>")
-      }
-    })
+  setBreaks(block) {
+    if (this.markdown.break.test(block.innerHTML)) {
+      const newEl = document.createElement("hr")
+      newEl.dataset.val = block.innerHTML
+      block = newEl
+    }
+
+    return block
+  },
+  setShortBreaks(block) {
+    if (this.markdown.shortBreak.test(block.innerHTML)) {
+      const newEl = document.createElement("hr")
+      newEl.dataset.val = block.innerHTML
+      block = newEl
+    }
+
+    return block
+  },
+  setCheckIns(block, i) {
+    if (this.markdown.checkIn.test(block.innerHTML)) {
+      const newEl = document.createElement("aside")
+      newEl.blockId = i
+      const p = document.createElement("p")
+      p.innerHTML = block.innerHTML.replaceAll(this.markdown.checkIn, "")
+      p.innerHTML = p.innerHTML.replaceAll(this.markdown.checkInAt, "<br />")
+      newEl.innerHTML = p.outerHTML
+      block = newEl
+    }
+
+    return block
+  },
+  setPre(block, i) {
+    if (this.markdown.pre.test(block.innerHTML)) {
+      const newEl = document.createElement("pre")
+      newEl.blockId = i
+      newEl.innerHTML = block.innerHTML
+      block = newEl
+    }
+
+    return block
+  },
+  setVars(block) {
+    for (const [key, value] of this.properNounMarkdown) {
+      block.innerHTML = block.innerHTML.replaceAll(key, value)
+    }
+
+    return block
+  },
+  setEm(block) {
+    if (["ASIDE", "P"].indexOf(block.tagName) !== -1) {
+      block.innerHTML = block.innerHTML.replace(this.markdown.em, "<em>$1</em>")
+    }
+
+    return block
   },
   getData: async function (newPage) {
     const url = `pages/part-${newPage}.txt`
@@ -185,14 +186,7 @@ const skvtoData = {
   putData: function () {
     skvto.reader.replaceChildren()
     this.setBlocks()
-    this.setPre()
-    this.setVars()
-    this.setH1()
-    this.setBoxes()
-    this.setBreaks()
-    this.setShortBreaks()
-    this.setEm()
-    this.setCheckIns()
+    this.setEverything()
     skvto.setCheckinFades()
     skvto.fillReader() // Part of reader
   },
