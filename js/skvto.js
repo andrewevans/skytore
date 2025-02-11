@@ -173,7 +173,7 @@ const skvtoData = {
     this.setBlocks()
     this.setEverything()
     skvto.setCheckinFades()
-    skvto.fillReader() // Part of reader
+    skvtoReader.fillReader() // Part of reader
   },
   setupNewData: async function (newPage) {
     await this.getData(newPage)
@@ -189,8 +189,6 @@ const skvto = {
   })(),
   url: new URL(document.URL),
   isEditing: false,
-  intervalId: 0,
-  intervalIdOuter: 0,
   bellsAndWhistles: false,
   setBlockEvents: function () {
     skvtoData.currentBlocks.forEach((block) => {
@@ -359,42 +357,6 @@ const skvto = {
       }.bind(this),
       false,
     )
-  },
-  fillReader() {
-    skvtoReader.reader.replaceChildren()
-    let outerCount = 0
-    let innerCount = 0
-
-    const doInnerThing = function (newBlock, innerHTML) {
-      newBlock.innerHTML = innerHTML.substring(
-        0,
-        innerCount * 15 + outerCount * 15,
-      )
-      newBlock.classList.add("webdinged")
-      if (innerCount * 15 + outerCount * 15 <= innerHTML.length) {
-        innerCount++
-        this.intervalId = setTimeout(doInnerThing, 0, newBlock, innerHTML)
-      } else {
-        newBlock.innerHTML = innerHTML
-        newBlock.classList.remove("webdinged")
-        innerCount = 0
-        doOuterThing()
-      }
-    }.bind(this)
-
-    const doOuterThing = function () {
-      const newBlock = skvtoData.currentBlocks[outerCount]
-
-      if (outerCount < skvtoData.currentBlocks.length) {
-        skvtoReader.reader.appendChild(newBlock)
-        const innerHTML = newBlock.innerHTML
-        newBlock.innerHTML = "■"
-        this.intervalIdOuter = setTimeout(doInnerThing, 0, newBlock, innerHTML)
-        outerCount++
-      }
-    }.bind(this)
-
-    doOuterThing()
   },
   resetReader() {
     window.scrollTo(0, 0)
@@ -611,6 +573,44 @@ const pageNavigator = {
 
 const skvtoReader = {
   reader: document.getElementById("reader"),
+  intervalId: 0,
+  intervalIdOuter: 0,
+  fillReader() {
+    this.reader.replaceChildren()
+    let outerCount = 0
+    let innerCount = 0
+
+    const doInnerThing = function (newBlock, innerHTML) {
+      newBlock.innerHTML = innerHTML.substring(
+        0,
+        innerCount * 15 + outerCount * 15,
+      )
+      newBlock.classList.add("webdinged")
+      if (innerCount * 15 + outerCount * 15 <= innerHTML.length) {
+        innerCount++
+        this.intervalId = setTimeout(doInnerThing, 0, newBlock, innerHTML)
+      } else {
+        newBlock.innerHTML = innerHTML
+        newBlock.classList.remove("webdinged")
+        innerCount = 0
+        doOuterThing()
+      }
+    }.bind(this)
+
+    const doOuterThing = function () {
+      const newBlock = skvtoData.currentBlocks[outerCount]
+
+      if (outerCount < skvtoData.currentBlocks.length) {
+        this.reader.appendChild(newBlock)
+        const innerHTML = newBlock.innerHTML
+        newBlock.innerHTML = "■"
+        this.intervalIdOuter = setTimeout(doInnerThing, 0, newBlock, innerHTML)
+        outerCount++
+      }
+    }.bind(this)
+
+    doOuterThing()
+  },
   init: function () {
     skvto.init()
     this.setupNewPage()
@@ -623,8 +623,8 @@ const skvtoReader = {
       parseInt(skvto.url.searchParams.get("page")) || skvtoData.page
 
     this.reader.replaceChildren()
-    clearInterval(skvto.intervalId)
-    clearInterval(skvto.intervalIdOuter)
+    clearInterval(this.intervalId)
+    clearInterval(this.intervalIdOuter)
 
     const boxes = Array.from("■".repeat(Math.max(skvtoData.page - 1, 1)))
     const boxLengthLoader = boxes.length
