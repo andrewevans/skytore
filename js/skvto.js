@@ -65,8 +65,6 @@ const skvtoData = {
         el.classList.add("data-dirty")
       }
 
-      el.addEventListener("click", (event) => this.pauseOrPlayOrEdit(event, 1))
-
       return el
     })
   },
@@ -76,9 +74,6 @@ const skvtoData = {
         const newEl = document.createElement("h1")
         newEl.innerHTML = block.innerHTML.replaceAll(this.markdown.h1, "")
         block = newEl
-        block.addEventListener("click", (event) =>
-          this.pauseOrPlayOrEdit(event, 1),
-        )
       }
 
       return block
@@ -96,9 +91,6 @@ const skvtoData = {
         const newEl = document.createElement("h2")
         newEl.innerHTML = boxes.join("")
         block = newEl
-        block.addEventListener("click", (event) =>
-          this.pauseOrPlayOrEdit(event, 1),
-        )
       }
 
       return block
@@ -241,6 +233,11 @@ const skvto = {
   intervalId: 0,
   intervalIdOuter: 0,
   bellsAndWhistles: false,
+  setBlockEvents: function () {
+    skvtoData.currentBlocks.forEach((block) => {
+      block.addEventListener("click", (event) => skvto.pauseOrPlayOrEdit(event, 1))
+    })
+  },
   postEdits: async function () {
     const editsList = []
 
@@ -535,7 +532,11 @@ const pageNavigator = {
     skvto.reader.replaceChildren()
     event?.preventDefault() // Cancel the default action to avoid it being handled twice
     skvtoData.setupNewPage(skvtoData.page + direction).catch(() => {
-      skvtoData.setupNewPage(skvtoData.page, event).then()
+      skvtoData.setupNewPage(skvtoData.page, event).then(() => {
+        skvto.setBlockEvents()
+      })
+    }).finally(() => {
+      skvto.setBlockEvents()
     })
   },
   navClicked: function (event, direction) {
@@ -702,6 +703,8 @@ skvto.init()
 const synth = window.speechSynthesis // Text to Speech
 synth.cancel()
 let utterThese = []
-skvtoData.setupNewPage(skvtoData.page).then()
+skvtoData.setupNewPage(skvtoData.page).then(() => {
+  skvto.setBlockEvents()
+})
 pageNavigator.init()
 backgroundMotion.init()
