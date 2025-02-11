@@ -26,6 +26,32 @@ const skvtoData = {
     checkInAt: /\n/gm,
     pre: /&lt;/gm,
   },
+  breakAudio: [
+    {
+      audioTitle: "",
+      audioAsset: "assets/wall-clock-tick.mp3",
+      direction: 0,
+      panner() {
+        return 0
+      },
+    },
+    {
+      audioTitle: "* * *",
+      audioAsset: "assets/spooky-dinkus.mp3",
+      direction: 1,
+      panner(pannerPanValue) {
+        return Math.max(-1, pannerPanValue - 0.1)
+      },
+    },
+    {
+      audioTitle: "*",
+      audioAsset: "assets/old-radio-static-noise-short.mp4",
+      direction: -1,
+      panner(pannerPanValue) {
+        return Math.min(1, pannerPanValue + 0.1)
+      },
+    },
+  ],
   setBlocks() {
     this.currentBlocks = this.currentText.split(this.markdown.block)
     this.currentBlocks = this.currentBlocks.map((block, i) => {
@@ -325,32 +351,6 @@ const skvto = {
   audio: {
     audioElement: {},
     audioEnded: false,
-    breakAudio: [
-      {
-        audioTitle: "",
-        audioAsset: "assets/wall-clock-tick.mp3",
-        direction: 0,
-        panner() {
-          return 0
-        },
-      },
-      {
-        audioTitle: "* * *",
-        audioAsset: "assets/spooky-dinkus.mp3",
-        direction: 1,
-        panner(pannerPanValue) {
-          return Math.max(-1, pannerPanValue - 0.1)
-        },
-      },
-      {
-        audioTitle: "*",
-        audioAsset: "assets/old-radio-static-noise-short.mp4",
-        direction: -1,
-        panner(pannerPanValue) {
-          return Math.min(1, pannerPanValue + 0.1)
-        },
-      },
-    ],
     audioStop() {
       this.audioElement.currentTime = this.audioElement.duration
       this.audioEnded = true
@@ -364,8 +364,8 @@ const skvto = {
       this.audioElement = document.createElement("audio")
       const track = audioContext.createMediaElementSource(this.audioElement)
       const breakAudio =
-        this.breakAudio.find((each) => each.audioTitle === audioTitle) ||
-        this.breakAudio[0]
+        skvtoData.breakAudio.find((each) => each.audioTitle === audioTitle) ||
+        skvtoData.breakAudio[0]
       this.audioElement.src = breakAudio.audioAsset
       this.audioElement.volume = 0.2
       let playBackIteration = 1
