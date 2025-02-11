@@ -2,7 +2,6 @@
 
 const skvtoData = {
   page: 1,
-  reader: document.getElementById("reader"),
   currentText: "",
   currentBlocks: [],
   properNounMarkdown: new Map([
@@ -163,7 +162,7 @@ const skvtoData = {
   },
   getData: async function (newPage) {
     const url = `pages/part-${newPage}.txt`
-    this.reader.replaceChildren()
+    skvtoReader.reader.replaceChildren()
     clearInterval(skvto.intervalId)
     clearInterval(skvto.intervalIdOuter)
 
@@ -176,7 +175,7 @@ const skvtoData = {
     const newEl = document.createElement("h2")
     newEl.innerHTML = boxes.join("")
     newEl.classList.add("loading")
-    this.reader.appendChild(newEl)
+    skvtoReader.reader.appendChild(newEl)
 
     const response = await fetch(url)
 
@@ -377,7 +376,7 @@ const skvto = {
     )
   },
   fillReader() {
-    skvtoData.reader.replaceChildren()
+    skvtoReader.reader.replaceChildren()
     let outerCount = 0
     let innerCount = 0
 
@@ -402,7 +401,7 @@ const skvto = {
       const newBlock = skvtoData.currentBlocks[outerCount]
 
       if (outerCount < skvtoData.currentBlocks.length) {
-        skvtoData.reader.appendChild(newBlock)
+        skvtoReader.reader.appendChild(newBlock)
         const innerHTML = newBlock.innerHTML
         newBlock.innerHTML = "■"
         this.intervalIdOuter = setTimeout(doInnerThing, 0, newBlock, innerHTML)
@@ -626,6 +625,7 @@ const pageNavigator = {
 }
 
 const skvtoReader = {
+  reader: document.getElementById("reader"),
   init: function () {
     skvto.init()
     this.setupNewPage()
