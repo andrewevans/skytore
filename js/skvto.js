@@ -493,8 +493,6 @@ const skvto = {
     this.addBellToggle()
     this.addEditor()
     this.isEditing = false
-    skvtoData.page =
-      parseInt(this.url.searchParams.get("page")) || skvtoData.page
   },
 }
 
@@ -581,11 +579,14 @@ const pageNavigator = {
 const skvtoReader = {
   init: function () {
     skvto.init()
-    skvtoReader.setupNewPage()
+    this.setupNewPage()
     pageNavigator.init()
     backgroundMotion.init()
   },
   setupNewPage: function (direction = 0) {
+    skvtoData.page =
+      parseInt(skvto.url.searchParams.get("page")) || skvtoData.page
+
     skvtoData
       .setupNewPage(skvtoData.page + direction)
       .then(() => {
