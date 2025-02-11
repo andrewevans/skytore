@@ -159,21 +159,6 @@ const skvtoData = {
       }
     })
   },
-  updateNav: function () {
-    const newPageUrl = new URL(document.URL)
-    newPageUrl.searchParams.set("page", (this.page + 1).toString())
-    pageNavigator.nav.next.href = newPageUrl
-    newPageUrl.searchParams.set("page", (this.page - 1).toString())
-    pageNavigator.nav.previous.href = newPageUrl
-  },
-  updateUrl: function () {
-    if (skvto.url.searchParams.has("page")) {
-      skvto.url.searchParams.set("page", this.page)
-      history.pushState({}, "", skvto.url)
-    } else {
-      skvto.url.searchParams.set("page", this.page)
-    }
-  },
   getData: async function (newPage) {
     const url = `pages/part-${newPage}.txt`
     clearInterval(skvto.intervalId)
@@ -214,12 +199,20 @@ const skvtoData = {
   setupNewPage: async function (newPage) {
     await this.getData(newPage)
     await this.putData()
-    this.updateUrl()
-    this.updateNav()
   },
 }
 
-const skvtoReader = {}
+const skvtoReader = {
+  setupNewPage: function(direction = 0) {
+    skvtoData.setupNewPage(skvtoData.page + direction).then(() => {
+      skvto.setBlockEvents()
+      pageNavigator.updateUrl()
+      pageNavigator.updateNav()
+    }).catch(() => {
+      this.setupNewPage()
+    })
+  },
+}
 
 const skvto = {
   hostname: (function () {
@@ -521,6 +514,21 @@ const pageNavigator = {
     previous: document.querySelector("#nav-back"),
     edit: document.querySelector("#edit-reader"),
   },
+  updateNav: function () {
+    const newPageUrl = new URL(document.URL)
+    newPageUrl.searchParams.set("page", (skvtoData.page + 1).toString())
+    pageNavigator.nav.next.href = newPageUrl
+    newPageUrl.searchParams.set("page", (skvtoData.page - 1).toString())
+    pageNavigator.nav.previous.href = newPageUrl
+  },
+  updateUrl: function () {
+    if (skvto.url.searchParams.has("page")) {
+      skvto.url.searchParams.set("page", skvtoData.page)
+      history.pushState({}, "", skvto.url)
+    } else {
+      skvto.url.searchParams.set("page", skvtoData.page)
+    }
+  },
   goToNavLink: function (direction, event) {
     if (skvto.isEditing) return
 
@@ -531,13 +539,7 @@ const pageNavigator = {
 
     skvto.reader.replaceChildren()
     event?.preventDefault() // Cancel the default action to avoid it being handled twice
-    skvtoData.setupNewPage(skvtoData.page + direction).catch(() => {
-      skvtoData.setupNewPage(skvtoData.page, event).then(() => {
-        skvto.setBlockEvents()
-      })
-    }).finally(() => {
-      skvto.setBlockEvents()
-    })
+    skvtoReader.setupNewPage(direction)
   },
   navClicked: function (event, direction) {
     event.preventDefault()
@@ -703,8 +705,7 @@ skvto.init()
 const synth = window.speechSynthesis // Text to Speech
 synth.cancel()
 let utterThese = []
-skvtoData.setupNewPage(skvtoData.page).then(() => {
-  skvto.setBlockEvents()
-})
+
+skvtoReader.setupNewPage()
 pageNavigator.init()
 backgroundMotion.init()
