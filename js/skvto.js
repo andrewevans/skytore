@@ -185,7 +185,6 @@ const skvtoData = {
     this.page = newPage
   },
   putData: function () {
-    this.reader.replaceChildren()
     this.setBlocks()
     this.setEverything()
     skvto.setCheckinFades()
@@ -579,7 +578,6 @@ const pageNavigator = {
     window.scrollTo(0, 0)
     skvtoData.currentBlocks.forEach((block) => block.observer?.disconnect())
 
-    skvtoData.reader.replaceChildren()
     event?.preventDefault() // Cancel the default action to avoid it being handled twice
     skvtoReader.setupNewPage(direction)
   },
