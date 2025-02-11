@@ -163,6 +163,7 @@ const skvtoData = {
   },
   getData: async function (newPage) {
     const url = `pages/part-${newPage}.txt`
+    this.reader.replaceChildren()
     clearInterval(skvto.intervalId)
     clearInterval(skvto.intervalIdOuter)
 
@@ -411,6 +412,17 @@ const skvto = {
 
     doOuterThing()
   },
+  resetReader() {
+    window.scrollTo(0, 0)
+    synth.cancel()
+    this.audio.audioStop()
+
+    skvtoData.currentBlocks.forEach((block) => {
+      block.classList.remove("marked") // Remove in case the synth was canceled
+      block.classList.remove("hidden-checkin")
+      block.observer?.disconnect()
+    })
+  },
   addBellToggle() {
     document.querySelectorAll(".switch").forEach((theSwitch) => {
       theSwitch.setAttribute("aria-checked", this.bellsAndWhistles.toString())
@@ -425,15 +437,7 @@ const skvto = {
             this.isEditing = false
             document.getElementById("edit").dataset.active = this.isEditing
 
-            synth.cancel()
-            this.audio.audioStop()
-            window.scrollTo(0, 0)
-
-            skvtoData.currentBlocks.forEach((block) => {
-              block.classList.remove("marked") // Remove in case the synth was canceled
-              block.classList.remove("hidden-checkin")
-              block.observer?.disconnect()
-            })
+            this.resetReader()
           } else {
             el.setAttribute("aria-checked", "true")
             this.bellsAndWhistles = true
@@ -573,11 +577,6 @@ const pageNavigator = {
   goToNavLink: function (direction, event) {
     if (skvto.isEditing) return
 
-    synth.cancel()
-    skvto.audio.audioStop()
-    window.scrollTo(0, 0)
-    skvtoData.currentBlocks.forEach((block) => block.observer?.disconnect())
-
     event?.preventDefault() // Cancel the default action to avoid it being handled twice
     skvtoReader.setupNewPage(direction)
   },
@@ -634,6 +633,7 @@ const skvtoReader = {
     backgroundMotion.init()
   },
   setupNewPage: function (direction = 0) {
+    skvto.resetReader()
     skvtoData.page =
       parseInt(skvto.url.searchParams.get("page")) || skvtoData.page
 
