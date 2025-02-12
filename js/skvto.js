@@ -55,7 +55,7 @@ const skvtoData = {
   setBlocks() {
     this.currentBlocks = this.currentText.split(this.markdown.block)
     this.currentBlocks = this.currentBlocks.map((block, i) => {
-      const el = document.createElement("p")
+      const el = document.createElement("p") // All blocks start as `p`
       el.innerHTML = block
       el.blockId = i
 
@@ -190,6 +190,8 @@ const skvto = {
   bellsAndWhistles: false,
   setBlockEvents: function () {
     skvtoData.currentBlocks.forEach((block) => {
+      if (block.tagName !== "P") return block
+
       block.addEventListener("click", (event) =>
         skvto.pauseOrPlayOrEdit(event, 1),
       )
