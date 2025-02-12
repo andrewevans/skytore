@@ -535,7 +535,7 @@ const pageNavigator = {
       (this.touchendX < this.touchstartX &&
         150 < this.touchstartX - this.touchendX)
     ) {
-      this.goToNavLink(1)
+      this.goToNavLink(this.nav.next.href)
     }
 
     if (
@@ -543,7 +543,7 @@ const pageNavigator = {
       (this.touchendX > this.touchstartX &&
         150 < this.touchendX - this.touchstartX)
     ) {
-      this.goToNavLink(-1)
+      this.goToNavLink(this.nav.previous.href)
     }
   },
   init: function () {
