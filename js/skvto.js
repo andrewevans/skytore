@@ -520,15 +520,14 @@ const pageNavigator = {
       skvto.url.searchParams.set("page", skvtoData.page)
     }
   },
-  goToNavLink: function (direction, event) {
+  goToNavLink: function (newUrl) {
     if (skvto.isEditing) return
 
-    event?.preventDefault() // Cancel the default action to avoid it being handled twice
-    skvtoReader.setupNewPage(direction)
+    skvtoReader.setupNewPage(newUrl)
   },
-  navClicked: function (event, direction) {
-    event.preventDefault()
-    this.goToNavLink(direction, event)
+  navClicked: function (event) {
+    event.preventDefault() // Cancel the default action to avoid it being handled twice
+    this.goToNavLink(event?.target.href)
   },
   checkDirection: function (event) {
     if (
@@ -563,10 +562,10 @@ const pageNavigator = {
     })
 
     this.nav.next.addEventListener("click", (event) =>
-      this.navClicked(event, 1),
+      this.navClicked(event),
     )
     this.nav.previous.addEventListener("click", (event) =>
-      this.navClicked(event, -1),
+      this.navClicked(event),
     )
   },
 }
@@ -617,17 +616,18 @@ const skvtoReader = {
     pageNavigator.init()
     backgroundMotion.init()
   },
-  setupNewPage: function (direction = 0) {
+  setupNewPage: function (newUrl) {
     skvto.resetReader()
+    const url = new URL(newUrl || document.URL)
     skvtoData.page =
-      parseInt(skvto.url.searchParams.get("page")) || skvtoData.page
+      parseInt(url.searchParams.get("page")) || skvtoData.page
 
     this.reader.replaceChildren()
     clearInterval(this.intervalId)
     clearInterval(this.intervalIdOuter)
 
     const boxes = Array.from(
-      "■".repeat(Math.max(skvtoData.page - 1 + direction, 1)),
+      "■".repeat(Math.max(skvtoData.page - 1, 1)),
     )
     const boxLengthLoader = boxes.length
     // 4 = block size, 2 = width of block aka sq root of block size
@@ -640,7 +640,7 @@ const skvtoReader = {
     this.reader.appendChild(newEl)
 
     skvtoData
-      .setupNewData(skvtoData.page + direction)
+      .setupNewData(skvtoData.page)
       .then(() => {
         this.fillReader()
         skvto.setCheckinFades()
