@@ -70,14 +70,14 @@ const skvtoData = {
   },
   setEverything() {
     this.currentBlocks = this.currentBlocks.map((block, i) => {
-      block = this.setPre(block, i)
+      block = this.setPre(block)
       block = this.setVars(block)
       block = this.setH1(block)
       block = this.setBoxes(block)
       block = this.setBreaks(block)
       block = this.setShortBreaks(block)
       block = this.setEm(block)
-      block = this.setCheckIns(block, i)
+      block = this.setCheckIns(block)
 
       return block
     })
@@ -123,10 +123,10 @@ const skvtoData = {
 
     return block
   },
-  setCheckIns(block, i) {
+  setCheckIns(block) {
     if (this.markdown.checkIn.test(block.innerHTML)) {
       const newEl = document.createElement("aside")
-      newEl.blockId = i
+      newEl.blockId = block.blockId
       const p = document.createElement("p")
       p.innerHTML = block.innerHTML.replaceAll(this.markdown.checkIn, "")
       p.innerHTML = p.innerHTML.replaceAll(this.markdown.checkInAt, "<br />")
@@ -136,10 +136,10 @@ const skvtoData = {
 
     return block
   },
-  setPre(block, i) {
+  setPre(block) {
     if (this.markdown.pre.test(block.innerHTML)) {
       const newEl = document.createElement("pre")
-      newEl.blockId = i
+      newEl.blockId = block.blockId
       newEl.innerHTML = block.innerHTML
       block = newEl
     }
