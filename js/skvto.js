@@ -648,7 +648,8 @@ const skvtoReader = {
         pageNavigator.updateUrl()
         pageNavigator.updateNav()
       })
-      .catch(() => {
+      .catch((err) => {
+        window.console.error("This has not been written. Why are you here?")
         this.setupNewPage()
       })
   },
