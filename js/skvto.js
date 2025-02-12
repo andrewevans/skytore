@@ -624,7 +624,9 @@ const skvtoReader = {
     clearInterval(this.intervalId)
     clearInterval(this.intervalIdOuter)
 
-    const boxes = Array.from("■".repeat(Math.max(skvtoData.page - 1 + direction, 1)))
+    const boxes = Array.from(
+      "■".repeat(Math.max(skvtoData.page - 1 + direction, 1)),
+    )
     const boxLengthLoader = boxes.length
     // 4 = block size, 2 = width of block aka sq root of block size
     const breakAt =
