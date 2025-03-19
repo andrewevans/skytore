@@ -1,6 +1,52 @@
-README
+README ■
 
-Don't fear the *documentation* that others may need.
+Connect a plain text file with zero markup in to *skvto* and it will output a book-like UI with bells and whistles such as audiobook, chapters, common novel page design. *skvto* also has an editor that allows you to edit your story inline and saves the changes "in the sky cloud".
 
 >check-in README $
 @ The Repo
+
+*
+
+ORDER OF INITIAL APP SETUP
+
+    - sktoReader init
+        - skvto init
+            - add Bells
+                - Turn on Notifications
+                - Turn on Check-in Fades
+            - add Editor
+        - setup new page
+            - create Title squares
+            - get the data, build the blocks
+            - fill reader with the blocks
+            - add Bells events
+        - Set up nav, URL
+        - ... user is now in charge ...
+
+*
+
+BLOCKS
+
+    - pre
+    - vars
+    - h1
+    - boxes
+    - breaks
+    - short breaks
+    - em
+    - check-ins
+
+*
+
+BELLS
+
+    - play, pause, edit switch
+    - check-in fades
+    - editor
+    - read text
+    - notifications
+    - swipe nav (TODO: put behind the Bells flag)
+
+*
+
+EDITOR (TODO: Add editor documentation)
