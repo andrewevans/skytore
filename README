@@ -8,7 +8,8 @@ Connect a plain text file with zero markup in to *skvto* and it will output a bo
 
 * * *
 
-ORDER OF INITIAL APP SETUP
+ORDER OF INITIAL APP SETUP ■
+============
 
     - sktoReader init
         - skvto init
@@ -26,7 +27,8 @@ ORDER OF INITIAL APP SETUP
 
 * * *
 
-BLOCKS
+BLOCKS ■
+============
 
     - pre
     - vars
@@ -39,7 +41,8 @@ BLOCKS
 
 * * *
 
-BELLS
+BELLS ■
+============
 
     - play, pause, edit switch
     - check-in fades
@@ -50,4 +53,7 @@ BELLS
 
 * * *
 
-EDITOR (TODO: Add editor documentation)
+EDITOR ■
+============
+
+    - (TODO: Add editor documentation)
