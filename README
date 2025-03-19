@@ -1,11 +1,12 @@
 README ■
+============
 
 Connect a plain text file with zero markup in to *skvto* and it will output a book-like UI with bells and whistles such as audiobook, chapters, common novel page design. *skvto* also has an editor that allows you to edit your story inline and saves the changes "in the sky cloud".
 
 >check-in README $
 @ The Repo
 
-*
+* * *
 
 ORDER OF INITIAL APP SETUP
 
@@ -23,7 +24,7 @@ ORDER OF INITIAL APP SETUP
         - Set up nav, URL
         - ... user is now in charge ...
 
-*
+* * *
 
 BLOCKS
 
@@ -36,7 +37,7 @@ BLOCKS
     - em
     - check-ins
 
-*
+* * *
 
 BELLS
 
@@ -47,6 +48,6 @@ BELLS
     - notifications
     - swipe nav (TODO: put behind the Bells flag)
 
-*
+* * *
 
 EDITOR (TODO: Add editor documentation)
