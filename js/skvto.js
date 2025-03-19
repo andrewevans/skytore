@@ -69,7 +69,7 @@ const skvtoData = {
     })
   },
   setEverything() {
-    this.currentBlocks = this.currentBlocks.map((block, i) => {
+    this.currentBlocks = this.currentBlocks.map((block) => {
       block = this.setPre(block)
       block = this.setVars(block)
       block = this.setH1(block)
