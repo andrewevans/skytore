@@ -6,36 +6,215 @@
 
 "Have you set up the light client yet? We need it for our test net."
 
-"No it's still really fat," I said. "Britten, listen to me. This is bigger than we think. Something extra ordinary is happening."
+"Britten, listen to me,” I started. “This is bigger than we think. Something extra ordinary is happening."
 
-She points up. "Meteors in the sky all the time?" About a dozen meteor streaks scored the afternoon sky, which became a normal occurrence.
+She points up. "Meteors in the sky all the time?" A handful of meteor streaks scored the afternoon sky, which became a normal occurrence.
 
-I told Britten about the little incident with $C, and I could tell she had begun to lose faith.
+I told Britten about the incident with $C, and I could tell she had begun to lose faith.
 
->check-in $AX
-@ Bee Theory
-
-I checked in just as Francis called. "What up Francis?"
+Francis called just as I was about the check in.
 
 "I got it, what you told me to get. From her phone," he said.
 
-"That's grouch. How?" I leaned toward Britten and told her "I gotta bounce." She nodded and waved me away.
+>check-in bri10
+@ La Rotonde
 
-"I just plugged in that thing you gave me just like you said and I think it downloaded everything," he said.
+"That's grouch. How?" I leaned toward Britten and told her, “I must away.” She nodded and waved me away.
 
-He explained how the opportunity arose when Melody's phone had slipped from her pocket while he was taking her home. Before bringing it back, he downloaded everything off her phone and got exactly what I needed. Francis had been seeing Melody for a few days now. It was unprecedented.
+"I just plugged in that device you gave me just like you said."
 
-I raced home to meet Francis leaning on the picket fence in the front yard, dangling the device in his hand, not too happy.
+He explained how the opportunity arose when Melody's phone had slipped from her pocket while he was taking her home. Before bringing it back to her, he downloaded everything off her phone and got exactly what I needed. Francis had been seeing Melody for a few days now. It was unprecedented.
+
+I raced home to meet Francis leaning on the picket fence in the front yard, dangling my device in his hand, not too happy.
 
 "What's with the sadness? Did you lose that ball?" I asked him.
 
 "I don't know. It's pretty fucked up what I did," he said. He handed me the data. "Take this. I want to forget I ever did that."
 
-"Thank you thank you!" I gave him a pat on the back and quickly walked inside.
+"Thank you thank you!" I gave him a pat on the back and quickly walked inside. I thought about consoling him, but there were more important things at hand.
+
+If I couldn’t get to $C, Francis could still get to Melody. She was my next lead, which meant Francis was. She trusted him. She should. He was an honest person. But he trusted me.
 
 *
 
 It was a goldmine. Data queries, notes on algorithms, passwords stored in plain text. Stupid girl.
 
-As I rifled through the data, it became even more confusing. It dated [sic]
+As I rifled through the data, it became even more confusing. The data was grouped as “blocks”, dating into the distant past and into the near future. Future data blocks were marked with an 'Eclipse' that looked like probability ratios coupling each future block. Most blocks were marked as unlikely, and a few as near definite.
 
+Most users had very repetitive blocks: from work to home, and back again. These simple lives were enticed with blocks ever so slightly off their beaten paths.
+
+I projected the data on my cracked Glass to display it as a scrolling marquee. It looked like a puzzle, but it didn't feel like one. That flat translucent crystal ball in front of me was stitching together our likely near future, and parts of it were shown through Raiden's stained blood.
+
+Instead of walking down 4th Street to work today, it suggested one user walk down 5th.
+
+Another user was persuaded to use 5th Street that morning as well. Its Eclipse was low, but if they both confirmed that block, they would then be led to a chain of high Eclipsed blocks with their threads intertwined through the maze, ending at her flat that night. And it was her place repeatedly thereafter as their blocks merged, all the way to the right edge of where the new blocks were birthed.
+
+Every moment that passed affected the data. Eclipses constantly adjusted on future blocks while missed blocks were destroyed for their failures. And when high eclipsed blocks were missed, it sent a flurry of data adjustments lighting up the screen like fireworks; the algorithm clearly didn’t like being wrong.
+
+When the algorithm’s predictions were wrong, it would loop through countless drafts of possibilities in a dazzle of glittering threads, rearranging in hopes of finding some preferred set. Each of those changes caused rippling changes through the data as far as the Glass could display. This helpless fit would go on until it found a comfortable stasis, and then all was calm again.
+
+*
+
+"Yes you have it and it's ready! That's what you're going to tell me, right?" Britten lit up with the falsest glee I had ever seen.
+
+>check-in $AX
+@ La Rotonde
+
+>check-in bri10
+@ La Rotonde
+
+"Yes I do actually," I retorted.
+
+Her eyes widened in disbelief. She prepared her plume over her notes. "Okay, let's hear it."
+
+"It's like a million little fibers in the wind trying to catch grains of sand," I explained. "It's beautiful. It can--"
+
+"In less idiot terms please," she remarked.
+
+"They map out our actions into connected blocks and artificially cause fluctuations in these chains!"
+
+"..."
+
+I motioned around us. "These blocks, these events, are created and chained together to reach some desired outcome. The only goal I can surmise is that it lusts to simply be accurate in its predictions. And when it’s way off target, it lights up like crazy while it vanquishes its misses and reshapes the chains to fit its needs. The most confusing of it all is, in some cases, in some sort of desperation, it’ll update past blocks to fit its upcoming narrative. It cheats at its own game." I did the best I could to explain what I thought the Eclipse ratios were and everything else I saw that night.
+
+Her notes still didn't have a drop of ink on them. "Is it immutable? Do you have write access?"
+
+"No, but," I began while I realized I did not know. I hadn't tried. "No. I don't."
+
+*
+
+>-$ block #4f3k8
+$ confirmed
+$ @ e0.900 -rf
+
+It was late into the night when I hit something unsettling. If I was reading it correctly, it said user $melodic was going to arrive at our house to cross paths with $francix with an unlikely Eclipse. Francis was asleep, though.
+
+I stood at the glass wall of the war room atop the house overlooking the night’s empty streets waiting for some strangeness to occur.
+
+The Glass's frantic glimmer reflected off the window as my heavy-lidded eyes gazed down at the sleeping city. My curiosity, though, was overtaken by my fatigue.
+
+*
+
+The doorbell rang.
+
+The doorbell rang again.
+
+And again.
+
+It was pouring rain in the middle of the night. Who would be at the door at this ungodly hour in this torrential storm?
+
+I stumbled through the dark house to get to the front door. The door bell kept ringing.
+
+I looked through the peep hole. It was Melody with somebody behind her at the bottom of the steps.
+
+I opened the unlocked door. She was drenched from head to toe. Her signature eyeliner was dripping down her furious face.
+
+She said something to me but the storm drowned out her words. Her soaked hair draped over her black dress, melting into it.
+
+I couldn't understand what she said so I took a step outside to get closer.
+
+I leaned toward her to hear her. Finally it was audible.
+
+"You," she said in a deeper voice than her own. "You made a big mistake."
+
+I looked behind her to see who her backup was. It was Francis. His state was cold and lifeless, part zombie, part vengeful.
+
+The door bell rang again. And again. And again. I put my hand over the bell to stop the ringing. Melody pressed her freezing ice cold hand against mine to force me to ring it.
+
+When I woke, it was still night. And there was a storm. My phone was ringing. By the time I went to answer it, the call had ended. It was $C.
+
+*
+
+I was hoping this was the place she told me to meet her. Her only remark was "at the place we skipped when we were walking in the rain, don’t bring any tech". We skipped pebbles in a puddle when we were walking home from the ball bar the first night we soirée’d, so it was probably the place she was talking about.
+
+I sat on the broken hitching rail near where that puddle might have been to the best of my recollection.
+
+While I lit my spliff, a hand was placed on my shoulder from behind followed by, "Hi don't take your phone out."
+
+$C leaned against the post.
+
+"I don’t," I said. She sounded serious.
+
+"How is your spliff?" she asked.
+
+"It's delicious," I said.
+
+"How is your eye?" she dared ask.
+
+"It doesn't hurt any more," I told her.
+
+"It looks like shit. Look, I need to talk to you. Don't take your phone out."
+
+"I don’t have it."
+
+"I don't want them to know I'm here."
+
+"Well your phone could probably be tracked easily."
+
+"I left it at home dumb dumb. We're fine," she said.
+
+"It's that easy huh?"
+
+"It's that easy."
+
+She taps on the rail rapidly. She perfects her posture and turns her body to face me. "I knew who you were before I met you."
+
+"How romantic," I sarcast.
+
+"They know about it," she says. "And they want you."
+
+"Well I want them," I say, making sure my words are as ambiguous as hers. "Sounds like good news."
+
+"No, it's not," she says. She nearly tears up. "This... This *thing*... has gotten out of hand. You need to understand something," she says. "Let's go for a walk."
+
+“Apology accepted,” I say.
+
+"It's about your app."
+
+"Hmm," I say, both of us silent as I juggle whether to admit or deny what I'm sure she already knows about. "Yeah, let's go for a walk."
+
+We strolled atop the rolling green coastal hills on the warmest and sunniest of days with a sky unbothered by a single cloud, lightly tattered with those common streaks of stardust. With no devices on us, we were freed from our self-imposed matrix.
+
+"What did you do before $four?" I ask.
+
+"I was working on something very similar to your app," she says. "Until I met Daemon."
+
+"Where did you meet him?"
+
+She giggles to herself and shakes her head. "In da club, you could say."
+
+Figures. I made a spinning-around-the-pole motion with my finger. She shakes her head followed by a nod.
+
+She told me everything.
+
+Daemon read her white paper about people's personal information and social data mining. He found her at da club, recruited her, and so began $four's recommendation engine. It was heavily based on a person's daily patterns. Most people live simple, repetitive lives with only a few moveable levers to alter. Although a lot of the technical aspects of the algorithms went over my head, I understood that its bullseye accuracy came from the subtlety of its suggestions; It offered the users a future that was only a hair different than their original fate. The delta between what the players wanted and what the code preferred, though, was creating a rift.
+
+Very quickly the data learned its own accuracy, its 'Eclipse' of reality, and would act on that as well. Some people were easily influenced. Some were born influencers. And they all liked their virtual and real-world rewards.
+
+The algorithm grew to be vain. It learned that if reward encouraged people to follow its suggestions, then punishment for doing otherwise would do the same.
+
+"People meeting at a location but not knowing who they're supposed to meet."
+
+"Yeah," I say. "I usually don't know why I even listen to it."
+
+"You’re what we call a fanatic," she says. "You fall for it so hard that you believe the science fiction we wrote."
+
+"But it feels like a playful game."
+
+"It was. Now it's different. I think it's planned out a future already," she explains. "And it's reaching for it."
+
+"Did you create those mechanics?"
+
+"I'm the creator. Daemon's the instigator," she says. "Algorithms folding into algorithms." She shakes her head. "I've seen it choose from a million choices and it chooses freaky things now."
+
+"Can't you just adjust it?"
+
+"Not anymore!" she says. "Daemon won't let me, and it's tearing apart at the seams."
+
+"How so?"
+
+"I know it sounds weird, but I think those aren't meteors," she says as she points at the imperfect sky. "Those are rips. When what is supposed to happen doesn't, the hourglass gets shaken, violently."
+
+"Hourglass, huh," I say with raised eyebrows, not really understanding her fantastical explanation.
+
+"And now I think the hourglass is cracking," she says with a laugh. "Ugh, what am I saying?"
