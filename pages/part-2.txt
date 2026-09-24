@@ -4,7 +4,7 @@ I wanted to tell my roommates about the hilarious night I had, but they were sti
 
 I woke up a while later to the crackling of gunfire and explosions. It was time to get up.
 
-"You fuckin chance!" Francis yelled at his Glass with one hand on the keys and the other sliding weapons across the screen. "Nah nah, I kid I kid. What up Ander," he said as he welcomed me to the new day without breaking his concentration from the battlefield in front of him. "Did you gather that intel you were looking for last night? How'd it go?"
+"You fuckin chance!" Francis yelled at his Glass with one hand on the keys and the other sliding weapons across the screen. "Nah nah, I kid I kid. What up $A," he said as he welcomed me to the new day without breaking his concentration from the battlefield in front of him. "Did you gather that intel you were looking for last night? How'd it go?"
 
 "Dude it was awesome. I met this girl and her friend and I think I kissed her friend. I don't know." I tried to recount what exactly had happened. "It was like a dream I swear."
 
@@ -40,7 +40,7 @@ $G
 
 "Then we're going," I responded. "Let's kill this gruel quick so I can get back to my post."
 
-I needed to get as much work done as possible before then to ensure meeting my deadline. Rose Garden had to be a loosely stitched prototype by the morrow or the investors would second-guess my team's ability to deliver in a timely fashion.
+I needed to get as much work done as possible before then to ensure meeting my deadline. Rose Garden had to be a loosely stitched prototype by the morrow or the investors would second-guess my ability to deliver in a timely fashion.
 
 Most of the necessary game mechanics were in place for a very rudimentary version. I tied into various maps for landmarks and business locations, public tax documents for revenues, census data for population density, police reports for criminal activity, $four for the motherload of human traffic stats, and a handful of manual entries for things that lacked mineable data.
 
