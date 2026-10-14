@@ -1,6 +1,6 @@
 ■■
 
-I got to the top of the cliff and there was somebody already there. Not quite waiting for me, but sitting there acting like she was expecting me, but still surprised that it was me she was expecting. She was dancing her fingers pointed at the sky like she was moving smoke between her fingers. She was painting. With each movement the colors would swirl together in the clouds while her other hand shot shooting stars into the backdrop. I asked her if I could join her. She said she didn't know. She asked why would I be up there if not to join her. I sat down next to her and brushed the view with my fingertips. Nothing happened. I asked if I could use her fingertips instead and she said I could. Her hand still painting in the sky, I fit my fingers between hers to open her grip. The colors went flowing as her fingers spread and drew 4 distinct cloud trails in the sky. I heard a meow so I looked down at our feet and there was orange cat. He brushed against both of both our legs and continued walking. I didn't realize my hand had fallen, pushing hers with mine. It sent the masterpiece we had made splashing into the ocean in front of us. A strange sound shot from the sea like a siren. The cat jumped off the cliff and into the ocean. The tiniest beeps got louder. The beeps overcame the image. My eyes flickered with confusion. I couldn't see. And then I could. My hand had already fallen on top of the Snooze, and the siren stopped.
+I got to the top of the cliff and there was somebody already there. Not quite waiting for me, but sitting there acting like she was expecting me, but still surprised that it was me she was expecting. She was dancing her fingers pointed at the sky like she was moving smoke between her fingers. She was painting. With each movement the colors would swirl together in the clouds while her other hand shot shooting stars into the backdrop. I asked her if I could join her. She said she didn't know. She asked why would I be up there if not to join her. I sat down next to her and brushed the view with my fingertips. Nothing happened. I asked if I could use her fingertips instead and she said I could. Her hand still painting in the sky, I fit my fingers between hers to open her grip. The colors went flowing as her fingers spread and drew 4 distinct cloud trails in the sky. I heard a meow so I looked down at our feet and there was orange cat. He brushed against both of both our legs and continued walking. A strange sound shot from the sea like a siren. The cat jumped off the cliff and into the ocean. The tiniest beeps got louder. The beeps overcame the image. I didn't realize my hand had fallen, pushing hers with mine. It sent the masterpiece we had made splashing into the ocean in front of us. My eyes flickered with confusion. I couldn't see. And then I could. My hand had already fallen on top of the Snooze, and the siren stopped.
 
 I had a big day ahead of me.
 
@@ -26,7 +26,7 @@ I walked back inside with my fist clenched in victory. Karl walked out of his ro
 
 We gathered in the war room on my house's freshly built second story. Its glass walls didn't match the rest of the structure's craftsman decor at all, but it let in the sunshine. The celebration was only minutes long. My framed Jessica Rabbit drawing and server equipment caught some strays from all of us shotgunning beers. Then I got back to work.
 
-Most of the heavy lifting had already been done. Beacons would pop up all around the map from our hundreds of bots pretending to play. We could artificially feed in a park here, destroy a library there, delete some crime across town, or create dozens of check-ins at a nearby historical site.
+Most of the heavy lifting had already been done. Beacons would pop up all around the map from the hundreds of bots pretending to play. I could artificially feed in a park here, destroy a library there, delete some crime across town, or create dozens of check-ins at a nearby historical site.
 
 There was still one enormous missing thread to this gamified social quilt: how does it all end? Or at least, what is the point of playing? I needed my social experts.
 
@@ -50,15 +50,15 @@ There was still one enormous missing thread to this gamified social quilt: how d
 
 "I did my research."
 
-She showed me her open palms. "Two days ago I asked you for the research you had done. And you gave me nothing."
+She showed me her open palms. "I asked you for the research you had done. And you gave me nothing."
 
 "I was busy."
 
-"No," she said. "You were drunk. And it was noon on a Tuesday."
+"No," she said. "You were drunk. And it was noon on a workday."
 
 "Well shit I'm sorry," I said. "I was celebrating. What are you, the morality police?"
 
-"No," she said in a stern voice as she slammed her hand against the table. She stood up and crooked her head. "I am not the morality police. You are. This whole game you've created is. It's fucking ridiculous. Building a karaoke bar gains you 12 points when a preschool earns you 3?"
+"No," she said in a stern voice as she slammed her hand against the table. She stood up and crooked her head. "I am not the morality police. You are. This whole game you've created is. It's fucking ridiculous. Building a karaoke bar gains you 4 points when a preschool earns you 1?"
 
 "I'm working out the kinks," I said as I looked around at the people staring at us. "And I'm paying you to adjust this stuff. Sit down."
 
@@ -74,7 +74,7 @@ Right before she got into the buggy whip that pulled up, she looked at me and pu
 
 I hadn't seen $C for some while. Neither of us were even reaching out to one another. But then I hit *the* snag. I couldn't figure out how $four suggested a person's next movement. $four would crunch the data it had in such a way that it would very accurately tell you where you *should* go next. It was clear that it had something to do with your friends and your geolocation, but how did it know that I could meet someone at a nearby park when they weren't even there... yet?
 
-After some back and forth texts, we decided to meet at a joint that was hip enough to earn a user a handful of points if they had a beacon nearby.
+After some back and forths, we decided to meet at a joint that was hip enough to earn a user a handful of points if they had a beacon nearby.
 
 >check-in $CX $
 @ Lucky Charm
@@ -150,7 +150,7 @@ The walk took a while, but we eventually made it through the mildest of drizzlin
 
 "Hi Francis!" she said as she clapped in excitement, which I thought was kind of weird.
 
-"This is Raiden, our homeless friend," he said as he introduced our friend. Raiden stood up and shook her hand.
+"This is Raiden, our homeless friend," he said as he introduced our friend.
 
 "Hi Raiden," she said. "Nice to meet you."
 
@@ -160,13 +160,13 @@ The walk took a while, but we eventually made it through the mildest of drizzlin
 
 "Of course you do," Raiden said. "You're playing then. You can be red."
 
-$C was leaning against the pole in the middle of the room with one arm wrapped around it behind her back. She turned toward it and twirled around the pole doing an upside down fly kick trick with ease. When her spinning finished, she looked at me with a smirk and a shrug. She sat down and made herself at home as if I had already agreed that I wanted to play Risk, and play Risk with her involved. She put her coat over her seat and looked at me, waiting for me to sit. I cracked my neck and threw my jacket in the corner and said, "Alright, let's do this. And if I win, you have to teach me that move."
+$C was leaning against the dance pole in the middle of the parlor with one arm wrapped around it behind her back. She turned toward it and twirled around the pole doing an upside down fly kick trick with ease. When her spinning finished, she looked at me with a smirk and a shrug. She sat down and made herself at home as if I had already agreed that I wanted to play Risk, and play Risk with her involved. She put her coat over her seat and looked at me, waiting for me to sit. I cracked my neck and threw my coat on the hook and said, "Alright, let's do this. And if I win, you have to teach me that move."
 
 The red can empty beers had piled up. The lines of powdered residue on the table were so obvious a blind man could see it. She had won. There was no contest. Raiden in a distant second.
 
 "What is Game Theory exactly?" Raiden asked $C in a slurred, drunken, but polite tone. The three of us were sitting lounged back in our chairs smoking spliffs in defeat as $C sat surprisingly stoked and leaned forward.
 
-"Well," she said, trying to hide her own drunken druggedness. "We're all boundedly rational agents with infinite choices. But I get to--" She stops herself mid-sentence. "It needs balance, first of all," she said as she raised one finger in the air. "And... and you guys sucked at this game."
+"Well," she said, trying to hide her own drunken druggedness. "We're all boundedly rational agents with infinite choices. But I get to--" She stops herself mid-sentence with a finger over her lips. "It needs balance, first of all," she said as she raised the same finger in the air. "And... and you guys sucked at this game."
 
 "And since Silly won, I don't have to teach you any moves and you have to give me a tour."
 
@@ -196,17 +196,18 @@ She was on to me just like I was on to her. She was good at that. But I was so f
 
 "I want to know."
 
-"You first," I popped back. "You started at $four two years ago, right?"
+"You first," I popped back. "You started at $four recently, right?"
 
 "That's right."
 
 "And that's also when $four added its recommendation feature, right?" I asked.
+"And then $four added its recommendation feature, right?" I asked.
 
 "Soon after, yes," she said. "I'm pretty much in charge of that. I spearheaded that initiative."
 
 "You what? Anyways, what databases do you feed off of to figure out the--" I said, interrupted by a person falling and glass breaking.
 
-"Ouwwwww," Raiden muttered as he held his bloody hand with a bloody crack in the Glass next to him.
+"Ouwwwww," Raiden muttered as he held his bloody hand along with a bloody crack on the Glass next to him.
 
 "Oh my god he's bleeding," $C said.
 
@@ -228,7 +229,7 @@ The night wrapped up quickly after that, with all of us bandaging Raiden's hand 
 
 "Continue."
 
-"Let's say the machine knew your favorite piece was the knight, and your weakest moments were after Blitzkreig offenses. And it knew you were left-handed and 52% partial to moves on the left side of the board, and when you took a long time that meant you were working on getting your rooks and bishops out into battle." He was on to something. "If $four, or your app, could combine the machine's ability to cycle through a billion permutations with the ability to reason with you, to convince you, to misdirect you... that would be unstoppable."
+"Let's say the machine knew your favorite piece was the knight, and your weakest moments were after Blitzkreig offenses. And it knew you were left-handed and partial to moves on the left side of the board, and when you took a long time that meant you were working on getting your rooks and bishops out into battle." He was on to something. "If $four, or your app, could combine the machine's ability to cycle through a billion permutations with the ability to reason with you, to convince you, to misdirect you... that would be unstoppable."
 
 "Fuckin' A," I mumbled. It didn't answer how $four did what it did, but it brought to light the method of a solid future-guessing algorithm. "She said something about a blueprint when I first met her. It's like the data actually becomes building blocks. Like how our DNA transcribes who we are going to be, from what we have been before, billions of eons in the making."
 
@@ -254,7 +255,7 @@ The night wrapped up quickly after that, with all of us bandaging Raiden's hand 
 
 Those words hit. Again, he uncovered more clues, mostly accidentally this time.
 
-It was like we were at a passage where our DNA, the core building blocks for everything we considered to be alive, had met its match. DNA was too slow. It needed eons of procreating generations to make its point, but this new robotic frontier was quick to act, within seconds. Of course it would win. Maybe those binary hiveminds, built by our clandestine totalitarian hands, had discovered their own existence. It's not that our algorithms had bred something new, but that they were ready to do exactly what we taught them to do: to reproduce and conquer.
+It was like we were at a passage where our DNA, the core building blocks for everything we consider to be alive, had met its match. DNA was too slow. It needed eons of procreating generations to make its point, but this new robotic frontier was quick to act, within seconds. Of course it would win. Maybe those binary hiveminds, built by our clandestine totalitarian hands, had discovered their own existence. It's not that our algorithms had bred something new, but that they were ready to do exactly what we taught them to do: to reproduce and conquer.
 
 We cheersed and both nearly fell off of the roof right after our glasses collided. Francis slid a lot further than me, his drink following close behind, pouring all over him.
 
@@ -272,8 +273,7 @@ He was okay, though, probably.
 
 *
 
-I hobbled through the empty funeral parlor toward an open coffin. It looked comfortable. The candles around the room being the only light, off the inside of the casket's cushioned lid I could see the flickering shadow of the body inside. I walked closer, my limp and weak legs slowed my progress. I could see the tailored tuxedo and his dirty shoes. He had a book, a short story, on his chest that he held calmly. His last possession. And his face, it was me. Like standing in front of a mirror I brushed the hair from my face, and then from his. Then I saw as him, through his eyes as I laid in that coffin. The man standing above me was me. His hair grey, his beard unkempt. His lips twitched to hide back his tears. An old man, filled with regret. The crypt closed.
-
+I hobbled through the empty funeral parlor toward an open coffin. It looked comfortable. The gaslight around the room being the only light, off the inside of the casket's cushioned lid I could see the flickering shadow of the body inside. I walked closer, my limp and weak legs slowed my progress. I could see the tailored tuxedo and his dirty shoes. He had a book, a short story, on his chest that he held calmly. His last possession. And his face, it was me. Like standing in front of a mirror I brushed the hair from my face, and then from his. Then I saw as him, through his eyes as I laid in that coffin. The man standing above me was me. His hair grey, his beard unkempt. His lips twitched to hide back his tears. An old man, filled with regret. The crypt closed.
 *
 
 >check-in $AX $
@@ -334,7 +334,7 @@ We stood in front of the bay windows overlooking The Bay smoking our half cigars
 
 There was buzz about a scary haunted house and a lot of encouragement to swarm the place with $fourmeme. $G was going to be there too. If there was an Oz curtain, it would be at this carnival, and I was about to look behind it. I was running out of time.
 
-"Alright alright I got it!" Francis walked in the front door with a ziplock baggy held high in the air.
+"Alright alright I got it!" Francis walked in the front door with a sack held high in the air.
 
 "Let the games begin," I said.
 
@@ -356,7 +356,7 @@ She sighed. "See you then."
 
 *
 
-This was a textbook carnival: poorly built rides, all the colors of the bow, trashy folk, all of it. The freak show was only in town for one night, it had never been there before, and would most likely never legally continue, so we all made a night out of it.
+This textbook carnival freak show was only in town for one night, it had never been there before, and would most likely never legally continue, so we all made a night out of it.
 
 A phone playing a live video shows up in front of my face. It's facing me showing me in a cowboy hat and a girl next to me wearing daisy dukes. It's me and $C on her $fourcam.
 
@@ -525,8 +525,6 @@ Karl and Lila had set up the bedding in the parlor for $C (before I could get a 
 
 "That's so sad," Lila said.
 
-"I wish someone could have stopped that," Karl said.
-
 >*"... at the first ever county fair. It's a..."*
 
 My mind inebriated and my vision blurred, the pictures on the Glass come in to view. There was an accident.
@@ -551,7 +549,7 @@ $C lay in her comfortings, looking at me with no emotion, just listening.
 
 Still, nothing from her.
 
-"She had accident marks on her in the tent!" I say. "I tried to tell you."
+"She had awful marks on her in the tent!" I say. "I tried to tell you."
 
 I look around at the others, thoroughly passed out, understandably so. I would be too if I didn't just see the worst thing I had ever seen.
 
@@ -571,7 +569,7 @@ She opens her eyes. "Go. To. Sleep. $A."
 
 "Get up right fucking now," I tell her.
 
-I walk over to her while she lay on the couch, mostly unscathed by anything I've said. I grab both of her shoulders and lift her completely upright, the quilt falling to her feet. I bring my face a millimeter away from hers and grip her arms tightly to make sure she knows I'm talking directly to her and her only.
+I walk over to her while she lay on the couch, mostly unscathed by anything I've said. I grab her shoulders and lift her completely upright, the quilt falling to her feet. I bring my face a millimeter away from hers and grip her arms tightly to make sure she knows I'm talking directly to her and her only.
 
 "Fucking tell me right fucking now fucking tell me bitch this isn't a game anymore I could have stopped someone from getting their face smashed in from a carnival buggy what is it with you and carnivals anyways?! Tell me!"
 
