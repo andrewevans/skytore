@@ -187,7 +187,7 @@ Figures. I made a spinning-around-the-pole motion with my finger. She shakes her
 
 She told me everything.
 
-Daemon read her white paper about people's personal information and social data mining. He found her at da club, recruited her, and so began $four's recommendation engine. It was heavily based on a person's daily patterns. Most people live simple, repetitive lives with only a few moveable levers to alter. Although a lot of the technical aspects of the algorithms went over my head, I understood that its bullseye accuracy came from the subtlety of its suggestions; It offered the users a future that was only a hair different than their original fate. The delta between what the players wanted and what the code preferred, though, was creating a rift.
+Daemon read her white paper about people's personal information and social data mining. He found her at da club, recruited her, and so began $four's recommendation engine. It was heavily based on a person's daily patterns. Most people live simple, repetitive lives with only a few moveable levers to alter. Although a lot of the technical aspects of the algorithms went over my head, I understood that its pinpoint accuracy came from the subtlety of its suggestions; It offered the users a future that was only a hair different than their original fate. The delta between what the players wanted and what the code preferred, though, was creating a rift.
 
 Very quickly the data learned its own accuracy, its 'Eclipse' of reality, and would act on that as well. Some people were easily influenced. Some were born influencers. And they all liked their virtual and real-world rewards.
 
